@@ -2,9 +2,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   const meta = {
-    title: 'Andrea Bianchi\'s Blog',
+    title: 'Andrea Bianchi Fromont',
     description: 'Questo è il mio blog e di nessun altro.',
-    image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
+    image: '/images/Andromeda_2022-09-27.jpg'
   }
 
   return (
