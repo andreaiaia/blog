@@ -24,6 +24,7 @@ body {
   font-variation-settings: 'wght' 450;
   font-variant: common-ligatures contextual;
   letter-spacing: -0.02em;
+  padding: 0;
 }
 b,
 strong,
@@ -44,7 +45,7 @@ h2 {
   screen and (min-resolution: 1.5dppx) {
   body {
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: greyscale;
   }
 }
 
