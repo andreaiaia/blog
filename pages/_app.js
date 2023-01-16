@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import { Navbar } from '../components/Navbar';
 
-import 'nextra-theme-blog/style.css';
+import '../styles/normalize.css';
 import '../styles/main.scss';
 import '../styles/layout.scss';
 
