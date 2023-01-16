@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
-
+import React, { Children, useContext } from 'react';
+import { useRouter } from 'next/router';
+import cx from 'classnames';
 import Link from 'next/link';
 
 import { NavbarContext } from '../../Hooks/Context/GlobalContext';
@@ -19,13 +20,35 @@ import {
 
 import styles from './Navbar.module.scss';
 
+const NavLink = ({ children, activeClassName = 'active', ...props }) => {
+  const { asPath } = useRouter();
+  const child = Children.only(children);
+  const childClassName = child.props.className || '';
+
+  const isActive = asPath === props.href || asPath === props.as;
+  const inactive = 'inactive';
+
+  const className = cx(
+    childClassName,
+    { [activeClassName]: isActive },
+    { [inactive]: !isActive }
+  );
+
+  return (
+    <Link {...props}>
+      {React.cloneElement(child, {
+        className: className || null,
+      })}
+    </Link>
+  );
+};
+
 export const Navbar = () => {
   const { expanded, setExpanded } = useContext(NavbarContext);
   const YEAR = new Date().getFullYear();
 
   const handleMenu = () => {
     setExpanded(() => !expanded);
-    console.log(expanded);
   };
 
   return (
@@ -49,29 +72,23 @@ export const Navbar = () => {
       >
         <nav className={styles.nav}>
           <ul>
-            <li className={styles.active}>
-              <Link href="./index">
-                <>
-                  <Home className={styles.icon} />
-                  Home
-                </>
-              </Link>
+            <li>
+              <Home className={styles.icon} />
+              <NavLink href="/">
+                <span>Home</span>
+              </NavLink>
             </li>
             <li>
-              <Link href="./Posts">
-                <>
-                  <Archive className={styles.icon} />
-                  Posts
-                </>
-              </Link>
+              <Archive className={styles.icon} />
+              <NavLink href="/posts">
+                <span>Posts</span>
+              </NavLink>
             </li>
             <li>
-              <Link href="./Photos">
-                <>
-                  <Camera className={styles.icon} />
-                  Photos
-                </>
-              </Link>
+              <Camera className={styles.icon} />
+              <NavLink href="/photos">
+                <span>Photos</span>
+              </NavLink>
             </li>
           </ul>
         </nav>
