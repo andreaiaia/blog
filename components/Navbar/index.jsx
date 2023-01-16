@@ -87,7 +87,7 @@ export const Navbar = () => {
             </li>
           </ul>
           <div className={styles.credits}>
-            <time>{YEAR}</time> © Andrea Bianchi.
+            <time>{YEAR}</time> © Andrea Bianchi.{' '}
             <a className={styles.rss} href="/feed.xml">
               RSS
             </a>

@@ -9,7 +9,7 @@
   margin: 0;
   padding: 1rem 4rem;
   z-index: 1;
-  box-shadow: 0 0 12px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 12px -6px $light-shadow;
   transition: 0.5s ease-in-out;
   overflow: hidden;
 
@@ -25,6 +25,17 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  @include breakpoint($smartphone) {
+    width: 100%;
+    height: 33%;
+    justify-content: center;
+    padding: 0 4rem;
+
+    &.collapsed {
+      transform: translateY(-600px);
+    }
+  }
 }
 
 .nav {
@@ -45,11 +56,20 @@
       color: $grey;
     }
   }
+
+  @include breakpoint($smartphone) {
+    flex: 3;
+    padding-top: 3rem;
+  }
 }
 
 .active {
   text-decoration: none;
   color: $grey;
+
+  @include breakpoint($smartphone) {
+    color: $black;
+  }
 }
 
 .socials {
@@ -60,19 +80,28 @@
 
   & > ul {
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     align-content: flex-end;
 
     & > li {
       border-radius: 6px;
       transition: 0.3s ease-in-out;
+      cursor: pointer;
 
       &:hover {
         color: $grey;
         background-color: $white;
       }
     }
+  }
+
+  @include breakpoint($smartphone) {
+    flex: 1;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: $grey;
   }
 }
 
@@ -89,6 +118,13 @@
   & > *:hover {
     color: $black;
   }
+
+  @include breakpoint($smartphone) {
+    gap: 0;
+    top: 20px;
+    width: 90%;
+    justify-content: space-between;
+  }
 }
 
 .icon {
@@ -103,4 +139,8 @@
 .rss {
   float: right;
   text-decoration: underline;
+
+  @include breakpoint($smartphone) {
+    float: unset;
+  }
 }
