@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import Link from 'next/link';
+
+import { NavbarContext } from '../../Hooks/Context/GlobalContext';
 
 import {
   Archive,
@@ -18,20 +20,25 @@ import {
 import styles from './Navbar.module.scss';
 
 export const Navbar = () => {
-  const [expanded, setExpanded] = useState(true);
+  const { expanded, setExpanded } = useContext(NavbarContext);
   const YEAR = new Date().getFullYear();
 
   const handleMenu = () => {
-    setExpanded(!expanded);
+    setExpanded(() => !expanded);
+    console.log(expanded);
   };
 
   return (
     <>
       <div className={styles.options}>
         {expanded ? (
-          <XCircle onClick={handleMenu} />
+          <button onClick={handleMenu}>
+            <XCircle />
+          </button>
         ) : (
-          <Menu onClick={handleMenu} />
+          <button onClick={handleMenu}>
+            <Menu />
+          </button>
         )}
         <Moon />
       </div>
