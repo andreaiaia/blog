@@ -63,7 +63,13 @@ img.next-image {
   color: #0074de;
 }
 
-.nav-line .nav-link {
+.nav-line {
+  display: none;
+  color: #69778c;
+}
+
+.nav-link {
+  display: none;
   color: #69778c;
 }
 
