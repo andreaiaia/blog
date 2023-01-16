@@ -1,0 +1,20 @@
+// Colors
+$shade: #ececec;
+$black: #2f353f;
+$grey: #69778c;
+$white: #f3f3f3;
+$light-shadow: rgba(0, 0, 0, 0.5);
+
+// breakpoints
+$smartphone: 600px;
+$tablet-portrait: 768px;
+$tablet-landscape: 992px;
+$laptop: 1200px;
+
+// media query mixin
+
+@mixin breakpoint($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
