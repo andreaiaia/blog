@@ -11,4 +11,8 @@ main {
   @include breakpoint(1100px) {
     margin-left: 0;
   }
+
+  @include breakpoint($smartphone) {
+    padding: 1rem 1.5rem 0;
+  }
 }
