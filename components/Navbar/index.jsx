@@ -52,7 +52,10 @@ export const Navbar = () => {
   };
 
   const closeMenu = () => {
-    setExpanded(() => false);
+    // typeof window !== 'undefined' &&
+    if (window.innerWidth < 1100) {
+      setExpanded(() => false);
+    }
   };
 
   return (
@@ -81,21 +84,21 @@ export const Navbar = () => {
       >
         <nav className={styles.nav}>
           <ul>
-            <li>
+            <li onClick={closeMenu}>
               <Home className={styles.icon} />
-              <NavLink onClick={() => closeMenu} href="/">
+              <NavLink href="/">
                 <span>Home</span>
               </NavLink>
             </li>
-            <li>
+            <li onClick={closeMenu}>
               <Archive className={styles.icon} />
-              <NavLink onClick={() => closeMenu} href="/posts">
+              <NavLink href="/posts">
                 <span>Posts</span>
               </NavLink>
             </li>
-            <li>
+            <li onClick={closeMenu}>
               <Camera className={styles.icon} />
-              <NavLink onClick={() => closeMenu} href="/photos">
+              <NavLink href="/photos">
                 <span>Photos</span>
               </NavLink>
             </li>
