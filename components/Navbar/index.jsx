@@ -52,7 +52,6 @@ export const Navbar = () => {
   };
 
   const closeMenu = () => {
-    // typeof window !== 'undefined' &&
     if (window.innerWidth < 1100) {
       setExpanded(() => false);
     }
@@ -93,7 +92,7 @@ export const Navbar = () => {
             <li onClick={closeMenu}>
               <Archive className={styles.icon} />
               <NavLink href="/posts">
-                <span>Posts</span>
+                <span>Blog</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
