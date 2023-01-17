@@ -98,6 +98,7 @@
   top: 10px;
   left: 20px;
   color: $grey;
+  background-color: $white;
   transition: 0.3s ease-in-out;
   display: flex;
   gap: 1rem;
@@ -110,7 +111,8 @@
   @include breakpoint($smartphone) {
     gap: 0;
     top: 20px;
-    width: 90%;
+    width: 100%;
+    padding: 1rem;
     justify-content: space-between;
   }
 }
