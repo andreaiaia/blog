@@ -9,9 +9,7 @@ import '../styles/layout.scss';
 import { NavbarContext } from '../Hooks/Context/GlobalContext';
 
 export default function App({ Component, pageProps }) {
-  const initialExpanded =
-    typeof window !== 'undefined' ? window.innerWidth > 1100 : true;
-  const [expanded, setExpanded] = useState(initialExpanded);
+  const [expanded, setExpanded] = useState(true);
 
   return (
     <>

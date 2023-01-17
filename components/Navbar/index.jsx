@@ -1,4 +1,4 @@
-import React, { Children, useContext } from 'react';
+import React, { Children, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import Link from 'next/link';
@@ -47,14 +47,16 @@ export const Navbar = () => {
   const { expanded, setExpanded } = useContext(NavbarContext);
   const YEAR = new Date().getFullYear();
 
+  useEffect(() => {
+    if (window.innerWidth < 1100) setExpanded(() => false);
+  }, []);
+
   const handleMenu = () => {
     setExpanded(() => !expanded);
   };
 
   const closeMenu = () => {
-    if (window.innerWidth < 1100) {
-      setExpanded(() => false);
-    }
+    if (window.innerWidth < 1100) setExpanded(() => false);
   };
 
   return (
