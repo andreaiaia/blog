@@ -95,25 +95,30 @@
 
 .options {
   position: fixed;
-  top: 10px;
-  left: 20px;
+  background-color: $shade;
   color: $grey;
-  background-color: $white;
-  transition: 0.3s ease-in-out;
   display: flex;
   gap: 1rem;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  transition: 0.2s ease;
   z-index: 2;
+
+  &.collapsed {
+    width: 100%;
+    background-color: #fff;
+  }
 
   & > *:hover {
     color: $black;
   }
 
   @include breakpoint($smartphone) {
-    gap: 0;
-    top: 20px;
     width: 100%;
     padding: 1rem;
     justify-content: space-between;
+    gap: 0;
   }
 }
 
