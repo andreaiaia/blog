@@ -1,9 +1,18 @@
-import 'nextra-theme-blog/style.css'
-import Head from 'next/head'
+import { useState } from 'react';
+import Head from 'next/head';
+import { Navbar } from '../components/Navbar';
 
-import '../styles/main.css'
+import 'nextra-theme-blog/style.css';
+import '../styles/main.scss';
+import '../styles/layout.scss';
 
-export default function Nextra({ Component, pageProps }) {
+import { NavbarContext } from '../Hooks/Context/GlobalContext';
+
+export default function App({ Component, pageProps }) {
+  const initialExpanded =
+    typeof window !== 'undefined' ? window.innerWidth > 1100 : true;
+  const [expanded, setExpanded] = useState(initialExpanded);
+
   return (
     <>
       <Head>
@@ -21,7 +30,12 @@ export default function Nextra({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <Component {...pageProps} />
+      <NavbarContext.Provider value={{ expanded, setExpanded }}>
+        <Navbar />
+        <main className={expanded ? '' : 'collapsed'}>
+          <Component {...pageProps} />
+        </main>
+      </NavbarContext.Provider>
     </>
-  )
+  );
 }
