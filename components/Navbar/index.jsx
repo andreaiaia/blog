@@ -51,6 +51,10 @@ export const Navbar = () => {
     setExpanded(() => !expanded);
   };
 
+  const closeMenu = () => {
+    setExpanded(() => false);
+  };
+
   return (
     <>
       <div
@@ -79,19 +83,19 @@ export const Navbar = () => {
           <ul>
             <li>
               <Home className={styles.icon} />
-              <NavLink href="/">
+              <NavLink onClick={() => closeMenu} href="/">
                 <span>Home</span>
               </NavLink>
             </li>
             <li>
               <Archive className={styles.icon} />
-              <NavLink href="/posts">
+              <NavLink onClick={() => closeMenu} href="/posts">
                 <span>Posts</span>
               </NavLink>
             </li>
             <li>
               <Camera className={styles.icon} />
-              <NavLink href="/photos">
+              <NavLink onClick={() => closeMenu} href="/photos">
                 <span>Photos</span>
               </NavLink>
             </li>
