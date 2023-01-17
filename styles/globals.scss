@@ -1,13 +1,3 @@
-// Light theme colors
-:root {
-  --black: #2f353f;
-}
-
-// Dark theme colors
-[data-theme='dark'] {
-  --black: #f3f3f3;
-}
-
 // Colors
 $shade: #ececec;
 $black: --black;
