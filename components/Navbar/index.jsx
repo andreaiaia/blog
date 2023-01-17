@@ -53,7 +53,13 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className={styles.options}>
+      <div
+        className={
+          expanded
+            ? `${styles.options}`
+            : `${styles.options} ${styles.collapsed}`
+        }
+      >
         {expanded ? (
           <button onClick={handleMenu}>
             <XCircle />
@@ -63,7 +69,6 @@ export const Navbar = () => {
             <Menu />
           </button>
         )}
-        <Moon />
       </div>
       <header
         className={
