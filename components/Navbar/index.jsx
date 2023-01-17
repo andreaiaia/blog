@@ -63,9 +63,7 @@ export const Navbar = () => {
     <>
       <div
         className={
-          expanded
-            ? `${styles.options}`
-            : `${styles.options} ${styles.collapsed}`
+          expanded ? `${styles.options} ${styles.expanded}` : styles.options
         }
       >
         {expanded ? (
@@ -80,7 +78,7 @@ export const Navbar = () => {
       </div>
       <header
         className={
-          expanded ? `${styles.header}` : `${styles.header} ${styles.collapsed}`
+          expanded ? `${styles.header} ${styles.expanded}` : styles.header
         }
       >
         <nav className={styles.nav}>
