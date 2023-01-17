@@ -11,8 +11,17 @@ $tablet-portrait: 768px;
 $tablet-landscape: 992px;
 $laptop: 1200px;
 
-// media query mixin
+// headeing levels presets
+@mixin h1() {
+  color: #111827;
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
 
+// media query mixin
 @mixin breakpoint($max) {
   @media (max-width: $max) {
     @content;
