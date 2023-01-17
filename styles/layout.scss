@@ -12,7 +12,7 @@ main {
     margin-left: 0;
   }
 
-  @include breakpoint($smartphone) {
+  @include smartphone() {
     padding: 1rem 1.5rem 0;
   }
 }

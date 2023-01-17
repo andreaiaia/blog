@@ -18,3 +18,9 @@ $laptop: 1200px;
     @content;
   }
 }
+
+@mixin smartphone() {
+  @media (max-width: $smartphone) {
+    @content;
+  }
+}
