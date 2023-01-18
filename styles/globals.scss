@@ -3,6 +3,31 @@ $shade: #ececec;
 $black: --black;
 $grey: #69778c;
 $white: #f3f3f3;
+// Azure
+$azure: #008ad8;
+$azure-tint: #0091e6;
+$azure-tone: #0079bf;
+$azure-shade: #006199;
+$azure-shadow: #003959;
+// French Blue
+$frenchblue: #006eb3;
+$frenchblue-tint: #009dff;
+$frenchblue-tone: #0076bf;
+$frenchblue-shade: #005e99;
+$frenchblue-shadow: #004773;
+// King Blue
+$kingBlue: #4169e1;
+$kingBlue-tint: #456fed;
+$kingBlue-tone: #3a5dc7;
+$kingBlue-shade: #2f4ba1;
+$kingBlue-shadow: #1c2d61;
+// Ocean Blue
+$oceanBlue: #005eb8;
+$oceanBlue-tint: #0aa3cf;
+$oceanBlue-tone: #0a3ccf;
+$oceanBlue-shade: #0065c4;
+$oceanBlue-shadow: #003e78;
+// Shadows
 $light-shadow: rgba(0, 0, 0, 0.5);
 
 // breakpoints
@@ -19,6 +44,11 @@ $laptop: 1200px;
   margin-top: 0;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
+}
+
+//buttons presets
+@mixin button() {
+  background-color: red;
 }
 
 // media query mixin
