@@ -9,10 +9,42 @@
   max-width: 65ch;
 }
 
+.card {
+  background-color: $shade;
+  padding: 1rem;
+  border-radius: 25px;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.img {
+    padding: 0;
+  }
+}
+
+.sectionBio {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 2fr;
+}
+
+.greetings {
+  @include h1();
+  margin-bottom: 0.5rem;
+  font-variation-settings: 'wght' 850;
+  text-align: center;
+}
 .title {
   @include h1();
+  text-align: center;
+  color: $azure-tint;
 }
 
 .proPic {
-  border-radius: 50%;
+  border-radius: 15px;
+}
+
+.download {
+  @include button();
 }
