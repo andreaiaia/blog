@@ -1,8 +1,16 @@
 // Colors
-$shade: #ececec;
-$black: #2f353f;
-$grey: #69778c;
 $white: #f3f3f3;
+$tint: #ececec;
+$tone: #afb9c7;
+$shade: #94a2b6;
+$shadow: #69778c;
+$black: #111827;
+$tint-black: #69778c;
+$tone-black: #525c71;
+$shade-black: #363c4a;
+$shadow-black: #282e37;
+// Shadows
+$light-shadow: rgba(0, 0, 0, 0.5);
 // Azure
 $azure: #008ad8;
 $azure-tint: #0091e6;
@@ -27,8 +35,6 @@ $oceanBlue-tint: #0aa3cf;
 $oceanBlue-tone: #0a3ccf;
 $oceanBlue-shade: #0065c4;
 $oceanBlue-shadow: #003e78;
-// Shadows
-$light-shadow: rgba(0, 0, 0, 0.5);
 
 // breakpoints
 $smartphone: 600px;
@@ -38,7 +44,7 @@ $laptop: 1200px;
 
 // headeing levels presets
 @mixin h1() {
-  color: #111827;
+  color: $black;
   font-weight: 800;
   font-size: 2.25em;
   margin-top: 0;
@@ -47,7 +53,7 @@ $laptop: 1200px;
 }
 
 //buttons presets
-@mixin button($type: 'primary') {
+@mixin button($type: 'primary', $size: 'normal') {
   line-height: normal;
   padding: 0.8rem 1rem;
   border-radius: 12px;
@@ -64,12 +70,20 @@ $laptop: 1200px;
     background-color: $azure-tone;
   }
 
+  @if $size == 'small' {
+    padding: 0.5rem 0.8rem;
+  }
+  @if $size == 'big' {
+    font-size: 1.5rem;
+  }
+
   @if $type == 'secondary' {
-    background-color: $shade;
-    color: $black;
+    border-radius: 10px;
+    background-color: $shadow;
+    color: $white;
 
     &:hover {
-      background-color: $white;
+      background-color: $shade-black;
     }
   }
 }

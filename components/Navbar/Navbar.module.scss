@@ -6,7 +6,7 @@
   left: -300px;
   height: 100%;
   width: 300px;
-  background-color: $shade;
+  background-color: $tint;
   margin: 0;
   padding: 1rem 3rem;
   z-index: 1;
@@ -56,14 +56,14 @@
     cursor: pointer;
 
     &:hover {
-      color: $grey;
+      color: $shadow;
     }
   }
 }
 
 .active {
   text-decoration: none;
-  color: $grey;
+  color: $shadow;
 
   @include smartphone() {
     color: $black;
@@ -87,20 +87,20 @@
       cursor: pointer;
 
       &:hover {
-        color: $grey;
+        color: $shadow;
         background-color: $white;
       }
     }
   }
 
   @include smartphone() {
-    color: $grey;
+    color: $shadow;
   }
 }
 
 .options {
   position: fixed;
-  color: $grey;
+  color: $shadow;
   display: flex;
   gap: 1rem;
   top: 0;
