@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import { FileText } from 'react-feather';
+import { AtSign, FileText, Layout, Smartphone } from 'react-feather';
 
 import styles from '../styles/Home.module.scss';
 
@@ -13,9 +13,13 @@ const index = () => {
     setProfilePic(`/images/bio/me-${random}.jpg`);
   }, []);
 
+  const renderCV = () => {
+    console.log('write me!');
+  };
+
   return (
     <article className={styles.container}>
-      <section className={styles.sectionBio}>
+      <section className={styles.sectionTitle}>
         <div className={`${styles.card} ${styles.img}`}>
           <Image
             src={profilePic}
@@ -27,13 +31,44 @@ const index = () => {
           />
         </div>
         <div className={styles.card}>
-          <div>
-            <p className={styles.greetings}>Hi, I'm</p>
-            <h1 className={styles.title}>Andrea Bianchi</h1>
-            <button className={styles.download}>
-              <FileText /> Download CV
-            </button>
-          </div>
+          <p className={styles.greetings}>Hi, I'm</p>
+          <h1 className={styles.title}>Andrea Bianchi</h1>
+          <button className={styles.download} onClick={renderCV}>
+            <FileText />
+            Download CV
+          </button>
+        </div>
+      </section>
+      <section className={styles.sectionBio}>
+        <div className={`${styles.card} ${styles.textWall}`}>
+          <p>
+            Sono uno sviluppatore web Front-End, mi piace per il design semplice
+            ed efficace.
+          </p>
+          <p> </p>
+          <p>
+            Studio informatica a Bologna e nel tempo libero scatto fotografie,
+            lavoro a progetti personali oppure gioco a scacchi.
+          </p>
+        </div>
+        <div className={styles.card}>
+          <ul>
+            <li>
+              <a href="mailto:bianan96@gmail.com">
+                <AtSign /> bianan96@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+39 351 710 58 75">
+                <Smartphone /> +39 351 710 58 75
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <Layout /> andreabianchi.vercel.app
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
     </article>
