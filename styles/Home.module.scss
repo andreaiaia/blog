@@ -16,7 +16,7 @@ $gap: 1rem;
 }
 
 .card {
-  background-color: $shade;
+  background-color: $tint;
   padding: 1rem;
   border-radius: 25px;
   display: flex;
@@ -35,6 +35,9 @@ $gap: 1rem;
   }
 }
 
+.bgImg {
+}
+
 .sectionTitle {
   display: grid;
   gap: $gap;
@@ -45,6 +48,38 @@ $gap: 1rem;
   display: grid;
   gap: $gap;
   grid-template-columns: 3fr 2fr;
+}
+
+.sectionSkills {
+  display: grid;
+  gap: $gap;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    'boh1 exp boh2'
+    'boh3 exp boh4'
+    'boh5 exp boh6';
+}
+.exp {
+  grid-area: exp;
+}
+.boh1 {
+  grid-area: boh1;
+}
+.boh2 {
+  grid-area: boh2;
+}
+.boh3 {
+  grid-area: boh3;
+}
+.boh4 {
+  grid-area: boh4;
+}
+.boh5 {
+  grid-area: boh5;
+}
+.boh6 {
+  grid-area: boh6;
 }
 
 .greetings {
@@ -63,5 +98,26 @@ $gap: 1rem;
 }
 
 .download {
-  @include button();
+  @include button('secondary', 'small');
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+
+  & > li > a {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: $azure;
+    }
+  }
+}
+
+.bold {
+  font-variation-settings: 'wght' 800;
 }

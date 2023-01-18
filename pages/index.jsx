@@ -42,8 +42,9 @@ const index = () => {
       <section className={styles.sectionBio}>
         <div className={`${styles.card} ${styles.textWall}`}>
           <p>
-            Sono uno sviluppatore web Front-End, mi piace per il design semplice
-            ed efficace.
+            Sono uno{' '}
+            <span className={styles.bold}>sviluppatore web Front-End</span>, mi
+            piace per il design semplice ed efficace.
           </p>
           <p> </p>
           <p>
@@ -51,8 +52,8 @@ const index = () => {
             lavoro a progetti personali oppure gioco a scacchi.
           </p>
         </div>
-        <div className={styles.card}>
-          <ul>
+        <div className={`${styles.card} ${styles.bgImg}`}>
+          <ul className={styles.contacts}>
             <li>
               <a href="mailto:bianan96@gmail.com">
                 <AtSign /> bianan96@gmail.com
@@ -70,6 +71,17 @@ const index = () => {
             </li>
           </ul>
         </div>
+      </section>
+      <section className={styles.sectionSkills}>
+        <div className={`${styles.card} ${styles.boh1}`}></div>
+        <div className={`${styles.card} ${styles.boh2}`}></div>
+        <div className={`${styles.card} ${styles.boh3}`}></div>
+        <div className={`${styles.card} ${styles.exp}`}>
+          <h2>Esperienza lavorativa</h2>
+        </div>
+        <div className={`${styles.card} ${styles.boh4}`}></div>
+        <div className={`${styles.card} ${styles.boh5}`}></div>
+        <div className={`${styles.card} ${styles.boh6}`}></div>
       </section>
     </article>
   );
