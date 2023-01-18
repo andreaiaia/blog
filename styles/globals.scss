@@ -1,6 +1,6 @@
 // Colors
 $shade: #ececec;
-$black: --black;
+$black: #2f353f;
 $grey: #69778c;
 $white: #f3f3f3;
 // Azure
@@ -47,8 +47,31 @@ $laptop: 1200px;
 }
 
 //buttons presets
-@mixin button() {
-  background-color: red;
+@mixin button($type: 'primary') {
+  line-height: normal;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background-color: $azure-tint;
+  color: $white;
+  transition: 0.3s ease-in-out;
+
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: $azure-tone;
+  }
+
+  @if $type == 'secondary' {
+    background-color: $shade;
+    color: $black;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
 }
 
 // media query mixin
