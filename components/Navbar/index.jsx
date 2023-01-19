@@ -68,11 +68,11 @@ export const Navbar = () => {
       >
         {expanded ? (
           <button onClick={handleMenu}>
-            <XCircle />
+            <XCircle alt="" />
           </button>
         ) : (
           <button onClick={handleMenu}>
-            <Menu />
+            <Menu alt="" />
           </button>
         )}
       </div>
@@ -84,19 +84,19 @@ export const Navbar = () => {
         <nav className={styles.nav}>
           <ul>
             <li onClick={closeMenu}>
-              <Home className={styles.icon} />
+              <Home className={styles.icon} alt="" />
               <NavLink href="/">
                 <span>Home</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
-              <Archive className={styles.icon} />
+              <Archive className={styles.icon} alt="" />
               <NavLink href="/posts">
                 <span>Blog</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
-              <Camera className={styles.icon} />
+              <Camera className={styles.icon} alt="" />
               <NavLink href="/photos">
                 <span>Photos</span>
               </NavLink>
@@ -107,17 +107,17 @@ export const Navbar = () => {
           <ul className={styles.socialsLinks}>
             <li>
               <Link href="https://instagram.com/andreaiaia">
-                <Instagram className={styles.icon} />
+                <Instagram className={styles.icon} alt="Instagram logo" />
               </Link>
             </li>
             <li>
               <Link href="https://github.com/andreaiaia">
-                <GitHub className={styles.icon} />
+                <GitHub className={styles.icon} alt="Github logo" />
               </Link>
             </li>
             <li>
               <Link href="https://linkedin.com/in/andreaiaia/">
-                <Linkedin className={styles.icon} />
+                <Linkedin className={styles.icon} alt="Linkedin logo" />
               </Link>
             </li>
           </ul>
