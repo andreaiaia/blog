@@ -56,36 +56,86 @@ $gap: 1rem;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
-    'boh1 exp boh2'
-    'boh3 exp boh4'
-    'boh5 exp boh6';
+    'basics exp docker'
+    'react exp graphql'
+    'ts exp postgres';
 }
 .exp {
   grid-area: exp;
+
+  & > h2 {
+    @include h2();
+  }
 }
-.boh1 {
-  grid-area: boh1;
+.basics {
+  grid-area: basics;
+  font-size: 0.8rem;
+  text-align: center;
 }
-.boh2 {
-  grid-area: boh2;
+.docker {
+  grid-area: docker;
+  text-align: center;
+  padding-top: 0.8rem;
+
+  & > p {
+    padding-top: 0.2rem;
+
+    & > span {
+      @include bold;
+      color: $azure-tone;
+    }
+  }
 }
-.boh3 {
-  grid-area: boh3;
+.react {
+  grid-area: react;
+  padding: 0 1rem 0.8rem;
+  text-align: center;
+
+  & > p > span {
+    @include bold;
+    color: #00b9e7;
+    text-shadow: 0 0 6px $white;
+  }
 }
-.boh4 {
-  grid-area: boh4;
+.graphql {
+  grid-area: graphql;
+  text-align: center;
+
+  & > p > span {
+    @include bold;
+    color: #e10098;
+  }
 }
-.boh5 {
-  grid-area: boh5;
+.ts {
+  grid-area: ts;
+  color: $white;
+  padding-bottom: 100px;
+  background: url('../public/images/skills/ts.png') no-repeat;
+  background-size: cover;
+  text-shadow: 0 0 6px $black;
+  text-align: center;
+
+  & > p > span {
+    @include bold;
+  }
 }
-.boh6 {
-  grid-area: boh6;
+
+.postgres {
+  grid-area: postgres;
+  font-size: 0.8rem;
+  text-align: center;
+
+  & > p > span {
+    color: $azure-shade;
+    font-size: 1rem;
+    @include bold;
+  }
 }
 
 .greetings {
   @include h1();
+  @include boldest;
   margin-bottom: 0.5rem;
-  font-variation-settings: 'wght' 850;
 }
 .title {
   @include h1();
@@ -119,5 +169,10 @@ $gap: 1rem;
 }
 
 .bold {
-  font-variation-settings: 'wght' 800;
+  @include bold;
+}
+
+.accent {
+  @include bold;
+  color: $azure-tint;
 }
