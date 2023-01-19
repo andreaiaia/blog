@@ -46,7 +46,6 @@ const index = () => {
             <span className={styles.bold}>sviluppatore web Front-End</span>, mi
             piace per il design semplice ed efficace.
           </p>
-          <p> </p>
           <p>
             Studio informatica a Bologna e nel tempo libero scatto fotografie,
             lavoro a progetti personali oppure gioco a scacchi.

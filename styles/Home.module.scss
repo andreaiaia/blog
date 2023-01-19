@@ -116,10 +116,11 @@ $gap: 1rem;
   display: grid;
   gap: $gap;
   grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'bio contacts';
 
   @include smartphone() {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     grid-template-areas:
       'contacts'
       'bio';
@@ -178,14 +179,6 @@ $gap: 1rem;
       'graphql postgres';
   }
 }
-
-.sectionMore {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: $gap;
-}
-
 .exp {
   grid-area: exp;
 
@@ -228,7 +221,6 @@ $gap: 1rem;
   @include skillCard;
   padding-bottom: 0.5rem;
 }
-
 .graphql {
   grid-area: graphql;
   background: url('../public/images/skills/graphql.webp') no-repeat;
@@ -236,7 +228,6 @@ $gap: 1rem;
   padding: 0.5rem 1rem 0.5rem;
   justify-content: space-between;
 }
-
 .postgres {
   grid-area: postgres;
   background: url('../public/images/skills/postgres.webp') no-repeat;
@@ -245,6 +236,12 @@ $gap: 1rem;
   justify-content: flex-start;
 }
 
+.sectionMore {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: $gap;
+}
 .hobbies > div {
   margin-bottom: 0.5rem;
 
