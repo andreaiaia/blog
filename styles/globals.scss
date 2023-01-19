@@ -5,7 +5,7 @@ $tone: #afb9c7;
 $shade: #94a2b6;
 $shadow: #69778c;
 $black: #111827;
-$tint-black: #69778c;
+$tint-black: #6b788b;
 $tone-black: #525c71;
 $shade-black: #363c4a;
 $shadow-black: #282e37;
@@ -61,14 +61,18 @@ $laptop: 1200px;
   line-height: 1.3333333;
 }
 
+@mixin light() {
+  font-variation-settings: 'wght' 400;
+}
+@mixin normal() {
+  font-variation-settings: 'wght' 500;
+}
 @mixin bold() {
   font-variation-settings: 'wght' 700;
 }
-
 @mixin bolder() {
   font-variation-settings: 'wght' 800;
 }
-
 @mixin boldest() {
   font-variation-settings: 'wght' 850;
 }

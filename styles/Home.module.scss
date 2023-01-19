@@ -2,6 +2,30 @@
 
 $gap: 1rem;
 
+@mixin title() {
+  @include h2();
+  color: $shadow-black;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+@mixin label() {
+  & > h3 {
+    @include normal;
+    color: $shade-black;
+    margin-bottom: 0.5rem;
+
+    & > span {
+      text-transform: uppercase;
+      @include bold;
+      color: $tint-black;
+      float: right;
+      font-size: 0.8rem;
+      line-height: 24px;
+    }
+  }
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -18,7 +42,7 @@ $gap: 1rem;
 .card {
   background-color: $tint;
   padding: 1rem;
-  border-radius: 25px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,9 +59,6 @@ $gap: 1rem;
   }
 }
 
-.bgImg {
-}
-
 .sectionTitle {
   display: grid;
   gap: $gap;
@@ -47,70 +68,81 @@ $gap: 1rem;
 .sectionBio {
   display: grid;
   gap: $gap;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 4fr 3fr;
 }
 
 .sectionSkills {
   display: grid;
   gap: $gap;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
     'basics exp docker'
+    'basics exp docker'
     'react exp graphql'
-    'ts exp postgres';
+    'react edu graphql'
+    'ts edu postgres'
+    'ts edu postgres';
 }
+
+.sectionMore {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: $gap;
+}
+
 .exp {
   grid-area: exp;
 
   & > h2 {
-    @include h2();
+    @include title();
+  }
+
+  & > div {
+    @include label;
+  }
+}
+.edu {
+  grid-area: edu;
+
+  & > h2 {
+    @include title();
+  }
+
+  & > div {
+    @include label;
   }
 }
 .basics {
   grid-area: basics;
-  font-size: 0.8rem;
   text-align: center;
-}
-.docker {
-  grid-area: docker;
-  text-align: center;
-  padding-top: 0.8rem;
+  padding: 1rem 0;
+  justify-content: space-between;
+  background: url('../public/images/skills/html-css-js.webp') no-repeat;
+  background-size: cover;
 
-  & > p {
-    padding-top: 0.2rem;
-
-    & > span {
-      @include bold;
-      color: $azure-tone;
-    }
+  & > p > span {
+    @include bold;
   }
 }
 .react {
   grid-area: react;
-  padding: 0 1rem 0.8rem;
+  padding-bottom: 0.2rem;
   text-align: center;
+  justify-content: flex-end;
+  background: url('../public/images/skills/react.webp') no-repeat;
+  background-size: cover;
 
   & > p > span {
     @include bold;
-    color: #00b9e7;
-    text-shadow: 0 0 6px $white;
-  }
-}
-.graphql {
-  grid-area: graphql;
-  text-align: center;
-
-  & > p > span {
-    @include bold;
-    color: #e10098;
   }
 }
 .ts {
   grid-area: ts;
   color: $white;
   padding-bottom: 100px;
-  background: url('../public/images/skills/ts.png') no-repeat;
+  background: url('../public/images/skills/ts.webp') no-repeat;
   background-size: cover;
   text-shadow: 0 0 6px $black;
   text-align: center;
@@ -119,15 +151,44 @@ $gap: 1rem;
     @include bold;
   }
 }
+.docker {
+  grid-area: docker;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  justify-content: flex-end;
+  background: url('../public/images/skills/docker.webp') no-repeat;
+  background-size: cover;
+  color: $white;
+
+  & > p > span {
+    @include bold;
+  }
+}
+
+.graphql {
+  grid-area: graphql;
+  text-align: center;
+  padding: 0.5rem 1rem 0.5rem;
+  justify-content: space-between;
+  background: url('../public/images/skills/graphql.webp') no-repeat;
+  background-size: cover;
+  color: $white;
+
+  & > p > span {
+    @include bold;
+  }
+}
 
 .postgres {
   grid-area: postgres;
-  font-size: 0.8rem;
+  padding-top: 0.5rem;
   text-align: center;
+  justify-content: flex-start;
+  background: url('../public/images/skills/postgres.webp') no-repeat;
+  background-size: cover;
+  color: $white;
 
   & > p > span {
-    color: $azure-shade;
-    font-size: 1rem;
     @include bold;
   }
 }
@@ -144,7 +205,7 @@ $gap: 1rem;
 }
 
 .proPic {
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .download {
@@ -154,6 +215,9 @@ $gap: 1rem;
 .contacts {
   display: flex;
   flex-direction: column;
+  @include bold;
+  color: $white;
+  text-shadow: 0 0 6px $black;
   gap: $gap;
 
   & > li > a {
@@ -163,9 +227,13 @@ $gap: 1rem;
     transition: 0.3s ease-in-out;
 
     &:hover {
-      color: $azure;
+      text-decoration: underline;
     }
   }
+}
+.bgImg {
+  background: url('../public/images/contacts.jpg') no-repeat;
+  background-size: cover;
 }
 
 .bold {

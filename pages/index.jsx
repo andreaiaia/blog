@@ -73,65 +73,30 @@ const index = () => {
         </div>
       </section>
       <section className={styles.sectionSkills}>
-        <div className={`${styles.card} ${styles.basics}`}>
-          <Image
-            src="/images/skills/html-css-js.png"
-            alt="The HTML, CSS and Javascript logos"
-            width={300}
-            height={200}
-          />
-          <p>
-            Knows <span className={styles.accent}>HTML, CSS</span> and{' '}
-            <span className={styles.accent}>Javascript</span>
-          </p>
-        </div>
-        <div className={`${styles.card} ${styles.docker}`}>
-          <Image
-            src="/images/skills/docker.png"
-            alt="Docker logo"
-            width={300}
-            height={200}
-          />
-          <p>
-            Fights the chaos with <span>Docker</span>
-          </p>
-        </div>
-        <div className={`${styles.card} ${styles.react}`}>
-          <Image
-            src="/images/skills/react.png"
-            alt="ReactJS logo"
-            width={400}
-            height={400}
-          />
-          <p>
-            Enjoys <span>ReactJS</span>
-          </p>
-        </div>
         <div className={`${styles.card} ${styles.exp}`}>
           <h2>Esperienza lavorativa</h2>
           <div>
-            <h3>Credimi S.p.A.</h3>
-            <h4>Febbraio 2022 - Presente</h4>
-            <ul>
-              <li>
-                Sviluppo del sito pubblico come parte del team Acquisition;
-              </li>
-              <li>
-                Sviluppo del widget antifrode come parte del team internal.
-              </li>
-            </ul>
+            <h3>
+              Credimi S.p.A. <span>Feb 2022 - Present</span>
+            </h3>
+            <p>
+              Sviluppo del sito pubblico come parte del team Acquisition;
+              Sviluppo del widget antifrode come parte del team internal.
+            </p>
           </div>
         </div>
-        <div className={`${styles.card} ${styles.graphql}`}>
-          <p>Asks questions</p>
-          <Image
-            src="/images/skills/graphql.png"
-            alt="The GraphQL Logo"
-            width={80}
-            height={80}
-          />
+        <div className={`${styles.card} ${styles.basics}`}>
           <p>
-            with <span>GraphQL</span>
+            Knows <span>HTML, CSS</span>
+          </p>
+
+          <p>
+            and <span>Javascript</span>
+          </p>
+        </div>
+        <div className={`${styles.card} ${styles.react}`}>
+          <p>
+            Enjoys <span>ReactJS</span>
           </p>
         </div>
         <div className={`${styles.card} ${styles.ts}`}>
@@ -139,16 +104,39 @@ const index = () => {
             &#129293; In love with <span>Typescript</span>
           </p>
         </div>
+        <div className={`${styles.card} ${styles.docker}`}>
+          <p>
+            Fights the chaos with <span>Docker</span>
+          </p>
+        </div>
+        <div className={`${styles.card} ${styles.graphql}`}>
+          <p>Asks questions</p>
+          <p>
+            with <span>GraphQL</span>
+          </p>
+        </div>
         <div className={`${styles.card} ${styles.postgres}`}>
           <p>
             Stays tidy with <span>PostgreSQL</span>
           </p>
-          <Image
-            src="/images/skills/postgres.png"
-            alt="PostgreSQL Logo"
-            width={300}
-            height={200}
-          />
+        </div>
+        <div className={`${styles.card} ${styles.edu}`}>
+          <h2>Istruzione</h2>
+          <div>
+            <h3>
+              Laurea in Scienze della Comunicazione <span>Nov 2019</span>
+            </h3>
+            <p>
+              I got my degree in Communication Science at the University of
+              Bologna with a thesis about the AI Generated Art (before DALL·E
+              made drove crazy about it).
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className={styles.sectionMore}>
+        <div className={styles.card}>
+          <h2>Hobby</h2>
         </div>
       </section>
     </article>
