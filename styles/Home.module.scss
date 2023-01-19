@@ -199,6 +199,9 @@ $gap: 1rem;
   }
 }
 
+.proPic {
+  border-radius: 20px;
+}
 .greetings {
   @include h1();
   @include boldest;
@@ -210,12 +213,13 @@ $gap: 1rem;
   color: $azure-tint;
 }
 
-.proPic {
-  border-radius: 20px;
-}
-
 .download {
   @include button('secondary', 'small');
+}
+.downloadBig {
+  display: block;
+  margin: auto;
+  @include button('primary', 'big');
 }
 
 .contacts {
@@ -245,7 +249,6 @@ $gap: 1rem;
 .bold {
   @include bold;
 }
-
 .accent {
   @include bold;
   color: $azure-tint;

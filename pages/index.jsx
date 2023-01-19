@@ -157,6 +157,10 @@ const index = () => {
           </div>
         </div>
       </section>
+      <button className={styles.downloadBig} onClick={renderCV}>
+        <FileText />
+        Download CV
+      </button>
     </article>
   );
 };
