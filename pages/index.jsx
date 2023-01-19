@@ -135,8 +135,26 @@ const index = () => {
         </div>
       </section>
       <section className={styles.sectionMore}>
-        <div className={styles.card}>
-          <h2>Hobby</h2>
+        <div className={`${styles.card} ${styles.hobbies}`}>
+          <h2>Hobbies</h2>
+          <div>
+            <h3>Photography</h3>
+            <p>
+              As you might have guessed, I really like photography: I started
+              when I was 16 and I enjoy taking pictures for myself, I also print
+              them in posters or books. Wherever I go I make sure I have my
+              loved Fujifilm X-T3 with me.
+            </p>
+          </div>
+          <div>
+            <h3>Opt Out Podcast</h3>
+            <p>
+              I made a one season podcast about privacy and online security; the
+              goal was to explain in the easiest way possible the basic concepts
+              for a broad audience. The podcast is in Italian and avialable on
+              Spotify and other platforms.
+            </p>
+          </div>
         </div>
       </section>
     </article>
