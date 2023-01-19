@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import { AtSign, FileText, Layout, Smartphone } from 'react-feather';
+import { AtSign, FileText, Linkedin, Smartphone } from 'react-feather';
 
 import styles from '../styles/Home.module.scss';
 
@@ -24,8 +24,8 @@ const index = () => {
           <Image
             src={profilePic}
             alt="A boring picture of me, Andrea"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             priority
             className={styles.proPic}
           />
@@ -65,23 +65,91 @@ const index = () => {
               </a>
             </li>
             <li>
-              <a href="#">
-                <Layout /> andreabianchi.vercel.app
+              <a href="https://linkedin.com/in/andreaiaia/">
+                <Linkedin /> linkedin.com/in/andreaiaia
               </a>
             </li>
           </ul>
         </div>
       </section>
       <section className={styles.sectionSkills}>
-        <div className={`${styles.card} ${styles.boh1}`}></div>
-        <div className={`${styles.card} ${styles.boh2}`}></div>
-        <div className={`${styles.card} ${styles.boh3}`}></div>
+        <div className={`${styles.card} ${styles.basics}`}>
+          <Image
+            src="/images/skills/html-css-js.png"
+            alt="The HTML, CSS and Javascript logos"
+            width={300}
+            height={200}
+          />
+          <p>
+            Knows <span className={styles.accent}>HTML, CSS</span> and{' '}
+            <span className={styles.accent}>Javascript</span>
+          </p>
+        </div>
+        <div className={`${styles.card} ${styles.docker}`}>
+          <Image
+            src="/images/skills/docker.png"
+            alt="Docker logo"
+            width={300}
+            height={200}
+          />
+          <p>
+            Fights the chaos with <span>Docker</span>
+          </p>
+        </div>
+        <div className={`${styles.card} ${styles.react}`}>
+          <Image
+            src="/images/skills/react.png"
+            alt="ReactJS logo"
+            width={400}
+            height={400}
+          />
+          <p>
+            Enjoys <span>ReactJS</span>
+          </p>
+        </div>
         <div className={`${styles.card} ${styles.exp}`}>
           <h2>Esperienza lavorativa</h2>
+          <div>
+            <h3>Credimi S.p.A.</h3>
+            <h4>Febbraio 2022 - Presente</h4>
+            <ul>
+              <li>
+                Sviluppo del sito pubblico come parte del team Acquisition;
+              </li>
+              <li>
+                Sviluppo del widget antifrode come parte del team internal.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className={`${styles.card} ${styles.boh4}`}></div>
-        <div className={`${styles.card} ${styles.boh5}`}></div>
-        <div className={`${styles.card} ${styles.boh6}`}></div>
+        <div className={`${styles.card} ${styles.graphql}`}>
+          <p>Asks questions</p>
+          <Image
+            src="/images/skills/graphql.png"
+            alt="The GraphQL Logo"
+            width={80}
+            height={80}
+          />
+          <p>
+            with <span>GraphQL</span>
+          </p>
+        </div>
+        <div className={`${styles.card} ${styles.ts}`}>
+          <p>
+            &#129293; In love with <span>Typescript</span>
+          </p>
+        </div>
+        <div className={`${styles.card} ${styles.postgres}`}>
+          <p>
+            Stays tidy with <span>PostgreSQL</span>
+          </p>
+          <Image
+            src="/images/skills/postgres.png"
+            alt="PostgreSQL Logo"
+            width={300}
+            height={200}
+          />
+        </div>
       </section>
     </article>
   );
