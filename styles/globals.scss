@@ -45,11 +45,32 @@ $laptop: 1200px;
 // headeing levels presets
 @mixin h1() {
   color: $black;
-  font-weight: 800;
-  font-size: 2.25em;
+  font-variation-settings: 'wght' 800;
+  font-size: 2.25rem;
   margin-top: 0;
-  margin-bottom: 0.8888889em;
+  margin-bottom: 0.8888889rem;
   line-height: 1.1111111;
+}
+
+@mixin h2() {
+  color: $black;
+  font-variation-settings: 'wght' 700;
+  font-size: 1.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.3333333;
+}
+
+@mixin bold() {
+  font-variation-settings: 'wght' 700;
+}
+
+@mixin bolder() {
+  font-variation-settings: 'wght' 800;
+}
+
+@mixin boldest() {
+  font-variation-settings: 'wght' 850;
 }
 
 //buttons presets
