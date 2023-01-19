@@ -52,7 +52,7 @@ const index = () => {
             lavoro a progetti personali oppure gioco a scacchi.
           </p>
         </div>
-        <div className={`${styles.card} ${styles.bgImg}`}>
+        <div className={`${styles.card} ${styles.contactsContainer}`}>
           <ul className={styles.contacts}>
             <li>
               <a href="mailto:bianan96@gmail.com">
