@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <NavbarContext.Provider value={{ expanded, setExpanded }}>
-        <ThemeProvider defaultTheme="dark">
+        <ThemeProvider>
           <Navbar />
           <main className={expanded ? '' : 'collapsed'}>
             <Component {...pageProps} />
