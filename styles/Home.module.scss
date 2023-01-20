@@ -11,6 +11,10 @@ $gap: 1rem;
   @media print {
     margin-bottom: 0.2rem;
   }
+
+  @include dark {
+    color: $white;
+  }
 }
 
 @mixin label() {
@@ -26,6 +30,14 @@ $gap: 1rem;
       float: right;
       font-size: 0.8rem;
       line-height: 24px;
+    }
+
+    @include dark {
+      color: $tone;
+
+      & > span {
+        color: $tone;
+      }
     }
   }
 }
@@ -90,6 +102,10 @@ $gap: 1rem;
   @media print {
     background-color: $tint;
   }
+
+  @include dark {
+    background-color: $shade-black;
+  }
 }
 
 .sectionTitle {
@@ -119,8 +135,13 @@ $gap: 1rem;
     font-size: 1.5rem;
     margin-bottom: 0;
   }
+
   @media print {
     margin-bottom: 0;
+  }
+
+  @include dark {
+    color: $white;
   }
 }
 .name {
@@ -133,8 +154,13 @@ $gap: 1rem;
     margin-bottom: 0;
     font-size: 2rem;
   }
+
   @media print {
     margin-bottom: 0;
+  }
+
+  @include dark {
+    color: $frenchblue-tint;
   }
 }
 .download {
@@ -349,6 +375,12 @@ $gap: 1rem;
     & > h3 {
       font-size: 1rem;
       margin-bottom: 0.2rem;
+    }
+  }
+
+  @include dark {
+    & > h3 {
+      color: $tone;
     }
   }
 }
