@@ -84,9 +84,9 @@ img.next-image {
 // Fallback for navbar component
 .inactive {
   transition: 0.3s ease-in-out;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .active {
   transition: 0.3s ease-in-out;
-  text-decoration: none;
+  text-decoration: underline;
 }

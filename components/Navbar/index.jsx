@@ -11,7 +11,7 @@ import {
   Archive,
   Camera,
   GitHub,
-  Home,
+  User,
   Instagram,
   Linkedin,
   Menu,
@@ -90,7 +90,7 @@ export const Navbar = () => {
         <nav className={styles.nav}>
           <ul>
             <li onClick={closeMenu}>
-              <Home className={styles.icon} alt="" />
+              <User className={styles.icon} alt="" />
               <NavLink
                 href="/"
                 activeClassName={
@@ -98,7 +98,7 @@ export const Navbar = () => {
                 }
                 inactive={styles.inactive}
               >
-                <span>Home</span>
+                <span>About</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>

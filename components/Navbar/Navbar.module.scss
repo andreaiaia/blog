@@ -80,11 +80,11 @@
 
 .active {
   transition: 0.3s ease-in-out;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .inactive {
   transition: 0.3s ease-in-out;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .socials {
@@ -184,4 +184,5 @@
 .rss {
   float: right;
   text-decoration: underline;
+  cursor: pointer;
 }

@@ -20,11 +20,12 @@ const ThemeSwitcher = () => {
       </button>
     );
 
-  return (
-    <button onClick={() => setTheme('light')}>
-      <Sun />
-    </button>
-  );
+  if (theme === 'dark')
+    return (
+      <button onClick={() => setTheme('light')}>
+        <Sun />
+      </button>
+    );
 };
 
 export default ThemeSwitcher;
