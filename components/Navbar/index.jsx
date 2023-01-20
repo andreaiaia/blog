@@ -4,6 +4,7 @@ import cx from 'classnames';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
+import ThemeSwitcher from '../ThemeSwitcher';
 import { NavbarContext } from '../../Hooks/Context/GlobalContext';
 
 import {
@@ -14,8 +15,6 @@ import {
   Instagram,
   Linkedin,
   Menu,
-  Moon,
-  Sun,
   XCircle,
 } from 'react-feather';
 
@@ -81,6 +80,7 @@ export const Navbar = () => {
             <Menu alt="" />
           </button>
         )}
+        <ThemeSwitcher />
       </div>
       <header
         className={
