@@ -73,13 +73,12 @@ img.next-image {
   color: #69778c;
 }
 
+// Fallback for navbar component
 .inactive {
   transition: 0.3s ease-in-out;
   text-decoration: underline;
 }
-
 .active {
   transition: 0.3s ease-in-out;
   text-decoration: none;
-  color: $shadow;
 }

@@ -2,6 +2,7 @@ import React, { Children, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 import { NavbarContext } from '../../Hooks/Context/GlobalContext';
 
@@ -20,13 +21,17 @@ import {
 
 import styles from './Navbar.module.scss';
 
-const NavLink = ({ children, activeClassName = 'active', ...props }) => {
+const NavLink = ({
+  children,
+  activeClassName = 'active',
+  inactive = 'inactive',
+  ...props
+}) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const childClassName = child.props.className || '';
 
   const isActive = asPath === props.href || asPath === props.as;
-  const inactive = 'inactive';
 
   const className = cx(
     childClassName,
@@ -44,6 +49,7 @@ const NavLink = ({ children, activeClassName = 'active', ...props }) => {
 };
 
 export const Navbar = () => {
+  const { theme } = useTheme();
   const { expanded, setExpanded } = useContext(NavbarContext);
   const YEAR = new Date().getFullYear();
 
@@ -85,19 +91,37 @@ export const Navbar = () => {
           <ul>
             <li onClick={closeMenu}>
               <Home className={styles.icon} alt="" />
-              <NavLink href="/">
+              <NavLink
+                href="/"
+                activeClassName={
+                  theme === 'dark' ? styles.active : styles.activeDark
+                }
+                inactive={styles.inactive}
+              >
                 <span>Home</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
               <Archive className={styles.icon} alt="" />
-              <NavLink href="/posts">
+              <NavLink
+                href="/posts"
+                activeClassName={
+                  theme === 'dark' ? styles.active : styles.activeDark
+                }
+                inactive={styles.inactive}
+              >
                 <span>Blog</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
               <Camera className={styles.icon} alt="" />
-              <NavLink href="/photos">
+              <NavLink
+                href="/photos"
+                activeClassName={
+                  theme === 'dark' ? styles.active : styles.activeDark
+                }
+                inactive={styles.inactive}
+              >
                 <span>Photos</span>
               </NavLink>
             </li>

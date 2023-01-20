@@ -29,6 +29,11 @@
   flex-direction: column;
   justify-content: flex-end;
 
+  @include dark {
+    background-color: $shade-black;
+    box-shadow: unset;
+  }
+
   @include smartphone() {
     left: 0;
     top: -110%;
@@ -63,15 +68,23 @@
       color: $shadow;
     }
   }
+
+  @include dark {
+    color: $tone;
+
+    & > ul > li:hover {
+      color: $white;
+    }
+  }
 }
 
 .active {
+  transition: 0.3s ease-in-out;
   text-decoration: none;
-  color: $shadow;
-
-  @include smartphone() {
-    color: $black;
-  }
+}
+.inactive {
+  transition: 0.3s ease-in-out;
+  text-decoration: underline;
 }
 
 .socials {
