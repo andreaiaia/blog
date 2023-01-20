@@ -16,6 +16,9 @@ const index = () => {
 
   const renderCV = () => {
     window.print();
+    // Consider this library
+    // https://thewebdev.info/2021/05/30/how-to-generate-a-pdf-file-from-react-components/
+    // https://w3collective.com/react-component-pdf/
   };
 
   return (
