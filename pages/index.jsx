@@ -15,7 +15,7 @@ const index = () => {
   }, []);
 
   const renderCV = () => {
-    console.log('write me!');
+    window.print();
   };
 
   return (
