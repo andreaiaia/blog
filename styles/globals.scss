@@ -42,6 +42,13 @@ $tablet-portrait: 768px;
 $tablet-landscape: 992px;
 $laptop: 1200px;
 
+// Dark theme shorthand
+@mixin dark() {
+  [data-theme='dark'] & {
+    @content;
+  }
+}
+
 // headeing levels presets
 @mixin h1() {
   color: $black;
@@ -110,13 +117,15 @@ $laptop: 1200px;
     &:hover {
       background-color: $shade-black;
     }
-  }
-}
 
-// Dark theme shorthand
-@mixin dark() {
-  [data-theme='dark'] & {
-    @content;
+    @include dark {
+      background-color: $tone;
+      color: $black;
+
+      &:hover {
+        background-color: $tint;
+      }
+    }
   }
 }
 
