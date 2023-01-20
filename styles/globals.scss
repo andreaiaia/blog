@@ -113,6 +113,13 @@ $laptop: 1200px;
   }
 }
 
+// Dark theme shorthand
+@mixin dark() {
+  [data-theme='dark'] & {
+    @content;
+  }
+}
+
 // media query mixin
 @mixin breakpoint($max) {
   @media (max-width: $max) {
