@@ -16,6 +16,14 @@
   font-named-instance: 'Italic';
 }
 
+html {
+  background-color: $white;
+
+  &[data-theme='dark'] {
+    background-color: $black;
+  }
+}
+
 body {
   font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,

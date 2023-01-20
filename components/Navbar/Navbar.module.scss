@@ -135,7 +135,7 @@
   transition: 0.2s ease;
   z-index: 2;
   width: 100%;
-  background-color: #fff;
+  background-color: $white;
 
   &.expanded {
     background-color: rgba(0, 0, 0, 0);
@@ -155,7 +155,7 @@
 
   @include dark {
     color: $tint;
-    background-color: #1c1b22;
+    background-color: $black;
 
     &.expanded {
       background-color: rgba(0, 0, 0, 0);
