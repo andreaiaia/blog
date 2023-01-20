@@ -57,6 +57,10 @@ $laptop: 1200px;
   margin-top: 0;
   margin-bottom: 0.8888889rem;
   line-height: 1.1111111;
+
+  @include dark {
+    color: $white;
+  }
 }
 
 @mixin h2() {
@@ -66,6 +70,10 @@ $laptop: 1200px;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
   line-height: 1.3333333;
+
+  @include dark {
+    color: $white;
+  }
 }
 
 @mixin light() {
