@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { ThemeProvider } from 'next-themes';
+
 import { Navbar } from '../components/Navbar';
+
+import { NavbarContext } from '../Hooks/Context/GlobalContext';
 
 import '../styles/normalize.css';
 import '../styles/main.scss';
 import '../styles/layout.scss';
-
-import { NavbarContext } from '../Hooks/Context/GlobalContext';
 
 export default function App({ Component, pageProps }) {
   const [expanded, setExpanded] = useState(true);
@@ -29,10 +31,12 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <NavbarContext.Provider value={{ expanded, setExpanded }}>
-        <Navbar />
-        <main className={expanded ? '' : 'collapsed'}>
-          <Component {...pageProps} />
-        </main>
+        <ThemeProvider defaultTheme="dark">
+          <Navbar />
+          <main className={expanded ? '' : 'collapsed'}>
+            <Component {...pageProps} />
+          </main>
+        </ThemeProvider>
       </NavbarContext.Provider>
     </>
   );
