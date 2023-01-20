@@ -121,7 +121,7 @@ $laptop: 1200px;
 }
 
 @mixin smartphone() {
-  @media (max-width: $smartphone) {
+  @media screen and (max-width: $smartphone) {
     @content;
   }
 }

@@ -40,6 +40,10 @@
       transform: translateY(+110%);
     }
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .nav {
@@ -125,6 +129,10 @@
     padding: 1rem;
     justify-content: space-between;
     gap: 0;
+  }
+
+  @media print {
+    display: none;
   }
 }
 

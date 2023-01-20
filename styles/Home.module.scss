@@ -7,6 +7,10 @@ $gap: 1rem;
   color: $shadow-black;
   margin-top: 0;
   margin-bottom: 0.8rem;
+
+  @media print {
+    margin-bottom: 0.2rem;
+  }
 }
 
 @mixin label() {
@@ -36,6 +40,14 @@ $gap: 1rem;
   & > p > span {
     @include bold;
   }
+
+  @include smartphone() {
+    min-height: 170px;
+  }
+
+  @media print {
+    min-height: unset;
+  }
 }
 
 .container {
@@ -48,6 +60,12 @@ $gap: 1rem;
 
   & > section {
     padding-bottom: $gap;
+  }
+
+  @media print {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: unset;
   }
 }
 
@@ -68,6 +86,10 @@ $gap: 1rem;
     line-height: 0;
     padding: 0;
   }
+
+  @media print {
+    background-color: $tint;
+  }
 }
 
 .sectionTitle {
@@ -77,6 +99,11 @@ $gap: 1rem;
 
   @include smartphone() {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media print {
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 150px;
   }
 }
 .proPic {
@@ -92,8 +119,11 @@ $gap: 1rem;
     font-size: 1.5rem;
     margin-bottom: 0;
   }
+  @media print {
+    margin-bottom: 0;
+  }
 }
-.title {
+.name {
   @include h1();
   margin-bottom: 1rem;
   color: $azure-tint;
@@ -103,12 +133,26 @@ $gap: 1rem;
     margin-bottom: 0;
     font-size: 2rem;
   }
+  @media print {
+    margin-bottom: 0;
+  }
 }
 .download {
   @include button('secondary', 'small');
 
   @include smartphone() {
     display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+.title {
+  @media print {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -129,11 +173,19 @@ $gap: 1rem;
 .textWall {
   grid-area: bio;
   padding: 1rem 1.5rem;
+
+  @media print {
+    padding: 1rem;
+  }
 }
 .contactsContainer {
   grid-area: contacts;
   background: url('../public/images/contacts.jpg') no-repeat;
   background-size: cover;
+
+  @media print {
+    background: $shadow-black;
+  }
 }
 .contacts {
   display: flex;
@@ -178,6 +230,11 @@ $gap: 1rem;
       'ts docker'
       'graphql postgres';
   }
+
+  @media print {
+    grid-template-columns: 150px 2fr 150px;
+    grid-template-rows: 1fr;
+  }
 }
 .exp {
   grid-area: exp;
@@ -200,6 +257,11 @@ $gap: 1rem;
   color: $black;
   padding: 1rem 0;
   justify-content: space-between;
+
+  @media print {
+    background: $tint;
+    justify-content: center;
+  }
 }
 .react {
   grid-area: react;
@@ -207,6 +269,11 @@ $gap: 1rem;
   @include skillCard;
   padding-bottom: 0.2rem;
   color: $black;
+
+  @media print {
+    background: $tint;
+    justify-content: center;
+  }
 }
 .ts {
   grid-area: ts;
@@ -214,12 +281,25 @@ $gap: 1rem;
   @include skillCard;
   justify-content: flex-start;
   text-shadow: 0 0 6px $black;
+
+  @media print {
+    text-shadow: unset;
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
 }
 .docker {
   grid-area: docker;
   background: url('../public/images/skills/docker.webp') no-repeat;
   @include skillCard;
   padding-bottom: 0.5rem;
+
+  @media print {
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
 }
 .graphql {
   grid-area: graphql;
@@ -227,6 +307,12 @@ $gap: 1rem;
   @include skillCard;
   padding: 0.5rem 1rem 0.5rem;
   justify-content: space-between;
+
+  @media print {
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
 }
 .postgres {
   grid-area: postgres;
@@ -234,6 +320,12 @@ $gap: 1rem;
   @include skillCard;
   padding-top: 0.5rem;
   justify-content: flex-start;
+
+  @media print {
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
 }
 
 .sectionMore {
@@ -250,12 +342,25 @@ $gap: 1rem;
     color: $shadow-black;
     margin-bottom: 0.5rem;
   }
+
+  @media print {
+    margin-bottom: 0.2rem;
+
+    & > h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
 }
 
 .downloadBig {
   display: block;
   margin: auto;
   @include button('primary', 'big');
+
+  @media print {
+    display: none;
+  }
 }
 
 .bold {
