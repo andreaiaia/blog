@@ -110,8 +110,17 @@
     }
   }
 
-  @include smartphone() {
+  @include smartphone {
     color: $shadow;
+  }
+
+  @include dark {
+    color: $tone;
+
+    & > ul > li:hover {
+      background-color: $black;
+      color: $white;
+    }
   }
 }
 
@@ -137,11 +146,25 @@
     color: $black;
   }
 
-  @include smartphone() {
+  @include smartphone {
     width: 100%;
     padding: 1rem;
     justify-content: space-between;
     gap: 0;
+  }
+
+  @include dark {
+    color: $tint;
+    background-color: #1c1b22;
+
+    &.expanded {
+      background-color: rgba(0, 0, 0, 0);
+      color: $tone;
+    }
+
+    & > *:hover {
+      color: $white;
+    }
   }
 
   @media print {
