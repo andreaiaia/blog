@@ -1,4 +1,4 @@
-import React, { Children, useContext, useEffect } from 'react';
+import React, { Children, useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import Link from 'next/link';
@@ -49,12 +49,9 @@ const NavLink = ({
 
 export const Navbar = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const { expanded, setExpanded } = useContext(NavbarContext);
   const YEAR = new Date().getFullYear();
-
-  useEffect(() => {
-    if (window.innerWidth < 1100) setExpanded(() => false);
-  }, []);
 
   const handleMenu = () => {
     setExpanded(() => !expanded);
@@ -63,6 +60,13 @@ export const Navbar = () => {
   const closeMenu = () => {
     if (window.innerWidth < 1100) setExpanded(() => false);
   };
+
+  useEffect(() => {
+    closeMenu();
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <>
@@ -130,19 +134,19 @@ export const Navbar = () => {
         <small className={styles.socials}>
           <ul className={styles.socialsLinks}>
             <li>
-              <Link href="https://instagram.com/andreaiaia">
+              <a href="https://instagram.com/andreaiaia" target="_blank">
                 <Instagram className={styles.icon} alt="Instagram logo" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="https://github.com/andreaiaia">
+              <a href="https://github.com/andreaiaia" target="_blank">
                 <GitHub className={styles.icon} alt="Github logo" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="https://linkedin.com/in/andreaiaia/">
+              <a href="https://linkedin.com/in/andreaiaia/" target="_blank">
                 <Linkedin className={styles.icon} alt="Linkedin logo" />
-              </Link>
+              </a>
             </li>
           </ul>
           <div className={styles.credits}>
