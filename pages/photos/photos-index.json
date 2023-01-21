@@ -3,6 +3,7 @@
     {
       "category": "Astro",
       "photos": [
+        { "filename": "thumbnail.webp" },
         { "filename": "Andromeda-2022-09.webp" },
         { "filename": "Moon-HDR-2022-12.webp" },
         { "filename": "Neowise-2020-07.webp" },
