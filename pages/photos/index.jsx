@@ -1,5 +1,6 @@
 import React from 'react';
-import { Tab } from '@headlessui/react';
+
+import Thumbnail from '../../components/Thumbnail';
 
 import styles from './Photos.module.scss';
 
@@ -7,14 +8,14 @@ const index = () => {
   return (
     <article className={styles.container}>
       <h1>Photo Gallery</h1>
-      <Tab.Group>
-        <Tab.List>
-          <Tab></Tab>
-        </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel></Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+      <section className={styles.group}>
+        <Thumbnail
+          src="/images/photos/Astro/thumbnail.webp"
+          alt="View my pictures of the deep sky"
+          to="/photos/Astrophotography"
+          description="astrophotography"
+        />
+      </section>
     </article>
   );
 };
