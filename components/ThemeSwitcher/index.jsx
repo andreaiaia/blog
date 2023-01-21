@@ -3,6 +3,8 @@ import { useTheme } from 'next-themes';
 
 import { Moon, Sun } from 'react-feather';
 
+import styles from './ThemeSwitcher.module.scss';
+
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -13,19 +15,16 @@ const ThemeSwitcher = () => {
 
   if (!mounted) return null;
 
-  if (theme === 'light')
-    return (
-      <button onClick={() => setTheme('dark')}>
+  return (
+    <>
+      <button onClick={() => setTheme('dark')} className={styles.Moon}>
         <Moon />
       </button>
-    );
-
-  if (theme === 'dark')
-    return (
-      <button onClick={() => setTheme('light')}>
+      <button onClick={() => setTheme('light')} className={styles.Sun}>
         <Sun />
       </button>
-    );
+    </>
+  );
 };
 
 export default ThemeSwitcher;
