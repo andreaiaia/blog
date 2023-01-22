@@ -7,44 +7,60 @@
       "description": "My photos of Matera",
       "photos": [
         {
-          "filename": "Craco-MT-2021.webp",
-          "title": "",
-          "description": ""
+          "filename": "Matera-Moon-Composite-2023.webp",
+          "title": "The Moon setting over an awakening Matera",
+          "description": "In this 1 hour composite we can see the path of the setting Moon above the Sassi of Matera, which are beginnig to be hit by the first rays of sunlight of a new day",
+          "width": 1152,
+          "height": 1440
         },
         {
-          "filename": "Matera-2021.webp",
-          "title": "",
-          "description": ""
-        },
-        {
-          "filename": "Matera-Kodak-Gold-2021.webp",
-          "title": "",
-          "description": ""
+          "filename": "Matera-Sunset-Moon-2022.webp",
+          "title": "The Sassi \"Constellation\"",
+          "description": "The Sun is already below the horizon, the Moon will follow soon. At this time the evening lights of the Sassi di Matera come on and give us this romantic view of the city that seems to be formed by many small stars",
+          "width": 1152,
+          "height": 1440
         },
         {
           "filename": "Matera-Moon-2022.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
-          "filename": "Matera-Moon-Composite-2023.webp",
+          "filename": "Craco-MT-2021.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
-          "filename": "Matera-Silbersaltx-2022.webp",
+          "filename": "Matera-2021.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-Kodak-Gold-2021.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 872
         },
         {
           "filename": "Matera-Sunset-2021.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
-          "filename": "Matera-Sunset-Moon-2022.webp",
+          "filename": "Matera-Silbersaltx-2022.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         }
       ]
     },
@@ -55,29 +71,39 @@
       "description": "My photos of the Deep Sky",
       "photos": [
         {
-          "filename": "Andromeda-2022-09.webp",
+          "filename": "Full-Mineral-Moon-2022-12.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         },
         {
           "filename": "Moon-HDR-2022-12.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Andromeda-2022-09.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Neowise-2020-07.webp",
           "title": "",
-          "description": ""
-        },
-        {
-          "filename": "Full-Mineral-Moon-2022-12.webp",
-          "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Moon-Mars-Conj-2022-12.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         }
       ]
     },
@@ -90,67 +116,86 @@
         {
           "filename": "Bologna-2022-me.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         },
         {
           "filename": "Bologna-San-Luca-2018-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Bologna-San-Luca-2018-2.webp",
           "title": "",
-          "description": ""
-        },
-        {
-          "filename": "D75_9915.jpg",
-          "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Firenze-2022-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         },
         {
           "filename": "Firenze-2022-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         },
         {
           "filename": "Matera-2021-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Matera-2021-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Matera-2021-3.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Matera-2021-4.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Matera-2021-5.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1152
         },
         {
           "filename": "Matera-2021-6.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         },
         {
           "filename": "Matera-2021-7.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         }
       ]
     },
@@ -163,132 +208,184 @@
         {
           "filename": "Alpi-Piemontesi.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Antwerp-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Antwerp-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Berlin.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1440
         },
         {
           "filename": "Crespi-D-Adda-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Crespi-D-Adda-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Firenze-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Firenze-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Forte-Di-Bard-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 1188
         },
         {
           "filename": "Forte-Di-Bard-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Gent-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Gent-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1600,
+          "height": 876
         },
         {
           "filename": "London-Battersea-Power-Station.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1080,
+          "height": 1440
         },
         {
           "filename": "London-Big-Ben.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1152,
+          "height": 1440
         },
         {
           "filename": "London-Tube.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1080,
+          "height": 1440
         },
         {
           "filename": "London-Westminster-Abbey-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "London-Westminster-Abbey-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Mont-Isola.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Roma-Altare-Della-Patria.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Roma-Colosseo.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 926
         },
         {
           "filename": "Torino-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Torino-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Torino-3.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Torino-4.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Torino-5.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Venezia-San-Marco.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1017,
+          "height": 1440
         }
       ]
     },
@@ -301,77 +398,107 @@
         {
           "filename": "Apricot-Blossom.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Autumn-Tree-Linkeroever.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Basilicata-Sunset.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Ceresole-Reale.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Close-Up-Bee.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Diga-San-Giuliano-Sunset.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Festa-Della-Bruna-Portrait.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Grandma.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Lago-Iseo.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Nivolet-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Nivolet-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Olive-Trees.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Oostende-1.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 960,
+          "height": 1440
         },
         {
           "filename": "Oostende-2.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         },
         {
           "filename": "Polignano-A-Mare.webp",
           "title": "",
-          "description": ""
+          "description": "",
+          "width": 1440,
+          "height": 960
         }
       ]
     }
