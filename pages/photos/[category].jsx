@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 import photoData from './photos-index.json';
 
@@ -21,22 +22,23 @@ const Category = () => {
         <h1>{data.category}</h1>
         <p>{data.description}</p>
         <section className={styles.gallery}>
-          {data.photos.map((photo, index) => {
-            const url = data.path + '/' + photo.filename;
-            let size = '';
+          <ResponsiveMasonry columnsCountBreakPoints={{ 500: 1, 700: 2 }}>
+            <Masonry gutter="1rem">
+              {data.photos.map((photo, index) => {
+                const url = data.path + '/' + photo.filename;
 
-            return (
-              <div className={styles.img}>
-                <Image
-                  key={index}
-                  src={url}
-                  alt={photo.description}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-            );
-          })}
+                return (
+                  <Image
+                    key={index}
+                    src={url}
+                    alt={photo.description}
+                    width={photo.width}
+                    height={photo.height}
+                  />
+                );
+              })}
+            </Masonry>
+          </ResponsiveMasonry>
         </section>
       </article>
     );
