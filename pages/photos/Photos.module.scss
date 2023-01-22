@@ -24,3 +24,21 @@ $gap: 1rem;
     @include h1;
   }
 }
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: $gap;
+  justify-items: center;
+  padding-top: 2rem;
+}
+
+.gallery {
+  padding-top: 2rem;
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
