@@ -51,12 +51,12 @@ const index = () => {
         <section className={styles.sectionBio}>
           <div className={`${styles.card} ${styles.textWall}`}>
             <p>
-              Sono un Junior{' '}
-              <span className={styles.bold}>sviluppatore web Front-End</span> in
-              crescita. Studio Informatica a Bologna, sono un grande
-              appassionato di fotografia e nel tempo libero mi piace imparare
-              cose nuove lavorando su progetti personali o rilassarmi con i
-              videogiochi o gli scacchi.
+              I am a growing Junior{' '}
+              <span className={styles.bold}>Front-End web developer</span>. I
+              study Computer Science in Bologna, I am a big photography
+              enthusiast and in my free time I like to learn new things by
+              working on personal projects, or relaxing with video games or
+              chess.
             </p>
           </div>
           <div className={`${styles.card} ${styles.contactsContainer}`}>
@@ -134,8 +134,8 @@ const index = () => {
                 Laurea in Scienze della Comunicazione <span>Nov 2019</span>
               </h3>
               <p>
-                I got my degree in Communication Science at the University of
-                Bologna with a thesis about the AI Generated Art.
+                I graduated in Communication Science at the University of
+                Bologna with a thesis on AI-generated art.
               </p>
             </div>
           </div>
@@ -146,19 +146,19 @@ const index = () => {
             <div>
               <h3>Photography</h3>
               <p>
-                As you might have guessed I really like photography: I started
-                when I was 16 and I enjoy taking pictures and print them in
-                posters or books. Wherever I go I make sure I have my beloved
-                Fujifilm with me.
+                Photography is my passion: I started taking pictures at the age
+                of 16 and I love capturing moments and printing them in posters
+                or books. Wherever I go, I make sure to have my beloved Fujifilm
+                camera with me.
               </p>
             </div>
             <div>
               <h3>Opt Out Podcast</h3>
               <p>
-                I made a one season podcast about privacy and online security;
-                the goal was to explain in the easiest way possible the basic
-                concepts for a broad audience. The podcast is in Italian and
-                avialable on multiple platforms.
+                I made a one-season podcast on privacy and online security, with
+                the goal of making it easily understandable for a broad
+                audience. The podcast is in Italian and available on multiple
+                platforms.
               </p>
             </div>
           </div>
