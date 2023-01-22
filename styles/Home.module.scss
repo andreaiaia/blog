@@ -1,0 +1,404 @@
+@use './globals.scss' as *;
+
+$gap: 1rem;
+
+@mixin title() {
+  @include h2();
+  color: $shadow-black;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+
+  @media print {
+    margin-bottom: 0.2rem;
+  }
+
+  @include dark {
+    color: $white;
+  }
+}
+
+@mixin label() {
+  & > h3 {
+    @include normal;
+    color: $shade-black;
+    margin-bottom: 0.5rem;
+
+    & > span {
+      text-transform: uppercase;
+      @include bold;
+      color: $tint-black;
+      float: right;
+      font-size: 0.8rem;
+      line-height: 24px;
+    }
+
+    @include dark {
+      color: $tone;
+
+      & > span {
+        color: $tone;
+      }
+    }
+  }
+}
+
+@mixin skillCard() {
+  text-align: center;
+  background-size: cover;
+  min-height: 160px;
+  justify-content: flex-end;
+  color: $white;
+
+  & > p > span {
+    @include bold;
+  }
+
+  @include smartphone() {
+    min-height: 170px;
+  }
+
+  @media print {
+    min-height: unset;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  max-width: 65ch;
+
+  & > section {
+    padding-bottom: $gap;
+  }
+
+  @media print {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: unset;
+  }
+}
+
+.card {
+  background-color: $tint;
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > h2 {
+    @include title;
+  }
+
+  &.img {
+    line-height: 0;
+    padding: 0;
+  }
+
+  @media print {
+    background-color: $tint;
+  }
+
+  @include dark {
+    background-color: $shade-black;
+  }
+}
+
+.sectionTitle {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: 1fr 2fr;
+
+  @include smartphone() {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media print {
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 150px;
+  }
+}
+.proPic {
+  border-radius: 20px;
+}
+.greetings {
+  @include h1();
+  @include boldest;
+  margin-bottom: 0.5rem;
+  text-align: center;
+
+  @include smartphone() {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  @media print {
+    margin-bottom: 0;
+  }
+
+  @include dark {
+    color: $white;
+  }
+}
+.name {
+  @include h1();
+  margin-bottom: 1rem;
+  color: $azure-tint;
+  text-align: center;
+
+  @include smartphone() {
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+
+  @media print {
+    margin-bottom: 0;
+  }
+
+  @include dark {
+    color: $frenchblue-tint;
+  }
+}
+.download {
+  @include button('secondary', 'small');
+
+  @include smartphone() {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+.title {
+  @media print {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.sectionBio {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'bio contacts';
+
+  @include smartphone() {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'contacts'
+      'bio';
+  }
+}
+.textWall {
+  grid-area: bio;
+  padding: 1rem 1.5rem;
+
+  @media print {
+    padding: 1rem;
+  }
+}
+.contactsContainer {
+  grid-area: contacts;
+  background: url('../public/images/contacts.jpg') no-repeat;
+  background-size: cover;
+
+  @media print {
+    background: $shadow-black;
+  }
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  @include bold;
+  color: $white;
+  text-shadow: 0 0 6px $black;
+  gap: $gap;
+
+  & > li > a {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sectionSkills {
+  display: grid;
+  gap: $gap;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    'basics exp docker'
+    'basics exp docker'
+    'react exp graphql'
+    'react edu graphql'
+    'ts edu postgres'
+    'ts edu postgres';
+
+  @include smartphone() {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'exp exp'
+      'edu edu'
+      'basics react'
+      'ts docker'
+      'graphql postgres';
+  }
+
+  @media print {
+    grid-template-columns: 150px 2fr 150px;
+    grid-template-rows: 1fr;
+  }
+}
+.exp {
+  grid-area: exp;
+
+  & > div {
+    @include label;
+  }
+}
+.edu {
+  grid-area: edu;
+
+  & > div {
+    @include label;
+  }
+}
+.basics {
+  grid-area: basics;
+  background: url('../public/images/skills/html-css-js.webp') no-repeat;
+  @include skillCard;
+  color: $black;
+  padding: 1rem 0;
+  justify-content: space-between;
+
+  @media print {
+    background: $tint;
+    justify-content: center;
+  }
+}
+.react {
+  grid-area: react;
+  background: url('../public/images/skills/react.webp') no-repeat;
+  @include skillCard;
+  padding-bottom: 0.2rem;
+  color: $black;
+
+  @media print {
+    background: $tint;
+    justify-content: center;
+  }
+}
+.ts {
+  grid-area: ts;
+  background: url('../public/images/skills/ts.webp') no-repeat;
+  @include skillCard;
+  justify-content: flex-start;
+  text-shadow: 0 0 6px $black;
+
+  @media print {
+    text-shadow: unset;
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
+}
+.docker {
+  grid-area: docker;
+  background: url('../public/images/skills/docker.webp') no-repeat;
+  @include skillCard;
+  padding-bottom: 0.5rem;
+
+  @media print {
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
+}
+.graphql {
+  grid-area: graphql;
+  background: url('../public/images/skills/graphql.webp') no-repeat;
+  @include skillCard;
+  padding: 0.5rem 1rem 0.5rem;
+  justify-content: space-between;
+
+  @media print {
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
+}
+.postgres {
+  grid-area: postgres;
+  background: url('../public/images/skills/postgres.webp') no-repeat;
+  @include skillCard;
+  padding-top: 0.5rem;
+  justify-content: flex-start;
+
+  @media print {
+    background: $tint;
+    color: $black;
+    justify-content: center;
+  }
+}
+
+.sectionMore {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: $gap;
+}
+.hobbies > div {
+  margin-bottom: 0.5rem;
+
+  & > h3 {
+    font-size: 1.2rem;
+    color: $shadow-black;
+    margin-bottom: 0.5rem;
+  }
+
+  @media print {
+    margin-bottom: 0.2rem;
+
+    & > h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  @include dark {
+    & > h3 {
+      color: $tone;
+    }
+  }
+}
+
+.downloadBig {
+  display: block;
+  margin: auto;
+  @include button('primary', 'big');
+
+  @media print {
+    display: none;
+  }
+}
+
+.bold {
+  @include bold;
+}
+.accent {
+  @include bold;
+  color: $azure-tint;
+}

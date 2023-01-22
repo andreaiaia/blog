@@ -1,9 +1,40 @@
 // Colors
-$shade: #ececec;
-$black: --black;
-$grey: #69778c;
 $white: #f3f3f3;
+$tint: #eaeaea;
+$tone: #afb6c1;
+$shade: #94a2b6;
+$shadow: #69778c;
+$black: #111827;
+$tint-black: #6b788b;
+$tone-black: #525c71;
+$shade-black: #363c4a;
+$shadow-black: #282e37;
+// Shadows
 $light-shadow: rgba(0, 0, 0, 0.5);
+// Azure
+$azure: #008ad8;
+$azure-tint: #0091e6;
+$azure-tone: #0079bf;
+$azure-shade: #006199;
+$azure-shadow: #003959;
+// French Blue
+$frenchblue: #006eb3;
+$frenchblue-tint: #009dff;
+$frenchblue-tone: #0076bf;
+$frenchblue-shade: #005e99;
+$frenchblue-shadow: #004773;
+// King Blue
+$kingBlue: #4169e1;
+$kingBlue-tint: #456fed;
+$kingBlue-tone: #3a5dc7;
+$kingBlue-shade: #2f4ba1;
+$kingBlue-shadow: #1c2d61;
+// Ocean Blue
+$oceanBlue: #005eb8;
+$oceanBlue-tint: #0aa3cf;
+$oceanBlue-tone: #0a3ccf;
+$oceanBlue-shade: #0065c4;
+$oceanBlue-shadow: #003e78;
 
 // breakpoints
 $smartphone: 600px;
@@ -11,8 +42,102 @@ $tablet-portrait: 768px;
 $tablet-landscape: 992px;
 $laptop: 1200px;
 
-// media query mixin
+// Dark theme shorthand
+@mixin dark() {
+  [data-theme='dark'] & {
+    @content;
+  }
+}
 
+// headeing levels presets
+@mixin h1() {
+  color: $black;
+  font-variation-settings: 'wght' 800;
+  font-size: 2.25rem;
+  margin-top: 0;
+  margin-bottom: 0.8888889rem;
+  line-height: 1.1111111;
+
+  @include dark {
+    color: $white;
+  }
+}
+
+@mixin h2() {
+  color: $black;
+  font-variation-settings: 'wght' 700;
+  font-size: 1.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.3333333;
+
+  @include dark {
+    color: $white;
+  }
+}
+
+@mixin light() {
+  font-variation-settings: 'wght' 400;
+}
+@mixin normal() {
+  font-variation-settings: 'wght' 500;
+}
+@mixin bold() {
+  font-variation-settings: 'wght' 700;
+}
+@mixin bolder() {
+  font-variation-settings: 'wght' 800;
+}
+@mixin boldest() {
+  font-variation-settings: 'wght' 850;
+}
+
+//buttons presets
+@mixin button($type: 'primary', $size: 'normal') {
+  line-height: normal;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background-color: $azure-tint;
+  color: $white;
+  transition: 0.3s ease-in-out;
+
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: $azure-tone;
+  }
+
+  @if $size == 'small' {
+    padding: 0.5rem 0.8rem;
+  }
+  @if $size == 'big' {
+    font-size: 1.5rem;
+  }
+
+  @if $type == 'secondary' {
+    border-radius: 10px;
+    background-color: $shadow;
+    color: $white;
+
+    &:hover {
+      background-color: $shade-black;
+    }
+
+    @include dark {
+      background-color: $tone;
+      color: $black;
+
+      &:hover {
+        background-color: $tint;
+      }
+    }
+  }
+}
+
+// media query mixin
 @mixin breakpoint($max) {
   @media (max-width: $max) {
     @content;
@@ -20,7 +145,7 @@ $laptop: 1200px;
 }
 
 @mixin smartphone() {
-  @media (max-width: $smartphone) {
+  @media screen and (max-width: $smartphone) {
     @content;
   }
 }

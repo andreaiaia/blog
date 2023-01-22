@@ -1,0 +1,58 @@
+@use '../../styles/globals.scss' as *;
+
+$gap: 1rem;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  max-width: 65ch;
+
+  & > section {
+    padding-bottom: $gap;
+  }
+
+  @media print {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: unset;
+  }
+
+  h1 {
+    @include h1;
+  }
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: $gap;
+  justify-items: center;
+  padding-top: 2rem;
+
+  @include smartphone {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery {
+  padding-top: 2rem;
+}
+
+.img {
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    z-index: 1;
+    transform: scale(1.2);
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0.5);
+    }
+  }
+}

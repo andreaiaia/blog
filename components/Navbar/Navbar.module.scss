@@ -3,19 +3,21 @@
 .header {
   // Header style
   position: fixed;
+  left: -300px;
   height: 100%;
   width: 300px;
-  background-color: $shade;
+  background-color: $tint;
   margin: 0;
   padding: 1rem 3rem;
   z-index: 1;
   box-shadow: 0 0 12px -6px $light-shadow;
-  transition: 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
   overflow: hidden;
 
-  &.collapsed {
-    transform: translateX(-350px);
-    opacity: 0;
+  &.expanded {
+    opacity: 1;
+    transform: translateX(300px);
   }
 
   & > * {
@@ -27,13 +29,25 @@
   flex-direction: column;
   justify-content: flex-end;
 
+  @include dark {
+    background-color: $shade-black;
+    box-shadow: unset;
+  }
+
   @include smartphone() {
+    left: 0;
+    top: -110%;
     width: 100%;
     height: 100%;
 
-    &.collapsed {
-      transform: translateY(-110%);
+    &.expanded {
+      transform: translateX(0);
+      transform: translateY(+110%);
     }
+  }
+
+  @media print {
+    display: none;
   }
 }
 
@@ -51,18 +65,26 @@
     cursor: pointer;
 
     &:hover {
-      color: $grey;
+      color: $shadow;
+    }
+  }
+
+  @include dark {
+    color: $tone;
+
+    & > ul > li:hover {
+      color: $white;
     }
   }
 }
 
 .active {
+  transition: 0.3s ease-in-out;
+  text-decoration: underline;
+}
+.inactive {
+  transition: 0.3s ease-in-out;
   text-decoration: none;
-  color: $grey;
-
-  @include smartphone() {
-    color: $black;
-  }
 }
 
 .socials {
@@ -82,21 +104,29 @@
       cursor: pointer;
 
       &:hover {
-        color: $grey;
+        color: $shadow;
         background-color: $white;
       }
     }
   }
 
-  @include smartphone() {
-    color: $grey;
+  @include smartphone {
+    color: $shadow;
+  }
+
+  @include dark {
+    color: $tone;
+
+    & > ul > li:hover {
+      background-color: $black;
+      color: $white;
+    }
   }
 }
 
 .options {
   position: fixed;
-  background-color: $shade;
-  color: $grey;
+  color: $shadow;
   display: flex;
   gap: 1rem;
   top: 0;
@@ -104,21 +134,42 @@
   padding: 1rem;
   transition: 0.2s ease;
   z-index: 2;
+  min-width: 95px;
+  background-color: $white;
+  justify-content: space-evenly;
 
-  &.collapsed {
-    width: 100%;
-    background-color: #fff;
+  &.expanded {
+    background-color: rgba(0, 0, 0, 0);
+    width: unset;
   }
 
   & > *:hover {
     color: $black;
   }
 
-  @include smartphone() {
+  @include smartphone {
     width: 100%;
     padding: 1rem;
     justify-content: space-between;
     gap: 0;
+  }
+
+  @include dark {
+    color: $tint;
+    background-color: $black;
+
+    &.expanded {
+      background-color: rgba(0, 0, 0, 0);
+      color: $tone;
+    }
+
+    & > *:hover {
+      color: $white;
+    }
+  }
+
+  @media print {
+    display: none;
   }
 }
 
@@ -134,4 +185,5 @@
 .rss {
   float: right;
   text-decoration: underline;
+  cursor: pointer;
 }

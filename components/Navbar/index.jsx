@@ -1,32 +1,36 @@
-import React, { Children, useContext } from 'react';
+import React, { Children, useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
+import ThemeSwitcher from '../ThemeSwitcher';
 import { NavbarContext } from '../../Hooks/Context/GlobalContext';
 
 import {
   Archive,
   Camera,
   GitHub,
-  Home,
+  User,
   Instagram,
   Linkedin,
   Menu,
-  Moon,
-  Sun,
   XCircle,
 } from 'react-feather';
 
 import styles from './Navbar.module.scss';
 
-const NavLink = ({ children, activeClassName = 'active', ...props }) => {
+const NavLink = ({
+  children,
+  activeClassName = 'active',
+  inactive = 'inactive',
+  ...props
+}) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const childClassName = child.props.className || '';
 
   const isActive = asPath === props.href || asPath === props.as;
-  const inactive = 'inactive';
 
   const className = cx(
     childClassName,
@@ -44,6 +48,8 @@ const NavLink = ({ children, activeClassName = 'active', ...props }) => {
 };
 
 export const Navbar = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const { expanded, setExpanded } = useContext(NavbarContext);
   const YEAR = new Date().getFullYear();
 
@@ -52,52 +58,74 @@ export const Navbar = () => {
   };
 
   const closeMenu = () => {
-    if (window.innerWidth < 1100) {
-      setExpanded(() => false);
-    }
+    if (window.innerWidth < 1100) setExpanded(() => false);
   };
+
+  useEffect(() => {
+    closeMenu();
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <>
       <div
         className={
-          expanded
-            ? `${styles.options}`
-            : `${styles.options} ${styles.collapsed}`
+          expanded ? `${styles.options} ${styles.expanded}` : styles.options
         }
       >
         {expanded ? (
           <button onClick={handleMenu}>
-            <XCircle />
+            <XCircle alt="" />
           </button>
         ) : (
           <button onClick={handleMenu}>
-            <Menu />
+            <Menu alt="" />
           </button>
         )}
+        <ThemeSwitcher />
       </div>
       <header
         className={
-          expanded ? `${styles.header}` : `${styles.header} ${styles.collapsed}`
+          expanded ? `${styles.header} ${styles.expanded}` : styles.header
         }
       >
         <nav className={styles.nav}>
           <ul>
             <li onClick={closeMenu}>
-              <Home className={styles.icon} />
-              <NavLink href="/">
-                <span>Home</span>
+              <User className={styles.icon} alt="" />
+              <NavLink
+                href="/"
+                activeClassName={
+                  theme === 'dark' ? styles.active : styles.activeDark
+                }
+                inactive={styles.inactive}
+              >
+                <span>About</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
-              <Archive className={styles.icon} />
-              <NavLink href="/posts">
+              <Archive className={styles.icon} alt="" />
+              <NavLink
+                href="/posts"
+                activeClassName={
+                  theme === 'dark' ? styles.active : styles.activeDark
+                }
+                inactive={styles.inactive}
+              >
                 <span>Blog</span>
               </NavLink>
             </li>
             <li onClick={closeMenu}>
-              <Camera className={styles.icon} />
-              <NavLink href="/photos">
+              <Camera className={styles.icon} alt="" />
+              <NavLink
+                href="/photos"
+                activeClassName={
+                  theme === 'dark' ? styles.active : styles.activeDark
+                }
+                inactive={styles.inactive}
+              >
                 <span>Photos</span>
               </NavLink>
             </li>
@@ -106,19 +134,19 @@ export const Navbar = () => {
         <small className={styles.socials}>
           <ul className={styles.socialsLinks}>
             <li>
-              <Link href="https://instagram.com/andreaiaia">
-                <Instagram className={styles.icon} />
-              </Link>
+              <a href="https://instagram.com/andreaiaia" target="_blank">
+                <Instagram className={styles.icon} alt="Instagram logo" />
+              </a>
             </li>
             <li>
-              <Link href="https://github.com/andreaiaia">
-                <GitHub className={styles.icon} />
-              </Link>
+              <a href="https://github.com/andreaiaia" target="_blank">
+                <GitHub className={styles.icon} alt="Github logo" />
+              </a>
             </li>
             <li>
-              <Link href="https://linkedin.com/in/andreaiaia/">
-                <Linkedin className={styles.icon} />
-              </Link>
+              <a href="https://linkedin.com/in/andreaiaia/" target="_blank">
+                <Linkedin className={styles.icon} alt="Linkedin logo" />
+              </a>
             </li>
           </ul>
           <div className={styles.credits}>

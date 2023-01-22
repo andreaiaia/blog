@@ -1,0 +1,11 @@
+.Moon {
+  [data-theme='dark'] & {
+    display: none;
+  }
+}
+
+.Sun {
+  [data-theme='light'] & {
+    display: none;
+  }
+}

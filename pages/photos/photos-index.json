@@ -1,0 +1,506 @@
+{
+  "data": [
+    {
+      "category": "Matera",
+      "path": "/images/photos/matera",
+      "thumbnail": "thumbnail.webp",
+      "description": "My photos of Matera",
+      "photos": [
+        {
+          "filename": "Matera-Moon-Composite-2023.webp",
+          "title": "The Moon setting over an awakening Matera",
+          "description": "This 1-hour composite captures the path of the setting Moon above the Sassi of Matera as the first rays of sunlight begin to hit the ancient town.",
+          "width": 1152,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-Sunset-Moon-2022.webp",
+          "title": "The Sassi \"Constellation\"",
+          "description": "As the day comes to a close, the city of Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
+          "width": 1152,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-Moon-2022.webp",
+          "title": "Supermoon above Matera",
+          "description": "In July 2022, the stunning Supermoon aligns perfectly with the bell tower of Matera's cathedral, creating a once-in-a-lifetime celestial spectacle.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Craco-MT-2021.webp",
+          "title": "Craco, the Golden Hill",
+          "description": "The breathtaking view from the window of Craco's defensive tower, a ghost town nestled in the heart of southern Italy, also known as the \"golden hill\" for the way its fields of wheat shimmer gold under the summer sun.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-2021.webp",
+          "title": "I Sassi di Matera",
+          "description": "The Sasso Caveoso, one of the ancient neighborhoods of Matera, is captured in the picture taken from the vantage point of Piazza San Pietro Caveoso on a warm summer day in August.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-Kodak-Gold-2021.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 872
+        },
+        {
+          "filename": "Matera-Sunset-2021.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-Silbersaltx-2022.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "category": "Astrophotography",
+      "path": "/images/photos/astrophotography",
+      "thumbnail": "thumbnail.webp",
+      "description": "My photos of the Deep Sky",
+      "photos": [
+        {
+          "filename": "Full-Mineral-Moon-2022-12.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Moon-HDR-2022-12.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Andromeda-2022-09.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Neowise-2020-07.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Moon-Mars-Conj-2022-12.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        }
+      ]
+    },
+    {
+      "category": "Black & White",
+      "path": "/images/photos/blackandwhite",
+      "thumbnail": "thumbnail.webp",
+      "description": "My Black & White photos",
+      "photos": [
+        {
+          "filename": "Bologna-2022-me.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Bologna-San-Luca-2018-1.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Bologna-San-Luca-2018-2.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Firenze-2022-1.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Firenze-2022-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-2021-1.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Matera-2021-2.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-2021-3.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-2021-4.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-2021-5.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1152
+        },
+        {
+          "filename": "Matera-2021-6.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Matera-2021-7.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        }
+      ]
+    },
+    {
+      "category": "Travel",
+      "path": "/images/photos/travel",
+      "thumbnail": "thumbnail.webp",
+      "description": "Photos I shot while travelling",
+      "photos": [
+        {
+          "filename": "Alpi-Piemontesi.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Antwerp-1.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Antwerp-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Berlin.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "filename": "Crespi-D-Adda-1.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Crespi-D-Adda-2.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Firenze-1.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Firenze-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Forte-Di-Bard-1.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 1188
+        },
+        {
+          "filename": "Forte-Di-Bard-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Gent-1.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Gent-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1600,
+          "height": 876
+        },
+        {
+          "filename": "London-Battersea-Power-Station.webp",
+          "title": "",
+          "description": "",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "filename": "London-Big-Ben.webp",
+          "title": "",
+          "description": "",
+          "width": 1152,
+          "height": 1440
+        },
+        {
+          "filename": "London-Tube.webp",
+          "title": "",
+          "description": "",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "filename": "London-Westminster-Abbey-1.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "London-Westminster-Abbey-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Mont-Isola.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Roma-Altare-Della-Patria.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Roma-Colosseo.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 926
+        },
+        {
+          "filename": "Torino-1.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Torino-2.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Torino-3.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Torino-4.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Torino-5.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Venezia-San-Marco.webp",
+          "title": "",
+          "description": "",
+          "width": 1017,
+          "height": 1440
+        }
+      ]
+    },
+    {
+      "category": "Misc",
+      "path": "/images/photos/misc",
+      "thumbnail": "thumbnail.webp",
+      "description": "Photos without category",
+      "photos": [
+        {
+          "filename": "Apricot-Blossom.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Autumn-Tree-Linkeroever.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Basilicata-Sunset.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Ceresole-Reale.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Close-Up-Bee.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Diga-San-Giuliano-Sunset.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Festa-Della-Bruna-Portrait.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Grandma.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Lago-Iseo.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Nivolet-1.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Nivolet-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Olive-Trees.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Oostende-1.webp",
+          "title": "",
+          "description": "",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filename": "Oostende-2.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filename": "Polignano-A-Mare.webp",
+          "title": "",
+          "description": "",
+          "width": 1440,
+          "height": 960
+        }
+      ]
+    }
+  ]
+}
