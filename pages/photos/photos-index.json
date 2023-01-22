@@ -1,96 +1,378 @@
 {
   "data": [
     {
-      "category": "Astro",
+      "category": "Matera",
+      "path": "/images/photos/matera",
+      "thumbnail": "thumbnail.webp",
+      "description": "My photos of Matera",
       "photos": [
-        { "filename": "thumbnail.webp" },
-        { "filename": "Andromeda-2022-09.webp" },
-        { "filename": "Moon-HDR-2022-12.webp" },
-        { "filename": "Neowise-2020-07.webp" },
-        { "filename": "Full-Mineral-Moon-2022-12.webp" },
-        { "filename": "Moon-Mars-Conj-2022-12.webp" }
+        {
+          "filename": "Craco-MT-2021.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-Kodak-Gold-2021.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-Moon-2022.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-Moon-Composite-2023.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-Silbersaltx-2022.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-Sunset-2021.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-Sunset-Moon-2022.webp",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "category": "Astrophotography",
+      "path": "/images/photos/astrophotography",
+      "thumbnail": "thumbnail.webp",
+      "description": "My photos of the Deep Sky",
+      "photos": [
+        {
+          "filename": "Andromeda-2022-09.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Moon-HDR-2022-12.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Neowise-2020-07.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Full-Mineral-Moon-2022-12.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Moon-Mars-Conj-2022-12.webp",
+          "title": "",
+          "description": ""
+        }
       ]
     },
     {
       "category": "Black & White",
+      "path": "/images/photos/blackandwhite",
+      "thumbnail": "thumbnail.webp",
+      "description": "My Black & White photos",
       "photos": [
-        { "filename": "Bologna-2022-me.webp" },
-        { "filename": "Bologna-San-Luca-2018-1.webp" },
-        { "filename": "Bologna-San-Luca-2018-2.webp" },
-        { "filename": "D75_9915.jpg" },
-        { "filename": "Firenze-2022-1.webp" },
-        { "filename": "Firenze-2022-2.webp" },
-        { "filename": "Matera-2021-1.webp" },
-        { "filename": "Matera-2021-2.webp" },
-        { "filename": "Matera-2021-3.webp" },
-        { "filename": "Matera-2021-4.webp" },
-        { "filename": "Matera-2021-5.webp" },
-        { "filename": "Matera-2021-6.webp" },
-        { "filename": "Matera-2021-7.webp" }
-      ]
-    },
-    {
-      "category": "Matera",
-      "photos": [
-        { "filename": "Craco-MT-2021.webp" },
-        { "filename": "Matera-2021.webp" },
-        { "filename": "Matera-Kodak-Gold-2021.webp" },
-        { "filename": "Matera-Moon-2022.webp" },
-        { "filename": "Matera-Moon-Composite-2023.webp" },
-        { "filename": "Matera-Silbersaltx-2022.webp" },
-        { "filename": "Matera-Sunset-2021.webp" },
-        { "filename": "Matera-Sunset-Moon-2022.webp" }
-      ]
-    },
-    {
-      "category": "Misc",
-      "photos": [
-        { "filename": "Apricot-Blossom.webp" },
-        { "filename": "Autumn-Tree-Linkeroever.webp" },
-        { "filename": "Basilicata-Sunset.webp" },
-        { "filename": "Ceresole-Reale.webp" },
-        { "filename": "Close-Up-Bee.webp" },
-        { "filename": "Diga-San-Giuliano-Sunset.webp" },
-        { "filename": "Festa-Della-Bruna-Portrait.webp" },
-        { "filename": "Grandma.webp" },
-        { "filename": "Lago-Iseo.webp" },
-        { "filename": "Nivolet-1.webp" },
-        { "filename": "Nivolet-2.webp" },
-        { "filename": "Olive-Trees.webp" },
-        { "filename": "Oostende-1.webp" },
-        { "filename": "Oostende-2.webp" },
-        { "filename": "Polignano-A-Mare.webp" }
+        {
+          "filename": "Bologna-2022-me.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Bologna-San-Luca-2018-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Bologna-San-Luca-2018-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "D75_9915.jpg",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Firenze-2022-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Firenze-2022-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-3.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-4.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-5.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-6.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Matera-2021-7.webp",
+          "title": "",
+          "description": ""
+        }
       ]
     },
     {
       "category": "Travel",
+      "path": "/images/photos/travel",
+      "thumbnail": "thumbnail.webp",
+      "description": "Photos I shot while travelling",
       "photos": [
-        { "filename": "Alpi-Piemontesi.webp" },
-        { "filename": "Antwerp-1.webp" },
-        { "filename": "Antwerp-2.webp" },
-        { "filename": "Berlin.webp" },
-        { "filename": "Crespi-D-Adda-1.webp" },
-        { "filename": "Crespi-D-Adda-2.webp" },
-        { "filename": "Firenze-1.webp" },
-        { "filename": "Firenze-2.webp" },
-        { "filename": "Forte-Di-Bard-1.webp" },
-        { "filename": "Forte-Di-Bard-2.webp" },
-        { "filename": "Gent-1.webp" },
-        { "filename": "Gent-2.webp" },
-        { "filename": "London-Battersea-Power-Station.webp" },
-        { "filename": "London-Big-Ben.webp" },
-        { "filename": "London-Tube.webp" },
-        { "filename": "London-Westminster-Abbey-1.webp" },
-        { "filename": "London-Westminster-Abbey-2.webp" },
-        { "filename": "Mont-Isola.webp" },
-        { "filename": "Roma-Altare-Della-Patria.webp" },
-        { "filename": "Roma-Colosseo.webp" },
-        { "filename": "Torino-1.webp" },
-        { "filename": "Torino-2.webp" },
-        { "filename": "Torino-3.webp" },
-        { "filename": "Torino-4.webp" },
-        { "filename": "Torino-5.webp" },
-        { "filename": "Venezia-San-Marco.webp" }
+        {
+          "filename": "Alpi-Piemontesi.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Antwerp-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Antwerp-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Berlin.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Crespi-D-Adda-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Crespi-D-Adda-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Firenze-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Firenze-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Forte-Di-Bard-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Forte-Di-Bard-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Gent-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Gent-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "London-Battersea-Power-Station.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "London-Big-Ben.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "London-Tube.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "London-Westminster-Abbey-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "London-Westminster-Abbey-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Mont-Isola.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Roma-Altare-Della-Patria.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Roma-Colosseo.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Torino-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Torino-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Torino-3.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Torino-4.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Torino-5.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Venezia-San-Marco.webp",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "category": "Misc",
+      "path": "/images/photos/misc",
+      "thumbnail": "thumbnail.webp",
+      "description": "Photos without category",
+      "photos": [
+        {
+          "filename": "Apricot-Blossom.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Autumn-Tree-Linkeroever.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Basilicata-Sunset.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Ceresole-Reale.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Close-Up-Bee.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Diga-San-Giuliano-Sunset.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Festa-Della-Bruna-Portrait.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Grandma.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Lago-Iseo.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Nivolet-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Nivolet-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Olive-Trees.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Oostende-1.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Oostende-2.webp",
+          "title": "",
+          "description": ""
+        },
+        {
+          "filename": "Polignano-A-Mare.webp",
+          "title": "",
+          "description": ""
+        }
       ]
     }
   ]
