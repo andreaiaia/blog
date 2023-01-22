@@ -51,13 +51,12 @@ const index = () => {
         <section className={styles.sectionBio}>
           <div className={`${styles.card} ${styles.textWall}`}>
             <p>
-              Sono uno{' '}
-              <span className={styles.bold}>sviluppatore web Front-End</span>,
-              mi piace per il design semplice ed efficace.
-            </p>
-            <p>
-              Studio informatica a Bologna e nel tempo libero scatto fotografie,
-              lavoro a progetti personali oppure gioco a scacchi.
+              Sono un Junior{' '}
+              <span className={styles.bold}>sviluppatore web Front-End</span> in
+              crescita. Studio Informatica a Bologna, sono un grande
+              appassionato di fotografia e nel tempo libero mi piace imparare
+              cose nuove lavorando su progetti personali o rilassarmi con i
+              videogiochi o gli scacchi.
             </p>
           </div>
           <div className={`${styles.card} ${styles.contactsContainer}`}>
