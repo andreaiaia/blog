@@ -4,7 +4,7 @@
       "category": "Matera",
       "path": "/images/photos/matera",
       "thumbnail": "thumbnail.webp",
-      "description": "My photos of Matera",
+      "description": "Matera, the town were I was born, is one of the oldest continuously inahabited cities of the world. Have a look at its breathtaking Sassi through my eyes.",
       "photos": [
         {
           "filename": "Matera-Moon-Composite-2023.webp",
@@ -16,7 +16,7 @@
         {
           "filename": "Matera-Sunset-Moon-2022.webp",
           "title": "The Sassi \"Constellation\"",
-          "description": "As the day comes to a close, the city of Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
+          "description": "As the day comes to a close, the Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
           "width": 1152,
           "height": 1440
         },
@@ -43,22 +43,22 @@
         },
         {
           "filename": "Matera-Kodak-Gold-2021.webp",
-          "title": "",
-          "description": "",
+          "title": "Placeholder",
+          "description": "Placeholder",
           "width": 1440,
           "height": 872
         },
         {
           "filename": "Matera-Sunset-2021.webp",
-          "title": "",
-          "description": "",
+          "title": "Placeholder",
+          "description": "Placeholder",
           "width": 960,
           "height": 1440
         },
         {
           "filename": "Matera-Silbersaltx-2022.webp",
-          "title": "",
-          "description": "",
+          "title": "Placeholder",
+          "description": "Placeholder",
           "width": 1440,
           "height": 960
         }
