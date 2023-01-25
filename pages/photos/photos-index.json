@@ -4,7 +4,7 @@
       "category": "Matera",
       "path": "/images/photos/matera",
       "thumbnail": "thumbnail.webp",
-      "description": "Matera, the town were I was born, is one of the oldest continuously inahabited cities of the world. Have a look at its breathtaking Sassi through my eyes.",
+      "description": "My photos of Matera",
       "photos": [
         {
           "filename": "Matera-Moon-Composite-2023.webp",
@@ -16,7 +16,7 @@
         {
           "filename": "Matera-Sunset-Moon-2022.webp",
           "title": "The Sassi \"Constellation\"",
-          "description": "As the day comes to a close, the Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
+          "description": "As the day comes to a close, the city of Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
           "width": 1152,
           "height": 1440
         },
@@ -42,23 +42,23 @@
           "height": 1440
         },
         {
-          "filename": "Matera-Kodak-Gold-2021.webp",
-          "title": "Placeholder",
-          "description": "Placeholder",
-          "width": 1440,
-          "height": 872
-        },
-        {
           "filename": "Matera-Sunset-2021.webp",
-          "title": "Placeholder",
-          "description": "Placeholder",
+          "title": "One last glimpse of sunlight",
+          "description": "The Sun hides behind the bell tower of Matera's cathedral, just before the end of the day, ",
           "width": 960,
           "height": 1440
         },
         {
+          "filename": "Matera-Kodak-Gold-2021.webp",
+          "title": "Matera Analogica",
+          "description": "I love film photography because I can experiment with it in the more peculiar ways: for this picture I used a 35mm film inside my Granpa's Rolleicord V, obtaining an image of Matera that spread across all the emulsion. The colors of the Kodak Gold are absolutely stunning!",
+          "width": 1440,
+          "height": 872
+        },
+        {
           "filename": "Matera-Silbersaltx-2022.webp",
-          "title": "Placeholder",
-          "description": "Placeholder",
+          "title": "A quiet moment",
+          "description": "Nowadays this place, where once the shepherds used to take their  flocks to gase, is usually full with tourists. It was a quiet early afternoon and I was able to enjoy the silence and the view, before calmly taking this photo",
           "width": 1440,
           "height": 960
         }
