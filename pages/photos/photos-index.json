@@ -4,7 +4,7 @@
       "category": "Matera",
       "path": "/images/photos/matera",
       "thumbnail": "thumbnail.webp",
-      "description": "My photos of Matera",
+      "description": "Matera, the town were I was born, is one of the oldest continuously inahabited cities of the world. Have a look at its breathtaking Sassi through my eyes.",
       "photos": [
         {
           "filename": "Matera-Moon-Composite-2023.webp",
@@ -16,7 +16,7 @@
         {
           "filename": "Matera-Sunset-Moon-2022.webp",
           "title": "The Sassi \"Constellation\"",
-          "description": "As the day comes to a close, the city of Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
+          "description": "As the day comes to a close, the Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
           "width": 1152,
           "height": 1440
         },
@@ -35,6 +35,13 @@
           "height": 1440
         },
         {
+          "filename": "Matera-Kodak-Gold-2021.webp",
+          "title": "Matera Analogica",
+          "description": "I love film photography because I can experiment with it in the more peculiar ways: for this picture I used a 35mm film inside my Granpa's Rolleicord V, obtaining an image of Matera that spread across all the emulsion. The colors of the Kodak Gold are absolutely stunning!",
+          "width": 1440,
+          "height": 872
+        },
+        {
           "filename": "Matera-2021.webp",
           "title": "I Sassi di Matera",
           "description": "The Sasso Caveoso, one of the ancient neighborhoods of Matera, is captured in the picture taken from the vantage point of Piazza San Pietro Caveoso on a warm summer day in August.",
@@ -49,13 +56,6 @@
           "height": 1440
         },
         {
-          "filename": "Matera-Kodak-Gold-2021.webp",
-          "title": "Matera Analogica",
-          "description": "I love film photography because I can experiment with it in the more peculiar ways: for this picture I used a 35mm film inside my Granpa's Rolleicord V, obtaining an image of Matera that spread across all the emulsion. The colors of the Kodak Gold are absolutely stunning!",
-          "width": 1440,
-          "height": 872
-        },
-        {
           "filename": "Matera-Silbersaltx-2022.webp",
           "title": "A quiet moment",
           "description": "Nowadays this place, where once the shepherds used to take their  flocks to gase, is usually full with tourists. It was a quiet early afternoon and I was able to enjoy the silence and the view, before calmly taking this photo",
@@ -68,40 +68,40 @@
       "category": "Astrophotography",
       "path": "/images/photos/astrophotography",
       "thumbnail": "thumbnail.webp",
-      "description": "My photos of the Deep Sky",
+      "description": "I can't help but keep looking at the sky, watching the stars makes me feel closer to infinity.",
       "photos": [
         {
           "filename": "Full-Mineral-Moon-2022-12.webp",
-          "title": "",
-          "description": "",
+          "title": "Mineral Moon",
+          "description": "In this picture the colors have been enhanced to show the mineral composition of the moon: the areas in blue are rich of Iron, while the red areas contain alluminium. This are true colors of the moon, the picture has simply been saturated to enhance them.",
           "width": 1440,
           "height": 1440
         },
         {
           "filename": "Moon-HDR-2022-12.webp",
-          "title": "",
-          "description": "",
+          "title": "HDR First Quarter Moon",
+          "description": "In this composite HDR shot the dark park of the Moon is perfectly visible during the First Quarter phase of the Moon.",
           "width": 1440,
           "height": 1440
         },
         {
           "filename": "Andromeda-2022-09.webp",
-          "title": "",
-          "description": "",
+          "title": "Andromeda Galaxy",
+          "description": "My first attempt in deep space astrophotography: to take this picture I used my beloved Fujifilm X-T3 with an old Nikkor 135mm f3.5, the result, although imperfect, gave me the motivation to invest time and money into exploring this kind of photography.",
           "width": 1440,
           "height": 960
         },
         {
           "filename": "Neowise-2020-07.webp",
-          "title": "",
-          "description": "",
+          "title": "Neowise Comet",
+          "description": "In the summer of 2020 this comet passed near earth and has been visible for several days in a row at the end of july, I took many shots and I enjoyed the time spent looking in the sky to find it and observe it.",
           "width": 960,
           "height": 1440
         },
         {
           "filename": "Moon-Mars-Conj-2022-12.webp",
-          "title": "",
-          "description": "",
+          "title": "Moon and Mars Conjunction",
+          "description": "One of my first pictures with my telescope, the conjunction of the Moon and Mars, the latter being at the opposition (that is when a planet is opposite the sun).",
           "width": 1440,
           "height": 1440
         }
