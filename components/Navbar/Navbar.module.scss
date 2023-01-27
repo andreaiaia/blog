@@ -9,7 +9,7 @@
   background-color: $tint;
   margin: 0;
   padding: 1rem 3rem;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 0 12px -6px $light-shadow;
   transition: all 0.3s ease-in-out;
   opacity: 0;
@@ -48,6 +48,22 @@
 
   @media print {
     display: none;
+  }
+}
+
+.closeMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+
+  @include dark {
+    color: $tint;
+    background-color: rgba(0, 0, 0, 0);
+
+    & > *:hover {
+      color: $white;
+    }
   }
 }
 
@@ -131,12 +147,12 @@
   gap: 1rem;
   top: 0;
   left: 0;
+  width: 100%;
   padding: 1rem;
   transition: 0.2s ease;
-  z-index: 2;
-  min-width: 95px;
+  z-index: 1;
   background-color: $white;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   &.expanded {
     background-color: rgba(0, 0, 0, 0);
@@ -147,9 +163,7 @@
   }
 
   @include smartphone {
-    width: 100%;
     padding: 1rem;
-    justify-content: space-between;
     gap: 0;
   }
 

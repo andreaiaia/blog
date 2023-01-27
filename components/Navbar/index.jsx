@@ -75,15 +75,9 @@ export const Navbar = () => {
           expanded ? `${styles.options} ${styles.expanded}` : styles.options
         }
       >
-        {expanded ? (
-          <button onClick={handleMenu}>
-            <XCircle alt="" />
-          </button>
-        ) : (
-          <button onClick={handleMenu}>
-            <Menu alt="" />
-          </button>
-        )}
+        <button onClick={handleMenu}>
+          <Menu alt="Open menu button" />
+        </button>
         <ThemeSwitcher />
       </div>
       <header
@@ -91,6 +85,9 @@ export const Navbar = () => {
           expanded ? `${styles.header} ${styles.expanded}` : styles.header
         }
       >
+        <button className={styles.closeMenu} onClick={handleMenu}>
+          <XCircle alt="Close menu button" />
+        </button>
         <nav className={styles.nav}>
           <ul>
             <li onClick={closeMenu}>
