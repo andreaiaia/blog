@@ -46,13 +46,15 @@ const Category = () => {
   if (data)
     return (
       <article className={styles.container}>
-        <div className={styles.title}>
-          <h1>{data.category}</h1>
-          <Link href="/photos">
-            <a className={styles.backlink}>Back to Photos</a>
-          </Link>
-        </div>
-        <p>{data.description}</p>
+        <section className={styles.titleContainer}>
+          <div className={styles.title}>
+            <h1>{data.category}</h1>
+            <Link href="/photos">
+              <a className={styles.backlink}>Back to Photos</a>
+            </Link>
+          </div>
+          <p>{data.description}</p>
+        </section>
         <section className={styles.gallery}>
           <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 700: 2 }}>
             <Masonry gutter="1rem">
