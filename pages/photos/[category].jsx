@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-import Modal from '../../components/Modal';
 import photoData from './photos-index.json';
 
 import styles from './Photos.module.scss';
@@ -21,13 +20,15 @@ const Photo = ({ url, photo }) => {
           width={photo.width}
           height={photo.height}
         />
-      </div>
-      <div className={styles.photoContainer}>
-        <div className={isVisible ? styles.open : styles.closed}>
-          <Modal onClose={() => setIsVisible(false)}>
-            <p className={styles.picTitle}>{photo.title}</p>
-            <p>{photo.description}</p>
-          </Modal>
+        <div
+          className={
+            isVisible
+              ? `${styles.photoDescription} ${styles.show}`
+              : `${styles.photoDescription} ${styles.hide}`
+          }
+        >
+          <p className={styles.picTitle}>{photo.title}</p>
+          <p>{photo.description}</p>
         </div>
       </div>
     </div>
