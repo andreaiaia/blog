@@ -70,11 +70,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div
-        className={
-          expanded ? `${styles.options} ${styles.expanded}` : styles.options
-        }
-      >
+      <div className={styles.options}>
         <button onClick={handleMenu}>
           <Menu alt="Open menu button" />
         </button>

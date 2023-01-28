@@ -154,10 +154,6 @@
   background-color: $white;
   justify-content: space-between;
 
-  &.expanded {
-    background-color: rgba(0, 0, 0, 0);
-  }
-
   & > *:hover {
     color: $black;
   }
@@ -170,11 +166,6 @@
   @include dark {
     color: $tint;
     background-color: $black;
-
-    &.expanded {
-      background-color: rgba(0, 0, 0, 0);
-      color: $tone;
-    }
 
     & > *:hover {
       color: $white;
