@@ -20,13 +20,15 @@ export function getSortedPostsData() {
     };
   });
 
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPostsData
+    .filter((post) => post.id !== 'index.jsx')
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
 }
 
 export function getAllPostIds() {
