@@ -1,6 +1,7 @@
 import React from 'react';
 import { getSortedPostsData } from '../../lib/posts';
-import Link from 'next/link';
+
+import Post from '../../components/PostThumbnail';
 
 import styles from './Blog.module.scss';
 
@@ -10,20 +11,6 @@ export async function getStaticProps() {
     props: { allPostsData },
   };
 }
-
-const Post = ({ id, date, title, author, tag, description }) => {
-  return (
-    <>
-      <Link href={`/posts/${id}`}>
-        <a>{title}</a>
-      </Link>
-      <p>{date}</p>
-      <p>{author}</p>
-      <p>{tag}</p>
-      <p>{description}</p>
-    </>
-  );
-};
 
 const Blog = ({ allPostsData }) => {
   return (
