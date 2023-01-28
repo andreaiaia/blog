@@ -1,7 +1,27 @@
-import React from 'react';
+import { getSortedPostsData } from '../../lib/posts';
+import Link from 'next/link';
 
-const index = () => {
-  return <div>WORK IN PROGRESS - PAGE UNDER CONSTRUCTION</div>;
-};
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: { allPostsData },
+  };
+}
 
-export default index;
+export default function Posts({ allPostsData }) {
+  return (
+    <div>
+      <ul>
+        {allPostsData.map(({ id, date, title }, index) => (
+          <li key={index}>
+            <Link href={`/posts/${id}`}>
+              <a>{title}</a>
+            </Link>
+            <br />
+            <span>{date}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
