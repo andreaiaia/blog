@@ -38,18 +38,14 @@ const Photo = ({ url, photo }) => {
 const Category = () => {
   const router = useRouter();
   const { category } = router.query;
-  const data = photoData.data.filter(
-    (item) => item.path === '/images/photos/' + category
-  )[0];
-
-  console.log(data);
+  const data = photoData.data.filter((item) => item.category === category)[0];
 
   if (data)
     return (
       <article className={styles.container}>
         <section className={styles.titleContainer}>
           <div className={styles.title}>
-            <h1>{data.category}</h1>
+            <h1>{data.title}</h1>
             <Link href="/photos">
               <a className={styles.backlink}>Back to Photos</a>
             </Link>
@@ -60,7 +56,7 @@ const Category = () => {
           <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 700: 2 }}>
             <Masonry gutter="1rem">
               {data.photos.map((photo, index) => {
-                const url = data.path + '/' + photo.filename;
+                const url = data.path + photo.filepath;
 
                 return <Photo key={index} url={url} photo={photo} />;
               })}

@@ -1,105 +1,114 @@
 {
   "data": [
     {
-      "category": "Matera",
-      "path": "/images/photos/matera",
-      "thumbnail": "thumbnail.webp",
+      "category": "matera",
+      "title": "Matera",
+      "path": "/images/photos/",
+      "thumbnail": "matera/thumbnail.webp",
       "description": "Matera, the town were I was born, is one of the oldest continuously inahabited cities of the world. Have a look at its breathtaking Sassi through my eyes.",
       "photos": [
         {
-          "filename": "Matera-Moon-Composite-2023.webp",
+          "filepath": "matera/Matera-Moon-Composite-2023.webp",
           "title": "The Moon setting over an awakening Matera",
           "description": "This 1-hour composite captures the path of the setting Moon above the Sassi of Matera as the first rays of sunlight begin to hit the ancient town.",
           "width": 1152,
           "height": 1440
         },
         {
-          "filename": "Matera-Sunset-Moon-2022.webp",
+          "filepath": "matera/Matera-Sunset-Moon-2022.webp",
           "title": "The Sassi \"Constellation\"",
           "description": "As the day comes to a close, the Sassi di Matera transforms into a romantic wonderland as the evening lights twinkle like stars, illuminating the city in a picturesque manner.",
           "width": 1152,
           "height": 1440
         },
         {
-          "filename": "Matera-Moon-2022.webp",
+          "filepath": "matera/Matera-Moon-2022.webp",
           "title": "Supermoon above Matera",
           "description": "In July 2022, the stunning Supermoon aligns perfectly with the bell tower of Matera's cathedral, creating a once-in-a-lifetime celestial spectacle.",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Craco-MT-2021.webp",
+          "filepath": "matera/Craco-MT-2021.webp",
           "title": "Craco, the Golden Hill",
           "description": "The breathtaking view from the window of Craco's defensive tower, a ghost town nestled in the heart of southern Italy, also known as the \"golden hill\" for the way its fields of wheat shimmer gold under the summer sun.",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Matera-Kodak-Gold-2021.webp",
+          "filepath": "matera/Matera-Kodak-Gold-2021.webp",
           "title": "Matera Analogica",
-          "description": "I enjoy experimenting with film photography in unique ways. For example, I captured this image of Matera by using a 35mm film in my Grandpa's Rolleicord V camera. The Kodak Gold film produced stunning colors that spread across the entire picture.",
+          "description": "I captured this image of Matera by using a 35mm film in my Grandpa's Rolleicord V camera. The Kodak Gold film produced stunning colors that spread across the entire picture.",
           "width": 1440,
           "height": 872
         },
         {
-          "filename": "Matera-2021.webp",
+          "filepath": "blackandwhite/Matera-2021-5.webp",
+          "title": "Matera o Laputa?",
+          "description": "In this double exposure, the clouds overlap with the ancient Sassi of Matera, giving the illusion that the city is the renowned Laputa, the flying city described in Jonathan Swift's Gulliver's Travels.",
+          "width": 1440,
+          "height": 1152
+        },
+        {
+          "filepath": "matera/Matera-2021.webp",
           "title": "I Sassi di Matera",
           "description": "The picture captures the ancient neighborhood of Sasso Caveoso in Matera, taken from the vantage point of Piazza San Pietro Caveoso on a warm summer day in August.",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Matera-Sunset-2021.webp",
+          "filepath": "matera/Matera-Sunset-2021.webp",
           "title": "One last glimpse of sunlight",
-          "description": "The Sun hides behind the bell tower of Matera's cathedral, just before the end of the day, ",
+          "description": "As the day comes to a close, the sun casts a warm glow on the bell tower of Matera's cathedral, illuminating the ancient stone structure in a beautiful orange light. I always make sure to have a cold beer and a good friend by my side to fully appreciate this stunning landscape.",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Matera-Silbersaltx-2022.webp",
+          "filepath": "matera/Matera-Silbersaltx-2022.webp",
           "title": "A quiet moment",
-          "description": "This place, once frequented by shepherds and their flocks, is now a popular destination for tourists. I was fortunate to be there on a quiet early afternoon, allowing me to enjoy the peacefulness and the view before capturing this photo.",
+          "description": "This place is now a popular destination for tourists. I was fortunate to be there on a quiet afternoon, allowing me to enjoy the tranquillity before capturing this photo.",
           "width": 1440,
           "height": 960
         }
       ]
     },
     {
-      "category": "Astrophotography",
-      "path": "/images/photos/astrophotography",
-      "thumbnail": "thumbnail.webp",
+      "category": "astrophotography",
+      "title": "Astrophotography",
+      "path": "/images/photos/",
+      "thumbnail": "astrophotography/thumbnail.webp",
       "description": "I can't help but keep looking at the sky, watching the stars makes me feel closer to infinity.",
       "photos": [
         {
-          "filename": "Full-Mineral-Moon-2022-12.webp",
+          "filepath": "astrophotography/Full-Mineral-Moon-2022-12.webp",
           "title": "Mineral Moon",
           "description": "This picture showcases the mineral composition of the moon by enhancing the colors. The blue areas are rich in Iron, and the red areas contain Aluminum. These are the true colors of the moon, just saturated to make them more visible.",
           "width": 1440,
           "height": 1440
         },
         {
-          "filename": "Moon-HDR-2022-12.webp",
+          "filepath": "astrophotography/Moon-HDR-2022-12.webp",
           "title": "HDR First Quarter Moon",
           "description": "This composite HDR shot captures the dark side of the Moon, which is visible during the First Quarter phase.",
           "width": 1440,
           "height": 1440
         },
         {
-          "filename": "Andromeda-2022-09.webp",
+          "filepath": "astrophotography/Andromeda-2022-09.webp",
           "title": "Andromeda Galaxy",
           "description": "This is my first attempt at deep space astrophotography. I used my Fujifilm X-T3 camera with an old Nikkor 135mm f3.5 lens to capture this image. Although the result is not perfect, it motivated me to invest time and money into further exploring this type of photography.",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Neowise-2020-07.webp",
+          "filepath": "astrophotography/Neowise-2020-07.webp",
           "title": "Neowise Comet",
           "description": "In the summer of 2020, the Neowise comet passed close to Earth and was visible for several days at the end of July. I took many shots and enjoyed the time spent searching for it and observing it in the sky.",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Moon-Mars-Conj-2022-12.webp",
+          "filepath": "astrophotography/Moon-Mars-Conj-2022-12.webp",
           "title": "Moon and Mars Conjunction",
           "description": "This is one of my first pictures taken using my telescope. It captures the conjunction of the Moon and Mars, with the latter at opposition (the point in its orbit when it is opposite the Sun).",
           "width": 1440,
@@ -108,280 +117,268 @@
       ]
     },
     {
-      "category": "Black & White",
-      "path": "/images/photos/blackandwhite",
-      "thumbnail": "thumbnail.webp",
-      "description": "My Black & White photos",
+      "category": "blackandwhite",
+      "title": "Black & White",
+      "path": "/images/photos/",
+      "thumbnail": "blackandwhite/thumbnail.webp",
+      "description": "Sometimes it's necessary to strip away the colors to see more clearly.",
       "photos": [
         {
-          "filename": "Bologna-2022-me.webp",
-          "title": "",
-          "description": "",
+          "filepath": "blackandwhite/Bologna-San-Luca-2018-1.webp",
+          "title": "Santuario di San Luca",
+          "description": "Bologna is renowned for its arcades. Among them, I find the arcades of the Sanctuary of San Luca to be the most captivating: they are impressive in size and have a certain allure.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "blackandwhite/Bologna-San-Luca-2018-2.webp",
+          "title": "Cimelio di famiglia",
+          "description": "The Rolleicord V, an analog camera passed down to me by my grandfather, is my favorite camera because it is a true pleasure to use, it produces images of exceptional quality, and it always looks sleek and stylish when I use it.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "blackandwhite/Firenze-2022-1.webp",
+          "title": "Santa Maria del Fiore",
+          "description": "Santa Maria del Fiore, a true jewel of Florence and the Renaissance, is renowned for its dome designed by Brunelleschi, which is the largest dome made of brick in the world and is widely considered one of the most significant architectural achievements of the Middle Ages as it set a new standard in construction and influenced the architecture of the centuries that followed.",
           "width": 1440,
           "height": 1440
         },
         {
-          "filename": "Bologna-San-Luca-2018-1.webp",
-          "title": "",
-          "description": "",
-          "width": 960,
-          "height": 1440
-        },
-        {
-          "filename": "Bologna-San-Luca-2018-2.webp",
-          "title": "",
-          "description": "",
-          "width": 960,
-          "height": 1440
-        },
-        {
-          "filename": "Firenze-2022-1.webp",
-          "title": "",
-          "description": "",
-          "width": 1440,
-          "height": 1440
-        },
-        {
-          "filename": "Firenze-2022-2.webp",
-          "title": "",
-          "description": "",
-          "width": 1440,
-          "height": 1440
-        },
-        {
-          "filename": "Matera-2021-1.webp",
-          "title": "",
-          "description": "",
-          "width": 1440,
-          "height": 960
-        },
-        {
-          "filename": "Matera-2021-2.webp",
-          "title": "",
-          "description": "",
-          "width": 960,
-          "height": 1440
-        },
-        {
-          "filename": "Matera-2021-3.webp",
-          "title": "",
-          "description": "",
-          "width": 960,
-          "height": 1440
-        },
-        {
-          "filename": "Matera-2021-4.webp",
-          "title": "",
-          "description": "",
-          "width": 960,
-          "height": 1440
-        },
-        {
-          "filename": "Matera-2021-5.webp",
-          "title": "",
-          "description": "",
+          "filepath": "blackandwhite/Matera-2021-5.webp",
+          "title": "Matera o Laputa?",
+          "description": "In this double exposure, the clouds overlap with the ancient Sassi of Matera, giving the illusion that the city is the renowned Laputa, the flying city described in Jonathan Swift's Gulliver's Travels.",
           "width": 1440,
           "height": 1152
         },
         {
-          "filename": "Matera-2021-6.webp",
-          "title": "",
-          "description": "",
+          "filepath": "blackandwhite/Matera-2021-2.webp",
+          "title": "Livelli",
+          "description": "One of Matera's most unique features is its stacked construction, where every street doubles as the roof of the house below. This is why I love to go to high vantage points and look at the labyrinth of streets and homes below me.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "blackandwhite/Matera-2021-3.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "blackandwhite/Matera-2021-4.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "blackandwhite/Matera-2021-1.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filepath": "blackandwhite/Matera-2021-6.webp",
+          "title": "placeholder",
+          "description": "placeholder",
           "width": 1440,
           "height": 1440
         },
         {
-          "filename": "Matera-2021-7.webp",
-          "title": "",
-          "description": "",
+          "filepath": "blackandwhite/Matera-2021-7.webp",
+          "title": "placeholder",
+          "description": "placeholder",
           "width": 1440,
           "height": 1440
         }
       ]
     },
     {
-      "category": "Travel",
-      "path": "/images/photos/travel",
-      "thumbnail": "thumbnail.webp",
+      "category": "travel",
+      "title": "Travel",
+      "path": "/images/photos/",
+      "thumbnail": "travel/thumbnail.webp",
       "description": "Photos I shot while travelling",
       "photos": [
         {
-          "filename": "Alpi-Piemontesi.webp",
+          "filepath": "travel/Alpi-Piemontesi.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Antwerp-1.webp",
+          "filepath": "travel/Antwerp-1.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Antwerp-2.webp",
+          "filepath": "travel/Antwerp-2.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Berlin.webp",
+          "filepath": "travel/Berlin.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 1440
         },
         {
-          "filename": "Crespi-D-Adda-1.webp",
+          "filepath": "travel/Crespi-D-Adda-1.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Crespi-D-Adda-2.webp",
+          "filepath": "travel/Crespi-D-Adda-2.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Firenze-1.webp",
+          "filepath": "travel/Firenze-1.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Firenze-2.webp",
+          "filepath": "travel/Firenze-2.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Forte-Di-Bard-1.webp",
+          "filepath": "travel/Forte-Di-Bard-1.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 1188
         },
         {
-          "filename": "Forte-Di-Bard-2.webp",
+          "filepath": "travel/Forte-Di-Bard-2.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Gent-1.webp",
+          "filepath": "travel/Gent-1.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Gent-2.webp",
+          "filepath": "travel/Gent-2.webp",
           "title": "",
           "description": "",
           "width": 1600,
           "height": 876
         },
         {
-          "filename": "London-Battersea-Power-Station.webp",
+          "filepath": "travel/London-Battersea-Power-Station.webp",
           "title": "",
           "description": "",
           "width": 1080,
           "height": 1440
         },
         {
-          "filename": "London-Big-Ben.webp",
+          "filepath": "travel/London-Big-Ben.webp",
           "title": "",
           "description": "",
           "width": 1152,
           "height": 1440
         },
         {
-          "filename": "London-Tube.webp",
+          "filepath": "travel/London-Tube.webp",
           "title": "",
           "description": "",
           "width": 1080,
           "height": 1440
         },
         {
-          "filename": "London-Westminster-Abbey-1.webp",
+          "filepath": "travel/London-Westminster-Abbey-1.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "London-Westminster-Abbey-2.webp",
+          "filepath": "travel/London-Westminster-Abbey-2.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Mont-Isola.webp",
+          "filepath": "travel/Mont-Isola.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Roma-Altare-Della-Patria.webp",
+          "filepath": "travel/Roma-Altare-Della-Patria.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Roma-Colosseo.webp",
+          "filepath": "travel/Roma-Colosseo.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 926
         },
         {
-          "filename": "Torino-1.webp",
+          "filepath": "travel/Torino-1.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Torino-2.webp",
+          "filepath": "travel/Torino-2.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Torino-3.webp",
+          "filepath": "travel/Torino-3.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Torino-4.webp",
+          "filepath": "travel/Torino-4.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Torino-5.webp",
+          "filepath": "travel/Torino-5.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Venezia-San-Marco.webp",
+          "filepath": "travel/Venezia-San-Marco.webp",
           "title": "",
           "description": "",
           "width": 1017,
@@ -390,111 +387,112 @@
       ]
     },
     {
-      "category": "Misc",
-      "path": "/images/photos/misc",
-      "thumbnail": "thumbnail.webp",
+      "category": "misc",
+      "title": "Misc",
+      "path": "/images/photos/",
+      "thumbnail": "misc/thumbnail.webp",
       "description": "Photos without category",
       "photos": [
         {
-          "filename": "Apricot-Blossom.webp",
+          "filepath": "misc/Apricot-Blossom.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Autumn-Tree-Linkeroever.webp",
+          "filepath": "misc/Autumn-Tree-Linkeroever.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Basilicata-Sunset.webp",
+          "filepath": "misc/Basilicata-Sunset.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Ceresole-Reale.webp",
+          "filepath": "misc/Ceresole-Reale.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Close-Up-Bee.webp",
+          "filepath": "misc/Close-Up-Bee.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Diga-San-Giuliano-Sunset.webp",
+          "filepath": "misc/Diga-San-Giuliano-Sunset.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Festa-Della-Bruna-Portrait.webp",
+          "filepath": "misc/Festa-Della-Bruna-Portrait.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Grandma.webp",
+          "filepath": "misc/Grandma.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Lago-Iseo.webp",
+          "filepath": "misc/Lago-Iseo.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Nivolet-1.webp",
+          "filepath": "misc/Nivolet-1.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Nivolet-2.webp",
+          "filepath": "misc/Nivolet-2.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Olive-Trees.webp",
+          "filepath": "misc/Olive-Trees.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Oostende-1.webp",
+          "filepath": "misc/Oostende-1.webp",
           "title": "",
           "description": "",
           "width": 960,
           "height": 1440
         },
         {
-          "filename": "Oostende-2.webp",
+          "filepath": "misc/Oostende-2.webp",
           "title": "",
           "description": "",
           "width": 1440,
           "height": 960
         },
         {
-          "filename": "Polignano-A-Mare.webp",
+          "filepath": "misc/Polignano-A-Mare.webp",
           "title": "",
           "description": "",
           "width": 1440,

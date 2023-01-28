@@ -18,10 +18,10 @@ const index = () => {
         {data.map((item, index) => (
           <Thumbnail
             key={index}
-            src={item.path + '/' + item.thumbnail}
+            src={item.path + item.thumbnail}
             alt={item.description}
-            to={'/photos/' + item.path.slice(15)}
-            description={item.category}
+            to={'/photos/' + item.category}
+            title={item.title}
           />
         ))}
       </section>
