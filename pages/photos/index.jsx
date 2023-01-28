@@ -11,15 +11,17 @@ const index = () => {
 
   return (
     <article className={styles.container}>
-      <h1>Photo Gallery</h1>
+      <section className={styles.titleContainer}>
+        <h1>Photo Gallery</h1>
+      </section>
       <section className={styles.thumbnails}>
         {data.map((item, index) => (
           <Thumbnail
             key={index}
-            src={item.path + '/' + item.thumbnail}
+            src={item.path + item.thumbnail}
             alt={item.description}
-            to={'/photos/' + item.path.slice(15)}
-            description={item.category}
+            to={'/photos/' + item.category}
+            title={item.title}
           />
         ))}
       </section>

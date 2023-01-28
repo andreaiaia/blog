@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import styles from './Thumbnail.module.scss';
 
-const Thumbnail = ({ src, alt, to, description }) => {
+const Thumbnail = ({ src, alt, to, title }) => {
   return (
     <div className={styles.container}>
       <Link href={to}>
@@ -16,7 +16,7 @@ const Thumbnail = ({ src, alt, to, description }) => {
             width={300}
             height={300}
           />
-          <span className={styles.description}>{description}</span>
+          <span className={styles.title}>{title}</span>
         </a>
       </Link>
     </div>
