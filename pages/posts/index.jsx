@@ -17,7 +17,7 @@ const Post = ({ id, date, title, author, tag, description }) => {
       <Link href={`/posts/${id}`}>
         <a>{title}</a>
       </Link>
-      <span>{date}</span>
+      <p>{date}</p>
       <p>{author}</p>
       <p>{tag}</p>
       <p>{description}</p>
@@ -26,7 +26,6 @@ const Post = ({ id, date, title, author, tag, description }) => {
 };
 
 const Blog = ({ allPostsData }) => {
-  console.log(allPostsData);
   return (
     <article className={styles.container}>
       <section className={styles.titleContainer}>
