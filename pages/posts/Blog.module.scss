@@ -28,3 +28,34 @@ $gap: 1rem;
 .titleContainer {
   margin-bottom: 4rem;
 }
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.tag {
+  color: $shadow;
+  border: 1px solid $shadow;
+  border-radius: 1rem;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+  // cursor: pointer;
+
+  // &:hover {
+  //   color: $black;
+  //   border-color: $black;
+  // }
+
+  @include dark {
+    color: $tone;
+    border-color: $tone;
+
+    // &:hover {
+    //   color: $tint;
+    //   border-color: $tint;
+    // }
+  }
+}
