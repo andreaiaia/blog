@@ -76,6 +76,19 @@ $laptop: 1200px;
   }
 }
 
+@mixin h3() {
+  color: $black;
+  font-variation-settings: 'wght' 600;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+
+  @include dark {
+    color: $white;
+  }
+}
+
 @mixin light() {
   font-variation-settings: 'wght' 400;
 }
