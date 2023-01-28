@@ -1,0 +1,66 @@
+@use '../../styles/globals.scss' as *;
+
+.postContainer {
+  h1 {
+    @include h1;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.tag {
+  color: $shadow;
+  border: 1px solid $shadow;
+  border-radius: 1rem;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+  // cursor: pointer;
+
+  // &:hover {
+  //   color: $black;
+  //   border-color: $black;
+  // }
+
+  @include dark {
+    color: $tone;
+    border-color: $tone;
+
+    // &:hover {
+    //   color: $tint;
+    //   border-color: $tint;
+    // }
+  }
+}
+
+.data {
+  display: flex;
+  gap: 0.8rem;
+  color: $shadow;
+
+  @include dark {
+    color: $tone;
+  }
+}
+
+.readMore {
+  color: $azure;
+  transition: 0.3s;
+  text-decoration: underline;
+
+  &:hover {
+    color: $azure-shadow;
+  }
+
+  @include dark {
+    &:hover {
+      color: $azure-tint;
+    }
+  }
+}
