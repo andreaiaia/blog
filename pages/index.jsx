@@ -81,15 +81,23 @@ const index = () => {
         </section>
         <section className={styles.sectionSkills}>
           <div className={`${styles.card} ${styles.exp}`}>
-            <h2>Esperienza lavorativa</h2>
+            <h2>Job Experience</h2>
             <div>
               <h3>
                 Credimi S.p.A. <span>Feb 2022 - Present</span>
               </h3>
-              <p>
-                Sviluppo del sito pubblico come parte del team Acquisition;
-                Sviluppo del widget antifrode come parte del team internal.
-              </p>
+              <ul className={styles.list}>
+                <li>
+                  Public website developer as part of the Acquisition team.
+                </li>
+                <li>
+                  Anti-fraud widget developer as part of the internal team.
+                </li>
+                <li>
+                  Technologies used: React, Gatsby, Typescript, SCSS, GraphQL
+                  and Apollo.
+                </li>
+              </ul>
             </div>
           </div>
           <div className={`${styles.card} ${styles.basics}`}>
@@ -128,10 +136,10 @@ const index = () => {
             </p>
           </div>
           <div className={`${styles.card} ${styles.edu}`}>
-            <h2>Istruzione</h2>
+            <h2>Education</h2>
             <div>
               <h3>
-                Laurea in Scienze della Comunicazione <span>Nov 2019</span>
+                Communication Science Degree <span>Nov 2019</span>
               </h3>
               <p>
                 I graduated in Communication Science at the University of

@@ -236,7 +236,7 @@ $gap: 1rem;
 .sectionSkills {
   display: grid;
   gap: $gap;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(6, auto);
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
     'basics exp docker'
@@ -401,4 +401,22 @@ $gap: 1rem;
 .accent {
   @include bold;
   color: $azure-tint;
+}
+
+.list {
+  & > li {
+    position: relative;
+    padding-left: 1.75em;
+  }
+
+  & > li::before {
+    content: '';
+    position: absolute;
+    background-color: $white;
+    border-radius: 50%;
+    width: 0.375em;
+    height: 0.375em;
+    top: calc(0.875em - 0.1875em);
+    left: 0.25em;
+  }
 }
