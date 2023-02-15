@@ -8,20 +8,18 @@ const Breadcrumbs = () => {
   const { asPath } = useRouter();
   const path = asPath.split('/');
 
-  console.log(path);
-
   return (
     <div className={styles.breadcrumbs}>
       <Link href={`/${path[0]}`}>
         <a className={styles.backlink}>Home</a>
       </Link>
-      {path.slice(1).map((item) => (
-        <>
+      {path.slice(1, -1).map((item, index) => (
+        <React.Fragment key={index}>
           {' > '}
           <Link href={`/${item}`}>
             <a className={styles.backlink}>{item}</a>
           </Link>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
