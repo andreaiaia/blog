@@ -42,7 +42,10 @@ const Post = ({ postData }) => {
           })}
         </div>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div
+        className={styles.postContent}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </article>
   );
 };
