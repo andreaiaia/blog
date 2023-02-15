@@ -2,6 +2,7 @@ import React from 'react';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 import styles from './Blog.module.scss';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -27,6 +28,7 @@ const Post = ({ postData }) => {
 
   return (
     <article className={styles.container}>
+      <Breadcrumbs />
       <h1>{data.title}</h1>
       <div className={styles.meta}>
         <div>{formattedDate}</div>
