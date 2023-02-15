@@ -1,0 +1,75 @@
+@use '../../styles/globals.scss' as *;
+
+$gap: 1rem;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  max-width: 65ch;
+
+  & > section {
+    padding-bottom: $gap;
+  }
+
+  @media print {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: unset;
+  }
+
+  h1 {
+    @include h1;
+  }
+}
+
+.titleContainer {
+  margin-bottom: 4rem;
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.tag {
+  color: $shadow;
+  border: 1px solid $shadow;
+  border-radius: 1rem;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+  // cursor: pointer;
+
+  // &:hover {
+  //   color: $black;
+  //   border-color: $black;
+  // }
+
+  @include dark {
+    color: $tone;
+    border-color: $tone;
+
+    // &:hover {
+    //   color: $tint;
+    //   border-color: $tint;
+    // }
+  }
+}
+
+.postContent {
+  h1 {
+    @include h1;
+  }
+
+  h2 {
+    @include h2;
+  }
+
+  h3 {
+    @include h3;
+  }
+}

@@ -1,12 +1,10 @@
 ---
 title: Markdown Examples
-date: 2021/3/19
+date: '2021-3-19'
 description: View examples of all possible Markdown options.
-tag: web development
-author: You
+tag: web development, markdown, test
+author: Andrea Bianchi
 ---
-
-# Markdown Examples
 
 ## h2 Heading
 
@@ -48,7 +46,7 @@ Ordered
 
 Inline `code`
 
-```
+```js
 export default function Nextra({ Component, pageProps }) {
   return (
     <>
@@ -69,7 +67,7 @@ export default function Nextra({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 ```
 
