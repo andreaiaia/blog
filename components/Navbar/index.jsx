@@ -1,11 +1,10 @@
-import React, { Children, useContext, useEffect, useState } from 'react';
+import React, { Children, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 import ThemeSwitcher from '../ThemeSwitcher';
-import { NavbarContext } from '../../Hooks/Context/GlobalContext';
 
 import {
   Archive,
@@ -50,19 +49,14 @@ const NavLink = ({
 export const Navbar = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { expanded, setExpanded } = useContext(NavbarContext);
+  const [expanded, setExpanded] = useState(false);
   const YEAR = new Date().getFullYear();
 
   const handleMenu = () => {
     setExpanded(() => !expanded);
   };
 
-  const closeMenu = () => {
-    if (window.innerWidth < 1100) setExpanded(() => false);
-  };
-
   useEffect(() => {
-    closeMenu();
     setMounted(true);
   }, []);
 
@@ -86,7 +80,7 @@ export const Navbar = () => {
         </button>
         <nav className={styles.nav}>
           <ul>
-            <li onClick={closeMenu}>
+            <li onClick={handleMenu}>
               <User className={styles.icon} alt="" />
               <NavLink
                 href="/"
@@ -98,7 +92,7 @@ export const Navbar = () => {
                 <span>About</span>
               </NavLink>
             </li>
-            <li onClick={closeMenu}>
+            <li onClick={handleMenu}>
               <Archive className={styles.icon} alt="" />
               <NavLink
                 href="/posts"
@@ -110,7 +104,7 @@ export const Navbar = () => {
                 <span>Blog</span>
               </NavLink>
             </li>
-            <li onClick={closeMenu}>
+            <li onClick={handleMenu}>
               <Camera className={styles.icon} alt="" />
               <NavLink
                 href="/photos"

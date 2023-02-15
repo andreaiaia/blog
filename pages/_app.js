@@ -1,18 +1,13 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 
 import { Navbar } from '../components/Navbar';
-
-import { NavbarContext } from '../Hooks/Context/GlobalContext';
 
 import '../styles/normalize.css';
 import '../styles/main.scss';
 import '../styles/layout.scss';
 
 export default function App({ Component, pageProps }) {
-  const [expanded, setExpanded] = useState(true);
-
   return (
     <>
       <Head>
@@ -30,14 +25,12 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <NavbarContext.Provider value={{ expanded, setExpanded }}>
-        <ThemeProvider>
-          <Navbar />
-          <main className={expanded ? '' : 'collapsed'}>
-            <Component {...pageProps} />
-          </main>
-        </ThemeProvider>
-      </NavbarContext.Provider>
+      <ThemeProvider>
+        <Navbar />
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
     </>
   );
 }
