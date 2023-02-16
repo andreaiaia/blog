@@ -13,8 +13,8 @@ const Thumbnail = ({ src, alt, to, title }) => {
             className={styles.img}
             src={src}
             alt={alt || ''}
-            width={300}
-            height={300}
+            width={350}
+            height={350}
           />
           <span className={styles.title}>{title}</span>
         </a>
