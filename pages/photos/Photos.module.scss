@@ -48,14 +48,24 @@ $gap: 1rem;
 }
 
 .thumbnails {
-  max-width: 65ch;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: $gap;
-  justify-items: center;
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+  justify-content: center;
   padding-top: 2rem;
+
+  & > div {
+    flex-basis: 350px;
+  }
+
+  @include breakpoint($laptop) {
+    & > div {
+      flex-basis: 300px;
+    }
+  }
 
   @include smartphone {
     grid-template-columns: 1fr;

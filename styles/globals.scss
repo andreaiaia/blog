@@ -152,7 +152,7 @@ $laptop: 1200px;
 
 // media query mixin
 @mixin breakpoint($max) {
-  @media (max-width: $max) {
+  @media screen and (max-width: $max) {
     @content;
   }
 }
