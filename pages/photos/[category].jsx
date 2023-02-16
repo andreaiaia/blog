@@ -53,7 +53,9 @@ const Category = () => {
           <p>{data.description}</p>
         </section>
         <section className={styles.gallery}>
-          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 700: 2 }}>
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 700: 2, 1200: 3 }}
+          >
             <Masonry gutter="1rem">
               {data.photos.map((photo, index) => {
                 const url = data.path + photo.filepath;

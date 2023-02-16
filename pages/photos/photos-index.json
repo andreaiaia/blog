@@ -80,10 +80,24 @@
       "description": "I can't help but keep looking at the sky, watching the stars makes me feel closer to infinity.",
       "photos": [
         {
+          "filepath": "astrophotography/Waxing_Crescent_Moon-2023.02.03.webp",
+          "title": "Waxing Crescent Moon",
+          "description": "My favorite photo of the moon so far, another Mineral moon, this time with more balanced colors. The dark blue areas are rich in Iron, and the yellow areas contain Aluminum. I prefer the waxing crescent moon to the full moon because the Copernicus and Tycho craters are more defined thanks to the shadow of the terminator.",
+          "width": 1000,
+          "height": 1000
+        },
+        {
           "filepath": "astrophotography/Full-Mineral-Moon-2022-12.webp",
           "title": "Mineral Moon",
           "description": "This picture showcases the mineral composition of the moon by enhancing the colors. The blue areas are rich in Iron, and the red areas contain Aluminum. These are the true colors of the moon, just saturated to make them more visible.",
           "width": 1440,
+          "height": 1440
+        },
+        {
+          "filepath": "astrophotography/Neowise-2020-07.webp",
+          "title": "Neowise Comet",
+          "description": "In the summer of 2020, the Neowise comet passed close to Earth and was visible for several days at the end of July. I took many shots and enjoyed the time spent searching for it and observing it in the sky.",
+          "width": 960,
           "height": 1440
         },
         {
@@ -94,25 +108,18 @@
           "height": 1440
         },
         {
-          "filepath": "astrophotography/Andromeda-2022-09.webp",
-          "title": "Andromeda Galaxy",
-          "description": "This is my first attempt at deep space astrophotography. I used my Fujifilm X-T3 camera with an old Nikkor 135mm f3.5 lens to capture this image. Although the result is not perfect, it motivated me to invest time and money into further exploring this type of photography.",
-          "width": 1440,
-          "height": 960
-        },
-        {
-          "filepath": "astrophotography/Neowise-2020-07.webp",
-          "title": "Neowise Comet",
-          "description": "In the summer of 2020, the Neowise comet passed close to Earth and was visible for several days at the end of July. I took many shots and enjoyed the time spent searching for it and observing it in the sky.",
-          "width": 960,
-          "height": 1440
-        },
-        {
           "filepath": "astrophotography/Moon-Mars-Conj-2022-12.webp",
           "title": "Moon and Mars Conjunction",
           "description": "This is one of my first pictures taken using my telescope. It captures the conjunction of the Moon and Mars, with the latter at opposition (the point in its orbit when it is opposite the Sun).",
           "width": 1440,
           "height": 1440
+        },
+        {
+          "filepath": "astrophotography/Andromeda-2022-09.webp",
+          "title": "Andromeda Galaxy",
+          "description": "This is my first attempt at deep space astrophotography. I used my Fujifilm X-T3 camera with an old Nikkor 135mm f3.5 lens to capture this image. Although the result is not perfect, it motivated me to invest time and money into further exploring this type of photography.",
+          "width": 1440,
+          "height": 960
         }
       ]
     },
@@ -287,25 +294,11 @@
           "height": 960
         },
         {
-          "filepath": "travel/Forte-Di-Bard-1.webp",
-          "title": "placeholder",
-          "description": "placeholder",
-          "width": 1440,
-          "height": 1188
-        },
-        {
-          "filepath": "travel/Forte-Di-Bard-2.webp",
+          "filepath": "travel/Torino-3.webp",
           "title": "placeholder",
           "description": "placeholder",
           "width": 1440,
           "height": 960
-        },
-        {
-          "filepath": "travel/Torino-1.webp",
-          "title": "placeholder",
-          "description": "placeholder",
-          "width": 960,
-          "height": 1440
         },
         {
           "filepath": "travel/Torino-2.webp",
@@ -315,7 +308,14 @@
           "height": 1440
         },
         {
-          "filepath": "travel/Torino-3.webp",
+          "filepath": "travel/Torino-1.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "travel/Torino-4.webp",
           "title": "placeholder",
           "description": "placeholder",
           "width": 1440,
@@ -329,7 +329,14 @@
           "height": 1440
         },
         {
-          "filepath": "travel/Torino-4.webp",
+          "filepath": "travel/Forte-Di-Bard-1.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 1440,
+          "height": 1188
+        },
+        {
+          "filepath": "travel/Forte-Di-Bard-2.webp",
           "title": "placeholder",
           "description": "placeholder",
           "width": 1440,
