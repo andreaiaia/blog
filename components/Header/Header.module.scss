@@ -15,11 +15,6 @@
   opacity: 0;
   overflow: hidden;
 
-  &.expanded {
-    opacity: 1;
-    transform: translateX(300px);
-  }
-
   & > * {
     color: $black;
   }
