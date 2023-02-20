@@ -2,6 +2,7 @@ import React, { Children, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
 import ThemeSwitcher from '../ThemeSwitcher';
@@ -73,11 +74,13 @@ export const Header = () => {
   // </button>
 
   return (
-    <header>
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Image src="/favicon.ico" alt="" width={48} height={48} />
+      </div>
       <nav className={styles.nav}>
-        <ul>
+        <ul className={styles.navLinks}>
           <li onClick={handleMenu}>
-            <User className={styles.icon} alt="" />
             <NavLink
               href="/"
               activeClassName={
@@ -89,7 +92,6 @@ export const Header = () => {
             </NavLink>
           </li>
           <li onClick={handleMenu}>
-            <Archive className={styles.icon} alt="" />
             <NavLink
               href="/posts"
               activeClassName={
@@ -101,7 +103,6 @@ export const Header = () => {
             </NavLink>
           </li>
           <li onClick={handleMenu}>
-            <Camera className={styles.icon} alt="" />
             <NavLink
               href="/photos"
               activeClassName={
@@ -114,6 +115,7 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
+      <ThemeSwitcher />
     </header>
   );
 };
