@@ -4,17 +4,19 @@
   // Header style
   position: relative;
   background-color: $white;
+  // background-color: red;
   margin: 0;
-  padding: 1rem 3rem;
+  padding: 0.5rem 1rem;
   z-index: 2;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 
   // Layout
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  align-items: center;
 
   & > * {
     color: $black;
@@ -50,16 +52,26 @@
 }
 
 .logo {
-  flex: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  justify-self: center;
 }
 
 .nav {
-  flex: 4;
+  grid-column-start: 5;
+  grid-column-end: 11;
+}
+
+.themeSwitcher {
+  grid-column-start: 11;
+  grid-column-end: 13;
+  justify-self: center;
 }
 
 .navLinks {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  gap: 4rem;
   align-items: baseline;
   font-size: 1.2rem;
 
@@ -83,12 +95,7 @@
 }
 
 .active {
-  transition: 0.3s ease-in-out;
-  text-decoration: underline;
-}
-.inactive {
-  transition: 0.3s ease-in-out;
-  text-decoration: none;
+  font-variation-settings: 'wght' 800;
 }
 
 .socials {

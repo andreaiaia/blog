@@ -20,23 +20,14 @@ import {
 
 import styles from './Header.module.scss';
 
-const NavLink = ({
-  children,
-  activeClassName = 'active',
-  inactive = 'inactive',
-  ...props
-}) => {
+const NavLink = ({ children, activeClassName = 'active', ...props }) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const childClassName = child.props.className || '';
 
   const isActive = asPath === props.href || asPath === props.as;
 
-  const className = cx(
-    childClassName,
-    { [activeClassName]: isActive },
-    { [inactive]: !isActive }
-  );
+  const className = cx(childClassName, { [activeClassName]: isActive });
 
   return (
     <Link {...props}>
@@ -81,41 +72,25 @@ export const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.navLinks}>
           <li onClick={handleMenu}>
-            <NavLink
-              href="/"
-              activeClassName={
-                theme === 'dark' ? styles.active : styles.activeDark
-              }
-              inactive={styles.inactive}
-            >
-              <span>About</span>
+            <NavLink href="/" activeClassName={styles.active}>
+              <a>About</a>
             </NavLink>
           </li>
           <li onClick={handleMenu}>
-            <NavLink
-              href="/posts"
-              activeClassName={
-                theme === 'dark' ? styles.active : styles.activeDark
-              }
-              inactive={styles.inactive}
-            >
-              <span>Blog</span>
+            <NavLink href="/posts" activeClassName={styles.active}>
+              <a>Blog</a>
             </NavLink>
           </li>
           <li onClick={handleMenu}>
-            <NavLink
-              href="/photos"
-              activeClassName={
-                theme === 'dark' ? styles.active : styles.activeDark
-              }
-              inactive={styles.inactive}
-            >
-              <span>Photos</span>
+            <NavLink href="/photos" activeClassName={styles.active}>
+              <a>Photos</a>
             </NavLink>
           </li>
         </ul>
       </nav>
-      <ThemeSwitcher />
+      <div className={styles.themeSwitcher}>
+        <ThemeSwitcher />
+      </div>
     </header>
   );
 };
