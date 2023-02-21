@@ -136,26 +136,11 @@
 }
 
 .options {
-  position: fixed;
   color: $shadow;
-  display: flex;
-  gap: 1rem;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  transition: 0.2s ease;
-  z-index: 1;
   background-color: $white;
-  justify-content: space-between;
 
   & > *:hover {
     color: $black;
-  }
-
-  @include smartphone {
-    padding: 1rem;
-    gap: 0;
   }
 
   @include dark {
@@ -165,10 +150,6 @@
     & > *:hover {
       color: $white;
     }
-  }
-
-  @media print {
-    display: none;
   }
 }
 

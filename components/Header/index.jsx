@@ -39,7 +39,6 @@ const NavLink = ({ children, activeClassName = 'active', ...props }) => {
 };
 
 export const Header = () => {
-  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState(false);
   // const YEAR = new Date().getFullYear();

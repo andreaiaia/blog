@@ -1,11 +1,25 @@
+@use '../../styles/globals.scss' as *;
+
 .Moon {
   [data-theme='dark'] & {
     display: none;
+  }
+
+  color: $shadow;
+
+  & > *:hover {
+    color: $black;
   }
 }
 
 .Sun {
   [data-theme='light'] & {
     display: none;
+  }
+
+  color: $tone;
+
+  & > *:hover {
+    color: $white;
   }
 }
