@@ -18,19 +18,12 @@ import {
 import styles from './Header.module.scss';
 
 export const Header = () => {
-  const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState(false);
   // const YEAR = new Date().getFullYear();
 
   const handleMenu = () => {
     setExpanded(() => !expanded);
   };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   // <div className={styles.options}>
   //   <button onClick={handleMenu}>

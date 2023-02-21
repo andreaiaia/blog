@@ -5,6 +5,8 @@
     display: none;
   }
 
+  transition: 0.3s ease-in-out;
+
   color: $shadow;
 
   & > *:hover {
@@ -16,6 +18,8 @@
   [data-theme='light'] & {
     display: none;
   }
+
+  transition: 0.3s ease-in-out;
 
   color: $tone;
 

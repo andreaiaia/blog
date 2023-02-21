@@ -76,26 +76,38 @@
   font-size: 1.2rem;
 
   & > li {
+    position: relative;
     margin: 1rem 0;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 
-    &:hover {
-      color: $shadow;
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: $black;
+      height: 2px;
+      width: 0;
+      left: 0;
+      bottom: 0;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover:after {
+      width: 100%;
     }
   }
 
   @include dark {
-    color: $tone;
+    color: $tint;
 
-    & > li:hover {
-      color: $white;
+    & > li:after {
+      background-color: $white;
     }
   }
 }
 
 .active {
-  font-variation-settings: 'wght' 800;
+  font-variation-settings: 'wght' 700;
 }
 
 .socials {
