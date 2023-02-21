@@ -1,10 +1,7 @@
-import React, { Children, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import cx from 'classnames';
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 
+import { NavLink } from './NavLink';
 import ThemeSwitcher from '../ThemeSwitcher';
 
 import {
@@ -19,24 +16,6 @@ import {
 } from 'react-feather';
 
 import styles from './Header.module.scss';
-
-const NavLink = ({ children, activeClassName = 'active', ...props }) => {
-  const { asPath } = useRouter();
-  const child = Children.only(children);
-  const childClassName = child.props.className || '';
-
-  const isActive = asPath === props.href || asPath === props.as;
-
-  const className = cx(childClassName, { [activeClassName]: isActive });
-
-  return (
-    <Link {...props}>
-      {React.cloneElement(child, {
-        className: className || null,
-      })}
-    </Link>
-  );
-};
 
 export const Header = () => {
   const [mounted, setMounted] = useState(false);
