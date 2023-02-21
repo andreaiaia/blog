@@ -135,24 +135,6 @@
   }
 }
 
-.options {
-  color: $shadow;
-  background-color: $white;
-
-  & > *:hover {
-    color: $black;
-  }
-
-  @include dark {
-    color: $tint;
-    background-color: $black;
-
-    & > *:hover {
-      color: $white;
-    }
-  }
-}
-
 .icon {
   display: inline-block;
   margin: 0.5rem;
