@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 import { NavLink } from './NavLink';
@@ -19,21 +19,10 @@ import styles from './Header.module.scss';
 
 export const Header = () => {
   const [expanded, setExpanded] = useState(false);
-  // const YEAR = new Date().getFullYear();
 
   const handleMenu = () => {
     setExpanded(() => !expanded);
   };
-
-  // <div className={styles.options}>
-  //   <button onClick={handleMenu}>
-  //     <Menu alt="Open menu button" />
-  //   </button>
-  //   <ThemeSwitcher />
-  // </div>;
-  // <button className={styles.closeMenu} onClick={handleMenu}>
-  //   <XCircle alt="Close menu button" />
-  // </button>
 
   return (
     <header className={styles.header}>
@@ -65,29 +54,3 @@ export const Header = () => {
     </header>
   );
 };
-
-// <small className={styles.socials}>
-//   <ul className={styles.socialsLinks}>
-//     <li>
-//       <a href="https://instagram.com/andreaiaia" target="_blank">
-//         <Instagram className={styles.icon} alt="Instagram logo" />
-//       </a>
-//     </li>
-//     <li>
-//       <a href="https://github.com/andreaiaia" target="_blank">
-//         <GitHub className={styles.icon} alt="Github logo" />
-//       </a>
-//     </li>
-//     <li>
-//       <a href="https://linkedin.com/in/andreaiaia/" target="_blank">
-//         <Linkedin className={styles.icon} alt="Linkedin logo" />
-//       </a>
-//     </li>
-//   </ul>
-//   <div className={styles.credits}>
-//     <time>{YEAR}</time> © Andrea Bianchi.{' '}
-//     <a className={styles.rss} href="/feed.xml">
-//       RSS
-//     </a>
-//   </div>
-// </small>
