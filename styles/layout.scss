@@ -1,13 +1,21 @@
-@use './globals.scss' as *;
+// @use './globals.scss' as *;
 
-main {
-  transition: 0.5s ease-in-out;
-
-  @include breakpoint(1100px) {
-    margin-left: 0;
-  }
-
-  @include smartphone() {
-    padding: 1rem 1.5rem 0;
-  }
+@mixin mainGrid() {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  align-items: center;
 }
+
+// main {
+//   transition: 0.5s ease-in-out;
+
+//   @include breakpoint(1100px) {
+//     margin-left: 0;
+//   }
+
+//   @include smartphone() {
+//     padding: 1rem 1.5rem 0;
+//   }
+// }
