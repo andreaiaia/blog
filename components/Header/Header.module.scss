@@ -1,4 +1,5 @@
 @use '../../styles/globals.scss' as *;
+@use '../../styles/layout.scss' as *;
 
 .header {
   // Header style
@@ -9,27 +10,20 @@
   transition: all 0.3s ease-in-out;
 
   // Layout
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  gap: 1rem;
-  align-items: center;
+  @include mainGrid;
 }
 
 .logo {
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column: 1 / 5;
   justify-self: center;
 }
 
 .nav {
-  grid-column-start: 7;
-  grid-column-end: 11;
+  grid-column: 7 / 11;
 }
 
 .themeSwitcher {
-  grid-column-start: 11;
-  grid-column-end: 13;
+  grid-column: 11 / 13;
   justify-self: center;
 }
 
