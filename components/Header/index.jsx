@@ -4,16 +4,7 @@ import Image from 'next/image';
 import { NavLink } from './NavLink';
 import ThemeSwitcher from '../ThemeSwitcher';
 
-import {
-  Archive,
-  Camera,
-  GitHub,
-  User,
-  Instagram,
-  Linkedin,
-  Menu,
-  XCircle,
-} from 'react-feather';
+import { Archive, Camera, User, Menu, XCircle } from 'react-feather';
 
 import styles from './Header.module.scss';
 
