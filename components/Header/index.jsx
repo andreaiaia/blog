@@ -17,7 +17,7 @@ import {
 
 import styles from './Header.module.scss';
 
-export const Header = () => {
+const Header = () => {
   const [expanded, setExpanded] = useState(false);
 
   const handleMenu = () => {
@@ -54,3 +54,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;
