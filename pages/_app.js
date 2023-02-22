@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 
-import { Header } from '../components/Header';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import '../styles/normalize.css';
 import '../styles/main.scss';
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }) {
         <main>
           <Component {...pageProps} />
         </main>
+        <Footer />
       </ThemeProvider>
     </>
   );
