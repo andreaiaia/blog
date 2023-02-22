@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import styles from './Post.module.scss';
 
-export const Post = ({ id, date, title, author, tag, description }) => {
+export const Post = ({ id, date, title, tag, description }) => {
   const formattedDate = new Date(date).toDateString();
 
   const tags = tag.split(', ');
