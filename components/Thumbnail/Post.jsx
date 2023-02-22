@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-import styles from './PostThumbnail.module.scss';
+import styles from './Post.module.scss';
 
-const Post = ({ id, date, title, author, tag, description }) => {
+export const Post = ({ id, date, title, author, tag, description }) => {
   const formattedDate = new Date(date).toDateString();
 
   const tags = tag.split(', ');
@@ -33,5 +33,3 @@ const Post = ({ id, date, title, author, tag, description }) => {
     </div>
   );
 };
-
-export default Post;

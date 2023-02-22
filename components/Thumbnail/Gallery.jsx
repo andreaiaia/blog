@@ -2,9 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './Thumbnail.module.scss';
+import styles from './Gallery.module.scss';
 
-const Thumbnail = ({ src, alt, to, title }) => {
+export const Gallery = ({ src, alt, to, title }) => {
   return (
     <div className={styles.container}>
       <Link href={to}>
@@ -22,5 +22,3 @@ const Thumbnail = ({ src, alt, to, title }) => {
     </div>
   );
 };
-
-export default Thumbnail;
