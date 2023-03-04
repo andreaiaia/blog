@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src="/favicon.ico" alt="" width={48} height={48} />
+        <Image src="/logo.svg" alt="" width={180} height={70} />
       </div>
       <nav className={styles.nav}>
         <ul className={styles.navLinks}>
