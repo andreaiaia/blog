@@ -16,6 +16,11 @@
 .logo {
   grid-column: 1 / 5;
   justify-self: center;
+
+  & svg {
+    width: 180px;
+    height: 70px;
+  }
 }
 
 .nav {

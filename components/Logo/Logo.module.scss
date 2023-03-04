@@ -1,0 +1,15 @@
+@use '../../styles/globals.scss' as *;
+
+.logo {
+  & > path {
+    stroke: black;
+    fill: black;
+  }
+
+  @include dark {
+    & > path {
+      stroke: white;
+      fill: white;
+    }
+  }
+}

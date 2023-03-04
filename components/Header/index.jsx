@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { NavLink } from './NavLink';
 import ThemeSwitcher from '../ThemeSwitcher';
+import Logo from '../Logo';
 
 import { Archive, Camera, User, Menu, XCircle } from 'react-feather';
 
@@ -18,7 +19,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src="/logo.svg" alt="" width={180} height={70} />
+        <Logo />
       </div>
       <nav className={styles.nav}>
         <ul className={styles.navLinks}>
