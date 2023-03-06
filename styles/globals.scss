@@ -49,7 +49,7 @@ $laptop: 1200px;
   }
 }
 
-// headeing levels presets
+// heading levels presets
 @mixin h1() {
   color: $black;
   font-variation-settings: 'wght' 800;
@@ -89,6 +89,7 @@ $laptop: 1200px;
   }
 }
 
+// font boldness variations
 @mixin light() {
   font-variation-settings: 'wght' 400;
 }
