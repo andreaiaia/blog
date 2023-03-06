@@ -6,6 +6,10 @@
   grid-template-rows: 1fr;
   gap: 1rem;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    gap: 0;
+  }
 }
 
 // main {
