@@ -5,9 +5,11 @@
   // Header style
   position: relative;
   // background-color: red;
-  margin: 0;
+  margin: auto;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in-out;
+
+  max-width: 1200px;
 
   // Layout
   @include mainGrid;
@@ -18,18 +20,34 @@
   justify-self: center;
 
   & svg {
-    width: 180px;
-    height: 70px;
+    width: 150px;
+    height: 60px;
+  }
+
+  @include smartphone {
+    grid-column: 1 / 9;
+    justify-self: start;
   }
 }
 
 .nav {
   grid-column: 7 / 11;
+
+  @include smartphone {
+    grid-column: 9 / 11;
+    justify-self: end;
+  }
 }
 
 .themeSwitcher {
   grid-column: 11 / 13;
   justify-self: center;
+  line-height: 0;
+
+  @include smartphone {
+    justify-self: end;
+    padding-right: 0.5rem;
+  }
 }
 
 .navLinks {
@@ -66,6 +84,10 @@
     & > li:after {
       background-color: $white;
     }
+  }
+
+  &.collapsed {
+    display: none;
   }
 }
 
