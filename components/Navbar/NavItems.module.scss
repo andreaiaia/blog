@@ -35,4 +35,14 @@
       background-color: $white;
     }
   }
+
+  @include smartphone {
+    flex-direction: column;
+    font-size: 1.8rem;
+
+    & > li {
+      line-height: normal;
+      margin: 0.5rem 1rem;
+    }
+  }
 }
