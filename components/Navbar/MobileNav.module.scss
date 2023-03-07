@@ -1,0 +1,8 @@
+@use '../../styles/globals.scss' as *;
+@use '../../styles/layout.scss' as *;
+
+.menuIcon {
+  cursor: pointer;
+  grid-column: 9 / 11;
+  justify-self: end;
+}
