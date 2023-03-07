@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import NavItems from './NavItems';
 
-import { Archive, Camera, User, Menu, XCircle } from 'react-feather';
+import { Menu, XCircle } from 'react-feather';
 
 import styles from './MobileNav.module.scss';
 
