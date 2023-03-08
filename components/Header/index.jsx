@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navbar from '../NavBar';
+import Navbar from '../Navbar';
 import ThemeSwitcher from '../ThemeSwitcher';
 import Logo from '../Logo';
 
