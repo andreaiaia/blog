@@ -15,9 +15,7 @@ const MobileNav = () => {
 
   return (
     <div className={styles.wrapper}>
-      <button className={styles.menuIcon} onClick={handleMenu}>
-        <MenuIcon isOpen={open} />
-      </button>
+      <MenuIcon isOpen={open} handler={handleMenu} />
       <nav className={open ? styles.nav : `${styles.nav} ${styles.collapsed}`}>
         <NavItems />
       </nav>
