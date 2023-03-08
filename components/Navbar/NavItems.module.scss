@@ -38,11 +38,11 @@
 
   @include smartphone {
     flex-direction: column;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 
     & > li {
       line-height: normal;
-      margin: 0.5rem 1rem;
+      margin: 1rem;
     }
   }
 }

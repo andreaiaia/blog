@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import NavItems from './NavItems';
 
-import { Menu, XCircle } from 'react-feather';
+import MenuIcon from './MenuIcon';
 
 import styles from './MobileNav.module.scss';
 
@@ -16,7 +16,7 @@ const MobileNav = () => {
   return (
     <div className={styles.wrapper}>
       <button className={styles.menuIcon} onClick={handleMenu}>
-        <Menu />
+        <MenuIcon isOpen={open} />
       </button>
       <nav className={open ? styles.nav : `${styles.nav} ${styles.collapsed}`}>
         <NavItems />
