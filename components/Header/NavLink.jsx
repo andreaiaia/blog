@@ -14,7 +14,7 @@ export const NavLink = ({ children, activeClassName = 'active', ...props }) => {
   const className = cx(childClassName, { [activeClassName]: isActive });
 
   return (
-    <Link {...props}>
+    <Link {...props} legacyBehavior>
       {React.cloneElement(child, {
         className: className || null,
       })}

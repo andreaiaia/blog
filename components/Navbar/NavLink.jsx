@@ -17,7 +17,7 @@ const NavLink = ({ children, ...props }) => {
 
   return (
     <li>
-      <Link {...props}>
+      <Link {...props} legacyBehavior>
         {React.cloneElement(child, {
           className: className || null,
         })}
