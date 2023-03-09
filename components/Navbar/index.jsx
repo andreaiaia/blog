@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { FullNav } from './FullNav';
 import { MobileNav } from './MobileNav';
 
-import styles from './Navbar.module.scss';
-
 const Navbar = ({ pages }) => {
   const [mounted, setMounted] = useState(false);
   const [width, setWidth] = useState(null);
