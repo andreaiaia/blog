@@ -10,7 +10,7 @@ export const Post = ({ id, date, title, tag, description }) => {
 
   return (
     <div className={styles.postContainer}>
-      <Link href={`/posts/${id}`} legacyBehavior>
+      <Link href={`/posts/${id}`}>
         <h1>{title}</h1>
       </Link>
       <p className={styles.description}>{description}</p>
