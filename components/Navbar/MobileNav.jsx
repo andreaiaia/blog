@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import NavItems from './NavItems';
 
-import MenuIcon from './MenuIcon';
+import MenuIcon from '../MenuIcon';
 
 import styles from './MobileNav.module.scss';
 
