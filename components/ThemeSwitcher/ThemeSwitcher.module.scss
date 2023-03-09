@@ -1,11 +1,29 @@
+@use '../../styles/globals.scss' as *;
+
 .Moon {
   [data-theme='dark'] & {
     display: none;
+  }
+
+  transition: 0.3s ease-in-out;
+
+  color: $shadow;
+
+  & > *:hover {
+    color: $black;
   }
 }
 
 .Sun {
   [data-theme='light'] & {
     display: none;
+  }
+
+  transition: 0.3s ease-in-out;
+
+  color: $tone;
+
+  & > *:hover {
+    color: $white;
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-import styles from './PostThumbnail.module.scss';
+import styles from './Post.module.scss';
 
-const Post = ({ id, date, title, author, tag, description }) => {
+export const Post = ({ id, date, title, tag, description }) => {
   const formattedDate = new Date(date).toDateString();
 
   const tags = tag.split(', ');
@@ -26,12 +26,10 @@ const Post = ({ id, date, title, author, tag, description }) => {
       <div className={styles.data}>
         <p className={styles.date}>{formattedDate}</p>
         <p>&bull;</p>
-        <Link href={`/posts/${id}`}>
-          <a className={styles.readMore}>Read post...</a>
+        <Link href={`/posts/${id}`} className={styles.readMore}>
+          Read post...
         </Link>
       </div>
     </div>
   );
 };
-
-export default Post;

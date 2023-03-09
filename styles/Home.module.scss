@@ -74,10 +74,8 @@ $gap: 1rem;
     padding-bottom: $gap;
   }
 
-  @media print {
+  @include smartphone {
     padding-top: 1rem;
-    padding-bottom: 1rem;
-    max-width: unset;
   }
 }
 
