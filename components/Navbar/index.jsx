@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import FullNav from './FullNav';
-import MobileNav from './MobileNav';
+import { FullNav } from './FullNav';
+import { MobileNav } from './MobileNav';
 
 import styles from './Navbar.module.scss';
 
@@ -20,9 +20,8 @@ const Navbar = () => {
     setWidth(window.innerWidth);
   });
 
-  // if (width <= 600)
-  return <MobileNav />;
-  // else return <FullNav />;
+  if (width <= 600) return <MobileNav />;
+  else return <FullNav />;
 };
 
 export default Navbar;
