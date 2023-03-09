@@ -5,6 +5,7 @@ import ThemeSwitcher from '../ThemeSwitcher';
 import Logo from '../Logo';
 
 import styles from './Header.module.scss';
+import Link from 'next/link';
 
 const Header = () => {
   const pages = [
@@ -25,7 +26,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </div>
       <Navbar pages={pages} />
       <div className={styles.themeSwitcher}>
