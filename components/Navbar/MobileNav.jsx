@@ -6,7 +6,7 @@ import MenuIcon from './MenuIcon';
 
 import styles from './MobileNav.module.scss';
 
-const MobileNav = () => {
+export const MobileNav = () => {
   const [open, setOpen] = useState(false);
 
   const handleMenu = () => {
@@ -17,10 +17,8 @@ const MobileNav = () => {
     <div className={styles.wrapper}>
       <MenuIcon isOpen={open} handler={handleMenu} />
       <nav className={open ? styles.nav : `${styles.nav} ${styles.collapsed}`}>
-        <NavItems />
+        <NavItems menuHandler={handleMenu} />
       </nav>
     </div>
   );
 };
-
-export default MobileNav;
