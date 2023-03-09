@@ -5,7 +5,7 @@ import { MobileNav } from './MobileNav';
 
 import styles from './Navbar.module.scss';
 
-const Navbar = () => {
+const Navbar = ({ pages }) => {
   const [mounted, setMounted] = useState(false);
   const [width, setWidth] = useState(null);
 
@@ -20,8 +20,8 @@ const Navbar = () => {
     setWidth(window.innerWidth);
   });
 
-  if (width <= 600) return <MobileNav />;
-  else return <FullNav />;
+  if (width <= 600) return <MobileNav pages={pages} />;
+  else return <FullNav pages={pages} />;
 };
 
 export default Navbar;

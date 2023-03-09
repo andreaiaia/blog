@@ -1,21 +1,17 @@
 import React from 'react';
-
-import NavLink from './NavLink';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import styles from './NavItems.module.scss';
 
-const NavItems = ({ menuHandler }) => {
+const NavItems = ({ menuHandler, pages }) => {
   return (
     <ul className={styles.navLinks}>
-      <NavLink href="/" onClick={menuHandler}>
-        About
-      </NavLink>
-      <NavLink href="/posts" onClick={menuHandler}>
-        Blog
-      </NavLink>
-      <NavLink href="/photos" onClick={menuHandler}>
-        Photos
-      </NavLink>
+      {pages.map((page) => (
+        <NavLink href={page.href} onClick={menuHandler}>
+          {page.name}
+        </NavLink>
+      ))}
     </ul>
   );
 };
