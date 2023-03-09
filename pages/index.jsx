@@ -6,7 +6,7 @@ import { AtSign, FileText, Linkedin, Smartphone } from 'react-feather';
 
 import styles from '../styles/Home.module.scss';
 
-const index = () => {
+const Home = () => {
   const [profilePic, setProfilePic] = useState('/images/bio/me-1.jpg');
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const index = () => {
             />
           </div>
           <div className={`${styles.card} ${styles.title}`}>
-            <p className={styles.greetings}>Hi, I'm</p>
+            <p className={styles.greetings}>Hi, I&apos;m</p>
             <h1 className={styles.name}>Andrea Bianchi</h1>
             <button className={styles.download} onClick={renderCV}>
               <FileText />
@@ -180,4 +180,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;
