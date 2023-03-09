@@ -31,7 +31,6 @@
 .themeSwitcher {
   grid-column: 11 / 13;
   justify-self: center;
-  line-height: 0;
 
   @include smartphone {
     justify-self: end;
