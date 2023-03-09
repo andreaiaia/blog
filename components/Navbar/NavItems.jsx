@@ -7,8 +7,8 @@ import styles from './NavItems.module.scss';
 const NavItems = ({ menuHandler, pages }) => {
   return (
     <ul className={styles.navLinks}>
-      {pages.map((page) => (
-        <NavLink href={page.href} onClick={menuHandler}>
+      {pages.map((page, index) => (
+        <NavLink key={index} href={page.href} onClick={menuHandler}>
           {page.name}
         </NavLink>
       ))}
