@@ -46,3 +46,7 @@
     }
   }
 }
+
+.active {
+  @include bold;
+}

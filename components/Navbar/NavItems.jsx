@@ -22,6 +22,21 @@ const NavItems = ({ menuHandler }) => {
 
 NavItems.defaultProps = {
   menuHandler: () => null,
+  pages: [],
+};
+
+export const NavLink = (props) => {
+  const { asPath } = useRouter();
+
+  const isActive = asPath === props.href || asPath === props.as;
+
+  return (
+    <li>
+      <Link {...props} className={isActive ? styles.active : ''}>
+        {props.children}
+      </Link>
+    </li>
+  );
 };
 
 export default NavItems;
