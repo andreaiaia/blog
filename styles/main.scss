@@ -1,4 +1,4 @@
-@use './globals.scss' as *;
+@use './_globals.module' as *;
 
 @font-face {
   font-family: 'Inter var';
@@ -83,14 +83,4 @@ img.next-image {
 .nav-link {
   display: none;
   color: #69778c;
-}
-
-// Fallback for navbar component
-.inactive {
-  transition: 0.3s ease-in-out;
-  text-decoration: none;
-}
-.active {
-  transition: 0.3s ease-in-out;
-  text-decoration: underline;
 }

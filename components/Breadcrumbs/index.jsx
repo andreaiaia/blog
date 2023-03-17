@@ -10,14 +10,14 @@ const Breadcrumbs = () => {
 
   return (
     <div className={styles.breadcrumbs}>
-      <Link href={`/${path[0]}`}>
-        <a className={styles.backlink}>Home</a>
+      <Link href={`/${path[0]}`} className={styles.backlink}>
+        Home
       </Link>
       {path.slice(1, -1).map((item, index) => (
         <React.Fragment key={index}>
           {' > '}
-          <Link href={`/${item}`}>
-            <a className={styles.backlink}>{item}</a>
+          <Link href={`/${item}`} className={styles.backlink}>
+            {item}
           </Link>
         </React.Fragment>
       ))}

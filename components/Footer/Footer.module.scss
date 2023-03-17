@@ -1,0 +1,65 @@
+@use '../../styles/_globals.module' as *;
+@use '../../styles/layout.scss' as *;
+
+.footer {
+  @include mainGrid;
+
+  background-color: $tint;
+  padding: 1.5rem;
+  color: $black;
+
+  @include dark {
+    background-color: $shadow-black;
+    color: $tint;
+  }
+
+  @include smartphone {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+.links {
+  grid-column: 1 / 5;
+
+  display: grid;
+  grid-template-columns: subgrid;
+  justify-items: center;
+
+  & > li {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  @include smartphone {
+    grid-column: 1 / 5;
+  }
+}
+
+.icon {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.credits {
+  grid-column: 9 / 12;
+  justify-self: end;
+
+  @include smartphone {
+    grid-row: 2;
+    grid-column: 1 / 6;
+    justify-self: center;
+  }
+}
+
+.themeSwitcher {
+  grid-column: 12 / 13;
+  justify-self: center;
+
+  @include smartphone {
+    grid-row: 1;
+    grid-column: 5 / 6;
+    line-height: 0;
+  }
+}

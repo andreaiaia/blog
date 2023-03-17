@@ -1,34 +1,41 @@
-// Colors
+// Light theme
 $white: #f3f3f3;
 $tint: #eaeaea;
 $tone: #afb6c1;
 $shade: #94a2b6;
 $shadow: #69778c;
-$black: #111827;
-$tint-black: #6b788b;
-$tone-black: #525c71;
-$shade-black: #363c4a;
-$shadow-black: #282e37;
+$black: #1d1f22;
+
+// Dark theme
+$tint-black: #737c8a;
+$tone-black: #5b616e;
+$shade-black: #3d4149;
+$shadow-black: #2e3237;
+
 // Shadows
 $light-shadow: rgba(0, 0, 0, 0.5);
+
 // Azure
 $azure: #008ad8;
 $azure-tint: #0091e6;
 $azure-tone: #0079bf;
 $azure-shade: #006199;
 $azure-shadow: #003959;
+
 // French Blue
 $frenchblue: #006eb3;
 $frenchblue-tint: #009dff;
 $frenchblue-tone: #0076bf;
 $frenchblue-shade: #005e99;
 $frenchblue-shadow: #004773;
+
 // King Blue
 $kingBlue: #4169e1;
 $kingBlue-tint: #456fed;
 $kingBlue-tone: #3a5dc7;
 $kingBlue-shade: #2f4ba1;
 $kingBlue-shadow: #1c2d61;
+
 // Ocean Blue
 $oceanBlue: #005eb8;
 $oceanBlue-tint: #0aa3cf;
@@ -41,6 +48,11 @@ $smartphone: 600px;
 $tablet-portrait: 768px;
 $tablet-landscape: 992px;
 $laptop: 1200px;
+// breakpoints in absolute numbers
+$smartphoneABS: 600;
+$tablet-portraitABS: 768;
+$tablet-landscapeABS: 992;
+$laptopABS: 1200;
 
 // Dark theme shorthand
 @mixin dark() {
@@ -49,7 +61,7 @@ $laptop: 1200px;
   }
 }
 
-// headeing levels presets
+// heading levels presets
 @mixin h1() {
   color: $black;
   font-variation-settings: 'wght' 800;
@@ -89,6 +101,7 @@ $laptop: 1200px;
   }
 }
 
+// font boldness variations
 @mixin light() {
   font-variation-settings: 'wght' 400;
 }
@@ -161,4 +174,12 @@ $laptop: 1200px;
   @media screen and (max-width: $smartphone) {
     @content;
   }
+}
+
+// EXPORTS
+:export {
+  smartphone: $smartphoneABS;
+  tabletPortrait: $tablet-portraitABS;
+  tabletLandscape: $tablet-landscapeABS;
+  laptop: $laptopABS;
 }
