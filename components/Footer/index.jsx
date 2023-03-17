@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { GitHub, Instagram, Linkedin } from 'react-feather';
+import { GitHub, Instagram, Linkedin, Rss } from 'react-feather';
+
+import ThemeSwitcher from '../ThemeSwitcher';
 
 import styles from './Footer.module.scss';
 
@@ -9,7 +11,12 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <ul className={styles.socials}>
+      <ul className={styles.links}>
+        <li>
+          <a href="/feed.xml">
+            <Rss className={styles.icon} alt="RSS feed" />
+          </a>
+        </li>
         <li>
           <a href="https://instagram.com/andreaiaia" target="_blank">
             <Instagram className={styles.icon} alt="Instagram logo" />
@@ -29,9 +36,9 @@ const Footer = () => {
       <small className={styles.credits}>
         <time>{YEAR}</time> © Andrea Bianchi.
       </small>
-      <small className={styles.rss}>
-        <a href="/feed.xml">RSS</a>
-      </small>
+      <div className={styles.themeSwitcher}>
+        <ThemeSwitcher />
+      </div>
     </footer>
   );
 };
