@@ -27,7 +27,7 @@ const Post = ({ postData }) => {
   const tags = data.tag.split(', ');
 
   return (
-    <article className={styles.container}>
+    <main className={styles.container}>
       <Breadcrumbs />
       <h1>{data.title}</h1>
       <div className={styles.meta}>
@@ -46,7 +46,7 @@ const Post = ({ postData }) => {
         className={styles.postContent}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-    </article>
+    </main>
   );
 };
 

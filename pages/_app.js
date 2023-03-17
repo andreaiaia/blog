@@ -28,9 +28,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider>
         <Header />
-        <main>
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
     </>

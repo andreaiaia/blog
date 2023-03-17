@@ -14,7 +14,7 @@ export async function getStaticProps() {
 
 const Blog = ({ allPostsData }) => {
   return (
-    <article className={styles.container}>
+    <main className={styles.container}>
       <section className={styles.titleContainer}>
         <h1>Blog</h1>
       </section>
@@ -36,7 +36,7 @@ const Blog = ({ allPostsData }) => {
           )}
         </ul>
       </section>
-    </article>
+    </main>
   );
 };
 

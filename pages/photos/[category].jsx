@@ -42,7 +42,7 @@ const Category = () => {
 
   if (data)
     return (
-      <article className={styles.container}>
+      <main className={styles.container}>
         <section className={styles.titleContainer}>
           <div className={styles.title}>
             <h1>{data.title}</h1>
@@ -65,7 +65,7 @@ const Category = () => {
             </Masonry>
           </ResponsiveMasonry>
         </section>
-      </article>
+      </main>
     );
 
   return null;

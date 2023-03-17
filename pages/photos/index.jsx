@@ -10,7 +10,7 @@ const index = () => {
   const data = photoData.data;
 
   return (
-    <article className={styles.container}>
+    <main className={styles.container}>
       <section className={styles.titleContainer}>
         <h1>Photo Gallery</h1>
       </section>
@@ -25,7 +25,7 @@ const index = () => {
           />
         ))}
       </section>
-    </article>
+    </main>
   );
 };
 
