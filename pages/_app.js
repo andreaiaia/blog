@@ -9,6 +9,21 @@ import '../styles/main.scss';
 import '../styles/layout.scss';
 
 export default function App({ Component, pageProps }) {
+  const pages = [
+    {
+      name: 'Home',
+      href: '/',
+    },
+    {
+      name: 'Photos',
+      href: '/photos',
+    },
+    {
+      name: 'About',
+      href: '/posts',
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -27,7 +42,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <ThemeProvider>
-        <Header />
+        <Header pages={pages} />
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
