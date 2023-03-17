@@ -4,6 +4,11 @@
 .footer {
   @include mainGrid;
 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
   background-color: $tint;
   padding: 1.5rem;
   color: $black;

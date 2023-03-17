@@ -18,6 +18,8 @@
 
 html {
   background-color: $white;
+  position: relative;
+  min-height: 100%;
 
   &[data-theme='dark'] {
     background-color: $black;
