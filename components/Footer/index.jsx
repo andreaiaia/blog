@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 import { GitHub, Instagram, Linkedin, Rss } from 'react-feather';
 
@@ -7,6 +9,21 @@ import ThemeSwitcher from '../ThemeSwitcher';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
+  const [mounted, setMounted] = useState(false);
+  const [notByAiBadge, setNotByAiBadge] = useState('/notByAiBadge-white.svg');
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (theme === 'dark') setNotByAiBadge('/notByAiBadge-black.svg');
+    else setNotByAiBadge('/notByAiBadge-white.svg');
+  }, [theme]);
+
+  if (!mounted) return null;
+
   const YEAR = new Date().getFullYear();
 
   return (
@@ -38,6 +55,16 @@ const Footer = () => {
       </small>
       <div className={styles.themeSwitcher}>
         <ThemeSwitcher />
+      </div>
+      <div className={styles.notAiBadge}>
+        <a href="https://notbyai.fyi/">
+          <Image
+            src={notByAiBadge}
+            alt="Badge certifying this website and its contents are human made - no AI involved"
+            height={84}
+            width={120}
+          />
+        </a>
       </div>
     </footer>
   );

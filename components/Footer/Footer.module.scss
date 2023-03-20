@@ -11,6 +11,7 @@
   overflow: hidden;
   background-color: $tint;
   padding: 1.5rem;
+  padding-top: 2.5rem;
   color: $black;
 
   @include dark {
@@ -66,5 +67,16 @@
     grid-row: 1;
     grid-column: 5 / 6;
     line-height: 0;
+  }
+}
+
+.notAiBadge {
+  grid-row: 2;
+  grid-column: 11 / 13;
+  justify-self: center;
+
+  @include smartphone {
+    grid-row: 3;
+    grid-column: 1 / 6;
   }
 }
