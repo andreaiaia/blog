@@ -18,7 +18,7 @@ const Blog = ({ allPostsData }) => {
       <section className={styles.titleContainer}>
         <h1>Blog</h1>
       </section>
-      <section className={styles.posts}>
+      <section>
         <ul>
           {allPostsData.map(
             ({ id, date, title, author, tag, description }, index) => (

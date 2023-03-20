@@ -77,7 +77,7 @@ const Home = ({ allPostsData }) => {
             </ul>
           </div>
         </section>
-        <section className={styles.posts}>
+        <section>
           <ul>
             {allPostsData.map(
               ({ id, date, title, author, tag, description }, index) => (
