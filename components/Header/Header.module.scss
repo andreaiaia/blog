@@ -1,0 +1,39 @@
+@use '../../styles/_globals.module' as *;
+@use '../../styles/layout.scss' as *;
+
+.header {
+  // Header style
+  margin: auto;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+
+  max-width: 1200px;
+
+  // Layout
+  @include mainGrid;
+}
+
+.logo {
+  grid-column: 1 / 5;
+  justify-self: center;
+
+  & svg {
+    width: 150px;
+    height: 60px;
+  }
+
+  @include smartphone {
+    grid-column: 1 / 9;
+    justify-self: start;
+  }
+}
+
+.themeSwitcher {
+  grid-column: 11 / 13;
+  justify-self: center;
+
+  @include smartphone {
+    justify-self: end;
+    padding-right: 0.5rem;
+  }
+}
