@@ -60,6 +60,12 @@ $gap: 1rem;
   }
 }
 
+.posts {
+  & > li {
+    margin-bottom: 3rem;
+  }
+}
+
 .postContent {
   h1 {
     @include h1;
@@ -71,5 +77,22 @@ $gap: 1rem;
 
   h3 {
     @include h3;
+  }
+
+  code {
+    background-color: $black;
+    color: $white;
+    padding: 0 4px;
+  }
+
+  pre {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: $black;
+
+    & > code {
+      background-color: unset;
+      padding: unset;
+    }
   }
 }
