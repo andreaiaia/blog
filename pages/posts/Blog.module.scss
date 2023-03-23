@@ -79,20 +79,9 @@ $gap: 1rem;
     @include h3;
   }
 
-  code {
-    background-color: $black;
-    color: $white;
-    padding: 0 4px;
-  }
-
-  pre {
-    margin: 2rem 0;
-    padding: 1rem;
-    background-color: $black;
-
-    & > code {
-      background-color: unset;
-      padding: unset;
+  @include dark {
+    pre {
+      background-color: $azure-shadow;
     }
   }
 }
