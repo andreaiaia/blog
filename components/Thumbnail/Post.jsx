@@ -9,7 +9,7 @@ export const Post = ({ id, date, title, tag, description }) => {
   const tags = tag.split(', ');
 
   return (
-    <div className={styles.postContainer}>
+    <div className={styles.container}>
       <Link href={`/posts/${id}`}>
         <h2>{title}</h2>
       </Link>

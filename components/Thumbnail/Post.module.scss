@@ -1,6 +1,6 @@
 @use '../../styles/_globals.module' as *;
 
-.postContainer {
+.container {
   h2 {
     @include h1;
     letter-spacing: -0.03em;
