@@ -106,10 +106,8 @@ strong {
 2. Correct the odd 'em' font sizing in all browsers.
 */
 
-code,
 kbd,
-samp,
-pre {
+samp {
   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
     monospace;
   /* 1 */
@@ -288,8 +286,7 @@ h5,
 h6,
 hr,
 figure,
-p,
-pre {
+p {
   margin: 0;
 }
 
@@ -484,8 +481,6 @@ textarea {
  * 'mono' font family.
  */
 
-pre,
-code,
 kbd,
 samp {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -731,59 +726,6 @@ video {
   margin-top: 0.8571429em;
 }
 
-.prose code {
-  color: #111827;
-  font-weight: 600;
-  font-size: 0.875em;
-}
-
-.prose code::before {
-  content: '`';
-}
-
-.prose code::after {
-  content: '`';
-}
-
-.prose a code {
-  color: #111827;
-}
-
-.prose pre {
-  color: #e5e7eb;
-  background-color: #1f2937;
-  overflow-x: auto;
-  font-size: 0.875em;
-  line-height: 1.7142857;
-  margin-top: 1.7142857em;
-  margin-bottom: 1.7142857em;
-  border-radius: 0.375rem;
-  padding-top: 0.8571429em;
-  padding-right: 1.1428571em;
-  padding-bottom: 0.8571429em;
-  padding-left: 1.1428571em;
-}
-
-.prose pre code {
-  background-color: transparent;
-  border-width: 0;
-  border-radius: 0;
-  padding: 0;
-  font-weight: 400;
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
-}
-
-.prose pre code::before {
-  content: none;
-}
-
-.prose pre code::after {
-  content: none;
-}
-
 .prose table {
   width: 100%;
   table-layout: auto;
@@ -853,14 +795,6 @@ video {
 .prose figure > * {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.prose h2 code {
-  font-size: 0.875em;
-}
-
-.prose h3 code {
-  font-size: 0.9em;
 }
 
 .prose ol {
@@ -1021,30 +955,6 @@ video {
   font-size: 0.8571429em;
   line-height: 1.3333333;
   margin-top: 0.6666667em;
-}
-
-.prose-sm code {
-  font-size: 0.8571429em;
-}
-
-.prose-sm h2 code {
-  font-size: 0.9em;
-}
-
-.prose-sm h3 code {
-  font-size: 0.8888889em;
-}
-
-.prose-sm pre {
-  font-size: 0.8571429em;
-  line-height: 1.6666667;
-  margin-top: 1.6666667em;
-  margin-bottom: 1.6666667em;
-  border-radius: 0.25rem;
-  padding-top: 0.6666667em;
-  padding-right: 1em;
-  padding-bottom: 0.6666667em;
-  padding-left: 1em;
 }
 
 .prose-sm ol {
@@ -1216,19 +1126,6 @@ video {
 
 .dark .dark\:prose-dark h4 {
   color: #f3f4f6;
-}
-
-.dark .dark\:prose-dark code {
-  color: #f3f4f6;
-}
-
-.dark .dark\:prose-dark a code {
-  color: #f3f4f6;
-}
-
-.dark .dark\:prose-dark pre {
-  color: #e5e7eb;
-  background-color: #1f2937;
 }
 
 .dark .dark\:prose-dark thead {
@@ -1757,59 +1654,6 @@ h1 {
     margin-top: 0.8571429em;
   }
 
-  .md\:prose code {
-    color: #111827;
-    font-weight: 600;
-    font-size: 0.875em;
-  }
-
-  .md\:prose code::before {
-    content: '`';
-  }
-
-  .md\:prose code::after {
-    content: '`';
-  }
-
-  .md\:prose a code {
-    color: #111827;
-  }
-
-  .md\:prose pre {
-    color: #e5e7eb;
-    background-color: #1f2937;
-    overflow-x: auto;
-    font-size: 0.875em;
-    line-height: 1.7142857;
-    margin-top: 1.7142857em;
-    margin-bottom: 1.7142857em;
-    border-radius: 0.375rem;
-    padding-top: 0.8571429em;
-    padding-right: 1.1428571em;
-    padding-bottom: 0.8571429em;
-    padding-left: 1.1428571em;
-  }
-
-  .md\:prose pre code {
-    background-color: transparent;
-    border-width: 0;
-    border-radius: 0;
-    padding: 0;
-    font-weight: 400;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    line-height: inherit;
-  }
-
-  .md\:prose pre code::before {
-    content: none;
-  }
-
-  .md\:prose pre code::after {
-    content: none;
-  }
-
   .md\:prose table {
     width: 100%;
     table-layout: auto;
@@ -1879,14 +1723,6 @@ h1 {
   .md\:prose figure > * {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  .md\:prose h2 code {
-    font-size: 0.875em;
-  }
-
-  .md\:prose h3 code {
-    font-size: 0.9em;
   }
 
   .md\:prose ol {

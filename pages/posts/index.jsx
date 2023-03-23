@@ -18,8 +18,8 @@ const Blog = ({ allPostsData }) => {
       <section className={styles.titleContainer}>
         <h1>Blog</h1>
       </section>
-      <section className={styles.posts}>
-        <ul>
+      <section>
+        <ul className={styles.posts}>
           {allPostsData.map(
             ({ id, date, title, author, tag, description }, index) => (
               <li key={index}>
