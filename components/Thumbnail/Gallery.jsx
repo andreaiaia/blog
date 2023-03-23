@@ -8,7 +8,6 @@ export const Gallery = ({ src, alt, to, title }) => {
   return (
     <div className={styles.container}>
       <Link href={to}>
-
         <Image
           className={styles.img}
           src={src}
@@ -17,7 +16,6 @@ export const Gallery = ({ src, alt, to, title }) => {
           height={350}
         />
         <span className={styles.title}>{title}</span>
-
       </Link>
     </div>
   );
