@@ -15,9 +15,7 @@ export async function getStaticProps() {
 const Blog = ({ allPostsData }) => {
   return (
     <main className={styles.container}>
-      <section className={styles.titleContainer}>
-        <h1>Blog</h1>
-      </section>
+      <h1>Blog</h1>
       <section>
         <ul className={styles.posts}>
           {allPostsData.map(
