@@ -54,10 +54,30 @@ $tablet-portraitABS: 768;
 $tablet-landscapeABS: 992;
 $laptopABS: 1200;
 
+$gap: 1rem;
+
 // Dark theme shorthand
 @mixin dark() {
   [data-theme='dark'] & {
     @content;
+  }
+}
+
+// container tag template
+@mixin container() {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 5rem;
+  padding-bottom: calc(8rem + 100px);
+  max-width: 65ch;
+
+  & > section {
+    padding-bottom: $gap;
+  }
+
+  @include smartphone {
+    padding-top: 1rem;
   }
 }
 
