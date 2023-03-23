@@ -60,6 +60,12 @@ $gap: 1rem;
   }
 }
 
+.posts {
+  & > li {
+    margin-bottom: 3rem;
+  }
+}
+
 .postContent {
   h1 {
     @include h1;
@@ -71,5 +77,70 @@ $gap: 1rem;
 
   h3 {
     @include h3;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: $azure-tone;
+
+    @include dark {
+      color: $azure-tint;
+    }
+  }
+
+  blockquote {
+    line-height: 1.4;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    background-color: $tint;
+    margin: 1.5rem 0;
+    padding: 1.2rem;
+    quotes: '\201C''\201D''\2018''\2019';
+
+    em {
+      letter-spacing: normal;
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: $shade-black;
+      // text-align: center;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @include dark {
+      background-color: $shade-black;
+
+      em {
+        color: $tint;
+      }
+    }
+  }
+
+  p > code {
+    background-color: #272822;
+    color: $white;
+    padding: 1px 0.5rem;
+    border-radius: 0.1rem;
+
+    @include dark {
+      background-color: $azure-shadow;
+    }
+  }
+
+  pre {
+    margin: 1rem 0;
+  }
+
+  @include dark {
+    pre {
+      background-color: $azure-shadow;
+    }
   }
 }
