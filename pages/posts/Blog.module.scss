@@ -3,30 +3,18 @@
 $gap: 1rem;
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-top: 5rem;
-  padding-bottom: 8rem;
-  max-width: 65ch;
-
-  & > section {
-    padding-bottom: $gap;
-  }
-
-  @media print {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    max-width: unset;
-  }
+  @include container;
 
   h1 {
-    @include h1;
+    @include h2;
+    margin-bottom: 2rem;
   }
 }
 
-.titleContainer {
-  margin-bottom: 4rem;
+.title {
+  h1 {
+    @include h1;
+  }
 }
 
 .tags {
@@ -67,6 +55,8 @@ $gap: 1rem;
 }
 
 .postContent {
+  padding-top: 2.25rem;
+
   h1 {
     @include h1;
   }
