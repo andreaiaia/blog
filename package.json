@@ -32,6 +32,7 @@
     "semi": false
   },
   "devDependencies": {
-    "eslint": "^8.35.0"
+    "eslint": "^8.35.0",
+    "remark-emoji": "^3.1.1"
   }
 }
