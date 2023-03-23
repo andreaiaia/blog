@@ -3,38 +3,30 @@
 $gap: 1rem;
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-top: 5rem;
-  padding-bottom: 8rem;
+  @include container;
   max-width: 1600px;
 
-  & > section {
-    padding-bottom: $gap;
-  }
-
-  @media print {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    max-width: unset;
-  }
-
   h1 {
-    @include h1;
+    @include h2;
   }
 }
 
-.titleContainer {
-  max-width: 65ch;
-  margin-left: auto;
-  margin-right: auto;
+.galleryTitle {
+  text-align: center;
 }
 
 .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  h1 {
+    @include h1;
+  }
+  max-width: 65ch;
+  margin: auto;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 }
 
 .backlink {
