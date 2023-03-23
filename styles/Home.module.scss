@@ -114,17 +114,13 @@ $gap: 1rem;
   @include smartphone() {
     grid-template-columns: 1fr 1fr;
   }
-
-  @media print {
-    grid-template-columns: 150px 1fr;
-    grid-template-rows: 150px;
-  }
 }
 .proPic {
   border-radius: 20px;
 }
 .greetings {
   @include h1();
+  font-size: 2.25rem;
   @include boldest;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -144,6 +140,7 @@ $gap: 1rem;
 }
 .name {
   @include h1();
+  font-size: 2.25rem;
   margin-bottom: 1rem;
   color: $azure-tint;
   text-align: center;
