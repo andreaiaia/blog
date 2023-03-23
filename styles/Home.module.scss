@@ -1,7 +1,5 @@
 @use './_globals.module' as *;
 
-$gap: 1rem;
-
 @mixin title() {
   @include h2();
   color: $shadow-black;
@@ -63,20 +61,7 @@ $gap: 1rem;
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-top: 5rem;
-  padding-bottom: calc(8rem + 100px);
-  max-width: 65ch;
-
-  & > section {
-    padding-bottom: $gap;
-  }
-
-  @include smartphone {
-    padding-top: 1rem;
-  }
+  @include container;
 }
 
 .card {
