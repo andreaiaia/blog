@@ -2,22 +2,26 @@
 @use '../../styles/layout.scss' as *;
 
 .footer {
-  @include mainGrid;
-
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   background-color: $tint;
-  padding: 1.5rem;
-  padding-top: 2.5rem;
   color: $black;
 
   @include dark {
     background-color: $shadow-black;
     color: $tint;
   }
+}
+
+.content {
+  @include mainGrid;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1.5rem;
+  padding-top: 2.5rem;
 
   @include smartphone {
     grid-template-columns: repeat(5, 1fr);
