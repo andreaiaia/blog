@@ -7,6 +7,8 @@ import Footer from '../components/Footer';
 import '../styles/normalize.css';
 import '../styles/main.scss';
 import '../styles/layout.scss';
+import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 export default function App({ Component, pageProps }) {
   return (
