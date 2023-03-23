@@ -83,12 +83,20 @@ $gap: 1rem;
     margin-bottom: 0.5rem;
   }
 
+  a {
+    color: $azure-tone;
+
+    @include dark {
+      color: $azure-tint;
+    }
+  }
+
   blockquote {
     line-height: 1.4;
     text-align: center;
     font-size: 1.2rem;
     letter-spacing: 1px;
-    background: $tint;
+    background-color: $tint;
     margin: 1.5rem 0;
     padding: 1.2rem;
     quotes: '\201C''\201D''\2018''\2019';
@@ -105,6 +113,14 @@ $gap: 1rem;
     p {
       margin-bottom: 0;
     }
+
+    @include dark {
+      background-color: $shade-black;
+
+      em {
+        color: $tint;
+      }
+    }
   }
 
   p > code {
@@ -112,6 +128,10 @@ $gap: 1rem;
     color: $white;
     padding: 1px 0.5rem;
     border-radius: 0.1rem;
+
+    @include dark {
+      background-color: $azure-shadow;
+    }
   }
 
   pre {
