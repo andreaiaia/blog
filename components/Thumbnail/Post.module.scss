@@ -2,10 +2,8 @@
 
 .postContainer {
   h2 {
-    @include h2;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    @include bolder;
+    @include h1;
+    letter-spacing: -0.03em;
     cursor: pointer;
     transition: 0.3s ease-in-out;
   }
