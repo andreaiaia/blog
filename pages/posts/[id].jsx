@@ -29,7 +29,9 @@ const Post = ({ postData }) => {
   return (
     <main className={styles.container}>
       <Breadcrumbs />
-      <h1>{data.title}</h1>
+      <div className={styles.title}>
+        <h1>{data.title}</h1>
+      </div>
       <div className={styles.meta}>
         <div>{formattedDate}</div>
         <div className={styles.tags}>
@@ -42,7 +44,7 @@ const Post = ({ postData }) => {
           })}
         </div>
       </div>
-      <div
+      <article
         className={styles.postContent}
         dangerouslySetInnerHTML={{ __html: content }}
       />
