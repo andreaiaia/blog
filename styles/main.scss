@@ -5,14 +5,14 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: block;
-  src: local('/fonts/Inter-roman.latin.var.woff2') format('woff2');
+  src: url('/fonts/Inter-roman.latin.var.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter var';
   font-style: italic;
   font-weight: 100 900;
   font-display: block;
-  src: local('/fonts/Inter-italic.latin.var.woff2') format('woff2');
+  src: url('/fonts/Inter-italic.latin.var.woff2') format('woff2');
   font-named-instance: 'Italic';
 }
 @font-face {
@@ -20,7 +20,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: local('/fonts/SpecialElite-Regular.tff') format('tff');
+  src: url('/fonts/specialelite-regular-webfont.woff2') format('woff2'),
+    url('/fonts/specialelite-regular-webfont.woff') format('woff');
 }
 
 html {
