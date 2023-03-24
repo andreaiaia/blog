@@ -19,15 +19,19 @@ const Blog = ({ allPostsData }) => {
       <section>
         <ul className={styles.posts}>
           {allPostsData.map(
-            ({ id, date, title, author, tag, description }, index) => (
+            (
+              { id, formattedDate, title, author, tag, description, stats },
+              index
+            ) => (
               <li key={index}>
                 <Post
                   id={id}
-                  date={date}
+                  date={formattedDate}
                   title={title}
                   author={author}
                   tag={tag}
                   description={description}
+                  stats={stats}
                 />
               </li>
             )
