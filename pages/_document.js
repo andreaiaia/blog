@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   const meta = {
-    title: 'Andrea Bianchi Fromont',
+    title: 'Andrea F.',
     description: 'Questo è il mio blog e di nessun altro.',
     image: '/images/Andromeda_2022-09-27.jpg',
   };
@@ -13,8 +13,12 @@ export default function Document() {
         <meta name="robots" content="follow, index" />
         <meta name="description" content={meta.description} />
         <meta property="og:site_name" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
+        <meta
+          property="og:description"
+          content={meta.description}
+          key="description"
+        />
+        <meta property="og:title" content={meta.title} key="title" />
         <meta property="og:image" content={meta.image} />
         <meta property="og:type" content="website" />
         {/* <meta name="twitter:card" content="summary_large_image" />

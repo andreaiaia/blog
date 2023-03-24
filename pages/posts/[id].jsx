@@ -34,7 +34,7 @@ const Post = ({ postData }) => {
       <Head>
         <title>{`${data.title} - Andrea`}</title>
         <meta property="og:title" content={data.title} key="title" />
-        <meta name="description" content={data.description} />
+        <meta name="description" content={data.description} key="description" />
         <meta name="keywords" content={data.tag} />
         <meta name="author" content={data.author} />
         <meta property="og:description" content={data.description} />
