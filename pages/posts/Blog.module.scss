@@ -20,12 +20,20 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
+
+  @include smartphone {
+    padding: 1.5rem 0 0.8rem;
+  }
 }
 
 .tags {
   display: flex;
   gap: 0.5rem;
   padding: 1rem 0;
+
+  @include smartphone {
+    padding: 0.5rem 0;
+  }
 }
 
 .tag {
@@ -137,5 +145,9 @@
     pre {
       background-color: $azure-shadow;
     }
+  }
+
+  @include smartphone {
+    padding-top: 1.8rem;
   }
 }

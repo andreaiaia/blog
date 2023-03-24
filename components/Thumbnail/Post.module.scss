@@ -9,15 +9,11 @@
   }
 }
 
-.metadata {
-  display: flex;
-  align-items: flex-end;
-}
-
 .tags {
   display: flex;
   gap: 0.8rem;
   padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -45,11 +41,17 @@
   }
 }
 
+.metadata {
+  display: flex;
+  align-items: flex-end;
+}
+
 .data {
   display: flex;
   gap: 0.8rem;
   color: $shadow;
   font-size: 0.8rem;
+  flex-wrap: wrap;
 
   @include dark {
     color: $tone;

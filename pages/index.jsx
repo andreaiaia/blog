@@ -41,7 +41,7 @@ const Home = ({ allPostsData }) => {
               className={styles.proPic}
             />
           </div>
-          <div className={`${styles.card} ${styles.title}`}>
+          <div className={styles.card}>
             <p className={styles.greetings}>Hi, I&apos;m</p>
             <h1 className={styles.name}>Andrea Bianchi</h1>
           </div>
@@ -77,8 +77,9 @@ const Home = ({ allPostsData }) => {
             </ul>
           </div>
         </section>
-        <section>
-          <ul>
+        <section className={styles.recentPosts}>
+          <h2>Latest posts</h2>
+          <ul className={styles.posts}>
             {allPostsData.map(
               (
                 { id, formattedDate, title, author, tag, description, stats },

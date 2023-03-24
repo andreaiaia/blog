@@ -77,7 +77,8 @@ $gap: 1rem;
   }
 
   @include smartphone {
-    padding-top: 1rem;
+    padding: 1rem;
+    padding-bottom: calc(8rem + 100px);
   }
 }
 
@@ -92,6 +93,10 @@ $gap: 1rem;
 
   @include dark {
     color: $white;
+  }
+
+  @include smartphone {
+    font-size: 3rem;
   }
 }
 
