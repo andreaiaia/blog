@@ -1,7 +1,5 @@
 @use '../../styles/_globals.module' as *;
 
-$gap: 1rem;
-
 .container {
   @include container;
 
@@ -17,28 +15,11 @@ $gap: 1rem;
   }
 }
 
-.meta {
+.metadata {
   padding: 2rem 0 1rem;
   display: flex;
   justify-content: center;
   align-items: baseline;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: $shade-black;
-
-  .readingtime {
-    @include bolder;
-  }
-
-  p:not(:last-child):after {
-    content: '/';
-    padding: 0 0.5rem;
-    @include extralight;
-  }
-
-  @include dark {
-    color: $tone;
-  }
 }
 
 .tags {
