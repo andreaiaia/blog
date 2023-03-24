@@ -1,8 +1,12 @@
 import React from 'react';
+import Head from 'next/head';
+
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
-import styles from './Blog.module.scss';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import PostMetadata from '../../components/PostMetadata';
+
+import styles from './Blog.module.scss';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -22,16 +26,28 @@ export async function getStaticPaths() {
 }
 
 const Post = ({ postData }) => {
-  const { data, content } = postData;
-  const formattedDate = new Date(data.date).toDateString();
+  const { data, content, stats, formattedDate } = postData;
   const tags = data.tag.split(', ');
 
   return (
-    <article className={styles.container}>
-      <Breadcrumbs />
-      <h1>{data.title}</h1>
-      <div className={styles.meta}>
-        <div>{formattedDate}</div>
+    <>
+      <Head>
+        <title>{data.title} - Andrea</title>
+        <meta property="og:title" content="homepage" key="title" />
+        <meta name="description" content={data.description} />
+        <meta name="keywords" content={data.tag} />
+        <meta name="author" content={data.author} />
+      </Head>
+      <main className={styles.container}>
+        <Breadcrumbs />
+        <PostMetadata
+          cname={styles.metadata}
+          date={formattedDate}
+          stats={stats}
+        />
+        <div className={styles.title}>
+          <h1>{data.title}</h1>
+        </div>
         <div className={styles.tags}>
           {tags.map((tag, index) => {
             return (
@@ -41,12 +57,12 @@ const Post = ({ postData }) => {
             );
           })}
         </div>
-      </div>
-      <div
-        className={styles.postContent}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </article>
+        <article
+          className={styles.postContent}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </main>
+    </>
   );
 };
 

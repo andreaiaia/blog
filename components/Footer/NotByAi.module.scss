@@ -1,0 +1,21 @@
+@use '../../styles/_globals.module' as *;
+
+.notByAi {
+  .background {
+    fill: white;
+    stroke: black;
+
+    @include dark {
+      fill: black;
+      stroke: #acacac;
+    }
+  }
+
+  .paths {
+    fill: black;
+
+    @include dark {
+      fill: white;
+    }
+  }
+}

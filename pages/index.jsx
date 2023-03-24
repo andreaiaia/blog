@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import { getSortedPostsData } from '../lib/posts';
+import { AtSign, Linkedin, Smartphone } from 'react-feather';
 
-import { AtSign, FileText, Linkedin, Smartphone } from 'react-feather';
+import { Post } from '../components/Thumbnail/Post';
 
 import styles from '../styles/Home.module.scss';
 
-const Home = () => {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: { allPostsData },
+  };
+}
+
+const Home = ({ allPostsData }) => {
   const [profilePic, setProfilePic] = useState('/images/bio/me-1.jpg');
 
   useEffect(() => {
@@ -14,20 +23,13 @@ const Home = () => {
     setProfilePic(`/images/bio/me-${random}.jpg`);
   }, []);
 
-  const renderCV = () => {
-    window.print();
-    // Consider this library
-    // https://thewebdev.info/2021/05/30/how-to-generate-a-pdf-file-from-react-components/
-    // https://w3collective.com/react-component-pdf/
-  };
-
   return (
     <>
       <Head>
-        <title>About Andrea</title>
-        <meta property="og:title" content="About Andrea" key="title" />
+        <title>Home - Andrea</title>
+        <meta property="og:title" content="homepage" key="title" />
       </Head>
-      <article className={styles.container}>
+      <main className={styles.container}>
         <section className={styles.sectionTitle}>
           <div className={`${styles.card} ${styles.img}`}>
             <Image
@@ -39,13 +41,9 @@ const Home = () => {
               className={styles.proPic}
             />
           </div>
-          <div className={`${styles.card} ${styles.title}`}>
+          <div className={styles.card}>
             <p className={styles.greetings}>Hi, I&apos;m</p>
             <h1 className={styles.name}>Andrea Bianchi</h1>
-            <button className={styles.download} onClick={renderCV}>
-              <FileText />
-              Download CV
-            </button>
           </div>
         </section>
         <section className={styles.sectionBio}>
@@ -79,103 +77,30 @@ const Home = () => {
             </ul>
           </div>
         </section>
-        <section className={styles.sectionSkills}>
-          <div className={`${styles.card} ${styles.exp}`}>
-            <h2>Job Experience</h2>
-            <div>
-              <h3>
-                Credimi S.p.A. <span>Feb 2022 - Present</span>
-              </h3>
-              <ul className={styles.list}>
-                <li>
-                  Public website developer as part of the Acquisition team.
+        <section className={styles.recentPosts}>
+          <h2>Latest posts</h2>
+          <ul className={styles.posts}>
+            {allPostsData.map(
+              (
+                { id, formattedDate, title, author, tag, description, stats },
+                index
+              ) => (
+                <li key={index}>
+                  <Post
+                    id={id}
+                    date={formattedDate}
+                    title={title}
+                    author={author}
+                    tag={tag}
+                    description={description}
+                    stats={stats}
+                  />
                 </li>
-                <li>
-                  Anti-fraud widget developer as part of the internal team.
-                </li>
-                <li>
-                  Technologies used: React, Gatsby, Typescript, SCSS, GraphQL
-                  and Apollo.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className={`${styles.card} ${styles.basics}`}>
-            <p>
-              Knows <span>HTML, CSS</span>
-            </p>
-
-            <p>
-              and <span>Javascript</span>
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.react}`}>
-            <p>
-              Enjoys <span>ReactJS</span>
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.ts}`}>
-            <p>
-              In love with <span>Typescript</span>
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.docker}`}>
-            <p>
-              Fights the chaos with <span>Docker</span>
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.graphql}`}>
-            <p>Asks questions</p>
-            <p>
-              with <span>GraphQL</span>
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.postgres}`}>
-            <p>
-              Stays tidy with <span>PostgreSQL</span>
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.edu}`}>
-            <h2>Education</h2>
-            <div>
-              <h3>
-                Communication Science Degree <span>Nov 2019</span>
-              </h3>
-              <p>
-                I graduated in Communication Science at the University of
-                Bologna with a thesis on AI-generated art.
-              </p>
-            </div>
-          </div>
+              )
+            )}
+          </ul>
         </section>
-        <section className={styles.sectionMore}>
-          <div className={`${styles.card} ${styles.hobbies}`}>
-            <h2>Hobbies</h2>
-            <div>
-              <h3>Photography</h3>
-              <p>
-                Photography is my passion: I started taking pictures at the age
-                of 16 and I love capturing moments and printing them in posters
-                or books. Wherever I go, I make sure to have my beloved Fujifilm
-                camera with me.
-              </p>
-            </div>
-            <div>
-              <h3>Opt Out Podcast</h3>
-              <p>
-                I made a one-season podcast on privacy and online security, with
-                the goal of making it easily understandable for a broad
-                audience. The podcast is in Italian and available on multiple
-                platforms.
-              </p>
-            </div>
-          </div>
-        </section>
-        <button className={styles.downloadBig} onClick={renderCV}>
-          <FileText />
-          Download CV
-        </button>
-      </article>
+      </main>
     </>
   );
 };

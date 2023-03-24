@@ -1,6 +1,6 @@
 ---
 title: My shell functions and shortcuts
-date: '2023-3-22'
+date: '2023/3/22'
 description: A walkthrough of my shell aliases and functions.
 tag: web development, shell, zsh, dev, setup
 author: Andrea Bianchi

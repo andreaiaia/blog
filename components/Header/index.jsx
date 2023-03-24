@@ -7,22 +7,7 @@ import Logo from '../Logo';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 
-const Header = () => {
-  const pages = [
-    {
-      name: 'Home',
-      href: '/',
-    },
-    {
-      name: 'Blog',
-      href: '/posts',
-    },
-    {
-      name: 'Photos',
-      href: '/photos',
-    },
-  ];
-
+const Header = ({ pages }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>

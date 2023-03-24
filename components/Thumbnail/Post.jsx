@@ -1,17 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
+import PostMetadata from '../PostMetadata';
+
 import styles from './Post.module.scss';
 
-export const Post = ({ id, date, title, tag, description }) => {
-  const formattedDate = new Date(date).toDateString();
-
+export const Post = ({ id, date, title, tag, description, stats }) => {
   const tags = tag.split(', ');
 
   return (
-    <div className={styles.postContainer}>
+    <div className={styles.container}>
       <Link href={`/posts/${id}`}>
-        <h1>{title}</h1>
+        <h2>{title}</h2>
       </Link>
       <p className={styles.description}>{description}</p>
       <div className={styles.tags}>
@@ -24,7 +24,7 @@ export const Post = ({ id, date, title, tag, description }) => {
         })}
       </div>
       <div className={styles.data}>
-        <p className={styles.date}>{formattedDate}</p>
+        <PostMetadata date={date} stats={stats} cname={styles.metadata} />
         <p>&bull;</p>
         <Link href={`/posts/${id}`} className={styles.readMore}>
           Read post...

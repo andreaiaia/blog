@@ -1,8 +1,9 @@
 @use '../../styles/_globals.module' as *;
 
-.postContainer {
-  h1 {
+.container {
+  h2 {
     @include h1;
+    letter-spacing: -0.03em;
     cursor: pointer;
     transition: 0.3s ease-in-out;
   }
@@ -12,6 +13,7 @@
   display: flex;
   gap: 0.8rem;
   padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -39,10 +41,17 @@
   }
 }
 
+.metadata {
+  display: flex;
+  align-items: flex-end;
+}
+
 .data {
   display: flex;
   gap: 0.8rem;
   color: $shadow;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
 
   @include dark {
     color: $tone;

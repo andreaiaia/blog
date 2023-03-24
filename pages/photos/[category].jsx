@@ -42,12 +42,12 @@ const Category = () => {
 
   if (data)
     return (
-      <article className={styles.container}>
-        <section className={styles.titleContainer}>
-          <div className={styles.title}>
+      <main className={styles.container}>
+        <section className={styles.title}>
+          <div>
             <h1>{data.title}</h1>
-            <Link href="/photos">
-              <a className={styles.backlink}>Back to Photos</a>
+            <Link href="/photos" className={styles.backlink}>
+              Back to Photos
             </Link>
           </div>
           <p>{data.description}</p>
@@ -65,7 +65,7 @@ const Category = () => {
             </Masonry>
           </ResponsiveMasonry>
         </section>
-      </article>
+      </main>
     );
 
   return null;

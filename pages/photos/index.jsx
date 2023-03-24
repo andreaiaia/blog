@@ -10,10 +10,7 @@ const index = () => {
   const data = photoData.data;
 
   return (
-    <article className={styles.container}>
-      <section className={styles.titleContainer}>
-        <h1>Photo Gallery</h1>
-      </section>
+    <main className={styles.container}>
       <section className={styles.thumbnails}>
         {data.map((item, index) => (
           <Gallery
@@ -25,7 +22,7 @@ const index = () => {
           />
         ))}
       </section>
-    </article>
+    </main>
   );
 };
 

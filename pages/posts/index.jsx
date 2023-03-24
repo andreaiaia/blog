@@ -14,29 +14,31 @@ export async function getStaticProps() {
 
 const Blog = ({ allPostsData }) => {
   return (
-    <article className={styles.container}>
-      <section className={styles.titleContainer}>
-        <h1>Blog</h1>
-      </section>
+    <main className={styles.container}>
+      <h1>Blog</h1>
       <section>
         <ul className={styles.posts}>
           {allPostsData.map(
-            ({ id, date, title, author, tag, description }, index) => (
+            (
+              { id, formattedDate, title, author, tag, description, stats },
+              index
+            ) => (
               <li key={index}>
                 <Post
                   id={id}
-                  date={date}
+                  date={formattedDate}
                   title={title}
                   author={author}
                   tag={tag}
                   description={description}
+                  stats={stats}
                 />
               </li>
             )
           )}
         </ul>
       </section>
-    </article>
+    </main>
   );
 };
 

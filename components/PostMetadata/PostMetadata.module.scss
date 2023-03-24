@@ -1,0 +1,21 @@
+@use '../../styles/_globals.module' as *;
+
+.meta {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: $shade-black;
+
+  .readingtime {
+    @include bolder;
+  }
+
+  p:not(:last-child):after {
+    content: '/';
+    padding: 0 0.5rem;
+    @include extralight;
+  }
+
+  @include dark {
+    color: $tone;
+  }
+}

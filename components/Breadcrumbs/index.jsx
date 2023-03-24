@@ -13,7 +13,7 @@ const Breadcrumbs = () => {
       <Link href={`/${path[0]}`} className={styles.backlink}>
         Home
       </Link>
-      {path.slice(1, -1).map((item, index) => (
+      {path.slice(1).map((item, index) => (
         <React.Fragment key={index}>
           {' > '}
           <Link href={`/${item}`} className={styles.backlink}>

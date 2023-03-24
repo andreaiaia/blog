@@ -11,6 +11,21 @@ import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 export default function App({ Component, pageProps }) {
+  const pages = [
+    {
+      name: 'Home',
+      href: '/',
+    },
+    {
+      name: 'Photos',
+      href: '/photos',
+    },
+    {
+      name: 'About',
+      href: '/posts',
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -29,10 +44,8 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <ThemeProvider>
-        <Header />
-        <main>
-          <Component {...pageProps} />
-        </main>
+        <Header pages={pages} />
+        <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
     </>
