@@ -9,6 +9,11 @@
   }
 }
 
+.metadata {
+  display: flex;
+  align-items: end;
+}
+
 .tags {
   display: flex;
   gap: 0.8rem;
@@ -44,6 +49,7 @@
   display: flex;
   gap: 0.8rem;
   color: $shadow;
+  font-size: 0.8rem;
 
   @include dark {
     color: $tone;
