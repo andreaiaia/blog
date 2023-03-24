@@ -121,6 +121,9 @@ $gap: 1rem;
 }
 
 // font boldness variations
+@mixin extralight() {
+  font-variation-settings: 'wght' 300;
+}
 @mixin light() {
   font-variation-settings: 'wght' 400;
 }
