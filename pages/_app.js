@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
       href: '/photos',
     },
     {
-      name: 'About',
+      name: 'Blog',
       href: '/posts',
     },
   ];

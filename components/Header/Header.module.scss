@@ -2,12 +2,17 @@
 @use '../../styles/layout.scss' as *;
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
   // Header style
   margin: auto;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in-out;
-
-  max-width: 1200px;
 
   // Layout
   @include mainGrid;
