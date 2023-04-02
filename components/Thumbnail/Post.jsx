@@ -5,7 +5,7 @@ import PostMetadata from '../PostMetadata';
 
 import styles from './Post.module.scss';
 
-export const Post = ({ id, date, title, tag, description, stats }) => {
+const Post = ({ id, date, title, tag, description, stats }) => {
   const tags = tag.split(', ');
 
   return (
@@ -33,3 +33,5 @@ export const Post = ({ id, date, title, tag, description, stats }) => {
     </div>
   );
 };
+
+export default Post;

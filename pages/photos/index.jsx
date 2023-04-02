@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Gallery } from '../../components/Thumbnail/Gallery';
+import Gallery from '../../components/Thumbnail/Gallery';
 
 import photoData from './photos-index.json';
 

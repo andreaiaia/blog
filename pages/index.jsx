@@ -4,7 +4,8 @@ import Image from 'next/image';
 import { getSortedPostsData } from '../lib/posts';
 import { AtSign, Linkedin, Smartphone } from 'react-feather';
 
-import { Post } from '../components/Thumbnail/Post';
+import Hero from '../components/Hero';
+import Post from '../components/Thumbnail/Post';
 
 import styles from '../styles/Home.module.scss';
 
@@ -30,6 +31,7 @@ const Home = ({ allPostsData }) => {
         <meta property="og:title" content="homepage" key="title" />
       </Head>
       <main className={styles.container}>
+        <Hero />
         <section className={styles.sectionTitle}>
           <div className={`${styles.card} ${styles.img}`}>
             <Image

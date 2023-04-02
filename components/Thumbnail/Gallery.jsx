@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import styles from './Gallery.module.scss';
 
-export const Gallery = ({ src, alt, to, title }) => {
+const Gallery = ({ src, alt, to, title }) => {
   return (
     <div className={styles.container}>
       <Link href={to}>
@@ -20,3 +20,5 @@ export const Gallery = ({ src, alt, to, title }) => {
     </div>
   );
 };
+
+export default Gallery;
