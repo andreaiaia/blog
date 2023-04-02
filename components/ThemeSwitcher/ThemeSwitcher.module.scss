@@ -8,10 +8,7 @@
   transition: 0.3s ease-in-out;
 
   color: $shadow;
-
-  & > *:hover {
-    color: $black;
-  }
+  color: $black;
 }
 
 .Sun {
@@ -21,9 +18,5 @@
 
   transition: 0.3s ease-in-out;
 
-  color: $tone;
-
-  & > *:hover {
-    color: $white;
-  }
+  color: $white;
 }
