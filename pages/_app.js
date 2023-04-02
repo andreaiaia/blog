@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <ThemeProvider>
+      <ThemeProvider disableTransitionOnChange>
         <Header pages={pages} />
         <Component {...pageProps} />
         <Footer />
