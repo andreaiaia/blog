@@ -1,4 +1,5 @@
 @use './_globals.module' as *;
+@use './layout.scss' as *;
 
 @mixin title() {
   @include h2();
@@ -17,7 +18,7 @@
   max-width: 100%;
   padding-top: 0;
 
-  section {
+  & > section {
     padding-bottom: 1rem;
   }
 
@@ -50,50 +51,87 @@
   }
 }
 
-.sectionTitle {
-  @include container;
-  display: grid;
-  gap: $gap;
-  grid-template-columns: 1fr 2fr;
+.sectionGreetings {
+  padding: 2rem;
 
-  @include smartphone() {
-    grid-template-columns: 1fr 1fr;
+  & > div {
+    @include mainGrid;
+    row-gap: 5rem;
   }
 }
-.proPic {
-  border-radius: 20px;
-}
-.greetings {
-  @include h1();
-  font-size: 2.25rem;
-  @include boldest;
-  margin-bottom: 0.5rem;
-  text-align: center;
 
-  @include smartphone() {
+.description {
+  grid-column: 2 / 7;
+
+  p {
     font-size: 1.5rem;
-    margin-bottom: 0;
-  }
-
-  @include dark {
-    color: $white;
+    @include normal;
   }
 }
-.name {
-  @include h1();
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
-  color: $azure-tint;
-  text-align: center;
 
-  @include smartphone() {
-    margin-bottom: 0;
-    font-size: 2rem;
+.developer {
+  & > div {
+    position: relative;
+    display: grid;
+    grid-column: 5 / 12;
+    grid-template-columns: subgrid;
+
+    & > h1 {
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+      transform: translateY(-50%);
+      z-index: -1;
+      @include h1;
+      font-size: 10rem;
+      color: #babec499;
+      user-select: none;
+
+      @include dark {
+        color: $shade-black;
+      }
+    }
+  }
+}
+
+.photographer {
+  & > div {
+    position: relative;
+    grid-row: 2;
+    display: grid;
+    grid-column: 1 / 9;
+    grid-template-columns: subgrid;
+
+    & > h1 {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      @include h1;
+      font-size: 10rem;
+      color: #babec499;
+      user-select: none;
+
+      @include dark {
+        color: $shade-black;
+      }
+    }
   }
 
-  @include dark {
-    color: $frenchblue-tint;
+  .description {
+    text-align: right;
   }
+}
+
+.proPic {
+  grid-column: 2 / 5;
+  justify-self: end;
+}
+.photoPic {
+  grid-column: 9 / 13;
+  grid-row: 2;
+  justify-self: start;
 }
 
 .sectionBio {
@@ -111,10 +149,6 @@
       'contacts'
       'bio';
   }
-}
-.textWall {
-  grid-area: bio;
-  padding: 1rem 1.5rem;
 }
 .contactsContainer {
   grid-area: contacts;
@@ -141,12 +175,8 @@
   }
 }
 
-.bold {
-  @include bold;
-}
 .accent {
   @include bold;
-  color: $azure-tint;
 }
 
 .recentPosts {
