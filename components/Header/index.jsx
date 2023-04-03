@@ -11,15 +11,18 @@ const Header = ({ pages }) => {
   const [mounted, setMounted] = useState(false);
   const [prevScroll, setPrevScroll] = useState(0);
   const [headerStyle, setHeaderStyle] = useState(styles.header);
+  const headerStyles = {
+    top: `${styles.header}`,
+    hidden: `${styles.header} ${styles.hidden}`,
+    visible: `${styles.header} ${styles.background}`,
+  };
 
   const handleScroll = () => {
     const currentScroll = window.scrollY;
 
-    if (currentScroll > prevScroll) {
-      setHeaderStyle(`${styles.header} ${styles.hidden}`);
-    } else {
-      setHeaderStyle(styles.header);
-    }
+    if (currentScroll > prevScroll) setHeaderStyle(headerStyles.hidden);
+    else if (currentScroll < 200) setHeaderStyle(headerStyles.top);
+    else setHeaderStyle(headerStyles.visible);
 
     setPrevScroll(currentScroll);
   };
