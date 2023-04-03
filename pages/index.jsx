@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../lib/posts';
 import { AtSign, Linkedin, Smartphone } from 'react-feather';
 
 import Hero from '../components/Hero';
-import Post from '../components/Thumbnail/Post';
+import Post from '../components/Thumbnails/Post';
 
 import styles from '../styles/Home.module.scss';
 
