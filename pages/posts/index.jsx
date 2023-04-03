@@ -1,7 +1,7 @@
 import React from 'react';
 import { getSortedPostsData } from '../../lib/posts';
 
-import Post from '../../components/Thumbnail/Post';
+import Post from '../../components/Thumbnails/Post';
 
 import styles from './Blog.module.scss';
 
