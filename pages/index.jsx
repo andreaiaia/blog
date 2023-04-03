@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+
 import { getSortedPostsData } from '../lib/posts';
 import { AtSign, Linkedin, Smartphone } from 'react-feather';
 
@@ -17,13 +18,6 @@ export async function getStaticProps() {
 }
 
 const Home = ({ allPostsData }) => {
-  const [profilePic, setProfilePic] = useState('/images/bio/me-1.jpg');
-
-  useEffect(() => {
-    const random = Math.floor(Math.random() * 4) + 1;
-    setProfilePic(`/images/bio/me-${random}.jpg`);
-  }, []);
-
   return (
     <>
       <Head>
@@ -32,33 +26,52 @@ const Home = ({ allPostsData }) => {
       </Head>
       <main className={styles.container}>
         <Hero />
-        <section className={styles.sectionTitle}>
-          <div className={`${styles.card} ${styles.img}`}>
+        <section className={styles.sectionGreetings}>
+          <div className={styles.developer}>
             <Image
-              src={profilePic}
+              src="/images/bio/me-2.jpg"
               alt="A boring picture of me, Andrea"
               width={300}
               height={300}
               priority
               className={styles.proPic}
             />
+            <div>
+              <h1>developer</h1>
+              <div className={styles.description}>
+                <p>
+                  I&apos;m an enthusiastic{' '}
+                  <span className={styles.accent}>front-end developer</span>{' '}
+                  from <span className={styles.accent}>Matera</span>, Italy.
+                </p>
+                <p>
+                  I refine the UX of the website of Credimi, a fintech based in
+                  Milan.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className={styles.card}>
-            <p className={styles.greetings}>Hi, I&apos;m</p>
-            <h1 className={styles.name}>Andrea Bianchi</h1>
+          <div className={styles.photographer}>
+            <Image
+              src="/images/bio/me-3.jpg"
+              alt="A boring picture of me, Andrea"
+              width={300}
+              height={300}
+              priority
+              className={styles.photoPic}
+            />
+            <div>
+              <h1>photographer</h1>
+              <div className={styles.description}>
+                <p>
+                  I love <span className={styles.accent}>photography</span>.
+                </p>
+                <p>When I&apos;m out shooting, I feel I&apos;m truly happy.</p>
+              </div>
+            </div>
           </div>
         </section>
         <section className={styles.sectionBio}>
-          <div className={`${styles.card} ${styles.textWall}`}>
-            <p>
-              I am a growing Junior{' '}
-              <span className={styles.bold}>Front-End web developer</span>. I
-              study Computer Science in Bologna, I am a big photography
-              enthusiast and in my free time I like to learn new things by
-              working on personal projects, or relaxing with video games or
-              chess.
-            </p>
-          </div>
           <div className={`${styles.card} ${styles.contactsContainer}`}>
             <ul className={styles.contacts}>
               <li>
