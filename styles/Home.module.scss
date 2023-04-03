@@ -51,6 +51,7 @@
 }
 
 .sectionTitle {
+  @include container;
   display: grid;
   gap: $gap;
   grid-template-columns: 1fr 2fr;
@@ -96,6 +97,8 @@
 }
 
 .sectionBio {
+  @include container;
+  padding-top: 0;
   display: grid;
   gap: $gap;
   grid-template-columns: 4fr 3fr;
@@ -147,6 +150,9 @@
 }
 
 .recentPosts {
+  @include container;
+  padding-top: 0;
+
   & > h2 {
     @include h2;
     margin: 2.5rem 0 1.5rem;
