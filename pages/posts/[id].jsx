@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { motion, useScroll } from 'framer-motion';
 
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
@@ -28,6 +29,7 @@ export async function getStaticPaths() {
 const Post = ({ postData }) => {
   const { data, content, stats, formattedDate } = postData;
   const tags = data.tag.split(', ');
+  const { scrollYProgress } = useScroll();
 
   return (
     <>
@@ -41,6 +43,10 @@ const Post = ({ postData }) => {
         <meta property="og:title" content={data.title} />
       </Head>
       <main className={styles.container}>
+        <motion.div
+          className={styles.progressBar}
+          style={{ scaleX: scrollYProgress }}
+        />
         <Breadcrumbs />
         <PostMetadata
           cname={styles.metadata}
