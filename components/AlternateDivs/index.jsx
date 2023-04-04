@@ -8,15 +8,20 @@ function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance], { ease: easeOut });
 }
 
-const Div = ({ img, imgAlt, title, children }) => {
+const Div = ({ img, imgAlt, title, children, right }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const x = useParallax(scrollYProgress, 300);
+  const distance = right ? -300 : 300;
+  const x = useParallax(scrollYProgress, distance);
 
   return (
-    <div className={styles.developer}>
+    <div
+      className={
+        right ? `${styles.wrapper} ${styles.wrapperRight}` : styles.wrapper
+      }
+    >
       <motion.div
-        className={styles.proPic}
+        className={styles.pic}
         initial={{ transform: 'translateX(-40%)' }}
         whileInView={{ transform: 'translateX(0)' }}
         transition={{ duration: 0.5, delay: 0.1 }}
@@ -54,6 +59,7 @@ const AlternateDivs = ({ children }) => {
         img="/images/bio/me-3.jpg"
         imgAlt="A boring picture of me, Andrea"
         title="photography"
+        right
       >
         <p>
           I love <span className={styles.accent}>photography</span>.

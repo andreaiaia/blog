@@ -1,78 +1,68 @@
 @use '../../styles/_globals.module' as *;
 @use '../../styles/layout.scss' as *;
 
-@mixin bigTitleBehind() {
-  position: relative;
-  display: grid;
-  grid-template-columns: subgrid;
-
-  & > h1 {
-    // positioning
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-    // font style
-    @include h1;
-    // font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
-    font-size: 9rem;
-    color: #c8c8c888;
-    user-select: none;
-
-    @include dark {
-      color: $shade-black;
-    }
-
-    @include smartphone {
-      font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
-    }
-  }
-}
-
-.alternateDivs {
-  padding: 1rem;
-
-  & > div {
-    @include mainGrid;
-    min-height: 50vh;
-
-    @include smartphone {
-      row-gap: 1rem;
-      padding-bottom: 3rem;
-      min-height: 80vh;
-    }
-  }
-}
-
-.description {
-  grid-column: 2 / 8;
-
-  p {
-    font-size: 1.5rem;
-    @include normal;
-    margin-bottom: 1rem;
-  }
+.wrapper {
+  @include mainGrid;
+  min-height: 50vh;
 
   @include smartphone {
-    grid-column: 1 / 13;
+    row-gap: 1rem;
+    padding-bottom: 3rem;
+    min-height: 80vh;
   }
-}
 
-.developer {
   .texts {
     grid-column: 5 / 12;
-    @include bigTitleBehind();
+    position: relative;
+    display: grid;
+    grid-template-columns: subgrid;
 
     & > h1 {
-      left: 2rem;
+      // positioning
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+      // font style
+      @include h1;
+      // font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
+      font-size: 9rem;
+      color: #c8c8c888;
+      user-select: none;
+
+      @include dark {
+        color: $shade-black;
+      }
+
+      @include smartphone {
+        font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
+      }
     }
+
+    // & > h1 {
+    //   left: 2rem;
+    // }
 
     @include smartphone {
       grid-column: 1 / 13;
       grid-row: 2;
 
-      & > h1 {
-        left: 0;
+      // & > h1 {
+      //   left: 0;
+      // }
+    }
+
+    .description {
+      grid-column: 2 / 8;
+
+      p {
+        font-size: 1.5rem;
+        @include normal;
+        margin-bottom: 1rem;
+      }
+
+      @include smartphone {
+        grid-column: 1 / 13;
       }
     }
   }
@@ -81,7 +71,6 @@
 .photographer {
   .texts {
     grid-column: 1 / 9;
-    @include bigTitleBehind();
 
     & > h1 {
       right: 2rem;
@@ -106,7 +95,7 @@
   }
 }
 
-.proPic {
+.pic {
   grid-column: 2 / 5;
   justify-self: end;
 
