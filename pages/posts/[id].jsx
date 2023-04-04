@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
@@ -30,6 +30,11 @@ const Post = ({ postData }) => {
   const { data, content, stats, formattedDate } = postData;
   const tags = data.tag.split(', ');
   const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <>
@@ -43,10 +48,7 @@ const Post = ({ postData }) => {
         <meta property="og:title" content={data.title} />
       </Head>
       <main className={styles.container}>
-        <motion.div
-          className={styles.progressBar}
-          style={{ scaleX: scrollYProgress }}
-        />
+        <motion.div className={styles.progressBar} style={{ scaleX }} />
         <Breadcrumbs />
         <PostMetadata
           cname={styles.metadata}
