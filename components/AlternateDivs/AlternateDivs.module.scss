@@ -10,88 +10,83 @@
     padding-bottom: 3rem;
     min-height: 80vh;
   }
+}
 
-  .texts {
-    grid-column: 5 / 12;
-    position: relative;
-    display: grid;
-    grid-template-columns: subgrid;
+.title {
+  // positioning
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  // font style
+  @include h1;
+  // font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
+  font-size: 9rem;
+  left: 2rem;
+  color: #c8c8c888;
+  user-select: none;
 
-    & > h1 {
-      // positioning
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: -1;
-      // font style
-      @include h1;
-      // font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
-      font-size: 9rem;
-      color: #c8c8c888;
-      user-select: none;
+  @include dark {
+    color: $shade-black;
+  }
 
-      @include dark {
-        color: $shade-black;
-      }
+  // for right-oriented sections
+  &.right {
+    left: 0;
+    right: 2rem;
+  }
 
-      @include smartphone {
-        font-size: clamp(4rem, 2.4694rem + 6.5306vw, 9rem);
-      }
-    }
-
-    // & > h1 {
-    //   left: 2rem;
-    // }
-
-    @include smartphone {
-      grid-column: 1 / 13;
-      grid-row: 2;
-
-      // & > h1 {
-      //   left: 0;
-      // }
-    }
-
-    .description {
-      grid-column: 2 / 8;
-
-      p {
-        font-size: 1.5rem;
-        @include normal;
-        margin-bottom: 1rem;
-      }
-
-      @include smartphone {
-        grid-column: 1 / 13;
-      }
-    }
+  @include smartphone {
+    font-size: 8rem;
+    left: 0;
+    right: 0;
   }
 }
 
-.photographer {
-  .texts {
-    grid-column: 1 / 9;
+.textDiv {
+  grid-column: 5 / 12;
+  position: relative;
+  display: grid;
+  grid-template-columns: subgrid;
 
-    & > h1 {
-      right: 2rem;
-    }
+  &.right {
+    grid-column: 1 / 9;
+    grid-row: 1;
 
     @include smartphone {
       grid-column: 1 / 13;
       grid-row: 2;
-
-      & > h1 {
-        left: 0;
-        right: unset;
-      }
     }
   }
 
-  .description {
+  @include smartphone {
+    grid-column: 1 / 13;
+    grid-row: 2;
+    padding: 1rem;
+  }
+}
+
+.description {
+  grid-column: 2 / 8;
+
+  p {
+    font-size: 1.5rem;
+    @include normal;
+    margin-bottom: 1rem;
+  }
+
+  &.right {
     text-align: right;
+
     @include smartphone {
+      grid-column: 1 / 13;
       text-align: left;
     }
+  }
+
+  @include smartphone {
+    grid-column: 1 / 13;
+    text-align: left;
   }
 }
 
@@ -99,15 +94,16 @@
   grid-column: 2 / 5;
   justify-self: end;
 
-  @include smartphone {
-    grid-column: 1 / 13;
-    grid-row: 1;
-    justify-self: center;
+  &.right {
+    grid-column: 9 / 13;
+    justify-self: start;
+
+    @include smartphone {
+      grid-column: 1 / 13;
+      grid-row: 1;
+      justify-self: center;
+    }
   }
-}
-.photoPic {
-  grid-column: 9 / 13;
-  justify-self: start;
 
   @include smartphone {
     grid-column: 1 / 13;

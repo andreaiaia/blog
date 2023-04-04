@@ -15,24 +15,36 @@ const Div = ({ img, imgAlt, title, children, right }) => {
   const x = useParallax(scrollYProgress, distance);
 
   return (
-    <div
-      className={
-        right ? `${styles.wrapper} ${styles.wrapperRight}` : styles.wrapper
-      }
-    >
+    <div className={styles.wrapper}>
       <motion.div
-        className={styles.pic}
-        initial={{ transform: 'translateX(-40%)' }}
+        className={right ? `${styles.pic} ${styles.right}` : styles.pic}
+        initial={
+          right
+            ? { transform: 'translateX(40%)' }
+            : { transform: 'translateX(-40%)' }
+        }
         whileInView={{ transform: 'translateX(0)' }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
         <Image src={img} alt={imgAlt} width={300} height={300} priority />
       </motion.div>
-      <div className={styles.texts} ref={ref}>
-        <motion.h1 style={{ x, transitionTimingFunction: 'easeOut' }}>
+      <div
+        className={right ? `${styles.textDiv} ${styles.right}` : styles.textDiv}
+        ref={ref}
+      >
+        <motion.h1
+          style={{ x, transitionTimingFunction: 'easeOut' }}
+          className={right ? `${styles.title} ${styles.right}` : styles.title}
+        >
           {title}
         </motion.h1>
-        <div className={styles.description}>{children}</div>
+        <div
+          className={
+            right ? `${styles.description} ${styles.right}` : styles.description
+          }
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
