@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 import Hero from '../components/Hero';
 import Post from '../components/Thumbnails/Post';
-import AlternateSections from '../components/AlternateSections';
+import AlternateDivs from '../components/AlternateDivs';
 
 import styles from '../styles/Home.module.scss';
 
@@ -25,7 +25,7 @@ const Home = ({ allPostsData }) => {
       </Head>
       <main className={styles.container}>
         <Hero />
-        <AlternateSections />
+        <AlternateDivs />
         <section className={styles.recentPosts}>
           <h2>Latest posts</h2>
           <ul className={styles.posts}>
