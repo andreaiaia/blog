@@ -2,13 +2,13 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, easeOut } from 'framer-motion';
 
-import styles from './AlternateDivs.module.scss';
+import styles from './AlternateDiv.module.scss';
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance], { ease: easeOut });
 }
 
-const Div = ({ img, imgAlt, title, children, right }) => {
+const AlternateDiv = ({ img, imgAlt, title, children, right }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const distance = right ? -300 : 300;
@@ -50,36 +50,4 @@ const Div = ({ img, imgAlt, title, children, right }) => {
   );
 };
 
-const AlternateDivs = ({ children }) => {
-  return (
-    <section className={styles.alternateDivs}>
-      <Div
-        img="/images/bio/me-2.jpg"
-        imgAlt="A boring picture of me, Andrea"
-        title="developer"
-      >
-        <p>
-          I&apos;m an enthusiastic{' '}
-          <span className={styles.accent}>front-end developer</span> from{' '}
-          <span className={styles.accent}>Matera</span>, Italy.
-        </p>
-        <p>
-          I refine the UX of the website of Credimi, a fintech based in Milan.
-        </p>
-      </Div>
-      <Div
-        img="/images/bio/me-3.jpg"
-        imgAlt="A boring picture of me, Andrea"
-        title="photography"
-        right
-      >
-        <p>
-          I love <span className={styles.accent}>photography</span>.
-        </p>
-        <p>When I&apos;m out shooting, I feel I&apos;m truly happy.</p>
-      </Div>
-    </section>
-  );
-};
-
-export default AlternateDivs;
+export default AlternateDiv;

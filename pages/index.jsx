@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 import Hero from '../components/Hero';
 import Post from '../components/Thumbnails/Post';
-import AlternateDivs from '../components/AlternateDivs';
+import AlternateDiv from '../components/AlternateDiv';
 
 import styles from '../styles/Home.module.scss';
 
@@ -25,7 +25,34 @@ const Home = ({ allPostsData }) => {
       </Head>
       <main className={styles.container}>
         <Hero />
-        <AlternateDivs />
+        <section className={styles.alternateDivs}>
+          <AlternateDiv
+            img="/images/bio/me-2.jpg"
+            imgAlt="A boring picture of me, Andrea"
+            title="developer"
+          >
+            <p>
+              I&apos;m an enthusiastic{' '}
+              <span className={styles.accent}>front-end developer</span> from{' '}
+              <span className={styles.accent}>Matera</span>, Italy.
+            </p>
+            <p>
+              I refine the UX of the website of Credimi, a fintech based in
+              Milan.
+            </p>
+          </AlternateDiv>
+          <AlternateDiv
+            img="/images/bio/me-3.jpg"
+            imgAlt="A boring picture of me, Andrea"
+            title="photography"
+            right
+          >
+            <p>
+              I love <span className={styles.accent}>photography</span>.
+            </p>
+            <p>When I&apos;m out shooting, I feel I&apos;m truly happy.</p>
+          </AlternateDiv>
+        </section>
         <section className={styles.recentPosts}>
           <h2>Latest posts</h2>
           <ul className={styles.posts}>
