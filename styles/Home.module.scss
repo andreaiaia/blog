@@ -1,19 +1,9 @@
 @use './_globals.module' as *;
 @use './layout.scss' as *;
 
-@mixin title() {
-  @include h2();
-  color: $shadow-black;
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-
-  @include dark {
-    color: $white;
-  }
-}
-
 .container {
   @include container;
+  overflow-x: hidden;
   margin: 0;
   max-width: 100%;
   padding-top: 0;
@@ -26,157 +16,6 @@
     padding: 0;
     padding-bottom: calc(8rem + 100px);
   }
-}
-
-.card {
-  background-color: $tint;
-  padding: 1rem;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  & > h2 {
-    @include title;
-  }
-
-  &.img {
-    line-height: 0;
-    padding: 0;
-  }
-
-  @include dark {
-    background-color: $shade-black;
-  }
-}
-
-.sectionGreetings {
-  padding: 2rem;
-
-  & > div {
-    @include mainGrid;
-    row-gap: 5rem;
-  }
-}
-
-.description {
-  grid-column: 2 / 7;
-
-  p {
-    font-size: 1.5rem;
-    @include normal;
-  }
-}
-
-.developer {
-  & > div {
-    position: relative;
-    display: grid;
-    grid-column: 5 / 12;
-    grid-template-columns: subgrid;
-
-    & > h1 {
-      position: absolute;
-      top: 50%;
-      left: 2rem;
-      transform: translateY(-50%);
-      z-index: -1;
-      @include h1;
-      font-size: 10rem;
-      color: #babec499;
-      user-select: none;
-
-      @include dark {
-        color: $shade-black;
-      }
-    }
-  }
-}
-
-.photographer {
-  & > div {
-    position: relative;
-    grid-row: 2;
-    display: grid;
-    grid-column: 1 / 9;
-    grid-template-columns: subgrid;
-
-    & > h1 {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      z-index: -1;
-      @include h1;
-      font-size: 10rem;
-      color: #babec499;
-      user-select: none;
-
-      @include dark {
-        color: $shade-black;
-      }
-    }
-  }
-
-  .description {
-    text-align: right;
-  }
-}
-
-.proPic {
-  grid-column: 2 / 5;
-  justify-self: end;
-}
-.photoPic {
-  grid-column: 9 / 13;
-  grid-row: 2;
-  justify-self: start;
-}
-
-.sectionBio {
-  @include container;
-  padding-top: 0;
-  display: grid;
-  gap: $gap;
-  grid-template-columns: 4fr 3fr;
-  grid-template-rows: auto;
-  grid-template-areas: 'bio contacts';
-
-  @include smartphone() {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'contacts'
-      'bio';
-  }
-}
-.contactsContainer {
-  grid-area: contacts;
-  background: url('../public/images/contacts.jpg') no-repeat;
-  background-size: cover;
-}
-.contacts {
-  display: flex;
-  flex-direction: column;
-  @include bold;
-  color: $white;
-  text-shadow: 0 0 6px $black;
-  gap: $gap;
-
-  & > li > a {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-start;
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.accent {
-  @include bold;
 }
 
 .recentPosts {
@@ -193,4 +32,8 @@
   li:not(:last-child) {
     margin-bottom: 3rem;
   }
+}
+
+.accent {
+  @include bold;
 }
