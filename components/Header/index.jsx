@@ -21,8 +21,10 @@ const Header = ({ pages }) => {
     const currentScroll = window.scrollY;
 
     if (currentScroll > prevScroll) setHeaderStyle(headerStyles.hidden);
-    else if (currentScroll < 200) setHeaderStyle(headerStyles.top);
-    else setHeaderStyle(headerStyles.visible);
+    else if (currentScroll < 200) {
+      setHeaderStyle(headerStyles.top);
+      return;
+    } else setHeaderStyle(headerStyles.visible);
 
     setPrevScroll(currentScroll);
   };
