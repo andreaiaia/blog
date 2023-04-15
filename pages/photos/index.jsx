@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Gallery from '../../components/Thumbnails/Gallery';
+import { Polaroid } from '../../components/Thumbnails';
 
 import photoData from './photos-index.json';
 
@@ -13,7 +13,7 @@ const index = () => {
     <main className={styles.container}>
       <section className={styles.thumbnails}>
         {data.map((item, index) => (
-          <Gallery
+          <Polaroid
             key={index}
             src={item.path + item.thumbnail}
             alt={item.description}
