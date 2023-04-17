@@ -64,7 +64,7 @@
           "height": 1440
         },
         {
-          "filepath": "matera/Matera-Silbersaltx-2022.webp",
+          "filepath": "matera/Matera-Silbersaltz-2022.webp",
           "title": "A quiet moment",
           "description": "This place is now a popular destination for tourists. I was fortunate to be there on a quiet afternoon, allowing me to enjoy the tranquillity before capturing this photo.",
           "width": 1440,
@@ -80,11 +80,25 @@
       "description": "I can't help but keep looking at the sky, watching the stars makes me feel closer to infinity.",
       "photos": [
         {
+          "filepath": "astrophotography/Mineral-Moon-First-Quarter-2023.04.webp",
+          "title": "First Quarter",
+          "description": "The First Quarter of the Moon in all its majestic beauty.",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "filepath": "astrophotography/Moon-Davinci-Glow-Composite.webp",
+          "title": "Da Vinci Glow",
+          "description": "During the first phases of the Moon it is possible to see a pale shadow of the full disk, this is thanks to the reflected light from the earth. This phenomenon is called Da Vinci's Glow because Leonardo Da Vinci was the first one to understand its cause.",
+          "width": 1440,
+          "height": 960
+        },
+        {
           "filepath": "astrophotography/Waxing_Crescent_Moon-2023.02.03.webp",
           "title": "Waxing Crescent Moon",
           "description": "My favorite photo of the moon so far, another Mineral moon, this time with more balanced colors. The dark blue areas are rich in Iron, and the yellow areas contain Aluminum. I prefer the waxing crescent moon to the full moon because the Copernicus and Tycho craters are more defined thanks to the shadow of the terminator.",
-          "width": 1000,
-          "height": 1000
+          "width": 1440,
+          "height": 1440
         },
         {
           "filepath": "astrophotography/Full-Mineral-Moon-2022-12.webp",
@@ -209,6 +223,20 @@
       "thumbnail": "travel/thumbnail.webp",
       "description": "Photos I shot while travelling",
       "photos": [
+        {
+          "filepath": "travel/Castel-Sant-Angelo-1.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 1440,
+          "height": 960
+        },
+        {
+          "filepath": "travel/Castel-Sant-Angelo-2.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 1440,
+          "height": 960
+        },
         {
           "filepath": "travel/Gent-1.webp",
           "title": "placeholder",
@@ -402,13 +430,6 @@
         },
         {
           "filepath": "misc/Diga-San-Giuliano-Sunset.webp",
-          "title": "placeholder",
-          "description": "placeholder",
-          "width": 1440,
-          "height": 960
-        },
-        {
-          "filepath": "misc/Grandma.webp",
           "title": "placeholder",
           "description": "placeholder",
           "width": 1440,
