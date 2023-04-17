@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 import styles from './Polaroid.module.scss';
 
-const Polaroid = ({ src, alt, to, title }) => {
+const Polaroid = ({ src, alt, to, title, cname }) => {
   return (
-    <figure className={styles.container}>
+    <figure className={`${styles.container} ${cname || ''}`}>
       <Link href={to}>
         <Image
           className={styles.img}

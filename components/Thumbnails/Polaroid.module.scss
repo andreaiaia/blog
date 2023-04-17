@@ -7,6 +7,8 @@
   padding-bottom: 2rem;
   // border: 1px solid $tone;
   background-color: #ededed;
+  max-width: calc(350px + 1.5rem);
+  max-height: calc(350px + 1.5rem + 2rem + 1.5rem + 2.25rem);
   // Polaroid shadow
   $cardShadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.75);
   box-shadow: $cardShadow;
