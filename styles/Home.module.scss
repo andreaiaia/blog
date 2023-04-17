@@ -4,9 +4,43 @@
 .container {
   @include container;
   max-width: 1200px;
+  padding-top: calc(100px + 3rem);
 
   & > section {
     padding-bottom: 1rem;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  min-height: 80vh;
+
+  h1 {
+    @include h1;
+  }
+
+  .greetings {
+    max-width: 500px;
+
+    @include smartphone {
+      max-width: unset;
+      padding: 4rem 0 2rem;
+    }
+  }
+
+  .pic {
+    transform: rotate(5deg);
+
+    @include smartphone {
+      transform: unset;
+    }
+  }
+
+  @include smartphone {
+    grid-template-columns: 1fr;
   }
 }
 

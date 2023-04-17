@@ -3,8 +3,10 @@ import Head from 'next/head';
 
 import { getSortedPostsData } from '../lib/posts';
 
-import Hero from '../components/Hero';
 import Post from '../components/Thumbnails/Post';
+import { Polaroid } from '../components/Thumbnails';
+
+import Matera from '../public/images/photos/matera/thumbnail.webp';
 
 import styles from '../styles/Home.module.scss';
 
@@ -23,13 +25,20 @@ const Home = ({ allPostsData }) => {
         <meta property="og:title" content="homepage" key="title" />
       </Head>
       <main className={styles.container}>
-        <section>
-          <h1>Hello</h1>
-          <h2>Its me</h2>
-          <h3>I was wondering about</h3>
-          <h4>the things we used to be</h4>
+        <section className={styles.hero}>
+          <div className={styles.greetings}>
+            <h1>Hello, my name is Andrea</h1>
+            <p>I&apos;m a Front-End Developer from Matera, Italy</p>
+          </div>
+          <Polaroid
+            cname={styles.pic}
+            src={Matera}
+            alt="My favourite pic of Matera, so far"
+            to="#"
+            title="My home, Matera"
+          />
         </section>
-        <section className={styles.alternateDivs}>
+        {/* <section className={styles.alternateDivs}>
           <div
             img="/images/bio/me-2.jpg"
             imgAlt="A boring picture of me, Andrea"
@@ -56,7 +65,7 @@ const Home = ({ allPostsData }) => {
             </p>
             <p>When I&apos;m out shooting, I feel I&apos;m truly happy.</p>
           </div>
-        </section>
+        </section> */}
         <section className={styles.recentPosts}>
           <h2>Latest posts</h2>
           <ul className={styles.posts}>
