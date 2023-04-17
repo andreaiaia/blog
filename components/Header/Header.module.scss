@@ -2,13 +2,34 @@
 @use '../../styles/layout.scss' as *;
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
   // Header style
-  margin: auto;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  z-index: 1;
 
+  &.background {
+    background-color: $white;
+
+    @include dark {
+      background-color: $black;
+    }
+  }
+
+  &.hidden {
+    top: -80px;
+  }
+}
+
+.container {
   max-width: 1200px;
-
+  margin: auto;
   // Layout
   @include mainGrid;
 }

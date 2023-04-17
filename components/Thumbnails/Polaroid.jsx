@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './Gallery.module.scss';
+import styles from './Polaroid.module.scss';
 
-export const Gallery = ({ src, alt, to, title }) => {
+const Polaroid = ({ src, alt, to, title, cname }) => {
   return (
-    <div className={styles.container}>
+    <figure className={`${styles.container} ${cname || ''}`}>
       <Link href={to}>
         <Image
           className={styles.img}
@@ -15,8 +15,10 @@ export const Gallery = ({ src, alt, to, title }) => {
           width={350}
           height={350}
         />
-        <span className={styles.title}>{title}</span>
+        <figcaption className={styles.title}>{title}</figcaption>
       </Link>
-    </div>
+    </figure>
   );
 };
+
+export default Polaroid;

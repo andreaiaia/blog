@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
       href: '/photos',
     },
     {
-      name: 'About',
+      name: 'Blog',
       href: '/posts',
     },
   ];
@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <ThemeProvider>
+      <ThemeProvider disableTransitionOnChange>
         <Header pages={pages} />
         <Component {...pageProps} />
         <Footer />

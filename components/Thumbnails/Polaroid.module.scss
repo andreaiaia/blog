@@ -1,0 +1,33 @@
+@use '../../styles/_globals.module' as *;
+
+.container {
+  position: relative;
+  line-height: 0;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  // border: 1px solid $tone;
+  background-color: #ededed;
+  max-width: calc(350px + 1.5rem);
+  max-height: calc(350px + 1.5rem + 2rem + 1.5rem + 2.25rem);
+  // Polaroid shadow
+  $cardShadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: $cardShadow;
+  -webkit-box-shadow: $cardShadow;
+  -moz-box-shadow: $cardShadow;
+
+  cursor: pointer;
+}
+
+.img {
+  border: 1px solid $tone;
+}
+
+.title {
+  font-family: 'caveatregular';
+  @include h2;
+  margin: 0;
+  text-align: center;
+  padding-top: 1.5rem;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+}

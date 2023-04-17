@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import { getSortedPostsData } from '../lib/posts';
-import { AtSign, Linkedin, Smartphone } from 'react-feather';
 
-import { Post } from '../components/Thumbnail/Post';
+import { getSortedPostsData } from '../lib/posts';
+
+import Post from '../components/Thumbnails/Post';
+import { Polaroid } from '../components/Thumbnails';
+
+import Matera from '../public/images/photos/matera/thumbnail.webp';
 
 import styles from '../styles/Home.module.scss';
 
@@ -16,13 +18,6 @@ export async function getStaticProps() {
 }
 
 const Home = ({ allPostsData }) => {
-  const [profilePic, setProfilePic] = useState('/images/bio/me-1.jpg');
-
-  useEffect(() => {
-    const random = Math.floor(Math.random() * 4) + 1;
-    setProfilePic(`/images/bio/me-${random}.jpg`);
-  }, []);
-
   return (
     <>
       <Head>
@@ -30,53 +25,47 @@ const Home = ({ allPostsData }) => {
         <meta property="og:title" content="homepage" key="title" />
       </Head>
       <main className={styles.container}>
-        <section className={styles.sectionTitle}>
-          <div className={`${styles.card} ${styles.img}`}>
-            <Image
-              src={profilePic}
-              alt="A boring picture of me, Andrea"
-              width={300}
-              height={300}
-              priority
-              className={styles.proPic}
-            />
+        <section className={styles.hero}>
+          <div className={styles.greetings}>
+            <h1>Hello, my name is Andrea</h1>
+            <p>I&apos;m a Front-End Developer from Matera, Italy</p>
           </div>
-          <div className={styles.card}>
-            <p className={styles.greetings}>Hi, I&apos;m</p>
-            <h1 className={styles.name}>Andrea Bianchi</h1>
-          </div>
+          <Polaroid
+            cname={styles.pic}
+            src={Matera}
+            alt="My favourite pic of Matera, so far"
+            to="#"
+            title="My home, Matera"
+          />
         </section>
-        <section className={styles.sectionBio}>
-          <div className={`${styles.card} ${styles.textWall}`}>
+        {/* <section className={styles.alternateDivs}>
+          <div
+            img="/images/bio/me-2.jpg"
+            imgAlt="A boring picture of me, Andrea"
+            title="developer"
+          >
             <p>
-              I am a growing Junior{' '}
-              <span className={styles.bold}>Front-End web developer</span>. I
-              study Computer Science in Bologna, I am a big photography
-              enthusiast and in my free time I like to learn new things by
-              working on personal projects, or relaxing with video games or
-              chess.
+              I&apos;m an enthusiastic{' '}
+              <span className={styles.accent}>front-end developer</span> from{' '}
+              <span className={styles.accent}>Matera</span>, Italy.
+            </p>
+            <p>
+              I refine the UX of the website of Credimi, a fintech based in
+              Milan.
             </p>
           </div>
-          <div className={`${styles.card} ${styles.contactsContainer}`}>
-            <ul className={styles.contacts}>
-              <li>
-                <a href="mailto:bianan96@gmail.com">
-                  <AtSign /> bianan96@gmail.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+39 351 710 58 75">
-                  <Smartphone /> +39 351 710 58 75
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/andreaiaia/">
-                  <Linkedin /> linkedin.com/in/andreaiaia
-                </a>
-              </li>
-            </ul>
+          <div
+            img="/images/bio/me-3.jpg"
+            imgAlt="A boring picture of me, Andrea"
+            title="photography"
+            right
+          >
+            <p>
+              I love <span className={styles.accent}>photography</span>.
+            </p>
+            <p>When I&apos;m out shooting, I feel I&apos;m truly happy.</p>
           </div>
-        </section>
+        </section> */}
         <section className={styles.recentPosts}>
           <h2>Latest posts</h2>
           <ul className={styles.posts}>
