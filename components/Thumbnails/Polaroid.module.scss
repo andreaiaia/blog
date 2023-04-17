@@ -25,6 +25,7 @@
 .title {
   font-family: 'caveatregular';
   @include h2;
+  color: $black;
   margin: 0;
   text-align: center;
   padding-top: 1.5rem;
