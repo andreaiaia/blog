@@ -5,6 +5,7 @@ $gap: 1rem;
 .container {
   @include container;
   max-width: 1600px;
+  padding-top: calc(3rem + 100px);
 
   h1 {
     @include h2;
@@ -19,7 +20,7 @@ $gap: 1rem;
   h1 {
     @include h1;
   }
-  max-width: 65ch;
+  max-width: 1000px;
   margin: auto;
 
   & > div {

@@ -23,7 +23,12 @@ const Home = ({ allPostsData }) => {
         <meta property="og:title" content="homepage" key="title" />
       </Head>
       <main className={styles.container}>
-        <Hero />
+        <section>
+          <h1>Hello</h1>
+          <h2>Its me</h2>
+          <h3>I was wondering about</h3>
+          <h4>the things we used to be</h4>
+        </section>
         <section className={styles.alternateDivs}>
           <div
             img="/images/bio/me-2.jpg"
