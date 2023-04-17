@@ -6,7 +6,7 @@ import styles from './Polaroid.module.scss';
 
 const Polaroid = ({ src, alt, to, title }) => {
   return (
-    <div className={styles.container}>
+    <figure className={styles.container}>
       <Link href={to}>
         <Image
           className={styles.img}
@@ -15,9 +15,9 @@ const Polaroid = ({ src, alt, to, title }) => {
           width={350}
           height={350}
         />
-        <p className={styles.title}>{title}</p>
+        <figcaption className={styles.title}>{title}</figcaption>
       </Link>
-    </div>
+    </figure>
   );
 };
 
