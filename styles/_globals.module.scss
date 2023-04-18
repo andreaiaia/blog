@@ -45,12 +45,12 @@ $oceanBlue-shadow: #003e78;
 
 // breakpoints
 $smartphone: 600px;
-$tablet-portrait: 768px;
+$tablet-portrait: 810px;
 $tablet-landscape: 992px;
 $laptop: 1200px;
 // breakpoints in absolute numbers
 $smartphoneABS: 600;
-$tablet-portraitABS: 768;
+$tablet-portraitABS: 810;
 $tablet-landscapeABS: 992;
 $laptopABS: 1200;
 
@@ -200,6 +200,12 @@ $gap: 1rem;
 
 @mixin smartphone() {
   @media screen and (max-width: $smartphone) {
+    @content;
+  }
+}
+
+@mixin tabletPortrait() {
+  @media screen and (max-width: $tablet-portrait) {
     @content;
   }
 }
