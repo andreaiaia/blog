@@ -1,23 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import styles from './Polaroid.module.scss';
 
-const Polaroid = ({ src, alt, to, title, cname }) => {
+const Polaroid = ({ src, alt, cname }) => {
   return (
-    <figure className={`${styles.container} ${cname || ''}`}>
-      <Link href={to}>
+    <div className={`${styles.container} ${cname || ''}`}>
+      <div className={styles.img}>
         <Image
-          className={styles.img}
           src={src}
           alt={alt || ''}
-          width={350}
-          height={350}
+          fill
+          sizes="(max-width: 768px) 300px,
+                  500px"
         />
-        <figcaption className={styles.title}>{title}</figcaption>
-      </Link>
-    </figure>
+      </div>
+      <div className={styles.title}>
+        <p>{alt}</p>
+      </div>
+    </div>
   );
 };
 
