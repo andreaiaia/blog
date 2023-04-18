@@ -50,12 +50,12 @@ $gap: 1rem;
   justify-content: center;
   padding-top: 2rem;
 
-  & > div {
+  & > a {
     flex-basis: 350px;
   }
 
   @include breakpoint($laptop) {
-    & > div {
+    & > a {
       flex-basis: 300px;
     }
   }
