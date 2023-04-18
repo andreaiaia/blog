@@ -4,7 +4,7 @@
 .container {
   @include container;
   max-width: 1200px;
-  padding-top: calc(100px + 3rem);
+  padding-top: calc(100px);
 
   & > section {
     padding-bottom: 1rem;
@@ -27,19 +27,19 @@
 
     @include smartphone {
       max-width: unset;
-      padding: 4rem 0 2rem;
+      padding: 2rem 0;
     }
   }
 
   .pic {
     transform: rotate(5deg);
 
-    @include smartphone {
-      transform: unset;
+    @include tabletPortrait {
+      grid-row: 1;
     }
   }
 
-  @include smartphone {
+  @include tabletPortrait {
     grid-template-columns: 1fr;
   }
 }
