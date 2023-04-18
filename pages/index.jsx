@@ -30,13 +30,7 @@ const Home = ({ allPostsData }) => {
             <h1>Hello, my name is Andrea</h1>
             <p>I&apos;m a Front-End Developer from Matera, Italy</p>
           </div>
-          <Polaroid
-            cname={styles.pic}
-            src={Matera}
-            alt="My favourite pic of Matera, so far"
-            to="#"
-            title="My home, Matera"
-          />
+          <Polaroid cname={styles.pic} src={Matera} alt="My home, Matera" />
         </section>
         {/* <section className={styles.alternateDivs}>
           <div

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import { Polaroid } from '../../components/Thumbnails';
 
@@ -13,13 +14,9 @@ const index = () => {
     <main className={styles.container}>
       <section className={styles.thumbnails}>
         {data.map((item, index) => (
-          <Polaroid
-            key={index}
-            src={item.path + item.thumbnail}
-            alt={item.description}
-            to={'/photos/' + item.category}
-            title={item.title}
-          />
+          <Link key={index} href={'/photos/' + item.category}>
+            <Polaroid src={item.path + item.thumbnail} alt={item.title} />
+          </Link>
         ))}
       </section>
     </main>
