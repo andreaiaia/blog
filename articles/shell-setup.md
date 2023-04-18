@@ -4,6 +4,7 @@ date: '2023/3/22'
 description: A walkthrough of my shell aliases and functions.
 tag: web development, shell, zsh, dev, setup
 author: Andrea Bianchi
+pic: https://images.unsplash.com/photo-1581088547417-790ffe02b79d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1530&q=80
 ---
 
 As a front-end web developer, I find myself using the shell quite a lot throughout the day, usually typing the same couple of commands.
