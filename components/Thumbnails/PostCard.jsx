@@ -1,7 +1,30 @@
 import React from 'react';
+import Link from 'next/link';
 
-const PostCard = () => {
-  return <div>This is a post card</div>;
+import PostMetadata from '../PostMetadata';
+
+import styles from './PostCard.module.scss';
+
+const PostCard = ({ id, date, title, description, stats, postPic }) => {
+  return (
+    <div
+      className={styles.container}
+      style={{
+        background: `url(${postPic})`,
+        backgroundSize: 'cover',
+      }}
+    >
+      <Link href={`/posts/${id}`} className={styles.content}>
+        <div className={styles.article}>
+          <p className={styles.title}>{title}</p>
+          <p className={styles.description}>{description}</p>
+        </div>
+        <div className={styles.data}>
+          <PostMetadata date={date} stats={stats} cname={styles.metadata} />
+        </div>
+      </Link>
+    </div>
+  );
 };
 
 export default PostCard;
