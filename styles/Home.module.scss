@@ -5,10 +5,6 @@
   @include container;
   max-width: 1200px;
   padding-top: calc(100px);
-
-  & > section {
-    padding-bottom: 1rem;
-  }
 }
 
 .hero {
@@ -24,6 +20,10 @@
 
   .greetings {
     max-width: 500px;
+
+    p {
+      @include h3;
+    }
 
     @include smartphone {
       max-width: unset;
@@ -55,6 +55,10 @@
   & > h2 {
     @include h2;
     margin: 2.5rem 0 1.5rem;
+  }
+
+  @include smartphone {
+    padding: 1rem 0;
   }
 }
 
