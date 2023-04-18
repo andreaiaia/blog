@@ -24,7 +24,7 @@ const Post = ({ id, date, title, tag, description, stats }) => {
         })}
       </div>
       <div className={styles.data}>
-        <PostMetadata date={date} stats={stats} cname={styles.metadata} />
+        <PostMetadata date={date} stats={stats} />
         <p>&bull;</p>
         <Link href={`/posts/${id}`} className={styles.readMore}>
           Read post...
