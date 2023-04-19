@@ -23,7 +23,10 @@ const PolaroidImage = ({ src, alt }) => (
 
 const Polaroid = ({ src, alt, cname, to }) => {
   return to ? (
-    <Link className={`${styles.container} ${cname || ''}`} href={to || '#'}>
+    <Link
+      className={`${styles.container} ${styles.link} ${cname || ''}`}
+      href={to || '#'}
+    >
       <PolaroidImage src={src} alt={alt} />
     </Link>
   ) : (
