@@ -27,32 +27,39 @@ const Home = ({ allPostsData }) => {
         <section className={styles.hero}>
           <div className={styles.greetings}>
             <h1>Hello, my name is Andrea</h1>
-            <p>I&apos;m a Front-End Developer from Matera, Italy</p>
+            <p>
+              I&apos;m a Front-End Developer from{' '}
+              <span className={styles.accent}>Matera, Italy</span>
+            </p>
           </div>
           <Polaroid cname={styles.pic} src={Matera} alt="My home, Matera" />
         </section>
         <section className={styles.recentPosts}>
           <h2>Latest posts</h2>
-          <ul className={styles.posts}>
-            {allPostsData.map(
-              (
-                { id, formattedDate, title, pic, tag, description, stats },
-                index
-              ) => (
-                <li key={index}>
-                  <PostCard
-                    id={id}
-                    date={formattedDate}
-                    title={title}
-                    tag={tag}
-                    description={description}
-                    stats={stats}
-                    postPic={pic}
-                  />
-                </li>
-              )
-            )}
-          </ul>
+          <div className={styles.postsContainer}>
+            <ul className={styles.posts}>
+              {allPostsData
+                .slice(0, 3)
+                .map(
+                  (
+                    { id, formattedDate, title, pic, tag, description, stats },
+                    index
+                  ) => (
+                    <li key={index}>
+                      <PostCard
+                        id={id}
+                        date={formattedDate}
+                        title={title}
+                        tag={tag}
+                        description={description}
+                        stats={stats}
+                        postPic={pic}
+                      />
+                    </li>
+                  )
+                )}
+            </ul>
+          </div>
         </section>
       </main>
     </>
