@@ -6,6 +6,8 @@
   height: 500px;
   border-radius: 12px;
   cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
 
   // shadow
   $cardShadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
@@ -13,7 +15,10 @@
   -webkit-box-shadow: $cardShadow;
   -moz-box-shadow: $cardShadow;
 
-  color: white;
+  &:hover {
+    transform: perspective(500px) translateZ(15px);
+  }
+
   @include dark {
     color: white;
   }
