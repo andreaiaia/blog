@@ -11,8 +11,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
 
-    &:hover {
-      transform: perspective(500px) translateZ(20px);
+    @include laptop {
+      &:hover {
+        transform: perspective(500px) translateZ(20px);
+      }
     }
   }
 
