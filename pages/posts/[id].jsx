@@ -8,6 +8,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import PostMetadata from '../../components/PostMetadata';
 
 import styles from './Blog.module.scss';
+import PostHero from '../../components/Hero/PostHero';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -28,7 +29,7 @@ export async function getStaticPaths() {
 
 const Post = ({ postData }) => {
   const { data, content, stats, formattedDate } = postData;
-  const tags = data.tag.split(', ');
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -50,24 +51,8 @@ const Post = ({ postData }) => {
       <main className={styles.main}>
         <motion.div className={styles.progressBar} style={{ scaleX }} />
         <div className={styles.container}>
-          <Breadcrumbs />
-          <PostMetadata
-            cname={styles.metadata}
-            date={formattedDate}
-            stats={stats}
-          />
-          <div className={styles.title}>
-            <h1>{data.title}</h1>
-          </div>
-          <div className={styles.tags}>
-            {tags.map((tag, index) => {
-              return (
-                <p key={index} className={styles.tag}>
-                  {tag}
-                </p>
-              );
-            })}
-          </div>
+          <PostHero data={data} date={formattedDate} stats={stats} />
+          <hr className={styles.separator} />
           <article
             className={styles.postContent}
             dangerouslySetInnerHTML={{ __html: content }}

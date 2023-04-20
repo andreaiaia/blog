@@ -7,50 +7,11 @@
 .container {
   @include container;
   max-width: 1200px;
+  padding-top: 2rem;
 
   h1 {
     @include h2;
     margin-bottom: 2rem;
-  }
-}
-
-.title {
-  h1 {
-    @include h1;
-  }
-}
-
-.metadata {
-  padding: 2rem 0 1rem;
-  justify-content: center;
-  align-items: baseline;
-
-  @include smartphone {
-    padding: 1.5rem 0 0.8rem;
-  }
-}
-
-.tags {
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem 0;
-
-  @include smartphone {
-    padding: 0.5rem 0;
-  }
-}
-
-.tag {
-  color: $shadow;
-  border: 1px solid $shadow;
-  border-radius: 1rem;
-  padding: 2px 8px;
-  font-size: 0.8rem;
-  transition: 0.3s ease-in-out;
-
-  @include dark {
-    color: $tone;
-    border-color: $tone;
   }
 }
 
@@ -158,5 +119,16 @@
 
   @include smartphone {
     padding-top: 1.8rem;
+  }
+}
+
+.separator {
+  border: 2px solid $shadow-black;
+  margin: 1rem auto 0;
+  width: 100px;
+  border-radius: 2px;
+
+  @include dark {
+    border-color: $tint;
   }
 }
