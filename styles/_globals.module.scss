@@ -192,8 +192,14 @@ $gap: 1rem;
 }
 
 // media query mixin
-@mixin breakpoint($max) {
-  @media screen and (max-width: $max) {
+@mixin breakpoint($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (pointer: fine) {
     @content;
   }
 }
