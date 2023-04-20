@@ -47,30 +47,32 @@ const Post = ({ postData }) => {
         <meta property="og:description" content={data.description} />
         <meta property="og:title" content={data.title} />
       </Head>
-      <main className={styles.container}>
+      <main className={styles.main}>
         <motion.div className={styles.progressBar} style={{ scaleX }} />
-        <Breadcrumbs />
-        <PostMetadata
-          cname={styles.metadata}
-          date={formattedDate}
-          stats={stats}
-        />
-        <div className={styles.title}>
-          <h1>{data.title}</h1>
+        <div className={styles.container}>
+          <Breadcrumbs />
+          <PostMetadata
+            cname={styles.metadata}
+            date={formattedDate}
+            stats={stats}
+          />
+          <div className={styles.title}>
+            <h1>{data.title}</h1>
+          </div>
+          <div className={styles.tags}>
+            {tags.map((tag, index) => {
+              return (
+                <p key={index} className={styles.tag}>
+                  {tag}
+                </p>
+              );
+            })}
+          </div>
+          <article
+            className={styles.postContent}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
-        <div className={styles.tags}>
-          {tags.map((tag, index) => {
-            return (
-              <p key={index} className={styles.tag}>
-                {tag}
-              </p>
-            );
-          })}
-        </div>
-        <article
-          className={styles.postContent}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
       </main>
     </>
   );

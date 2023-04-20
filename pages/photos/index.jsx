@@ -10,8 +10,8 @@ const index = () => {
   const data = photoData.data;
 
   return (
-    <main className={styles.container}>
-      <section className={styles.thumbnails}>
+    <main className={styles.main}>
+      <section className={styles.container}>
         {data.map((item, index) => (
           <Polaroid
             key={index}
