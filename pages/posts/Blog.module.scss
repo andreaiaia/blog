@@ -1,5 +1,9 @@
 @use '../../styles/_globals.module' as *;
 
+.main {
+  @include main;
+}
+
 .container {
   @include container;
   max-width: 1200px;
@@ -67,11 +71,12 @@
   flex-wrap: wrap;
 
   @include tabletPortrait {
-    justify-content: center;
+    justify-content: space-evenly;
   }
 }
 
 .postContent {
+  max-width: 65ch;
   padding-top: 2.25rem;
 
   h1 {

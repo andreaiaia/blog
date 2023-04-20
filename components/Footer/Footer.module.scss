@@ -4,7 +4,6 @@
 .footer {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
   overflow: hidden;
   background-color: $tint;
@@ -17,11 +16,10 @@
 }
 
 .content {
+  @include container;
   @include mainGrid;
-  max-width: 1000px;
-  margin: auto;
-  padding: 1.5rem;
   padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
   @include smartphone {
     grid-template-columns: repeat(5, 1fr);

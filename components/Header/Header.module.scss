@@ -4,12 +4,10 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
   display: block;
   width: 100%;
   // Header style
-  padding: 0.5rem 1rem;
+  padding: 0;
   transition: all 0.3s ease-in-out;
   background-color: transparent;
   z-index: 1;
@@ -31,15 +29,16 @@
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
+  @include container;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   // Layout
   @include mainGrid;
 }
 
 .logo {
   grid-column: 1 / 5;
-  justify-self: center;
+  justify-self: start;
 
   & svg {
     width: 150px;
@@ -48,13 +47,12 @@
 
   @include smartphone {
     grid-column: 1 / 9;
-    justify-self: start;
   }
 }
 
 .themeSwitcher {
-  grid-column: 11 / 13;
-  justify-self: center;
+  grid-column: 12 / 13;
+  justify-self: end;
 
   @include smartphone {
     justify-self: end;
