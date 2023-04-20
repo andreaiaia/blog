@@ -42,7 +42,7 @@ const Category = () => {
 
   if (data)
     return (
-      <main className={styles.container}>
+      <main className={styles.main}>
         <section className={styles.title}>
           <div>
             <h1>{data.title}</h1>

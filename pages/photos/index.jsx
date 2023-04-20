@@ -10,15 +10,14 @@ const index = () => {
   const data = photoData.data;
 
   return (
-    <main className={styles.container}>
-      <section className={styles.thumbnails}>
+    <main className={styles.main}>
+      <section className={styles.container}>
         {data.map((item, index) => (
           <Polaroid
             key={index}
             src={item.path + item.thumbnail}
-            alt={item.description}
+            alt={item.title}
             to={'/photos/' + item.category}
-            title={item.title}
           />
         ))}
       </section>

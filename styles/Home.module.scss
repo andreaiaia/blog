@@ -2,13 +2,8 @@
 @use './layout.scss' as *;
 
 .container {
-  @include container;
-  max-width: 1200px;
-  padding-top: calc(100px + 3rem);
-
-  & > section {
-    padding-bottom: 1rem;
-  }
+  padding-top: calc(100px);
+  padding-bottom: calc(8rem + 100px);
 }
 
 .hero {
@@ -17,6 +12,8 @@
   justify-items: center;
   align-items: center;
   min-height: 80vh;
+  max-width: 1200px;
+  margin: 0 auto;
 
   h1 {
     @include h1;
@@ -25,45 +22,88 @@
   .greetings {
     max-width: 500px;
 
+    p {
+      @include h3;
+    }
+
     @include smartphone {
       max-width: unset;
-      padding: 4rem 0 2rem;
+      padding: 2rem 1rem;
     }
   }
 
   .pic {
     transform: rotate(5deg);
 
-    @include smartphone {
-      transform: unset;
+    @include tabletPortrait {
+      grid-row: 1;
     }
   }
 
-  @include smartphone {
+  @include tabletPortrait {
     grid-template-columns: 1fr;
   }
 }
 
-.alternateDivs {
-  padding: 3rem 0;
-}
-
 .recentPosts {
-  @include container;
   padding-top: 0;
 
   & > h2 {
-    @include h2;
+    @include h1;
     margin: 2.5rem 0 1.5rem;
+    text-align: center;
+  }
+
+  @include smartphone {
+    padding: 1rem 0;
   }
 }
 
+.postsContainer {
+  display: flex;
+  align-items: center;
+}
+
 .posts {
-  li:not(:last-child) {
-    margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  scroll-padding: 0 50%;
+  scroll-snap-type: x mandatory;
+  // width: 100%;
+  margin: auto;
+  padding: 0 3rem;
+
+  li {
+    margin: 1rem 1rem 2rem;
+    scroll-snap-align: center;
+    display: inline-block;
+  }
+
+  @include smartphone {
+    padding: 0 1rem;
+    gap: 0;
+
+    li {
+      margin: 1rem 0.8rem 2rem;
+    }
   }
 }
 
 .accent {
-  @include bold;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    width: 104%;
+    height: 3px;
+    background-color: $azure;
+    z-index: -1;
+  }
 }

@@ -2,60 +2,24 @@
 
 $gap: 1rem;
 
+.main {
+  @include main;
+}
+
 .container {
   @include container;
-  max-width: 1600px;
-  padding-top: calc(3rem + 100px);
-
-  h1 {
-    @include h2;
-  }
-}
-
-.galleryTitle {
-  text-align: center;
-}
-
-.title {
-  h1 {
-    @include h1;
-  }
-  max-width: 1000px;
-  margin: auto;
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-}
-
-.backlink {
-  text-decoration: underline;
-  color: $black;
-  font-size: 0.8rem;
-
-  @include dark {
-    color: $shade;
-  }
-}
-
-.thumbnails {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   gap: $gap;
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 2rem;
 
-  & > div {
+  & > a {
     flex-basis: 350px;
   }
 
-  @include breakpoint($laptop) {
-    & > div {
+  @include breakpoint($tablet-landscape) {
+    & > a {
       flex-basis: 300px;
     }
   }
@@ -65,12 +29,37 @@ $gap: 1rem;
   }
 }
 
-.gallery {
-  padding: 2rem 2rem 0;
+.galleryTitle {
+  text-align: center;
+}
 
-  @include smartphone {
-    padding: 2rem 0 0;
+.title {
+  @include container;
+  padding-top: 2rem;
+
+  h1 {
+    @include h1;
   }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .backlink {
+    text-decoration: underline;
+    color: $black;
+    font-size: 0.8rem;
+
+    @include dark {
+      color: $shade;
+    }
+  }
+}
+
+.gallery {
+  padding: 2rem 1rem 0;
 }
 
 .img {

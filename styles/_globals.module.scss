@@ -45,13 +45,13 @@ $oceanBlue-shadow: #003e78;
 
 // breakpoints
 $smartphone: 600px;
-$tablet-portrait: 768px;
-$tablet-landscape: 992px;
+$tablet-portrait: 850px;
+$tablet-landscape: 1200px;
 $laptop: 1200px;
 // breakpoints in absolute numbers
 $smartphoneABS: 600;
-$tablet-portraitABS: 768;
-$tablet-landscapeABS: 992;
+$tablet-portraitABS: 850;
+$tablet-landscapeABS: 1200;
 $laptopABS: 1200;
 
 $gap: 1rem;
@@ -65,21 +65,27 @@ $gap: 1rem;
 
 // container tag template
 @mixin container() {
+  display: block;
+  max-width: 1200px;
+  padding: 0 2rem;
   margin-left: auto;
   margin-right: auto;
-  display: block;
-  padding-top: 5rem;
-  padding-bottom: calc(8rem + 100px);
-  max-width: 65ch;
 
   & > section {
     padding-bottom: $gap;
   }
 
   @include smartphone {
-    padding: 1rem;
-    padding-top: calc(80px);
-    padding-bottom: calc(8rem + 100px);
+    padding: 0 1rem;
+  }
+}
+
+@mixin main() {
+  padding: 5rem 0 calc(8rem + 100px);
+  margin: 0;
+
+  @include smartphone {
+    padding: calc(80px) 0 calc(8rem + 100px);
   }
 }
 
@@ -192,14 +198,26 @@ $gap: 1rem;
 }
 
 // media query mixin
-@mixin breakpoint($max) {
-  @media screen and (max-width: $max) {
+@mixin breakpoint($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (pointer: fine) {
     @content;
   }
 }
 
 @mixin smartphone() {
   @media screen and (max-width: $smartphone) {
+    @content;
+  }
+}
+
+@mixin tabletPortrait() {
+  @media screen and (max-width: $tablet-portrait) and (pointer: coarse) {
     @content;
   }
 }

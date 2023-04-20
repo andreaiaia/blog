@@ -1,7 +1,12 @@
 @use '../../styles/_globals.module' as *;
 
+.main {
+  @include main;
+}
+
 .container {
   @include container;
+  max-width: 1200px;
 
   h1 {
     @include h2;
@@ -17,7 +22,6 @@
 
 .metadata {
   padding: 2rem 0 1rem;
-  display: flex;
   justify-content: center;
   align-items: baseline;
 
@@ -43,21 +47,10 @@
   padding: 2px 8px;
   font-size: 0.8rem;
   transition: 0.3s ease-in-out;
-  // cursor: pointer;
-
-  // &:hover {
-  //   color: $black;
-  //   border-color: $black;
-  // }
 
   @include dark {
     color: $tone;
     border-color: $tone;
-
-    // &:hover {
-    //   color: $tint;
-    //   border-color: $tint;
-    // }
   }
 }
 
@@ -73,12 +66,17 @@
 }
 
 .posts {
-  & > li {
-    margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @include tabletPortrait {
+    justify-content: space-evenly;
   }
 }
 
 .postContent {
+  max-width: 65ch;
   padding-top: 2.25rem;
 
   h1 {

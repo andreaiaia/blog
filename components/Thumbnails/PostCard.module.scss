@@ -1,1 +1,108 @@
 @use '../../styles/_globals.module' as *;
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+
+  // shadow
+  $cardShadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: $cardShadow;
+  -webkit-box-shadow: $cardShadow;
+  -moz-box-shadow: $cardShadow;
+
+  @include laptop {
+    &:hover {
+      transform: perspective(500px) translateZ(15px);
+    }
+  }
+
+  @include dark {
+    color: white;
+  }
+
+  @include smartphone {
+    width: 300px;
+    height: 500px;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  // inner layout
+  display: grid;
+  grid-template-rows: repeat(1fr, 2);
+  @include smartphone {
+    padding: 2rem 1rem 1rem;
+  }
+}
+
+.article {
+  text-align: center;
+
+  .title {
+    position: relative;
+    @include h2;
+    color: $white;
+    transition: 0.3s ease-in-out;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $white;
+      height: 2px;
+      width: 4rem;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include smartphone {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.data {
+  width: 100%;
+  justify-self: center;
+  align-self: end;
+
+  & > div {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 4px 12px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: $tint;
+    opacity: 0.9;
+
+    @include dark {
+      background-color: black;
+    }
+
+    @include smartphone {
+      padding: 4px 8px;
+    }
+  }
+
+  .metadata {
+    color: $shade-black;
+
+    @include dark {
+      color: $tint;
+    }
+  }
+}

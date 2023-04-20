@@ -2,7 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "echo 'local network url: ' $(ipconfig getifaddr en0) && next dev",
     "build": "node ./scripts/gen-rss.js && next build",
     "start": "next start"
   },
@@ -23,6 +23,7 @@
     "remark-prism": "^1.3.6",
     "rss": "^1.2.2",
     "sass": "^1.57.1",
+    "sharp": "^0.32.0",
     "yarn": "^1.22.19"
   },
   "prettier": {

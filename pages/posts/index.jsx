@@ -14,13 +14,22 @@ export async function getStaticProps() {
 
 const Blog = ({ allPostsData }) => {
   return (
-    <main className={styles.container}>
-      <h1>Blog</h1>
-      <section>
+    <main className={styles.main}>
+      <section className={styles.container}>
+        <h1>Blog</h1>
         <ul className={styles.posts}>
           {allPostsData.map(
             (
-              { id, formattedDate, title, author, tag, description, stats },
+              {
+                id,
+                formattedDate,
+                title,
+                author,
+                tag,
+                description,
+                stats,
+                pic,
+              },
               index
             ) => (
               <li key={index}>
@@ -32,6 +41,7 @@ const Blog = ({ allPostsData }) => {
                   tag={tag}
                   description={description}
                   stats={stats}
+                  postPic={pic}
                 />
               </li>
             )

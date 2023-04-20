@@ -1,16 +1,18 @@
 @use '../../styles/_globals.module' as *;
 
 .meta {
-  text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
+  // text-transform: capitalize;
   font-size: 0.8rem;
   color: $shade-black;
 
   .readingtime {
-    @include bolder;
+    @include bold;
   }
 
   p:not(:last-child):after {
-    content: '/';
+    content: '•';
     padding: 0 0.5rem;
     @include extralight;
   }

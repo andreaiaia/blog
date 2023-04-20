@@ -1,60 +1,88 @@
 @use '../../styles/_globals.module' as *;
 
 .container {
-  h2 {
-    @include h1;
+  display: block;
+  transition: all 0.2s ease;
+
+  @include laptop {
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    &:hover {
+      .title::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.content {
+  width: 340px;
+
+  .title {
+    position: relative;
+    display: inline-block;
+    @include h3;
+    font-size: 1.3rem;
     letter-spacing: -0.03em;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: $black;
+      opacity: 0;
+      transition: all 0.2s ease;
+
+      @include dark {
+        background-color: $white;
+      }
+    }
   }
 }
 
-.tags {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem 0;
-  flex-wrap: wrap;
-}
+.coverPic {
+  position: relative;
+  height: 200px;
+  width: 340px;
 
-.tag {
-  color: $shadow;
-  border: 1px solid $shadow;
-  border-radius: 1rem;
-  padding: 2px 8px;
-  font-size: 0.8rem;
-  transition: 0.3s ease-in-out;
-  // cursor: pointer;
-
-  // &:hover {
-  //   color: $black;
-  //   border-color: $black;
-  // }
-
-  @include dark {
-    color: $tone;
-    border-color: $tone;
-
-    // &:hover {
-    //   color: $tint;
-    //   border-color: $tint;
-    // }
+  img {
+    object-fit: cover;
+    border-radius: 10px;
   }
-}
-
-.metadata {
-  display: flex;
-  align-items: flex-end;
 }
 
 .data {
-  display: flex;
-  gap: 0.8rem;
-  color: $shadow;
-  font-size: 0.8rem;
-  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
 
-  @include dark {
-    color: $tone;
+  & > div {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 4px 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: $tint;
+    opacity: 0.9;
+
+    @include dark {
+      background-color: black;
+    }
+  }
+
+  .metadata {
+    color: $shade-black;
+
+    @include dark {
+      color: $tint;
+    }
   }
 }
 
