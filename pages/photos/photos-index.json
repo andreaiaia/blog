@@ -29,11 +29,11 @@
           "height": 1440
         },
         {
-          "filepath": "matera/Craco-MT-2021.webp",
-          "title": "Craco, the Golden Hill",
-          "description": "The breathtaking view from the window of Craco's defensive tower, a ghost town nestled in the heart of southern Italy, also known as the \"golden hill\" for the way its fields of wheat shimmer gold under the summer sun.",
-          "width": 960,
-          "height": 1440
+          "filepath": "blackandwhite/Matera-2021-5.webp",
+          "title": "Matera o Laputa?",
+          "description": "In this double exposure, the clouds overlap with the ancient Sassi of Matera, giving the illusion that the city is the renowned Laputa, the flying city described in Jonathan Swift's Gulliver's Travels.",
+          "width": 1440,
+          "height": 1152
         },
         {
           "filepath": "matera/Matera-Kodak-Gold-2021.webp",
@@ -43,11 +43,11 @@
           "height": 872
         },
         {
-          "filepath": "blackandwhite/Matera-2021-5.webp",
-          "title": "Matera o Laputa?",
-          "description": "In this double exposure, the clouds overlap with the ancient Sassi of Matera, giving the illusion that the city is the renowned Laputa, the flying city described in Jonathan Swift's Gulliver's Travels.",
-          "width": 1440,
-          "height": 1152
+          "filepath": "matera/Craco-MT-2021.webp",
+          "title": "Craco, the Golden Hill",
+          "description": "The breathtaking view from the window of Craco's defensive tower, a ghost town nestled in the heart of southern Italy, also known as the \"golden hill\" for the way its fields of wheat shimmer gold under the summer sun.",
+          "width": 960,
+          "height": 1440
         },
         {
           "filepath": "matera/Matera-2021.webp",
@@ -108,6 +108,13 @@
           "height": 1440
         },
         {
+          "filepath": "astrophotography/Moon-Mars-Conj-2022-12.webp",
+          "title": "Moon and Mars Conjunction",
+          "description": "This is one of my first pictures taken using my telescope. It captures the conjunction of the Moon and Mars, with the latter at opposition (the point in its orbit when it is opposite the Sun).",
+          "width": 1440,
+          "height": 1440
+        },
+        {
           "filepath": "astrophotography/Neowise-2020-07.webp",
           "title": "Neowise Comet",
           "description": "In the summer of 2020, the Neowise comet passed close to Earth and was visible for several days at the end of July. I took many shots and enjoyed the time spent searching for it and observing it in the sky.",
@@ -118,13 +125,6 @@
           "filepath": "astrophotography/Moon-HDR-2022-12.webp",
           "title": "HDR First Quarter Moon",
           "description": "This composite HDR shot captures the dark side of the Moon, which is visible during the First Quarter phase.",
-          "width": 1440,
-          "height": 1440
-        },
-        {
-          "filepath": "astrophotography/Moon-Mars-Conj-2022-12.webp",
-          "title": "Moon and Mars Conjunction",
-          "description": "This is one of my first pictures taken using my telescope. It captures the conjunction of the Moon and Mars, with the latter at opposition (the point in its orbit when it is opposite the Sun).",
           "width": 1440,
           "height": 1440
         },
@@ -394,18 +394,18 @@
       "description": "Photos without category",
       "photos": [
         {
-          "filepath": "misc/Apricot-Blossom.webp",
-          "title": "placeholder",
-          "description": "placeholder",
-          "width": 1440,
-          "height": 960
-        },
-        {
           "filepath": "misc/Autumn-Tree-Linkeroever.webp",
           "title": "placeholder",
           "description": "placeholder",
           "width": 960,
           "height": 1440
+        },
+        {
+          "filepath": "misc/Apricot-Blossom.webp",
+          "title": "placeholder",
+          "description": "placeholder",
+          "width": 1440,
+          "height": 960
         },
         {
           "filepath": "misc/Basilicata-Sunset.webp",
