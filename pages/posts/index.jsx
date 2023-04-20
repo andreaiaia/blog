@@ -20,7 +20,16 @@ const Blog = ({ allPostsData }) => {
         <ul className={styles.posts}>
           {allPostsData.map(
             (
-              { id, formattedDate, title, author, tag, description, stats },
+              {
+                id,
+                formattedDate,
+                title,
+                author,
+                tag,
+                description,
+                stats,
+                pic,
+              },
               index
             ) => (
               <li key={index}>
@@ -32,6 +41,7 @@ const Blog = ({ allPostsData }) => {
                   tag={tag}
                   description={description}
                   stats={stats}
+                  postPic={pic}
                 />
               </li>
             )
