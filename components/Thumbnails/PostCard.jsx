@@ -12,6 +12,7 @@ const PostCard = ({ id, date, title, description, stats, postPic }) => {
       style={{
         background: `url(${postPic})`,
         backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <Link href={`/posts/${id}`} className={styles.content}>
