@@ -15,8 +15,10 @@
   -webkit-box-shadow: $cardShadow;
   -moz-box-shadow: $cardShadow;
 
-  &:hover {
-    transform: perspective(500px) translateZ(15px);
+  @include laptop {
+    &:hover {
+      transform: perspective(500px) translateZ(15px);
+    }
   }
 
   @include dark {
