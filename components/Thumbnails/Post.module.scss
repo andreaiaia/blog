@@ -69,6 +69,7 @@
     margin: 10px auto;
     border-radius: 5px;
     background-color: $tint;
+    opacity: 0.9;
 
     @include dark {
       background-color: black;

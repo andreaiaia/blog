@@ -40,7 +40,7 @@
   display: grid;
   grid-template-rows: repeat(1fr, 2);
   @include smartphone {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem;
   }
 }
 
@@ -71,15 +71,36 @@
   }
 }
 
-.metadata {
-  color: $white;
-
-  @include dark {
-    color: white;
-  }
-}
-
 .data {
+  width: 100%;
   justify-self: center;
   align-self: end;
+
+  & > div {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 4px 12px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: $tint;
+    opacity: 0.9;
+
+    @include dark {
+      background-color: black;
+    }
+
+    @include smartphone {
+      padding: 4px 8px;
+    }
+  }
+
+  .metadata {
+    color: $shade-black;
+
+    @include dark {
+      color: $tint;
+    }
+  }
 }

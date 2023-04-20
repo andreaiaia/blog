@@ -20,7 +20,9 @@ const PostCard = ({ id, date, title, description, stats, postPic }) => {
           <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.data}>
-          <PostMetadata date={date} stats={stats} cname={styles.metadata} />
+          <div>
+            <PostMetadata date={date} stats={stats} cname={styles.metadata} />
+          </div>
         </div>
       </Link>
     </div>
