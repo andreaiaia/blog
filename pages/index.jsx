@@ -35,7 +35,9 @@ const Home = ({ allPostsData }) => {
           <Polaroid cname={styles.pic} src={Matera} alt="My home, Matera" />
         </section>
         <section className={styles.recentPosts}>
-          <h2>Latest posts</h2>
+          <div className={styles.title}>
+            <h2>Latest posts</h2>
+          </div>
           <div className={styles.postsContainer}>
             <ul className={styles.posts}>
               {allPostsData
