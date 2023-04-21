@@ -1,11 +1,6 @@
 @use './_globals.module' as *;
 @use './layout.scss' as *;
 
-.container {
-  padding-top: calc(100px);
-  padding-bottom: calc(8rem + 100px);
-}
-
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,7 +48,7 @@
     @include container;
 
     & > h2 {
-      @include h1;
+      @include h2;
       margin: 2.5rem 0 1.5rem;
     }
   }

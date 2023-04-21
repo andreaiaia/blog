@@ -2,10 +2,6 @@
 
 $gap: 1rem;
 
-.main {
-  @include main;
-}
-
 .container {
   @include container;
   display: flex;
@@ -26,30 +22,6 @@ $gap: 1rem;
 
   @include smartphone {
     grid-template-columns: 1fr;
-  }
-}
-
-.galleryTitle {
-  text-align: center;
-}
-
-.title {
-  @include container;
-  padding-top: 2rem;
-
-  h1 {
-    @include h1;
-  }
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .backlink {
-    text-decoration: underline;
-    font-size: 0.8rem;
   }
 }
 

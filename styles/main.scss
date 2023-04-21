@@ -57,6 +57,16 @@ body {
   letter-spacing: -0.02em;
   padding: 0;
 }
+
+main {
+  padding: 5rem 0 calc(8rem + 100px);
+  margin: 0;
+
+  @media screen and (max-width: 600px) {
+    padding: calc(80px) 0 calc(8rem + 100px);
+  }
+}
+
 b,
 strong,
 h3,

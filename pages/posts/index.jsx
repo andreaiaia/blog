@@ -15,7 +15,7 @@ export async function getStaticProps() {
 
 const Blog = ({ allPostsData }) => {
   return (
-    <main className={styles.main}>
+    <main>
       <Banner title="Blog" text="My little corner of the web!" />
       <section className={styles.container}>
         <ul className={styles.posts}>

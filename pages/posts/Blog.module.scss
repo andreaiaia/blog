@@ -1,9 +1,5 @@
 @use '../../styles/_globals.module' as *;
 
-.main {
-  @include main;
-}
-
 .container {
   @include container;
   max-width: 1200px;

@@ -23,7 +23,7 @@ const Home = ({ allPostsData }) => {
         <title>Home - Andrea</title>
         <meta property="og:title" content="homepage" key="title" />
       </Head>
-      <main className={styles.container}>
+      <main>
         <section className={styles.hero}>
           <div className={styles.greetings}>
             <h1>Hello, my name is Andrea</h1>
