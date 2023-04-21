@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
+import Banner from '../../components/Banner';
 import photoData from './photos-index.json';
 
 import styles from './Photos.module.scss';
@@ -42,16 +43,8 @@ const Category = () => {
 
   if (data)
     return (
-      <main className={styles.main}>
-        <section className={styles.title}>
-          <div>
-            <h1>{data.title}</h1>
-            <Link href="/photos" className={styles.backlink}>
-              Back to Photos
-            </Link>
-          </div>
-          <p>{data.description}</p>
-        </section>
+      <main>
+        <Banner title={data.title} text={data.description} />
         <section className={styles.gallery}>
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 700: 2, 1200: 3 }}

@@ -11,8 +11,8 @@ const index = () => {
   const data = photoData.data;
 
   return (
-    <main className={styles.main}>
-      <Banner title="Gallery" text="Have a look at my pictures!" />
+    <main>
+      <Banner title="Photos" text="Have a look at my pictures!" />
       <section className={styles.container}>
         {data.map((item, index) => (
           <Polaroid
