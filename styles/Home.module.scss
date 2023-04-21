@@ -70,6 +70,9 @@
   overflow-x: scroll;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
   scroll-padding: 0 50%;
   scroll-snap-type: x mandatory;
   // width: 100%;
