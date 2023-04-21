@@ -121,14 +121,3 @@
     padding-top: 1.8rem;
   }
 }
-
-.separator {
-  border: 2px solid $shadow-black;
-  margin: 1rem auto 0;
-  width: 100px;
-  border-radius: 2px;
-
-  @include dark {
-    border-color: $tint;
-  }
-}

@@ -4,8 +4,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
-import Breadcrumbs from '../../components/Breadcrumbs';
-import PostMetadata from '../../components/PostMetadata';
+import Divider from '../../components/Divider';
 
 import styles from './Blog.module.scss';
 import PostHero from '../../components/Hero/PostHero';
@@ -52,7 +51,7 @@ const Post = ({ postData }) => {
         <motion.div className={styles.progressBar} style={{ scaleX }} />
         <div className={styles.container}>
           <PostHero data={data} date={formattedDate} stats={stats} />
-          <hr className={styles.separator} />
+          <Divider />
           <article
             className={styles.postContent}
             dangerouslySetInnerHTML={{ __html: content }}
