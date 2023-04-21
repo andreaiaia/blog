@@ -7,6 +7,21 @@
   border-radius: 2px;
 
   @include dark {
-    border-color: $tint;
+    border-color: $white;
+  }
+
+  &.small {
+    border-width: 1px;
+    width: 4rem;
+  }
+
+  &.medium {
+    border-width: 2px;
+    width: 100px;
+  }
+
+  &.large {
+    border-width: 2px;
+    width: 200px;
   }
 }
