@@ -8,10 +8,15 @@
   @include container;
   max-width: 1200px;
   padding-top: 2rem;
+}
 
-  h1 {
-    @include h2;
-    margin-bottom: 2rem;
+.posts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @include tabletPortrait {
+    justify-content: space-evenly;
   }
 }
 
@@ -27,16 +32,6 @@
 
   @include dark {
     background-color: $primary-dark;
-  }
-}
-
-.posts {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-
-  @include tabletPortrait {
-    justify-content: space-evenly;
   }
 }
 

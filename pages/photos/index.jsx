@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Polaroid } from '../../components/Thumbnails';
+import Banner from '../../components/Banner';
 
 import photoData from './photos-index.json';
 
@@ -11,6 +12,7 @@ const index = () => {
 
   return (
     <main className={styles.main}>
+      <Banner title="Gallery" text="Have a look at my pictures!" />
       <section className={styles.container}>
         {data.map((item, index) => (
           <Polaroid
