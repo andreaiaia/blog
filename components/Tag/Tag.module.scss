@@ -1,16 +1,16 @@
 @use '../../styles/_globals.module' as *;
 
 .tag {
-  color: $shadow;
+  color: $secondary-light;
   border-radius: 5px;
   padding: 6px 12px;
   font-size: 0.9rem;
   transition: 0.3s ease-in-out;
-  background-color: $tint;
+  background-color: $background-light;
 
   @include dark {
-    background-color: $shadow-black;
-    color: $tint;
+    background-color: $background-dark;
+    color: $secondary-dark;
   }
 
   @include smartphone {

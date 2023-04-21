@@ -36,7 +36,6 @@
   padding-bottom: 100%;
 
   img {
-    border: 1px solid $tone;
     object-fit: contain;
   }
 }
@@ -44,6 +43,7 @@
 .title {
   font-family: 'caveatregular';
   @include h2;
+  color: $black;
   margin: 1.2rem 0 0;
   text-align: center;
   text-transform: capitalize;

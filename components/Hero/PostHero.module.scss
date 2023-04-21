@@ -40,12 +40,7 @@
 
   p {
     font-size: 1.2rem;
-    color: $shadow;
     @include light;
-
-    @include dark {
-      color: $tone;
-    }
   }
 
   @include smartphone {

@@ -1,13 +1,13 @@
 @use '../../styles/_globals.module' as *;
 
 .separator {
-  border: 2px solid $shadow-black;
+  border: 2px solid $primary-light;
   margin: 1rem auto 0;
   width: 100px;
   border-radius: 2px;
 
   @include dark {
-    border-color: $white;
+    border-color: $primary-dark;
   }
 
   &.small {

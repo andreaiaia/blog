@@ -2,14 +2,14 @@
 
 .logo {
   & > path {
-    stroke: black;
-    fill: black;
+    stroke: $black;
+    fill: $black;
   }
 
   @include dark {
     & > path {
-      stroke: white;
-      fill: white;
+      stroke: $white;
+      fill: $white;
     }
   }
 }

@@ -1,47 +1,16 @@
-// Light theme
+// Colours
 $white: #f3f3f3;
-$tint: #eaeaea;
-$tone: #babec4;
-$shade: #94a2b6;
-$shadow: #69778c;
-$black: #1d1f22;
-
-// Dark theme
-$tint-black: #737c8a;
-$tone-black: #5b616e;
-$shade-black: #3d4149;
-$shadow-black: #2e3237;
-
-// Shadows
-$light-shadow: rgba(0, 0, 0, 0.5);
-
-// Azure
-$azure: #008ad8;
-$azure-tint: #0091e6;
-$azure-tone: #0079bf;
-$azure-shade: #006199;
-$azure-shadow: #003959;
-
-// French Blue
-$frenchblue: #006eb3;
-$frenchblue-tint: #009dff;
-$frenchblue-tone: #0076bf;
-$frenchblue-shade: #005e99;
-$frenchblue-shadow: #004773;
-
-// King Blue
-$kingBlue: #4169e1;
-$kingBlue-tint: #456fed;
-$kingBlue-tone: #3a5dc7;
-$kingBlue-shade: #2f4ba1;
-$kingBlue-shadow: #1c2d61;
-
-// Ocean Blue
-$oceanBlue: #005eb8;
-$oceanBlue-tint: #0aa3cf;
-$oceanBlue-tone: #0a3ccf;
-$oceanBlue-shade: #0065c4;
-$oceanBlue-shadow: #003e78;
+$black: #171819;
+// Light theme colours
+$primary-light: #1687a7;
+$secondary-light: #276678;
+$tertiary-light: #d3e0ea;
+$background-light: #dce5e7;
+// Dark theme colours
+$primary-dark: #c0eef2;
+$secondary-dark: #e9f8f9;
+$tertiary-dark: #537fe7;
+$background-dark: #28282d;
 
 // breakpoints
 $smartphone: 600px;
@@ -91,7 +60,7 @@ $gap: 1rem;
 
 // heading levels presets
 @mixin h1() {
-  color: $black;
+  color: $primary-light;
   font-variation-settings: 'wght' 800;
   font-size: 4rem;
   margin-top: 0;
@@ -99,7 +68,7 @@ $gap: 1rem;
   line-height: 1.2;
 
   @include dark {
-    color: $white;
+    color: $primary-dark;
   }
 
   @include smartphone {
@@ -108,19 +77,19 @@ $gap: 1rem;
 }
 
 @mixin h2() {
-  color: $black;
+  color: $secondary-light;
   font-variation-settings: 'wght' 700;
   font-size: 2.25rem;
   margin: 1rem 0;
   line-height: 1.3333333;
 
   @include dark {
-    color: $white;
+    color: $secondary-dark;
   }
 }
 
 @mixin h3() {
-  color: $black;
+  color: $secondary-light;
   font-variation-settings: 'wght' 600;
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -128,7 +97,7 @@ $gap: 1rem;
   line-height: 1.6;
 
   @include dark {
-    color: $white;
+    color: $secondary-dark;
   }
 }
 
@@ -157,7 +126,7 @@ $gap: 1rem;
   line-height: normal;
   padding: 0.8rem 1rem;
   border-radius: 12px;
-  background-color: $azure-tint;
+  background-color: $primary-light;
   color: $white;
   transition: 0.3s ease-in-out;
 
@@ -166,8 +135,13 @@ $gap: 1rem;
   justify-content: center;
   align-items: center;
 
+  @include dark {
+    background-color: $primary-dark;
+    color: $black;
+  }
+
   &:hover {
-    background-color: $azure-tone;
+    transform: translateY(-10px);
   }
 
   @if $size == 'small' {
@@ -179,20 +153,12 @@ $gap: 1rem;
 
   @if $type == 'secondary' {
     border-radius: 10px;
-    background-color: $shadow;
-    color: $white;
-
-    &:hover {
-      background-color: $shade-black;
-    }
+    background-color: $tertiary-light;
+    color: $secondary-light;
 
     @include dark {
-      background-color: $tone;
-      color: $black;
-
-      &:hover {
-        background-color: $tint;
-      }
+      background-color: $tertiary-dark;
+      color: $secondary-dark;
     }
   }
 }

@@ -14,13 +14,14 @@
   min-height: 80vh;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 
   h1 {
     @include h1;
   }
 
   .greetings {
-    max-width: 500px;
+    justify-self: start;
 
     p {
       @include h3;
@@ -48,10 +49,13 @@
 .recentPosts {
   padding-top: 0;
 
-  & > h2 {
-    @include h1;
-    margin: 2.5rem 0 1.5rem;
-    text-align: center;
+  .title {
+    @include container;
+
+    & > h2 {
+      @include h1;
+      margin: 2.5rem 0 1.5rem;
+    }
   }
 
   @include smartphone {
@@ -106,7 +110,13 @@
     left: -2%;
     width: 104%;
     height: 3px;
-    background-color: $azure;
+    background-color: $primary-light;
     z-index: -1;
+  }
+
+  @include dark {
+    &::before {
+      background-color: $primary-dark;
+    }
   }
 }

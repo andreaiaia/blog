@@ -21,9 +21,13 @@
   left: 0;
   right: 0;
   height: 0.5rem;
-  background: $azure;
+  background-color: $primary-light;
   transform-origin: 0%;
   z-index: 1;
+
+  @include dark {
+    background-color: $primary-dark;
+  }
 }
 
 .posts {
@@ -57,10 +61,10 @@
   }
 
   a {
-    color: $azure-tone;
+    color: $primary-light;
 
     @include dark {
-      color: $azure-tint;
+      color: $primary-dark;
     }
   }
 
@@ -69,7 +73,7 @@
     text-align: center;
     font-size: 1.2rem;
     letter-spacing: 1px;
-    background-color: $tint;
+    background-color: $background-light;
     margin: 1.5rem 0;
     padding: 1.2rem;
     quotes: '\201C''\201D''\2018''\2019';
@@ -79,8 +83,6 @@
       display: inline-block;
       margin-top: 1rem;
       font-size: 1rem;
-      color: $shade-black;
-      // text-align: center;
     }
 
     p {
@@ -88,33 +90,24 @@
     }
 
     @include dark {
-      background-color: $shade-black;
-
-      em {
-        color: $tint;
-      }
+      background-color: $background-dark;
     }
   }
 
   p > code {
-    background-color: #272822;
+    background-color: $black;
     color: $white;
     padding: 1px 0.5rem;
     border-radius: 0.1rem;
 
     @include dark {
-      background-color: $azure-shadow;
+      background-color: $secondary-light;
+      color: $white;
     }
   }
 
   pre {
     margin: 1rem 0;
-  }
-
-  @include dark {
-    pre {
-      background-color: $azure-shadow;
-    }
   }
 
   @include smartphone {

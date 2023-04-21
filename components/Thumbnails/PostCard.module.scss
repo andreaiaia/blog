@@ -6,8 +6,8 @@
   height: 500px;
   border-radius: 12px;
   cursor: pointer;
-  color: white;
   transition: all 0.3s ease;
+  color: $secondary-dark;
 
   // shadow
   $cardShadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
@@ -21,10 +21,6 @@
     }
   }
 
-  @include dark {
-    color: white;
-  }
-
   @include smartphone {
     width: 300px;
     height: 500px;
@@ -36,7 +32,7 @@
   height: 100%;
   padding: 2rem;
   border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(24, 24, 35, 0.5);
 
   // inner layout
   display: grid;
@@ -52,7 +48,7 @@
   .title {
     position: relative;
     @include h2;
-    color: $white;
+    color: $secondary-dark;
     transition: 0.3s ease-in-out;
 
     @include smartphone {
@@ -61,8 +57,8 @@
   }
 
   .divider {
-    border-color: $white;
     margin-bottom: 1rem;
+    border-color: $secondary-dark;
   }
 }
 
@@ -79,7 +75,7 @@
     padding: 4px 12px;
     margin: 0 auto;
     border-radius: 5px;
-    background-color: $tint;
+    background-color: $secondary-dark;
     opacity: 0.9;
 
     @include smartphone {
@@ -88,6 +84,6 @@
   }
 
   .metadata {
-    color: $shade-black;
+    color: $black;
   }
 }
