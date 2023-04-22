@@ -2,7 +2,6 @@
 
 .hero {
   background-color: $background-light;
-  padding: 2rem 0;
 
   @include dark {
     background-color: $background-dark;
@@ -39,14 +38,6 @@
 
 .content {
   @include container;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
   margin: 0 auto;
   padding: 0 2rem;
-
-  @include tabletPortrait {
-    grid-template-columns: 1fr;
-  }
 }
