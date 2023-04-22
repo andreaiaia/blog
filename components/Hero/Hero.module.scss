@@ -1,15 +1,24 @@
 @use '../../styles/_globals.module' as *;
 
-.container {
+.hero {
+  background-color: $tertiary-light;
+  padding: 2rem 0;
+
+  @include dark {
+    background-color: $tertiary-dark;
+  }
+}
+
+.content {
   @include container;
-  background-image: url('../../public/images/hero.webp');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  max-width: 100%;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  z-index: -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include tabletPortrait {
+    grid-template-columns: 1fr;
+  }
 }
