@@ -41,6 +41,7 @@
 
   h2 {
     @include h2;
+    margin-top: 2rem;
   }
 
   h3 {
@@ -80,6 +81,18 @@
       margin-bottom: 0;
     }
 
+    & p:first-child::first-letter {
+      color: unset;
+      font-size: unset;
+      float: unset;
+      padding-right: 0;
+      margin-top: 0;
+
+      @include dark {
+        color: unset;
+      }
+    }
+
     @include dark {
       background-color: $background-dark;
     }
@@ -91,5 +104,17 @@
 
   @include smartphone {
     padding-top: 1.8rem;
+  }
+
+  & p:first-child::first-letter {
+    color: $primary-light;
+    font-size: 4rem;
+    float: left;
+    padding-right: 8px;
+    margin-top: -3px;
+
+    @include dark {
+      color: $primary-dark;
+    }
   }
 }
