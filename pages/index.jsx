@@ -25,7 +25,7 @@ const Home = ({ allPostsData }) => {
         <meta property="og:title" content="homepage" key="title" />
       </Head>
       <main>
-        <Hero cname={styles.hero}>
+        <Hero cname={styles.hero} background="transparent">
           <div className={styles.greetings}>
             <h1>Hello, my name is Andrea</h1>
             <p>

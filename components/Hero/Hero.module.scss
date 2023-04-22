@@ -1,11 +1,39 @@
 @use '../../styles/_globals.module' as *;
 
 .hero {
-  background-color: $tertiary-light;
+  background-color: $background-light;
   padding: 2rem 0;
 
   @include dark {
-    background-color: $tertiary-dark;
+    background-color: $background-dark;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.primary {
+    background-color: $primary-light;
+
+    @include dark {
+      background-color: $primary-dark;
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary-light;
+
+    @include dark {
+      background-color: $secondary-dark;
+    }
+  }
+
+  &.tertiary {
+    background-color: $tertiary-light;
+
+    @include dark {
+      background-color: $tertiary-dark;
+    }
   }
 }
 
