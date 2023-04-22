@@ -1,19 +1,24 @@
 import React from 'react';
 
 import { Polaroid } from '../../components/Thumbnails';
-import Banner from '../../components/Banner';
+import Hero from '../../components/Hero';
 
 import photoData from './photos-index.json';
 
-import styles from './Photos.module.scss';
+import css from './Photos.module.scss';
 
 const index = () => {
   const data = photoData.data;
 
   return (
     <main>
-      <Banner title="Photos" text="Have a look at my pictures!" />
-      <section className={styles.container}>
+      <Hero cname={css.hero}>
+        <div>
+          <h1 className={css.title}>Photos</h1>
+          <p>Have a look at my pictures!</p>
+        </div>
+      </Hero>
+      <section className={css.container}>
         {data.map((item, index) => (
           <Polaroid
             key={index}
