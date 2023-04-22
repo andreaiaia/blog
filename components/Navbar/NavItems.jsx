@@ -27,7 +27,7 @@ export const NavLink = (props) => {
   const isActive = asPath === props.href || asPath === props.as;
 
   return (
-    <li>
+    <li className={styles.link}>
       <Link {...props} className={isActive ? styles.active : ''}>
         {props.children}
       </Link>
