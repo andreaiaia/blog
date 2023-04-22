@@ -1,6 +1,8 @@
 // Colours
 $white: #f3f3f3;
 $black: #171819;
+$light: #edf6f7;
+$dark: #0b262d;
 // Light theme colours
 $primary-light: #1687a7;
 $secondary-light: #276678;
@@ -60,7 +62,7 @@ $gap: 1rem;
 
 // heading levels presets
 @mixin h1() {
-  color: $primary-light;
+  color: $dark;
   font-variation-settings: 'wght' 800;
   font-size: 4rem;
   margin-top: 0;
@@ -68,7 +70,7 @@ $gap: 1rem;
   line-height: 1.2;
 
   @include dark {
-    color: $primary-dark;
+    color: $light;
   }
 
   @include smartphone {
@@ -89,7 +91,7 @@ $gap: 1rem;
 }
 
 @mixin h3() {
-  color: $secondary-light;
+  color: $black;
   font-variation-settings: 'wght' 600;
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -97,7 +99,7 @@ $gap: 1rem;
   line-height: 1.6;
 
   @include dark {
-    color: $secondary-dark;
+    color: $white;
   }
 }
 

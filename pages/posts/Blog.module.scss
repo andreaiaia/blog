@@ -85,18 +85,6 @@
     }
   }
 
-  p > code {
-    background-color: $black;
-    color: $white;
-    padding: 1px 0.5rem;
-    border-radius: 0.1rem;
-
-    @include dark {
-      background-color: $secondary-light;
-      color: $white;
-    }
-  }
-
   pre {
     margin: 1rem 0;
   }
