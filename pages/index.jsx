@@ -5,6 +5,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 import { PostCard } from '../components/Thumbnails';
 import { Polaroid } from '../components/Thumbnails';
+import Hero from '../components/Hero';
 
 import Matera from '../public/images/photos/matera/thumbnail.webp';
 import styles from '../styles/Home.module.scss';
@@ -24,7 +25,7 @@ const Home = ({ allPostsData }) => {
         <meta property="og:title" content="homepage" key="title" />
       </Head>
       <main>
-        <section className={styles.hero}>
+        <Hero cname={styles.hero}>
           <div className={styles.greetings}>
             <h1>Hello, my name is Andrea</h1>
             <p>
@@ -33,7 +34,7 @@ const Home = ({ allPostsData }) => {
             </p>
           </div>
           <Polaroid cname={styles.pic} src={Matera} alt="My home, Matera" />
-        </section>
+        </Hero>
         <section className={styles.recentPosts}>
           <div className={styles.title}>
             <h2>Latest posts</h2>

@@ -2,42 +2,24 @@
 @use './layout.scss' as *;
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  min-height: 80vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  min-height: 70vh;
+}
 
+.greetings {
   h1 {
     @include h1;
   }
 
-  .greetings {
-    justify-self: start;
-
-    p {
-      @include h3;
-    }
-
-    @include smartphone {
-      max-width: unset;
-      padding: 2rem 1rem;
-    }
+  p {
+    @include h3;
   }
+}
 
-  .pic {
-    transform: rotate(5deg);
-
-    @include tabletPortrait {
-      grid-row: 1;
-    }
-  }
+.pic {
+  transform: rotate(5deg);
 
   @include tabletPortrait {
-    grid-template-columns: 1fr;
+    grid-row: 1;
   }
 }
 
