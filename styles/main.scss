@@ -69,17 +69,19 @@ main {
 
 b,
 strong,
-h3,
 h4,
 h5,
 h6 {
   font-variation-settings: 'wght' 650;
 }
 h1 {
-  font-variation-settings: 'wght' 850;
+  @include h1;
 }
 h2 {
-  font-variation-settings: 'wght' 750;
+  @include h2;
+}
+h3 {
+  @include h3;
 }
 blockquote {
   font-family: 'Special Elite', serif;

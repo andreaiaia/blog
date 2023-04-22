@@ -1,9 +1,23 @@
 @use '../../styles/_globals.module' as *;
 
+.hero {
+  padding: 6rem 0;
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    @include h2;
+    margin-top: 0;
+  }
+}
+
 .container {
   @include container;
   max-width: 1200px;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 .posts {
@@ -35,17 +49,8 @@
   max-width: 65ch;
   padding-top: 2.25rem;
 
-  h1 {
-    @include h1;
-  }
-
   h2 {
-    @include h2;
     margin-top: 2rem;
-  }
-
-  h3 {
-    @include h3;
   }
 
   p {
