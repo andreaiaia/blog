@@ -36,12 +36,12 @@
   left: 0;
   right: 0;
   height: 0.5rem;
-  background-color: $primary-light;
+  background-color: $primary-500;
   transform-origin: 0%;
   z-index: 1;
 
   @include dark {
-    background-color: $primary-dark;
+    background-color: $primary-500;
   }
 }
 
@@ -58,10 +58,10 @@
   }
 
   a {
-    color: $primary-light;
+    color: $primary-500;
 
     @include dark {
-      color: $primary-dark;
+      color: $primary-500;
     }
   }
 
@@ -70,7 +70,7 @@
     text-align: center;
     font-size: 1.2rem;
     letter-spacing: 1px;
-    background-color: $background-light;
+    background-color: $light-l;
     margin: 1.5rem 0;
     padding: 1.2rem;
     quotes: '\201C''\201D''\2018''\2019';
@@ -99,7 +99,7 @@
     }
 
     @include dark {
-      background-color: $background-dark;
+      background-color: $light-d;
     }
   }
 
@@ -112,14 +112,14 @@
   }
 
   & p:first-child::first-letter {
-    color: $primary-light;
+    color: $primary-500;
     font-size: 4rem;
     float: left;
     padding-right: 8px;
     margin-top: -3px;
 
     @include dark {
-      color: $primary-dark;
+      color: $primary-500;
     }
   }
 }

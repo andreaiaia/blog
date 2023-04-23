@@ -33,11 +33,13 @@
 
 html {
   background-color: $white;
+  color: $black;
   position: relative;
   min-height: 100%;
 
   &[data-theme='dark'] {
     background-color: $black;
+    color: $white;
   }
 
   @media print {

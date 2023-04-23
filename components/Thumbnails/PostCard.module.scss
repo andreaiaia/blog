@@ -7,7 +7,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: $secondary-dark;
+  color: $light-l;
 
   // shadow
   $cardShadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
@@ -48,7 +48,7 @@
   .title {
     position: relative;
     @include h2;
-    color: $secondary-dark;
+    color: $light-l;
     transition: 0.3s ease-in-out;
 
     @include smartphone {
@@ -58,7 +58,7 @@
 
   .divider {
     margin-bottom: 1rem;
-    border-color: $secondary-dark;
+    border-color: $light-l;
   }
 }
 
@@ -75,7 +75,7 @@
     padding: 4px 12px;
     margin: 0 auto;
     border-radius: 5px;
-    background-color: $secondary-dark;
+    background-color: $light-l;
     opacity: 0.9;
 
     @include smartphone {

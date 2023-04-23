@@ -10,6 +10,15 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   align-items: baseline;
   font-size: 1.2rem;
   line-height: 1.8;
+
+  @include smartphone {
+    flex-direction: column;
+    font-size: 1.5rem;
+
+    & > .link {
+      margin: 1rem;
+    }
+  }
 }
 
 .link {
@@ -25,7 +34,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     left: 0;
     right: 0;
     height: 2px;
-    background-color: $primary-light;
+    background-color: $primary-500;
   }
 
   &:before {
@@ -58,7 +67,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   @include dark {
     &:before,
     &:after {
-      background-color: $primary-dark;
+      background-color: $primary-500;
     }
   }
 }

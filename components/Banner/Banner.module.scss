@@ -1,11 +1,11 @@
 @use '../../styles/_globals.module' as *;
 
 .banner {
-  background-color: $background-light;
+  background-color: $light-l;
   margin: 1rem 0 2rem;
 
   @include dark {
-    background-color: $background-dark;
+    background-color: $light-d;
   }
 
   & > div {

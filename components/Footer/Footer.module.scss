@@ -6,10 +6,10 @@
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  background-color: $background-light;
+  background-color: $light-l;
 
   @include dark {
-    background-color: $background-dark;
+    background-color: $light-d;
   }
 }
 
