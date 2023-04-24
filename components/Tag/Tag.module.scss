@@ -6,10 +6,10 @@
   padding: 6px 12px;
   font-size: 0.9rem;
   transition: 0.3s ease-in-out;
-  background-color: $secondary-200;
+  background-color: $primary-200;
 
   @include dark {
-    background-color: $secondary-500;
+    background-color: $primary-500;
   }
 
   @include smartphone {
