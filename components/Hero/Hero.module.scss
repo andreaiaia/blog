@@ -1,15 +1,43 @@
 @use '../../styles/_globals.module' as *;
 
-.container {
+.hero {
+  background-color: $light-l;
+
+  @include dark {
+    background-color: $light-d;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.primary-500 {
+    background-color: $primary-500;
+
+    @include dark {
+      background-color: $primary-500;
+    }
+  }
+
+  &.secondary-500 {
+    background-color: $secondary-500;
+
+    @include dark {
+      background-color: $secondary-500;
+    }
+  }
+
+  &.tertiary {
+    background-color: $info;
+
+    @include dark {
+      background-color: $info;
+    }
+  }
+}
+
+.content {
   @include container;
-  background-image: url('../../public/images/hero.webp');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  max-width: 100%;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  z-index: -1;
+  margin: 0 auto;
+  padding: 0 2rem;
 }

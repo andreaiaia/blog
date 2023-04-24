@@ -5,7 +5,6 @@
   align-items: flex-end;
   // text-transform: capitalize;
   font-size: 0.8rem;
-  color: $shade-black;
 
   .readingtime {
     @include bold;
@@ -15,9 +14,5 @@
     content: '•';
     padding: 0 0.5rem;
     @include extralight;
-  }
-
-  @include dark {
-    color: $tone;
   }
 }

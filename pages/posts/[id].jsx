@@ -47,7 +47,7 @@ const Post = ({ postData }) => {
         <meta property="og:description" content={data.description} />
         <meta property="og:title" content={data.title} />
       </Head>
-      <main className={styles.main}>
+      <main>
         <motion.div className={styles.progressBar} style={{ scaleX }} />
         <div className={styles.container}>
           <PostHero data={data} date={formattedDate} stats={stats} />

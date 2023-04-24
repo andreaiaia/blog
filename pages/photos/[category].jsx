@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Image from 'next/image';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
+import Banner from '../../components/Banner';
 import photoData from './photos-index.json';
 
-import styles from './Photos.module.scss';
+import css from './Photos.module.scss';
 
 const Photo = ({ url, photo }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div>
-      <div className={styles.img} onClick={() => setIsVisible(!isVisible)}>
+      <div className={css.img} onClick={() => setIsVisible(!isVisible)}>
         <Image
           src={url}
           alt={photo.description}
@@ -23,11 +23,11 @@ const Photo = ({ url, photo }) => {
         <div
           className={
             isVisible
-              ? `${styles.photoDescription} ${styles.show}`
-              : `${styles.photoDescription} ${styles.hide}`
+              ? `${css.photoDescription} ${css.show}`
+              : `${css.photoDescription} ${css.hide}`
           }
         >
-          <p className={styles.picTitle}>{photo.title}</p>
+          <p className={css.picTitle}>{photo.title}</p>
           <p>{photo.description}</p>
         </div>
       </div>
@@ -42,17 +42,9 @@ const Category = () => {
 
   if (data)
     return (
-      <main className={styles.main}>
-        <section className={styles.title}>
-          <div>
-            <h1>{data.title}</h1>
-            <Link href="/photos" className={styles.backlink}>
-              Back to Photos
-            </Link>
-          </div>
-          <p>{data.description}</p>
-        </section>
-        <section className={styles.gallery}>
+      <main>
+        <Banner title={data.title} text={data.description} />
+        <section className={css.gallery}>
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 700: 2, 1200: 3 }}
           >

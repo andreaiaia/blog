@@ -1,47 +1,45 @@
-// Light theme
-$white: #f3f3f3;
-$tint: #eaeaea;
-$tone: #babec4;
-$shade: #94a2b6;
-$shadow: #69778c;
-$black: #1d1f22;
-
-// Dark theme
-$tint-black: #737c8a;
-$tone-black: #5b616e;
-$shade-black: #3d4149;
-$shadow-black: #2e3237;
-
-// Shadows
-$light-shadow: rgba(0, 0, 0, 0.5);
-
-// Azure
-$azure: #008ad8;
-$azure-tint: #0091e6;
-$azure-tone: #0079bf;
-$azure-shade: #006199;
-$azure-shadow: #003959;
-
-// French Blue
-$frenchblue: #006eb3;
-$frenchblue-tint: #009dff;
-$frenchblue-tone: #0076bf;
-$frenchblue-shade: #005e99;
-$frenchblue-shadow: #004773;
-
-// King Blue
-$kingBlue: #4169e1;
-$kingBlue-tint: #456fed;
-$kingBlue-tone: #3a5dc7;
-$kingBlue-shade: #2f4ba1;
-$kingBlue-shadow: #1c2d61;
-
-// Ocean Blue
-$oceanBlue: #005eb8;
-$oceanBlue-tint: #0aa3cf;
-$oceanBlue-tone: #0a3ccf;
-$oceanBlue-shade: #0065c4;
-$oceanBlue-shadow: #003e78;
+// Colors
+$white: #fdfffc;
+$black: #001427;
+$info: #33658a;
+// Light theme colors
+$light-l: #fff9eb;
+// Dark theme colors
+$light-d: #152a3e;
+// primary color
+$primary-100: #faeee2;
+$primary-200: #fedeba;
+$primary-300: #ffc37e;
+$primary-400: #fca039;
+$primary-500: #fb8500;
+$primary-600: #db7401;
+$primary-700: #ad5d03;
+$primary-800: #904b00;
+$primary-900: #502a00;
+// secondary color
+$secondary-100: #fff9eb;
+$secondary-200: #ffe8ae;
+$secondary-300: #fdd779;
+$secondary-400: #ffc941;
+$secondary-500: #ffb703;
+$secondary-600: #db9c00;
+$secondary-700: #b07e00;
+$secondary-800: #7d5900;
+$secondary-900: #4d3702;
+// neutral shades
+$neutral-100: #e4eef7;
+$neutral-200: #b5c5d2;
+$neutral-300: #8091a0;
+$neutral-400: #5c6e7d;
+$neutral-500: #364757;
+$neutral-600: #273b4f;
+$neutral-700: #152a3e;
+$neutral-800: #091e31;
+$neutral-900: #001427;
+// semantic colors
+$success: #00af5e;
+$warning: #e9cd00;
+$danger: #fa000b;
 
 // breakpoints
 $smartphone: 600px;
@@ -91,16 +89,11 @@ $gap: 1rem;
 
 // heading levels presets
 @mixin h1() {
-  color: $black;
   font-variation-settings: 'wght' 800;
   font-size: 4rem;
   margin-top: 0;
   margin-bottom: 0.8888889rem;
   line-height: 1.2;
-
-  @include dark {
-    color: $white;
-  }
 
   @include smartphone {
     font-size: 3rem;
@@ -108,28 +101,18 @@ $gap: 1rem;
 }
 
 @mixin h2() {
-  color: $black;
   font-variation-settings: 'wght' 700;
   font-size: 2.25rem;
   margin: 1rem 0;
   line-height: 1.3333333;
-
-  @include dark {
-    color: $white;
-  }
 }
 
 @mixin h3() {
-  color: $black;
   font-variation-settings: 'wght' 600;
   font-size: 1.5rem;
   margin-top: 1rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   line-height: 1.6;
-
-  @include dark {
-    color: $white;
-  }
 }
 
 // font boldness variations
@@ -153,11 +136,11 @@ $gap: 1rem;
 }
 
 //buttons presets
-@mixin button($type: 'primary', $size: 'normal') {
+@mixin button($type: 'primary-500', $size: 'normal') {
   line-height: normal;
   padding: 0.8rem 1rem;
   border-radius: 12px;
-  background-color: $azure-tint;
+  background-color: $primary-500;
   color: $white;
   transition: 0.3s ease-in-out;
 
@@ -166,8 +149,13 @@ $gap: 1rem;
   justify-content: center;
   align-items: center;
 
+  @include dark {
+    background-color: $primary-500;
+    color: $black;
+  }
+
   &:hover {
-    background-color: $azure-tone;
+    transform: translateY(-10px);
   }
 
   @if $size == 'small' {
@@ -177,22 +165,14 @@ $gap: 1rem;
     font-size: 1.5rem;
   }
 
-  @if $type == 'secondary' {
+  @if $type == 'secondary-500' {
     border-radius: 10px;
-    background-color: $shadow;
-    color: $white;
-
-    &:hover {
-      background-color: $shade-black;
-    }
+    background-color: $info;
+    color: $secondary-500;
 
     @include dark {
-      background-color: $tone;
-      color: $black;
-
-      &:hover {
-        background-color: $tint;
-      }
+      background-color: $info;
+      color: $secondary-500;
     }
   }
 }

@@ -18,7 +18,7 @@
   z-index: 1;
   overflow: hidden;
   padding: 1rem;
-  background-color: $tint;
+  background-color: $light-l;
   width: 100%;
   height: auto;
   opacity: 1;
@@ -35,6 +35,6 @@
   }
 
   @include dark {
-    background-color: $shade-black;
+    background-color: $light-d;
   }
 }

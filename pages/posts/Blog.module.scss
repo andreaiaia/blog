@@ -1,29 +1,27 @@
 @use '../../styles/_globals.module' as *;
 
-.main {
-  @include main;
+.hero {
+  padding: 6rem 0;
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    @include h2;
+    margin-top: 0;
+  }
 }
 
 .container {
   @include container;
   max-width: 1200px;
-  padding-top: 2rem;
+  padding-top: 4rem;
 
-  h1 {
-    @include h2;
-    margin-bottom: 2rem;
+  @include smartphone {
+    padding-top: 2rem;
   }
-}
-
-.progressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0.5rem;
-  background: $azure;
-  transform-origin: 0%;
-  z-index: 1;
 }
 
 .posts {
@@ -36,20 +34,27 @@
   }
 }
 
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
+  background-color: $primary-500;
+  transform-origin: 0%;
+  z-index: 1;
+
+  @include dark {
+    background-color: $primary-500;
+  }
+}
+
 .postContent {
   max-width: 65ch;
   padding-top: 2.25rem;
 
-  h1 {
-    @include h1;
-  }
-
   h2 {
-    @include h2;
-  }
-
-  h3 {
-    @include h3;
+    margin-top: 2rem;
   }
 
   p {
@@ -57,10 +62,10 @@
   }
 
   a {
-    color: $azure-tone;
+    color: $primary-500;
 
     @include dark {
-      color: $azure-tint;
+      color: $primary-500;
     }
   }
 
@@ -69,7 +74,7 @@
     text-align: center;
     font-size: 1.2rem;
     letter-spacing: 1px;
-    background-color: $tint;
+    background-color: $light-l;
     margin: 1.5rem 0;
     padding: 1.2rem;
     quotes: '\201C''\201D''\2018''\2019';
@@ -79,31 +84,26 @@
       display: inline-block;
       margin-top: 1rem;
       font-size: 1rem;
-      color: $shade-black;
-      // text-align: center;
     }
 
     p {
       margin-bottom: 0;
     }
 
-    @include dark {
-      background-color: $shade-black;
+    & p:first-child::first-letter {
+      color: unset;
+      font-size: unset;
+      float: unset;
+      padding-right: 0;
+      margin-top: 0;
 
-      em {
-        color: $tint;
+      @include dark {
+        color: unset;
       }
     }
-  }
-
-  p > code {
-    background-color: #272822;
-    color: $white;
-    padding: 1px 0.5rem;
-    border-radius: 0.1rem;
 
     @include dark {
-      background-color: $azure-shadow;
+      background-color: $light-d;
     }
   }
 
@@ -111,13 +111,19 @@
     margin: 1rem 0;
   }
 
-  @include dark {
-    pre {
-      background-color: $azure-shadow;
-    }
-  }
-
   @include smartphone {
     padding-top: 1.8rem;
+  }
+
+  & p:first-child::first-letter {
+    color: $primary-500;
+    font-size: 4rem;
+    float: left;
+    padding-right: 8px;
+    margin-top: -3px;
+
+    @include dark {
+      color: $primary-500;
+    }
   }
 }

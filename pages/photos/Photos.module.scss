@@ -2,8 +2,18 @@
 
 $gap: 1rem;
 
-.main {
-  @include main;
+.hero {
+  padding: 6rem 0;
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    @include h2;
+    margin-top: 0;
+  }
 }
 
 .container {
@@ -26,35 +36,6 @@ $gap: 1rem;
 
   @include smartphone {
     grid-template-columns: 1fr;
-  }
-}
-
-.galleryTitle {
-  text-align: center;
-}
-
-.title {
-  @include container;
-  padding-top: 2rem;
-
-  h1 {
-    @include h1;
-  }
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .backlink {
-    text-decoration: underline;
-    color: $black;
-    font-size: 0.8rem;
-
-    @include dark {
-      color: $shade;
-    }
   }
 }
 

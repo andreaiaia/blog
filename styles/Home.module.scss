@@ -1,57 +1,69 @@
 @use './_globals.module' as *;
 @use './layout.scss' as *;
 
-.container {
-  padding-top: calc(100px);
-  padding-bottom: calc(8rem + 100px);
-}
-
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  min-height: 80vh;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  h1 {
-    @include h1;
-  }
-
-  .greetings {
-    max-width: 500px;
-
-    p {
-      @include h3;
-    }
-
-    @include smartphone {
-      max-width: unset;
-      padding: 2rem 1rem;
-    }
-  }
-
-  .pic {
-    transform: rotate(5deg);
+  & > div {
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
 
     @include tabletPortrait {
-      grid-row: 1;
+      justify-items: center;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.greetings {
+  margin: 2rem 0;
+
+  h1 {
+    @include smartphone {
+      // font-size: 2.25rem;
     }
   }
 
+  p {
+    @include h3;
+
+    @include smartphone {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.CTAs {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .homeCta {
+    @include smartphone {
+      font-size: 1rem;
+    }
+  }
+}
+
+.pic {
+  transform: rotate(5deg);
+  justify-self: end;
+
   @include tabletPortrait {
-    grid-template-columns: 1fr;
+    justify-self: center;
   }
 }
 
 .recentPosts {
   padding-top: 0;
 
-  & > h2 {
-    @include h1;
-    margin: 2.5rem 0 1.5rem;
-    text-align: center;
+  .title {
+    @include container;
+
+    & > h2 {
+      margin: 2.5rem 0 1.5rem;
+    }
   }
 
   @include smartphone {
@@ -96,17 +108,44 @@
 }
 
 .accent {
-  position: relative;
-  display: inline-block;
+  color: $primary-500;
+}
 
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -2%;
-    width: 104%;
-    height: 3px;
-    background-color: $azure;
-    z-index: -1;
+.pageNotFound {
+  margin-top: 1rem;
+  padding: 6rem 0;
+
+  & > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+
+    .pageNotFoundPic {
+      position: relative;
+      width: 100%;
+      min-height: 450px;
+
+      & > img {
+        object-fit: cover;
+      }
+    }
+
+    @include tabletPortrait {
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+      .pageNotFoundPic {
+        min-height: 300px;
+      }
+    }
+  }
+
+  h1 {
+    color: $primary-500;
+
+    @include dark {
+      color: $primary-500;
+    }
   }
 }

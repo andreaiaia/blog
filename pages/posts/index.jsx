@@ -2,6 +2,7 @@ import React from 'react';
 import { getSortedPostsData } from '../../lib/posts';
 
 import Post from '../../components/Thumbnails/Post';
+import Hero from '../../components/Hero';
 
 import styles from './Blog.module.scss';
 
@@ -14,9 +15,14 @@ export async function getStaticProps() {
 
 const Blog = ({ allPostsData }) => {
   return (
-    <main className={styles.main}>
+    <main>
+      <Hero cname={styles.hero}>
+        <div>
+          <h1 className={styles.title}>Blog</h1>
+          <p>My little corner of the web!</p>
+        </div>
+      </Hero>
       <section className={styles.container}>
-        <h1>Blog</h1>
         <ul className={styles.posts}>
           {allPostsData.map(
             (

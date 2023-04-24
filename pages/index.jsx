@@ -1,13 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { getSortedPostsData } from '../lib/posts';
 
 import { PostCard } from '../components/Thumbnails';
 import { Polaroid } from '../components/Thumbnails';
+import Hero from '../components/Hero';
+import Button from '../components/Button';
 
 import Matera from '../public/images/photos/matera/thumbnail.webp';
-import styles from '../styles/Home.module.scss';
+import css from '../styles/Home.module.scss';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -23,21 +26,32 @@ const Home = ({ allPostsData }) => {
         <title>Home - Andrea</title>
         <meta property="og:title" content="homepage" key="title" />
       </Head>
-      <main className={styles.container}>
-        <section className={styles.hero}>
-          <div className={styles.greetings}>
+      <main>
+        <Hero cname={css.hero} background="transparent">
+          <div className={css.greetings}>
             <h1>Hello, my name is Andrea</h1>
             <p>
-              I&apos;m a Front-End Developer from{' '}
-              <span className={styles.accent}>Matera, Italy</span>
+              I&apos;m a <span className={css.accent}>Front-End Developer</span>{' '}
+              from Matera, Italy and in my free time I love taking{' '}
+              <span className={css.accent}>photos</span>.
             </p>
+            <div className={css.CTAs}>
+              <Button className={css.homeCta}>
+                <Link href="/posts">Read my Blog</Link>
+              </Button>
+              <Button className={css.homeCta} secondary>
+                <Link href="/photos">See my Photos</Link>
+              </Button>
+            </div>
           </div>
-          <Polaroid cname={styles.pic} src={Matera} alt="My home, Matera" />
-        </section>
-        <section className={styles.recentPosts}>
-          <h2>Latest posts</h2>
-          <div className={styles.postsContainer}>
-            <ul className={styles.posts}>
+          <Polaroid cname={css.pic} src={Matera} alt="My home, Matera" />
+        </Hero>
+        <section className={css.recentPosts}>
+          <div className={css.title}>
+            <h2>Latest posts</h2>
+          </div>
+          <div className={css.postsContainer}>
+            <ul className={css.posts}>
               {allPostsData
                 .slice(0, 3)
                 .map(

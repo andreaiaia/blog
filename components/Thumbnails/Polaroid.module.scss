@@ -4,7 +4,7 @@
   line-height: 0;
   padding: 1.2rem;
   margin: 1.5rem;
-  background-color: #ededed;
+  background-color: #f1f1f1;
   width: clamp(300px, 80%, 500px);
 
   &.link {
@@ -36,7 +36,6 @@
   padding-bottom: 100%;
 
   img {
-    border: 1px solid $tone;
     object-fit: contain;
   }
 }
@@ -44,6 +43,7 @@
 .title {
   font-family: 'caveatregular';
   @include h2;
+  color: $black;
   margin: 1.2rem 0 0;
   text-align: center;
   text-transform: capitalize;

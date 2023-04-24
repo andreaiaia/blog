@@ -5,17 +5,17 @@
     fill: white;
     stroke: black;
 
-    @include dark {
-      fill: black;
-      stroke: #acacac;
-    }
+    // @include dark {
+    //   fill: black;
+    //   stroke: #acacac;
+    // }
   }
 
   .paths {
     fill: black;
 
-    @include dark {
-      fill: white;
-    }
+    // @include dark {
+    //   fill: white;
+    // }
   }
 }

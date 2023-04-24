@@ -33,11 +33,13 @@
 
 html {
   background-color: $white;
+  color: $black;
   position: relative;
   min-height: 100%;
 
   &[data-theme='dark'] {
     background-color: $black;
+    color: $white;
   }
 
   @media print {
@@ -57,19 +59,31 @@ body {
   letter-spacing: -0.02em;
   padding: 0;
 }
+
+main {
+  padding: 5rem 0 calc(8rem + 100px);
+  margin: 0;
+
+  @media screen and (max-width: 600px) {
+    padding: calc(80px) 0 calc(8rem + 100px);
+  }
+}
+
 b,
 strong,
-h3,
 h4,
 h5,
 h6 {
   font-variation-settings: 'wght' 650;
 }
 h1 {
-  font-variation-settings: 'wght' 850;
+  @include h1;
 }
 h2 {
-  font-variation-settings: 'wght' 750;
+  @include h2;
+}
+h3 {
+  @include h3;
 }
 blockquote {
   font-family: 'Special Elite', serif;
@@ -90,18 +104,4 @@ details summary {
 
 img.next-image {
   margin: 0;
-}
-
-.prose a {
-  color: #0074de;
-}
-
-.nav-line {
-  display: none;
-  color: #69778c;
-}
-
-.nav-link {
-  display: none;
-  color: #69778c;
 }
