@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import '../styles/normalize.css';
 import '../styles/main.scss';
 import '../styles/layout.scss';
-import '../styles/prismjs/prism-nord.css';
+import '../styles/prismjs/prism-gruvbox-dark.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 export default function App({ Component, pageProps }) {

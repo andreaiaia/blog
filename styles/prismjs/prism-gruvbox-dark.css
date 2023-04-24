@@ -8,6 +8,13 @@
  * @version 1.0
  */
 
+p > code {
+  background-color: #1d2021;
+  color: #fabd2f;
+  padding: 1px 0.5rem;
+  border-radius: 0.1rem;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   color: #ebdbb2; /* fg1 / fg */
