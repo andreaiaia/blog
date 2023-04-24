@@ -19,8 +19,30 @@
 .greetings {
   margin: 2rem 0;
 
+  h1 {
+    @include smartphone {
+      // font-size: 2.25rem;
+    }
+  }
+
   p {
     @include h3;
+
+    @include smartphone {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.CTAs {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .homeCta {
+    @include smartphone {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -29,7 +51,6 @@
   justify-self: end;
 
   @include tabletPortrait {
-    grid-row: 1;
     justify-self: center;
   }
 }
@@ -87,25 +108,7 @@
 }
 
 .accent {
-  position: relative;
-  display: inline-block;
-
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -2%;
-    width: 104%;
-    height: 3px;
-    background-color: $primary-500;
-    z-index: -1;
-  }
-
-  @include dark {
-    &::before {
-      background-color: $primary-500;
-    }
-  }
+  color: $primary-500;
 }
 
 .pageNotFound {
