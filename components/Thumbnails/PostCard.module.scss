@@ -48,7 +48,7 @@
   .title {
     position: relative;
     @include h2;
-    color: $light-l;
+    color: $white;
     transition: 0.3s ease-in-out;
 
     @include smartphone {
@@ -58,7 +58,7 @@
 
   .divider {
     margin-bottom: 1rem;
-    border-color: $light-l;
+    border-color: $white;
   }
 }
 
@@ -75,7 +75,7 @@
     padding: 4px 12px;
     margin: 0 auto;
     border-radius: 5px;
-    background-color: $light-l;
+    background-color: $white;
     opacity: 0.9;
 
     @include smartphone {

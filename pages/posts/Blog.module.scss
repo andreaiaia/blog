@@ -18,6 +18,10 @@
   @include container;
   max-width: 1200px;
   padding-top: 4rem;
+
+  @include smartphone {
+    padding-top: 2rem;
+  }
 }
 
 .posts {
