@@ -46,7 +46,7 @@ const Footer = () => {
         <small className={css.credits}>
           <time>{YEAR}</time> © Andrea Bianchi.
         </small>
-        <div className={css.themeSwitcher}>
+        <div>
           <ThemeSwitcher cname={css.switcherStyle} />
         </div>
         <div className={css.notAiBadge}>

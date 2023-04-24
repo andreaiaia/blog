@@ -5,7 +5,7 @@ import { Moon, Sun } from 'react-feather';
 
 import styles from './ThemeSwitcher.module.scss';
 
-const ThemeSwitcher = ({ cname }) => {
+const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme } = useTheme();
 
@@ -17,16 +17,10 @@ const ThemeSwitcher = ({ cname }) => {
 
   return (
     <>
-      <button
-        onClick={() => setTheme('dark')}
-        className={`${styles.Moon} ${cname}`}
-      >
+      <button onClick={() => setTheme('dark')} className={styles.Moon}>
         <Moon />
       </button>
-      <button
-        onClick={() => setTheme('light')}
-        className={`${styles.Sun} ${cname}`}
-      >
+      <button onClick={() => setTheme('light')} className={styles.Sun}>
         <Sun />
       </button>
     </>

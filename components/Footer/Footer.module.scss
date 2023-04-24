@@ -6,14 +6,10 @@
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  background-color: $secondary-500;
+  background-color: $secondary-100;
 
   @include dark {
-    color: $black;
-
-    .switcherStyle {
-      color: $black;
-    }
+    background-color: $light-d;
   }
 }
 
