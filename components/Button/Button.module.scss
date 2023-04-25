@@ -9,8 +9,10 @@
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   @include normal;
 
-  &:hover {
-    box-shadow: 0 5px 10px -5px $primary-900;
+  @include laptop {
+    &:hover {
+      box-shadow: 0 5px 10px -5px $primary-900;
+    }
   }
 
   @include dark {
