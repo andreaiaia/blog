@@ -4,7 +4,7 @@ import { getSortedPostsData } from '../../lib/posts';
 import Post from '../../components/Thumbnails/Post';
 import Hero from '../../components/Hero';
 
-import styles from './Blog.module.scss';
+import css from './Blog.module.scss';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -16,14 +16,14 @@ export async function getStaticProps() {
 const Blog = ({ allPostsData }) => {
   return (
     <main>
-      <Hero cname={styles.hero}>
+      <Hero cname={css.hero}>
         <div>
-          <h1 className={styles.title}>Blog</h1>
+          <h1 className={css.title}>Blog</h1>
           <p>My little corner of the web!</p>
         </div>
       </Hero>
-      <section className={styles.container}>
-        <ul className={styles.posts}>
+      <section className={css.container}>
+        <ul className={css.posts}>
           {allPostsData.map(
             (
               {
