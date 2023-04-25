@@ -17,6 +17,14 @@
 .container {
   @include container;
   padding-bottom: 2rem;
+
+  & > div {
+    margin-bottom: 4rem;
+
+    @include smartphone {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .postsCount {
