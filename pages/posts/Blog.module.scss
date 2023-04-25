@@ -16,7 +16,6 @@
 
 .container {
   @include container;
-  max-width: 1200px;
   padding-top: 4rem;
 
   @include smartphone {
@@ -71,12 +70,12 @@
 
   blockquote {
     line-height: 1.4;
-    text-align: center;
     font-size: 1.2rem;
     letter-spacing: 1px;
     background-color: $light-l;
     margin: 1.5rem 0;
     padding: 1.2rem;
+    border-left: 5px solid $secondary-500;
     quotes: '\201C''\201D''\2018''\2019';
 
     em {
@@ -84,6 +83,10 @@
       display: inline-block;
       margin-top: 1rem;
       font-size: 1rem;
+
+      &::before {
+        content: '- ';
+      }
     }
 
     p {
@@ -117,13 +120,17 @@
 
   & p:first-child::first-letter {
     color: $primary-500;
+    // initial-letter: 4; at the moment is not compatible with most browsers
     font-size: 4rem;
+    line-height: 4rem;
     float: left;
-    padding-right: 8px;
-    margin-top: -3px;
+    padding-right: 6px;
 
     @include dark {
       color: $primary-500;
+    }
+    @include smartphone {
+      padding-right: 4px;
     }
   }
 }

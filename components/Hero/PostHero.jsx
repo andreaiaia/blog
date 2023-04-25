@@ -1,17 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
 
 import PostMetadata from '../PostMetadata';
 import Tag from '../Tag';
 
-import styles from './PostHero.module.scss';
-import Image from 'next/image';
+import css from './PostHero.module.scss';
 
 const PostHero = ({ date, data, stats }) => {
-  const tags = data.tag.split(', ');
+  const tags = data.tag.split(',');
 
   return (
-    <section className={styles.hero}>
-      <div className={styles.postPic}>
+    <section className={css.hero}>
+      <div className={css.postPic}>
         <Image
           src={data.pic}
           alt={data.description}
@@ -20,17 +20,17 @@ const PostHero = ({ date, data, stats }) => {
                   500px"
         />
       </div>
-      <div className={styles.postData}>
-        <div className={styles.tags}>
+      <div className={css.postData}>
+        <div className={css.tags}>
           {tags.map((tag, index) => {
-            return <Tag key={index} tag={tag} />;
+            return <Tag key={index} tag={tag} to={`/tags#${tag}`} />;
           })}
         </div>
-        <div className={styles.title}>
+        <div className={css.title}>
           <h1>{data.title}</h1>
           <p>{data.description}</p>
         </div>
-        <PostMetadata cname={styles.metadata} date={date} stats={stats} />
+        <PostMetadata cname={css.metadata} date={date} stats={stats} />
       </div>
     </section>
   );

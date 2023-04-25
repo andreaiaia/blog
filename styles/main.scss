@@ -36,6 +36,7 @@ html {
   color: $black;
   position: relative;
   min-height: 100%;
+  scroll-behavior: smooth;
 
   &[data-theme='dark'] {
     background-color: $black;
@@ -86,7 +87,6 @@ h3 {
   @include h3;
 }
 blockquote {
-  font-family: 'Special Elite', serif;
   font-variation-settings: 'wght' 400;
 }
 
