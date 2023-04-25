@@ -46,8 +46,6 @@ const TaggedPosts = ({ allPostsData, tag }) => {
 };
 
 const TagCloud = ({ tags }) => {
-  console.log(tags);
-
   return (
     <div className={css.tagCloud}>
       {Object.keys(tags)

@@ -3,17 +3,22 @@ import Head from 'next/head';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getSimilarPostsData } from '../../lib/tags';
 
 import Divider from '../../components/Divider';
+import SimilarPosts from '../../components/SimilarPosts';
 
 import styles from './Blog.module.scss';
 import PostHero from '../../components/Hero/PostHero';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
+  const similarPosts = await getSimilarPostsData(params.id);
+
   return {
     props: {
       postData,
+      similarPosts,
     },
   };
 }
@@ -26,7 +31,7 @@ export async function getStaticPaths() {
   };
 }
 
-const Post = ({ postData }) => {
+const Post = ({ postData, similarPosts }) => {
   const { data, content, stats, formattedDate } = postData;
 
   const { scrollYProgress } = useScroll();
@@ -56,6 +61,7 @@ const Post = ({ postData }) => {
             className={styles.postContent}
             dangerouslySetInnerHTML={{ __html: content }}
           />
+          <SimilarPosts similarPostsData={similarPosts} />
         </div>
       </main>
     </>
