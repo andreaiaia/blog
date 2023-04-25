@@ -38,7 +38,7 @@ const Header = ({ pages }) => {
   window.addEventListener('scroll', handleScroll);
 
   return (
-    <header className={headerStyle}>
+    <header id="top" className={headerStyle}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href="/">
