@@ -4,6 +4,7 @@ import { getSortedPostsData } from '../../lib/posts';
 
 import Post from '../../components/Thumbnails/Post';
 import Hero from '../../components/Hero';
+import Tag from '../../components/Tag';
 
 import css from './Tags.module.scss';
 
@@ -44,27 +45,58 @@ const TaggedPosts = ({ allPostsData, tag }) => {
   );
 };
 
+const TagCloud = ({ tags }) => {
+  console.log(tags);
+
+  return (
+    <div className={css.tagCloud}>
+      {Object.keys(tags)
+        .sort((a, b) => a.localeCompare(b))
+        .map((tag, index) => {
+          return <Tag key={index} tag={tag} to={`#${tag}`} toAnchor />;
+        })}
+    </div>
+  );
+};
+
 const Tags = ({ allTags, allPostsData }) => {
+  const returnToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // for smoothly scrolling
+    });
+  };
+
   return (
     <main>
       <Hero cname={css.hero}>
         <div>
           <h1 className={css.title}>Tags</h1>
-          <p>All tagged posts</p>
+          <TagCloud tags={allTags} />
         </div>
       </Hero>
       <section className={css.container}>
-        {Object.keys(allTags).map((tag, index) => {
-          return (
-            <div key={`tag-${index}`} className={css.tag}>
-              <h2>{tag}</h2>
-              <TaggedPosts tag={tag} allPostsData={allPostsData} />
-            </div>
-          );
-        })}
-        <ul className={css.posts}>
-          {/* {allTags && allTags.map((tag, index) => <div key={index}>{tag}</div>)} */}
-        </ul>
+        {Object.keys(allTags)
+          .sort((a, b) => a.localeCompare(b))
+          .map((tag, index) => {
+            return (
+              <div key={`tag-${index}`} className={css.tag}>
+                <div id={tag} className={css.tagHeading}>
+                  <div className={css.tagTitle}>
+                    <div className={css.postsCount}>
+                      <p className={css.number}>{allTags[tag]}</p>
+                      <p>{allTags[tag] > 1 ? 'Posts' : 'Post'}</p>
+                    </div>
+                    <h2>{tag}</h2>
+                  </div>
+                  <button className={css.toTop} onClick={() => returnToTop()}>
+                    Return to top
+                  </button>
+                </div>
+                <TaggedPosts tag={tag} allPostsData={allPostsData} />
+              </div>
+            );
+          })}
       </section>
     </main>
   );

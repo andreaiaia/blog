@@ -1,5 +1,4 @@
 @use '../../styles/_globals.module' as *;
-@use '../../styles/_globals.module' as *;
 
 .hero {
   padding: 6rem 0;
@@ -17,11 +16,95 @@
 
 .container {
   @include container;
-  max-width: 1200px;
-  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.postsCount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: $secondary-200;
+  width: fit-content;
+
+  @include dark {
+    background-color: $light-d;
+  }
+
+  .number {
+    font-size: 2rem;
+    @include bold;
+    line-height: 2rem;
+  }
 
   @include smartphone {
+    display: none;
+  }
+}
+
+.tagHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+
+  .toTop {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $secondary-500;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    @include smartphone {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include smartphone {
+    margin-bottom: 1rem;
     padding-top: 2rem;
+  }
+}
+
+.tagTitle {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  @include smartphone {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+
+  @include smartphone {
+    padding-top: 0.5rem;
+    margin: 0;
   }
 }
 
@@ -32,99 +115,5 @@
 
   @include tabletPortrait {
     justify-content: space-evenly;
-  }
-}
-
-.progressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0.5rem;
-  background-color: $primary-500;
-  transform-origin: 0%;
-  z-index: 1;
-
-  @include dark {
-    background-color: $primary-500;
-  }
-}
-
-.postContent {
-  max-width: 65ch;
-  padding-top: 2.25rem;
-
-  h2 {
-    margin-top: 2rem;
-  }
-
-  p {
-    margin-bottom: 0.5rem;
-  }
-
-  a {
-    color: $primary-500;
-
-    @include dark {
-      color: $primary-500;
-    }
-  }
-
-  blockquote {
-    line-height: 1.4;
-    text-align: center;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    background-color: $light-l;
-    margin: 1.5rem 0;
-    padding: 1.2rem;
-    quotes: '\201C''\201D''\2018''\2019';
-
-    em {
-      letter-spacing: normal;
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    & p:first-child::first-letter {
-      color: unset;
-      font-size: unset;
-      float: unset;
-      padding-right: 0;
-      margin-top: 0;
-
-      @include dark {
-        color: unset;
-      }
-    }
-
-    @include dark {
-      background-color: $light-d;
-    }
-  }
-
-  pre {
-    margin: 1rem 0;
-  }
-
-  @include smartphone {
-    padding-top: 1.8rem;
-  }
-
-  & p:first-child::first-letter {
-    color: $primary-500;
-    font-size: 4rem;
-    float: left;
-    padding-right: 8px;
-    margin-top: -3px;
-
-    @include dark {
-      color: $primary-500;
-    }
   }
 }
