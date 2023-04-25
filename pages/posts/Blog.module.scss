@@ -85,24 +85,12 @@
       font-size: 1rem;
 
       &::before {
-        content: '- ';
+        content: '— ';
       }
     }
 
     p {
       margin-bottom: 0;
-    }
-
-    & p:first-child::first-letter {
-      color: unset;
-      font-size: unset;
-      float: unset;
-      padding-right: 0;
-      margin-top: 0;
-
-      @include dark {
-        color: unset;
-      }
     }
 
     @include dark {
@@ -118,7 +106,7 @@
     padding-top: 1.8rem;
   }
 
-  & p:first-child::first-letter {
+  & > p:first-child::first-letter {
     color: $primary-500;
     // initial-letter: 4; at the moment is not compatible with most browsers
     font-size: 4rem;
