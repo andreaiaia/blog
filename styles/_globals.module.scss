@@ -1,45 +1,45 @@
 // Colors
-$white: #fdfffc;
-$black: #001427;
-$info: #33658a;
+$white: hsl(100, 100%, 99%);
+$black: hsl(209, 100%, 8%);
+$info: hsl(206, 46%, 37%);
 // Light theme colors
-$light-l: #fff9eb;
+$light-l: hsl(43, 100%, 96%);
 // Dark theme colors
-$light-d: #152a3e;
+$light-d: hsl(209, 49%, 16%);
 // primary color
-$primary-100: #faeee2;
-$primary-200: #fedeba;
-$primary-300: #ffc37e;
-$primary-400: #fca039;
-$primary-500: #fb8500;
-$primary-600: #db7401;
-$primary-700: #ad5d03;
-$primary-800: #904b00;
-$primary-900: #502a00;
+$primary-100: hsl(32, 71%, 93%);
+$primary-200: hsl(32, 97%, 86%);
+$primary-300: hsl(32, 100%, 75%);
+$primary-400: hsl(32, 97%, 61%);
+$primary-500: hsl(32, 100%, 49%);
+$primary-600: hsl(32, 99%, 43%);
+$primary-700: hsl(32, 97%, 35%);
+$primary-800: hsl(32, 100%, 28%);
+$primary-900: hsl(32, 100%, 16%);
 // secondary color
-$secondary-100: #fff9eb;
-$secondary-200: #ffe8ae;
-$secondary-300: #fdd779;
-$secondary-400: #ffc941;
-$secondary-500: #ffb703;
-$secondary-600: #db9c00;
-$secondary-700: #b07e00;
-$secondary-800: #7d5900;
-$secondary-900: #4d3702;
+$secondary-100: hsl(43, 100%, 96%);
+$secondary-200: hsl(43, 100%, 84%);
+$secondary-300: hsl(43, 97%, 73%);
+$secondary-400: hsl(43, 100%, 63%);
+$secondary-500: hsl(43, 100%, 51%);
+$secondary-600: hsl(43, 100%, 43%);
+$secondary-700: hsl(43, 100%, 35%);
+$secondary-800: hsl(43, 100%, 25%);
+$secondary-900: hsl(43, 95%, 15%);
 // neutral shades
-$neutral-100: #e4eef7;
-$neutral-200: #b5c5d2;
-$neutral-300: #8091a0;
-$neutral-400: #5c6e7d;
-$neutral-500: #364757;
-$neutral-600: #273b4f;
-$neutral-700: #152a3e;
-$neutral-800: #091e31;
-$neutral-900: #001427;
+$neutral-100: hsl(209, 54%, 93%);
+$neutral-200: hsl(209, 24%, 77%);
+$neutral-300: hsl(209, 14%, 56%);
+$neutral-400: hsl(209, 15%, 43%);
+$neutral-500: hsl(209, 23%, 28%);
+$neutral-600: hsl(209, 34%, 23%);
+$neutral-700: hsl(209, 49%, 16%);
+$neutral-800: hsl(209, 69%, 11%);
+$neutral-900: hsl(209, 100%, 8%);
 // semantic colors
-$success: #00af5e;
-$warning: #e9cd00;
-$danger: #fa000b;
+$success: hsl(152, 100%, 34%);
+$warning: hsl(53, 100%, 46%);
+$danger: hsl(357, 100%, 49%);
 
 // breakpoints
 $smartphone: 600px;
