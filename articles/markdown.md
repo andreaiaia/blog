@@ -2,7 +2,7 @@
 title: Markdown Examples
 date: '2021/3/19'
 description: View examples of all possible Markdown options.
-tag: web development, markdown, test
+tag: markdown,test
 author: Andrea Bianchi
 pic: /images/photos/matera/Matera-Sunset-Moon-2022.webp
 ---
