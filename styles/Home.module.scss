@@ -1,5 +1,4 @@
 @use './_globals.module' as *;
-@use './layout.scss' as *;
 
 .hero {
   & > div {
@@ -109,43 +108,4 @@
 
 .accent {
   color: $primary-500;
-}
-
-.pageNotFound {
-  margin-top: 1rem;
-  padding: 6rem 0;
-
-  & > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 1rem;
-
-    .pageNotFoundPic {
-      position: relative;
-      width: 100%;
-      min-height: 450px;
-
-      & > img {
-        object-fit: cover;
-      }
-    }
-
-    @include tabletPortrait {
-      grid-template-columns: 1fr;
-      justify-items: center;
-
-      .pageNotFoundPic {
-        min-height: 300px;
-      }
-    }
-  }
-
-  h1 {
-    color: $primary-500;
-
-    @include dark {
-      color: $primary-500;
-    }
-  }
 }
