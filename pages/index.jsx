@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { getSortedPostsData } from '../lib/posts';
+import { getLatestPostsData } from '../lib/notion';
 
 import { PostCard } from '../components/Thumbnails';
 import { Polaroid } from '../components/Thumbnails';
@@ -12,10 +13,16 @@ import Button from '../components/Button';
 import Matera from '../public/images/photos/matera/thumbnail.webp';
 import css from '../styles/Home.module.scss';
 
+export const databaseId = process.env.NOTION_DATABASE_ID;
+
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const latestPosts = await getLatestPostsData(databaseId);
+
+  console.log(latestPosts);
   return {
     props: { allPostsData },
+    revalidate: 10, // In seconds
   };
 }
 
