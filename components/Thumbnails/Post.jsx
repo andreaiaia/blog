@@ -6,9 +6,9 @@ import PostMetadata from '../PostMetadata';
 
 import styles from './Post.module.scss';
 
-const Post = ({ id, date, title, description, stats, postPic }) => {
+const Post = ({ slug, title, description, date, stats, postPic }) => {
   return (
-    <Link className={styles.container} href={`/posts/${id}`}>
+    <Link className={styles.container} href={`/posts/${slug}`}>
       <div className={styles.coverPic}>
         <Image src={postPic} alt={description} fill sizes="340px" />
         <div className={styles.data}>

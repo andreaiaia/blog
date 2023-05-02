@@ -6,7 +6,7 @@ import PostMetadata from '../PostMetadata';
 import styles from './PostCard.module.scss';
 import Divider from '../Divider';
 
-const PostCard = ({ id, date, title, description, stats, postPic }) => {
+const PostCard = ({ slug, title, description, date, stats, postPic }) => {
   return (
     <div
       className={styles.container}
@@ -16,7 +16,7 @@ const PostCard = ({ id, date, title, description, stats, postPic }) => {
         backgroundPosition: 'center',
       }}
     >
-      <Link href={`/posts/${id}`} className={styles.content}>
+      <Link href={`/posts/${slug}`} className={styles.content}>
         <div className={styles.article}>
           <p className={styles.title}>{title}</p>
           <Divider size="small" cname={styles.divider} />
