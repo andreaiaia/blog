@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { getLatestPostsData } from '../../lib/notion';
+import { getLatestPostsData } from '/lib/notion';
 
-import Post from '../../components/Thumbnails/Post';
-import Hero from '../../components/Hero';
+import Post from '/components/Thumbnails/Post';
+import Hero from '/components/Hero';
 
 import css from './Blog.module.scss';
 
-export const databaseId = process.env.NOTION_DATABASE_ID;
+import { databaseId } from '../index.jsx';
 
 export async function getStaticProps() {
   const allPostsData = await getLatestPostsData(databaseId);
