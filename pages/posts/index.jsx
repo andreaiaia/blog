@@ -1,13 +1,17 @@
 import React from 'react';
-import { getSortedPostsData } from '../../lib/posts';
+
+import { getLatestPostsData } from '../../lib/notion';
 
 import Post from '../../components/Thumbnails/Post';
 import Hero from '../../components/Hero';
 
 import css from './Blog.module.scss';
 
+export const databaseId = process.env.NOTION_DATABASE_ID;
+
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = await getLatestPostsData(databaseId);
+
   return {
     props: { allPostsData },
   };
@@ -26,26 +30,15 @@ const Blog = ({ allPostsData }) => {
         <ul className={css.posts}>
           {allPostsData.map(
             (
-              {
-                id,
-                formattedDate,
-                title,
-                author,
-                tag,
-                description,
-                stats,
-                pic,
-              },
+              { slug, title, description, formattedDate, stats, pic },
               index
             ) => (
               <li key={index}>
                 <Post
-                  id={id}
-                  date={formattedDate}
+                  slug={slug}
                   title={title}
-                  author={author}
-                  tag={tag}
                   description={description}
+                  date={formattedDate}
                   stats={stats}
                   postPic={pic}
                 />

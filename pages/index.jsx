@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { getSortedPostsData } from '../lib/posts';
 import { getLatestPostsData } from '../lib/notion';
 
 import { PostCard } from '../components/Thumbnails';
@@ -16,10 +15,8 @@ import css from '../styles/Home.module.scss';
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  const latestPosts = await getLatestPostsData(databaseId);
+  const allPostsData = await getLatestPostsData(databaseId);
 
-  console.log(latestPosts);
   return {
     props: { allPostsData },
     revalidate: 10, // In seconds
@@ -63,16 +60,15 @@ const Home = ({ allPostsData }) => {
                 .slice(0, 3)
                 .map(
                   (
-                    { id, formattedDate, title, pic, tag, description, stats },
+                    { slug, title, description, formattedDate, stats, pic },
                     index
                   ) => (
                     <li key={index}>
                       <PostCard
-                        id={id}
-                        date={formattedDate}
+                        slug={slug}
                         title={title}
-                        tag={tag}
                         description={description}
+                        date={formattedDate}
                         stats={stats}
                         postPic={pic}
                       />
