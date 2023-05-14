@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getLatestPostsData } from '/lib/notion';
 
-import Post from '/components/Thumbnails/Post';
+import { Post } from '/components/Thumbnails';
 import Hero from '/components/Hero';
 
 import css from './Blog.module.scss';
