@@ -2,31 +2,31 @@ import React from 'react';
 import Head from 'next/head';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-import { getAllPostIds, getPostData } from '../../lib/posts';
-import { getSimilarPostsData } from '../../lib/tags';
-import { getAllPosts } from '../../lib/notion';
-import { renderPage } from '../../lib/notionBlockRenderer';
+import { getAllPostIds, getPostData } from '/lib/posts';
+import { getSimilarPostsData } from '/lib/tags';
+import { getAllPostsSlugs, getBlocks } from '/lib/notion';
 
-import Divider from '../../components/Divider';
-import SimilarPosts from '../../components/SimilarPosts';
+import Divider from '/components/Divider';
+import SimilarPosts from '/components/SimilarPosts';
+import PostHero from '/components/Hero/PostHero';
+import { RenderBlocks } from '/components/NotionRenderer';
 
-import styles from './Blog.module.scss';
-import PostHero from '../../components/Hero/PostHero';
+import css from './Blog.module.scss';
 
-import { databaseId } from '../index.jsx';
+import { databaseId } from '/pages/index.jsx';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   const similarPosts = await getSimilarPostsData(params.id);
 
-  // use the function in notion.js to get the data from the database
-  const allPosts = await getAllPosts(databaseId);
-
-  // in allPosts find the post with slug equals to params.id
+  // Use the function in notion.js to get the data from the database
+  const allPosts = await getAllPostsSlugs(databaseId);
+  // In allPosts find the post with slug equals to params.id
   const post = allPosts.find((post) => post.slug === params.id);
 
-  const article = renderPage(post.content);
-  console.log(article);
+  const content = await getBlocks(post.id);
+
+  const article = RenderBlocks(content);
 
   return {
     props: {
@@ -66,12 +66,12 @@ const Post = ({ postData, similarPosts }) => {
         <meta property="og:title" content={data.title} />
       </Head>
       <main>
-        <motion.div className={styles.progressBar} style={{ scaleX }} />
-        <div className={styles.container}>
+        <motion.div className={css.progressBar} style={{ scaleX }} />
+        <div className={css.container}>
           <PostHero data={data} date={formattedDate} stats={stats} />
           <Divider />
           <article
-            className={styles.postContent}
+            className={css.postContent}
             dangerouslySetInnerHTML={{ __html: content }}
           />
           <SimilarPosts similarPostsData={similarPosts} />
