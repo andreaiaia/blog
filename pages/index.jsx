@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { getLatestPostsData } from '../lib/notion';
+import { getLatestPostsData } from '../lib/posts';
 
 import { PostCard } from '../components/Thumbnails';
 import { Polaroid } from '../components/Thumbnails';
@@ -12,18 +12,16 @@ import Button from '../components/Button';
 import Matera from '../public/images/photos/matera/thumbnail.webp';
 import css from '../styles/Home.module.scss';
 
-export const databaseId = process.env.NOTION_DATABASE_ID;
-
 export async function getStaticProps() {
-  const allPostsData = await getLatestPostsData(databaseId);
+  const postsData = await getLatestPostsData();
 
   return {
-    props: { allPostsData },
+    props: { postsData },
     revalidate: 10, // In seconds
   };
 }
 
-const Home = ({ allPostsData }) => {
+const Home = ({ postsData }) => {
   return (
     <>
       <Head>
@@ -56,25 +54,23 @@ const Home = ({ allPostsData }) => {
           </div>
           <div className={css.postsContainer}>
             <ul className={css.posts}>
-              {allPostsData
-                .slice(0, 3)
-                .map(
-                  (
-                    { slug, title, description, formattedDate, stats, pic },
-                    index
-                  ) => (
-                    <li key={index}>
-                      <PostCard
-                        slug={slug}
-                        title={title}
-                        description={description}
-                        date={formattedDate}
-                        stats={stats}
-                        postPic={pic}
-                      />
-                    </li>
-                  )
-                )}
+              {postsData.map(
+                (
+                  { id, title, description, formattedDate, stats, pic },
+                  index
+                ) => (
+                  <li key={index}>
+                    <PostCard
+                      slug={id}
+                      title={title}
+                      description={description}
+                      date={formattedDate}
+                      stats={stats}
+                      postPic={pic}
+                    />
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </section>

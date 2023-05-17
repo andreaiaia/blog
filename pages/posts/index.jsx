@@ -1,16 +1,14 @@
 import React from 'react';
 
-import { getLatestPostsData } from '/lib/notion';
+import { getSortedPostsData } from '/lib/posts';
 
 import { Post } from '/components/Thumbnails';
 import Hero from '/components/Hero';
 
 import css from './Blog.module.scss';
 
-import { databaseId } from '../index.jsx';
-
 export async function getStaticProps() {
-  const allPostsData = await getLatestPostsData(databaseId);
+  const allPostsData = await getSortedPostsData();
 
   return {
     props: { allPostsData },
@@ -29,13 +27,10 @@ const Blog = ({ allPostsData }) => {
       <section className={css.container}>
         <ul className={css.posts}>
           {allPostsData.map(
-            (
-              { slug, title, description, formattedDate, stats, pic },
-              index
-            ) => (
+            ({ id, title, description, formattedDate, stats, pic }, index) => (
               <li key={index}>
                 <Post
-                  slug={slug}
+                  slug={id}
                   title={title}
                   description={description}
                   date={formattedDate}

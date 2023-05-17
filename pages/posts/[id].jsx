@@ -4,29 +4,16 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 
 import { getAllPostIds, getPostData } from '/lib/posts';
 import { getSimilarPostsData } from '/lib/tags';
-import { getAllPostsSlugs, getBlocks } from '/lib/notion';
 
 import Divider from '/components/Divider';
 import SimilarPosts from '/components/SimilarPosts';
 import PostHero from '/components/Hero/PostHero';
-import { RenderBlocks } from '/components/NotionRenderer';
 
 import css from './Blog.module.scss';
-
-import { databaseId } from '/pages/index.jsx';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   const similarPosts = await getSimilarPostsData(params.id);
-
-  // Use the function in notion.js to get the data from the database
-  const allPosts = await getAllPostsSlugs(databaseId);
-  // In allPosts find the post with slug equals to params.id
-  const post = allPosts.find((post) => post.slug === params.id);
-
-  const content = await getBlocks(post.id);
-
-  const article = RenderBlocks(content);
 
   return {
     props: {

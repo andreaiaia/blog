@@ -1,10 +1,10 @@
 import React from 'react';
-import { getAllTags } from '../../lib/tags';
-import { getSortedPostsData } from '../../lib/posts';
+import { getAllTags } from '/lib/tags';
+import { getSortedPostsData } from '/lib/posts';
 
-import Post from '../../components/Thumbnails/Post';
-import Hero from '../../components/Hero';
-import Tag from '../../components/Tag';
+import Post from '/components/Thumbnails/Post';
+import Hero from '/components/Hero';
+import Tag from '/components/Tag';
 
 import css from './Tags.module.scss';
 
