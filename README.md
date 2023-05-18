@@ -1,4 +1,4 @@
-<a href="#" style="display: block; margin: auto; width: 100%"><img width="auto" height="175px" src="logo.png" style="display: block; margin: 10px auto"/></a>
+<a href="#" style="display: block; margin: auto; width: 100%"><img width="auto" height="100px" src="logo.png" style="display: block; margin: 10px auto"/></a>
 
 ![License GNU GPL](https://img.shields.io/github/license/andreaiaia/blog)
 ![Repo size badge](https://img.shields.io/github/repo-size/andreaiaia/blog)
