@@ -18,4 +18,6 @@ This blog is built with **Next.js**. It is build to allow you to write Markdown 
 
 ## Getting Started
 
-If you like my blog and want to use it as a starter for your own, you can use the template repo I made, it is immediately deployable on Vercel and you can easily customize it to your liking. You can find it [here](ADD LINK TO REPO TEMPLATE).
+If you like my blog and want to use it as a starter for your own, you can use the template repo I made, it is immediately deployable on Vercel and you can easily customize it to your liking.
+
+You can find it [here](https://github.com/andreaiaia/blog-template).
