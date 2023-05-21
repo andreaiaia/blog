@@ -23,16 +23,6 @@
   }
 }
 
-.posts {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-
-  @include tabletPortrait {
-    justify-content: space-evenly;
-  }
-}
-
 .progressBar {
   position: fixed;
   top: 0;
