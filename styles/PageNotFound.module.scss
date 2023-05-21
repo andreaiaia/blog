@@ -3,50 +3,19 @@
 
 .pageNotFound {
   margin-top: 1rem;
-  padding: 6rem 0;
-
-  & > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 1rem;
-
-    .pageNotFoundPic {
-      position: relative;
-      width: 100%;
-      min-height: 450px;
-
-      & > img {
-        object-fit: cover;
-      }
-    }
-
-    @include tabletPortrait {
-      grid-template-columns: 1fr;
-      justify-items: center;
-
-      .pageNotFoundPic {
-        min-height: 300px;
-      }
-    }
-  }
+  padding: 4rem 0;
 }
 
 .title {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-
-  & > p {
-    font-size: 10rem;
-    color: $primary-300;
-    position: absolute;
-    left: 0;
-    top: 0;
+  p {
+    @include h1;
+    font-size: 7rem;
+    margin: 0;
+    color: $secondary-300;
   }
 
-  & > h1 {
-    z-index: 1;
+  h1 {
+    @include h2;
+    color: $secondary-500;
   }
 }
