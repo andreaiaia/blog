@@ -1,6 +1,6 @@
 @use '../../styles/_globals.module' as *;
 
-.similarPosts {
+.container {
   @include container;
   padding: 0 0 2rem;
   margin-top: 4rem;
