@@ -2,9 +2,8 @@ import React from 'react';
 
 import { getSortedPostsData } from '/lib/posts';
 
-import { Post } from '/components/Thumbnails';
 import Hero from '/components/Hero';
-import PostsList from '/components/PostsList';
+import { SimpleList } from '/components/PostsList';
 
 import css from './Blog.module.scss';
 
@@ -25,7 +24,7 @@ const Blog = ({ allPostsData }) => {
           <p>My little corner of the web!</p>
         </div>
       </Hero>
-      <PostsList posts={allPostsData} />
+      <SimpleList posts={allPostsData} />
     </main>
   );
 };

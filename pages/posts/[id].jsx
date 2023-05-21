@@ -6,7 +6,7 @@ import { getAllPostIds, getPostData } from '/lib/posts';
 import { getSimilarPostsData } from '/lib/tags';
 
 import Divider from '/components/Divider';
-import PostsList from '/components/PostsList';
+import { SimpleList } from '/components/PostsList';
 import PostHero from '/components/Hero/PostHero';
 
 import css from './Blog.module.scss';
@@ -61,7 +61,7 @@ const Post = ({ postData, similarPosts }) => {
             className={css.postContent}
             dangerouslySetInnerHTML={{ __html: content }}
           />
-          <PostsList posts={similarPosts} title="You may also like" />
+          <SimpleList posts={similarPosts} title="You may also like" />
         </div>
       </main>
     </>
