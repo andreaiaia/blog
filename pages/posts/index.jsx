@@ -4,6 +4,7 @@ import { getSortedPostsData } from '/lib/posts';
 
 import { Post } from '/components/Thumbnails';
 import Hero from '/components/Hero';
+import PostsList from '/components/PostsList';
 
 import css from './Blog.module.scss';
 
@@ -24,24 +25,7 @@ const Blog = ({ allPostsData }) => {
           <p>My little corner of the web!</p>
         </div>
       </Hero>
-      <section className={css.container}>
-        <ul className={css.posts}>
-          {allPostsData.map(
-            ({ id, title, description, formattedDate, stats, pic }, index) => (
-              <li key={index}>
-                <Post
-                  slug={id}
-                  title={title}
-                  description={description}
-                  date={formattedDate}
-                  stats={stats}
-                  postPic={pic}
-                />
-              </li>
-            )
-          )}
-        </ul>
-      </section>
+      <PostsList posts={allPostsData} />
     </main>
   );
 };
