@@ -2,15 +2,15 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { getLatestPostsData } from '../lib/posts';
+import { getLatestPostsData } from '/lib/posts';
 
-import { PostCard } from '../components/Thumbnails';
-import { Polaroid } from '../components/Thumbnails';
-import Hero from '../components/Hero';
-import Button from '../components/Button';
+import { Polaroid } from '/components/Thumbnails';
+import Hero from '/components/Hero';
+import Button from '/components/Button';
+import { CardList } from '/components/PostsList';
 
-import Matera from '../public/images/photos/matera/thumbnail.webp';
-import css from '../styles/Home.module.scss';
+import Matera from '/public/images/photos/matera/thumbnail.webp';
+import css from '/styles/Home.module.scss';
 
 export async function getStaticProps() {
   const postsData = await getLatestPostsData();
@@ -48,32 +48,7 @@ const Home = ({ postsData }) => {
           </div>
           <Polaroid cname={css.pic} src={Matera} alt="My home, Matera" />
         </Hero>
-        <section className={css.recentPosts}>
-          <div className={css.title}>
-            <h2>Latest posts</h2>
-          </div>
-          <div className={css.postsContainer}>
-            <ul className={css.posts}>
-              {postsData.map(
-                (
-                  { id, title, description, formattedDate, stats, pic },
-                  index
-                ) => (
-                  <li key={index}>
-                    <PostCard
-                      slug={id}
-                      title={title}
-                      description={description}
-                      date={formattedDate}
-                      stats={stats}
-                      postPic={pic}
-                    />
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        </section>
+        <CardList posts={postsData} title="Latest posts" />
       </main>
     </>
   );
