@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@next/codemod": "^13.2.3",
-    "eslint-config-next": "^13.4.4",
     "framer-motion": "^10.2.3",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
@@ -37,7 +36,11 @@
     "semi": false
   },
   "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
     "eslint": "^8.35.0",
-    "remark-emoji": "^3.1.1"
+    "eslint-config-next": "^13.4.4",
+    "remark-emoji": "^3.1.1",
+    "typescript": "^5.0.4"
   }
 }
