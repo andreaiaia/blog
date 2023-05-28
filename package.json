@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "@next/codemod": "^13.2.3",
-    "@notionhq/client": "^2.2.4",
-    "eslint-config-next": "^13.2.3",
+    "eslint-config-next": "^13.4.4",
     "framer-motion": "^10.2.3",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
