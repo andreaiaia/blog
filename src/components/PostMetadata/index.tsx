@@ -1,8 +1,9 @@
 import React from 'react';
+import { PostMetadataPropsType } from '../types';
 
 import styles from './PostMetadata.module.scss';
 
-const PostMetadata = ({ date, stats, cname }) => {
+const PostMetadata = ({ date, stats, cname }: PostMetadataPropsType) => {
   return (
     <div className={`${styles.meta} ${cname}`}>
       <p>{date}</p>
