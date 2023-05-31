@@ -11,8 +11,8 @@ import '../styles/prismjs/prism-gruvbox-dark.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Welcome to Next.js',
+  title: 'Andrea F.',
+  description: 'Questo è il mio blog e di nessun altro.',
 };
 
 export default function RootLayout({
