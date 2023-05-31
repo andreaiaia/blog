@@ -1,12 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import { PostPropsType } from '../types';
 
 import PostMetadata from '../PostMetadata';
 
 import styles from './PostCard.module.scss';
 import Divider from '../Divider';
 
-const PostCard = ({ slug, title, description, date, stats, postPic }) => {
+const PostCard = ({
+  slug,
+  title,
+  description,
+  date,
+  stats,
+  postPic,
+}: PostPropsType) => {
   return (
     <div
       className={styles.container}
