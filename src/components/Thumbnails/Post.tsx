@@ -1,12 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PostPropsType } from '../types';
 
 import PostMetadata from '../PostMetadata';
 
 import styles from './Post.module.scss';
 
-const Post = ({ slug, title, description, date, stats, postPic }) => {
+const Post = ({
+  slug,
+  title,
+  description,
+  date,
+  stats,
+  postPic,
+}: PostPropsType) => {
   return (
     <Link className={styles.container} href={`/posts/${slug}`}>
       <div className={styles.coverPic}>
