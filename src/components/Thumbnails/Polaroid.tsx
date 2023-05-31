@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PolaroidPropsType, ImagePropsType } from '../types';
 
 import styles from './Polaroid.module.scss';
 
-const PolaroidImage = ({ src, alt }) => (
+const PolaroidImage = ({ src, alt }: ImagePropsType) => (
   <>
     <div className={styles.img}>
       <Image
@@ -21,7 +22,7 @@ const PolaroidImage = ({ src, alt }) => (
   </>
 );
 
-const Polaroid = ({ src, alt, cname, to }) => {
+const Polaroid = ({ src, alt, cname, to }: PolaroidPropsType) => {
   return to ? (
     <Link
       className={`${styles.container} ${styles.link} ${cname || ''}`}
