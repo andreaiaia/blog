@@ -1,4 +1,3 @@
-import 'server-only';
 const { promises: fs } = require('fs');
 const path = require('path');
 const RSS = require('rss');
@@ -11,16 +10,16 @@ async function generate() {
     feed_url: 'https://andreafromont.vercel.app/feed.xml',
   });
 
-  const posts = await fs.readdir(path.join(__dirname, '..', 'articles'));
+  const posts = await fs.readdir(path.join(__dirname, '..', '..', 'articles'));
 
   const regex = new RegExp(/\.mdx$/, 'i');
 
   await Promise.all(
     posts
-      .filter((fileName: string) => regex.test(fileName))
-      .map(async (name: string) => {
+      .filter((fileName) => regex.test(fileName))
+      .map(async (name) => {
         const content = await fs.readFile(
-          path.join(__dirname, '..', 'articles', name)
+          path.join(__dirname, '..', '..', 'articles', name)
         );
         const frontmatter = matter(content);
 
