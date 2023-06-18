@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import '../styles/normalize.css';
 import '../styles/main.scss';
