@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { ThemeProvider } from 'next-themes';
+import { Theme } from './Theme';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -36,12 +36,12 @@ export default function RootLayout({
   ];
 
   return (
-    <ThemeProvider disableTransitionOnChange>
+    <Theme>
       <html lang="en">
         <Header pages={pages} />
         <body>{children}</body>
         <Footer />
       </html>
-    </ThemeProvider>
+    </Theme>
   );
 }
