@@ -1,3 +1,3 @@
-export type StatsType = {
-  [key: string]: string;
-};
+import { ReadTimeResults } from 'reading-time';
+
+export type StatsType = ReadTimeResults;

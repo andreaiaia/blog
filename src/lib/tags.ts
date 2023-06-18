@@ -12,14 +12,14 @@ const postsDirectory = path.join(process.cwd(), '/articles');
 export async function getAllTags() {
   const allIds = await getAllPostIds();
 
-  let tagCount = {};
+  let tagCount: { [key: string]: number } = {};
   // Iterate through each post, putting all found tags into `tags`
   allIds.forEach((post) => {
     const fullPath = path.join(postsDirectory, `${post.params.id}.mdx`);
     const source = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(source);
     if (data.tag) {
-      data.tag.split(',').forEach((tag) => {
+      data.tag.split(',').forEach((tag: string) => {
         const formattedTag = kebabCase(tag);
         if (formattedTag in tagCount) {
           tagCount[formattedTag] += 1;
@@ -33,7 +33,7 @@ export async function getAllTags() {
   return tagCount;
 }
 
-export async function getSimilarPostsData(id) {
+export async function getSimilarPostsData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data } = matter(fileContents);
@@ -64,10 +64,10 @@ export async function getSimilarPostsData(id) {
 
   return allPostsData
     .sort((a, b) => {
-      const commonElementsWithA = originalPostTags.filter((element) =>
+      const commonElementsWithA = originalPostTags.filter((element: string) =>
         a.tags.includes(element)
       );
-      const commonElementsWithB = originalPostTags.filter((element) =>
+      const commonElementsWithB = originalPostTags.filter((element: string) =>
         b.tags.includes(element)
       );
 

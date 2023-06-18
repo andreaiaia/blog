@@ -8,6 +8,7 @@ import prism from 'remark-prism';
 import emoji from 'remark-emoji';
 import readingTime from 'reading-time';
 import { formatDate } from './utils/formatDate';
+import { PostData, Metadata } from './types';
 
 const postsDirectory = path.join(process.cwd(), '/articles');
 
@@ -19,13 +20,15 @@ export function getLatestPostsData() {
 export function getSortedPostsData() {
   const fileNames = fs.readdirSync(postsDirectory);
   const regex = new RegExp(/\.mdx$/, 'i');
-  const allPostsData = fileNames
+  const allPostsData: PostData[] = fileNames
     .filter((fileName) => regex.test(fileName))
     .map((fileName) => {
       const id = fileName.replace(/\.mdx$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
+      const { data, content }: { data: Metadata; content: string } = matter(
+        fileContents
+      ) as unknown as { data: Metadata; content: string };
       const stats = readingTime(content);
       const formattedDate = formatDate(data.date);
       const tags = data.tag.split(',');
@@ -36,7 +39,7 @@ export function getSortedPostsData() {
         tags,
         stats,
         formattedDate,
-      };
+      } as PostData;
     });
 
   return allPostsData.sort((a, b) => {
@@ -62,7 +65,7 @@ export function getAllPostIds() {
     });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);

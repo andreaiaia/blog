@@ -17,8 +17,8 @@ async function generate() {
 
   await Promise.all(
     posts
-      .filter((fileName) => regex.test(fileName))
-      .map(async (name) => {
+      .filter((fileName: string) => regex.test(fileName))
+      .map(async (name: string) => {
         const content = await fs.readFile(
           path.join(__dirname, '..', 'articles', name)
         );
