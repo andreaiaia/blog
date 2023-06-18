@@ -1,10 +1,11 @@
 import React from 'react';
+import { Props } from './types';
 
 import Post from '../Thumbnails/Post';
 
 import css from './SimpleList.module.scss';
 
-const SimpleList = ({ posts, title }) => {
+const SimpleList = ({ posts, title }: Props) => {
   return (
     <section className={css.container}>
       {title && <h2>{title}</h2>}

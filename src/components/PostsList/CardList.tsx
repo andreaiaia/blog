@@ -1,10 +1,11 @@
 import React from 'react';
+import { Props } from './types';
 
-import { PostCard } from '/components/Thumbnails';
+import { PostCard } from '../Thumbnails';
 
 import css from './CardList.module.scss';
 
-const CardList = ({ posts, title }) => {
+const CardList = ({ posts, title }: Props) => {
   return (
     <section className={css.recentPosts}>
       <div className={css.title}>{title && <h2>{title}</h2>}</div>
