@@ -16,22 +16,22 @@ const Footer = () => {
         <ul className={css.links}>
           <li>
             <a href="/feed.xml">
-              <Rss className={css.icon} alt="RSS feed" />
+              <Rss className={css.icon} />
             </a>
           </li>
           <li>
             <a href="https://instagram.com/andreaiaia" target="_blank">
-              <Instagram className={css.icon} alt="Instagram logo" />
+              <Instagram className={css.icon} />
             </a>
           </li>
           <li>
             <a href="https://github.com/andreaiaia" target="_blank">
-              <GitHub className={css.icon} alt="Github logo" />
+              <GitHub className={css.icon} />
             </a>
           </li>
           <li>
             <a href="https://linkedin.com/in/andreaiaia/" target="_blank">
-              <Linkedin className={css.icon} alt="Linkedin logo" />
+              <Linkedin className={css.icon} />
             </a>
           </li>
         </ul>
@@ -39,7 +39,7 @@ const Footer = () => {
           <time>{YEAR}</time> © Andrea Bianchi.
         </small>
         <div>
-          <ThemeSwitcher cname={css.switcherStyle} />
+          <ThemeSwitcher />
         </div>
         <div className={css.notAiBadge}>
           <a href="https://notbyai.fyi/">
