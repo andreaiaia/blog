@@ -3,8 +3,14 @@ import Link from 'next/link';
 
 import styles from './Tag.module.scss';
 
-const Tag = ({ tag, to, toAnchor }) => {
-  if (toAnchor)
+type Props = {
+  tag: string;
+  to?: string;
+  anchor?: boolean;
+};
+
+const Tag = ({ tag, to, anchor }: Props) => {
+  if (anchor)
     return (
       <a href={to} className={styles.tag}>
         {tag}
