@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { GitHub, Instagram, Linkedin, Rss } from 'react-feather';
 
@@ -10,14 +8,6 @@ import NotByAi from './NotByAi';
 import css from './Footer.module.scss';
 
 const Footer = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   const YEAR = new Date().getFullYear();
 
   return (
