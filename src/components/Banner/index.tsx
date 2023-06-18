@@ -2,7 +2,12 @@ import React from 'react';
 
 import styles from './Banner.module.scss';
 
-const Banner = ({ title, text }) => {
+type Props = {
+  title: string;
+  text: string;
+};
+
+const Banner = ({ title, text }: Props) => {
   return (
     <section className={styles.banner}>
       <div>
