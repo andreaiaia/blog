@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 import styles from './NavItems.module.scss';
@@ -24,7 +25,7 @@ type NavItemsProps = {
   menuHandler: () => void;
 };
 
-const NavItems = ({ menuHandler }: NavItemsProps) => {
+const NavItems = ({ menuHandler = () => null }: NavItemsProps) => {
   return (
     <ul className={styles.navLinks}>
       {pages.map((page, index) => (
@@ -36,11 +37,6 @@ const NavItems = ({ menuHandler }: NavItemsProps) => {
   );
 };
 
-NavItems.defaultProps = {
-  menuHandler: () => null,
-  pages: [],
-};
-
 type NavLinkProps = {
   href: string;
   onClick?: () => void;
@@ -48,9 +44,9 @@ type NavLinkProps = {
 };
 
 export const NavLink = ({ href, onClick, children }: NavLinkProps) => {
-  const { asPath } = useRouter();
+  const pathname = usePathname();
 
-  const isActive = asPath === href;
+  const isActive = pathname === href;
 
   return (
     <li className={styles.link}>
