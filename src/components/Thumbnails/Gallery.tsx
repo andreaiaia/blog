@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GalleryPropsType, ImagePropsType } from '../types';
+import { GalleryPropsType, ImagePropsType } from './types';
 
 import styles from './Gallery.module.scss';
 

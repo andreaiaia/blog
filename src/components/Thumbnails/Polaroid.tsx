@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PolaroidPropsType, ImagePropsType } from '../types';
+import { PolaroidPropsType, ImagePropsType } from './types';
 
 import styles from './Polaroid.module.scss';
 

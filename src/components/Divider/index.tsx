@@ -1,9 +1,13 @@
 import React from 'react';
-import { DividerPropsType } from '../types';
 
 import styles from './Divider.module.scss';
 
-const Divider = ({ size, cname }: DividerPropsType) => {
+type PropsType = {
+  size: string;
+  cname?: string;
+};
+
+const Divider = ({ size, cname }: PropsType) => {
   return <hr className={`${styles.separator} ${styles[size]} ${cname}`} />;
 };
 
