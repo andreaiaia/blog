@@ -4,10 +4,10 @@ import NavItems from './NavItems';
 
 import styles from './FullNav.module.scss';
 
-export const FullNav = ({ pages }) => {
+export const FullNav = () => {
   return (
     <nav className={styles.nav}>
-      <NavItems pages={pages} />
+      <NavItems />
     </nav>
   );
 };

@@ -3,11 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { FullNav } from './FullNav';
 import { MobileNav } from './MobileNav';
 
-import { smartphone } from '../../styles/_globals.module.scss';
-
-const Navbar = ({ pages }) => {
+const Navbar = () => {
   const [mounted, setMounted] = useState(false);
-  const [width, setWidth] = useState(null);
+  const [width, setWidth] = useState<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -20,8 +18,9 @@ const Navbar = ({ pages }) => {
     setWidth(window.innerWidth);
   });
 
-  if (width <= smartphone) return <MobileNav pages={pages} />;
-  else return <FullNav pages={pages} />;
+  // TODO remove 600 and put a not hard-coded variable
+  if (width && width <= 600) return <MobileNav />;
+  else return <FullNav />;
 };
 
 export default Navbar;
