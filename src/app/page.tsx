@@ -12,7 +12,7 @@ import { CardList } from '../components/PostsList';
 import Matera from '/public/images/photos/matera/thumbnail.webp';
 import css from '../styles/Home.module.scss';
 
-export async function getData() {
+async function getData() {
   const postsData = await getLatestPostsData();
 
   return postsData;
