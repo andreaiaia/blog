@@ -1,16 +1,28 @@
-import React from 'react';
-import { Props } from './types';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Props, Post as PostType } from './types';
 
 import Post from '../Thumbnails/Post';
 
 import css from './SimpleList.module.scss';
 
 const SimpleList = ({ posts, title }: Props) => {
+  const [postsData, setPostsData] = useState<PostType[]>([]);
+
+  useEffect(() => {
+    async function setData() {
+      const data = await posts;
+      setPostsData(data);
+    }
+
+    setData();
+  }, [posts]);
+
   return (
     <section className={css.container}>
       {title && <h2>{title}</h2>}
       <ul className={css.posts}>
-        {posts.map(
+        {postsData.map(
           ({ id, title, description, formattedDate, stats, pic }, index) => (
             <li key={index}>
               <Post
