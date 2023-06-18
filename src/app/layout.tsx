@@ -20,25 +20,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pages = [
-    {
-      name: 'Home',
-      href: '/',
-    },
-    {
-      name: 'Photos',
-      href: '/photos',
-    },
-    {
-      name: 'Blog',
-      href: '/posts',
-    },
-  ];
-
   return (
     <Theme>
       <html lang="en">
-        <Header pages={pages} />
+        <Header />
         <body>{children}</body>
         <Footer />
       </html>
