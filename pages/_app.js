@@ -4,10 +4,10 @@ import { ThemeProvider } from 'next-themes';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 
-import '../styles/normalize.css';
-import '../styles/main.scss';
-import '../styles/layout.scss';
-import '../styles/prismjs/prism-gruvbox-dark.css';
+import '../src/styles/normalize.css';
+import '../src/styles/main.scss';
+import '../src/styles/layout.scss';
+import '../src/styles/prismjs/prism-gruvbox-dark.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 export default function App({ Component, pageProps }) {
