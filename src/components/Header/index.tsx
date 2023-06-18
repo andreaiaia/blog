@@ -9,7 +9,7 @@ import Logo from '../Logo';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 
-const Header = ({ pages }) => {
+const Header = () => {
   const [mounted, setMounted] = useState(false);
   const [prevScroll, setPrevScroll] = useState(0);
   const [headerStyle, setHeaderStyle] = useState(styles.header);
@@ -47,7 +47,7 @@ const Header = ({ pages }) => {
             <Logo />
           </Link>
         </div>
-        <Navbar pages={pages} />
+        <Navbar />
         <div className={styles.themeSwitcher}>
           <ThemeSwitcher />
         </div>
