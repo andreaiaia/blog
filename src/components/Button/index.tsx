@@ -2,18 +2,26 @@ import React from 'react';
 
 import css from './Button.module.scss';
 
+type PropsType = {
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  secondary?: boolean;
+  cname?: string;
+  children: JSX.Element;
+};
+
 const Button = ({
-  onClick = null,
+  onClick,
   type = 'button',
   secondary,
-  className,
+  cname,
   children,
-}) => {
+}: PropsType) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`${css.button} ${className} ${secondary && css.secondary}`}
+      className={`${css.button} ${cname} ${secondary && css.secondary}`}
     >
       {children}
     </button>
