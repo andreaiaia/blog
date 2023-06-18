@@ -1,11 +1,13 @@
+import { StaticImageData } from 'next/image';
+
 export type StatsType = {
   [key: string]: string;
 };
 
 export type PolaroidPropsType = {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
-  to: string;
+  to?: string;
   cname?: string;
 };
 
