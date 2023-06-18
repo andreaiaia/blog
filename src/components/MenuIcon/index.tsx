@@ -3,7 +3,12 @@ import { motion } from 'framer-motion';
 
 import styles from './MenuIcon.module.scss';
 
-const MenuIcon = ({ isOpen, handler }) => {
+type Props = {
+  isOpen: boolean;
+  handler: () => void;
+};
+
+const MenuIcon = ({ isOpen, handler }: Props) => {
   const transition = { duration: 0.3, ease: 'easeInOut' };
 
   return (
