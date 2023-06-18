@@ -22,7 +22,7 @@ const pages = [
 ];
 
 type NavItemsProps = {
-  menuHandler: () => void;
+  menuHandler?: () => void;
 };
 
 const NavItems = ({ menuHandler = () => null }: NavItemsProps) => {
