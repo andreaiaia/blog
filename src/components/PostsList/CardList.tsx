@@ -1,17 +1,29 @@
-import React from 'react';
-import { Props } from './types';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Props, Post } from './types';
 
 import { PostCard } from '../Thumbnails';
 
 import css from './CardList.module.scss';
 
 const CardList = ({ posts, title }: Props) => {
+  const [postsData, setPostsData] = useState<Post[]>([]);
+
+  useEffect(() => {
+    async function setData() {
+      const data = await posts;
+      setPostsData(data);
+    }
+
+    setData();
+  }, [posts]);
+
   return (
     <section className={css.recentPosts}>
       <div className={css.title}>{title && <h2>{title}</h2>}</div>
       <div className={css.postsContainer}>
         <ul className={css.posts}>
-          {posts.map(
+          {postsData.map(
             ({ id, title, description, formattedDate, stats, pic }, index) => (
               <li key={index}>
                 <PostCard

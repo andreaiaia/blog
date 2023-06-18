@@ -10,6 +10,6 @@ export type Post = {
 };
 
 export type Props = {
-  posts: Post[];
+  posts: Promise<Post[]> | Post[];
   title?: string;
 };
