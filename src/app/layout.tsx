@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { Theme } from './Theme';
+import { ServerThemeProvider } from 'next-themes';
+import { Providers } from './providers';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -21,12 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Theme>
+    <ServerThemeProvider attribute="class">
       <html lang="en">
-        <Header />
-        <body>{children}</body>
-        <Footer />
+        <body>
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </body>
       </html>
-    </Theme>
+    </ServerThemeProvider>
   );
 }
