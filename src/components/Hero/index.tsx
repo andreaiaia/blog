@@ -2,7 +2,13 @@ import React from 'react';
 
 import css from './Hero.module.scss';
 
-const Hero = ({ children, cname, background }) => {
+type Props = {
+  children: React.ReactNode;
+  cname?: string;
+  background: string;
+};
+
+const Hero = ({ children, cname, background }: Props) => {
   return (
     <section className={`${css.hero} ${cname} ${css[background]}`}>
       <div className={`${css.content}`}>{children}</div>

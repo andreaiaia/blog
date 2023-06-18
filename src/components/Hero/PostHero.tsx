@@ -4,9 +4,24 @@ import Image from 'next/image';
 import PostMetadata from '../PostMetadata';
 import Tag from '../Tag';
 
+import { StatsType } from '../types';
+
 import css from './PostHero.module.scss';
 
-const PostHero = ({ date, data, stats }) => {
+type Data = {
+  title: string;
+  description: string;
+  tag: string;
+  pic: string;
+};
+
+type Props = {
+  date: string;
+  data: Data;
+  stats: StatsType;
+};
+
+const PostHero = ({ date, data, stats }: Props) => {
   const tags = data.tag.split(',');
 
   return (
