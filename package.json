@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "echo 'local network url: ' $(ipconfig getifaddr en0) && next dev",
-    "build": "node ./lib/gen-rss.js && next build",
+    "build": "node ./src/lib/gen-rss.js && next build",
     "start": "next start"
   },
   "dependencies": {
