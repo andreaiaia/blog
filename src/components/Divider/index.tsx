@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './Divider.module.scss';
 
 type PropsType = {
-  size: string;
+  size?: 'small' | 'medium' | 'large';
   cname?: string;
 };
 
-const Divider = ({ size, cname }: PropsType) => {
+const Divider = ({ size = 'medium', cname }: PropsType) => {
   return <hr className={`${styles.separator} ${styles[size]} ${cname}`} />;
 };
 
