@@ -5,10 +5,10 @@ import css from './Hero.module.scss';
 type Props = {
   children: React.ReactNode;
   cname?: string;
-  background: string;
+  background?: 'transparent' | 'primary' | 'secondary' | 'tertiary' | 'info';
 };
 
-const Hero = ({ children, cname, background }: Props) => {
+const Hero = ({ children, cname, background = 'tertiary' }: Props) => {
   return (
     <section className={`${css.hero} ${cname} ${css[background]}`}>
       <div className={`${css.content}`}>{children}</div>

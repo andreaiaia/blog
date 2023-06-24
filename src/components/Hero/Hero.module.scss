@@ -1,8 +1,6 @@
 @use '../../styles/_globals.module' as *;
 
 .hero {
-  background-color: $light-l;
-
   @include dark {
     background-color: $light-d;
   }
@@ -11,7 +9,7 @@
     background-color: transparent;
   }
 
-  &.primary-500 {
+  &.primary {
     background-color: $primary-500;
 
     @include dark {
@@ -19,7 +17,7 @@
     }
   }
 
-  &.secondary-500 {
+  &.secondary {
     background-color: $secondary-500;
 
     @include dark {
@@ -28,6 +26,14 @@
   }
 
   &.tertiary {
+    background-color: $light-l;
+
+    @include dark {
+      background-color: $light-d;
+    }
+  }
+
+  &.info {
     background-color: $info;
 
     @include dark {
