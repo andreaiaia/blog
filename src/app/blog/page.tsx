@@ -1,21 +1,22 @@
 import React from 'react';
 
-import { getSortedPostsData } from '/lib/posts';
+import { getSortedPostsData } from '@lib/posts';
+import { PostData } from '@lib/types';
 
-import Hero from '/components/Hero';
-import { SimpleList } from '/components/PostsList';
+import Hero from '@components/Hero';
+import { SimpleList } from '@components/PostsList';
 
 import css from './Blog.module.scss';
 
-export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData();
+async function getData() {
+  const posts: PostData[] = await getSortedPostsData();
 
-  return {
-    props: { allPostsData },
-  };
+  return posts;
 }
 
-const Blog = ({ allPostsData }) => {
+const Blog = () => {
+  const allPostsData = getData();
+
   return (
     <main>
       <Hero cname={css.hero}>

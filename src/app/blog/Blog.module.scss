@@ -23,21 +23,6 @@
   }
 }
 
-.progressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0.5rem;
-  background-color: $primary-500;
-  transform-origin: 0%;
-  z-index: 1;
-
-  @include dark {
-    background-color: $primary-500;
-  }
-}
-
 .postContent {
   max-width: 65ch;
   padding-top: 2.25rem;
