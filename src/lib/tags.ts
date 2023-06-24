@@ -1,4 +1,4 @@
-import 'server-only';
+// import 'server-only';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -6,6 +6,7 @@ import { getAllPostIds } from './posts';
 import kebabCase from './utils/kebabCase';
 import readingTime from 'reading-time';
 import { formatDate } from './utils/formatDate';
+import { PostData, Metadata } from './types';
 
 const postsDirectory = path.join(process.cwd(), '/articles');
 
@@ -33,22 +34,24 @@ export async function getAllTags() {
   return tagCount;
 }
 
-export async function getSimilarPostsData(id: string) {
+export async function getSimilarPostsData(id: string): Promise<PostData[]> {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data } = matter(fileContents);
-  const originalPostTags = data.tag.split(',');
+  const { data: originalData } = matter(fileContents);
+  const originalPostTags = originalData.tag.split(',');
 
   const fileNames = fs.readdirSync(postsDirectory);
   const regex = new RegExp(/\.mdx$/, 'i');
-  const allPostsData = fileNames
+  const allPostsData: PostData[] = fileNames
     .filter((fileName) => regex.test(fileName))
     .filter((fileName) => fileName !== `${id}.mdx`)
     .map((fileName) => {
       const id = fileName.replace(/\.mdx$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
+      const { data, content }: { data: Metadata; content: string } = matter(
+        fileContents
+      ) as unknown as { data: Metadata; content: string };
       const stats = readingTime(content);
       const formattedDate = formatDate(data.date);
       const tags = data.tag.split(',');

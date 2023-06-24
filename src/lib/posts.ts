@@ -1,14 +1,15 @@
-import 'server-only';
+// import 'server-only';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import remarkMdx from 'remark-mdx';
+// import remarkMdx from 'remark-mdx';
+import html from 'remark-html';
 import prism from 'remark-prism';
 import emoji from 'remark-emoji';
 import readingTime from 'reading-time';
 import { formatDate } from './utils/formatDate';
-import { PostData, Metadata } from './types';
+import { PostData, Metadata, FullPost } from './types';
 
 const postsDirectory = path.join(process.cwd(), '/articles');
 
@@ -65,19 +66,21 @@ export function getAllPostIds() {
     });
 }
 
-export async function getPostData(id: string) {
+export async function getPostData(id: string): Promise<FullPost> {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+  const { data, content }: { data: Metadata; content: string } = matter(
+    fileContents
+  ) as unknown as { data: Metadata; content: string };
   const stats = readingTime(content);
   const formattedDate = formatDate(data.date);
   const tags = data.tag.split(',');
 
   const processedContent = await remark()
-    .use(remarkMdx)
+    .use(html)
     .use(emoji, { accessible: true })
-    .use(prism, { plugins: ['line-numbers'] })
     .process(content);
+  // .use(prism, { plugins: ['line-numbers'] })
   const contentHtml = processedContent.toString();
 
   return {
