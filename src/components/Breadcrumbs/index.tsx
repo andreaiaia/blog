@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 import styles from './Breadcrumbs.module.scss';
 
 const Breadcrumbs = () => {
-  const { asPath } = useRouter();
-  const path = asPath.split('/');
+  const pathname = usePathname();
+  const path = pathname.split('/');
 
   return (
     <div className={styles.breadcrumbs}>
