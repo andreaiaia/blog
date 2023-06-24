@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GitHub, Instagram, Linkedin, Rss } from 'react-feather';
 
-import ThemeSwitcher from '../ThemeSwitcher';
+import ThemeSwitcher from '@components/ThemeSwitcher';
 import NotByAi from './NotByAi';
 
 import css from './Footer.module.scss';

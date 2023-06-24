@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { PostPropsType } from './types';
 
-import PostMetadata from '../PostMetadata';
+import PostMetadata from '@components/PostMetadata';
 
 import styles from './Post.module.scss';
 

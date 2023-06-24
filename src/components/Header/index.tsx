@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
-import Navbar from '../Navbar';
-import ThemeSwitcher from '../ThemeSwitcher';
-import Logo from '../Logo';
+import Navbar from '@components/Navbar';
+import ThemeSwitcher from '@components/ThemeSwitcher';
+import Logo from '@components/Logo';
 
 import styles from './Header.module.scss';
-import Link from 'next/link';
 
 const Header = () => {
   const [mounted, setMounted] = useState(false);

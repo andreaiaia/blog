@@ -2,15 +2,15 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import { getLatestPostsData } from '../lib/posts';
+import { getLatestPostsData } from '@lib/posts';
 
-import { Polaroid } from '../components/Thumbnails';
-import Hero from '../components/Hero';
-import Button from '../components/Button';
-import { CardList } from '../components/PostsList';
+import { Polaroid } from '@components/Thumbnails';
+import Hero from '@components/Hero';
+import Button from '@components/Button';
+import { CardList } from '@components/PostsList';
 
 import Matera from '/public/images/photos/matera/thumbnail.webp';
-import css from '../styles/Home.module.scss';
+import css from '@styles/Home.module.scss';
 
 async function getData() {
   const postsData = await getLatestPostsData();

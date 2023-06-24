@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Props, Post as PostType } from './types';
 
-import Post from '../Thumbnails/Post';
+import Post from '@components/Thumbnails/Post';
 
 import css from './SimpleList.module.scss';
 

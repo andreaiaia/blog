@@ -2,10 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { PostPropsType } from './types';
 
-import PostMetadata from '../PostMetadata';
+import PostMetadata from '@components/PostMetadata';
+import Divider from '@components/Divider';
 
 import styles from './PostCard.module.scss';
-import Divider from '../Divider';
 
 const PostCard = ({
   slug,

@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { ServerThemeProvider } from 'next-themes';
 import { Providers } from './providers';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
 
-import '../styles/normalize.css';
-import '../styles/main.scss';
-import '../styles/layout.scss';
-import '../styles/prismjs/prism-gruvbox-dark.css';
+import '@styles/normalize.css';
+import '@styles/main.scss';
+import '@styles/layout.scss';
+import '@styles/prismjs/prism-gruvbox-dark.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 export const metadata: Metadata = {

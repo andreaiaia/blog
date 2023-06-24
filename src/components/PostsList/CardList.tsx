@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Props, Post } from './types';
 
-import { PostCard } from '../Thumbnails';
+import { PostCard } from '@components/Thumbnails';
 
 import css from './CardList.module.scss';
 
