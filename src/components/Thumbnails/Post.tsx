@@ -16,7 +16,7 @@ const Post = ({
   postPic,
 }: PostPropsType) => {
   return (
-    <Link className={styles.container} href={`/posts/${slug}`}>
+    <Link className={styles.container} href={`/blog/${slug}`}>
       <div className={styles.coverPic}>
         <Image src={postPic} alt={description} fill sizes="340px" />
         <div className={styles.data}>

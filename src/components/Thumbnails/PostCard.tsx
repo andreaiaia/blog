@@ -24,7 +24,7 @@ const PostCard = ({
         backgroundPosition: 'center',
       }}
     >
-      <Link href={`/posts/${slug}`} className={styles.content}>
+      <Link href={`/blog/${slug}`} className={styles.content}>
         <div className={styles.article}>
           <p className={styles.title}>{title}</p>
           <Divider size="small" cname={styles.divider} />

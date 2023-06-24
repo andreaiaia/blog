@@ -17,7 +17,7 @@ const pages = [
   },
   {
     name: 'Blog',
-    href: '/posts',
+    href: '/blog',
   },
 ];
 

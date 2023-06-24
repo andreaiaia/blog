@@ -37,7 +37,7 @@ const Home = () => {
           </p>
           <div className={css.CTAs}>
             <Button cname={css.homeCta}>
-              <Link href="/posts">Read my Blog</Link>
+              <Link href="/blog">Read my Blog</Link>
             </Button>
             <Button cname={css.homeCta} secondary>
               <Link href="/photos">See my Photos</Link>
