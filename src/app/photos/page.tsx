@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Polaroid } from '../../components/Thumbnails';
-import Hero from '../../components/Hero';
+import { Polaroid } from '@components/Thumbnails';
+import Hero from '@components/Hero';
 
 import photoData from './photos-index.json';
 

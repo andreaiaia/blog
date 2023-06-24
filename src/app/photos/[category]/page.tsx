@@ -1,14 +1,26 @@
+'use client';
+
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-import Banner from '../../components/Banner';
-import photoData from './photos-index.json';
+import Banner from '@components/Banner';
+import photoData from '../photos-index.json';
 
-import css from './Photos.module.scss';
+import css from '../Photos.module.scss';
 
-const Photo = ({ url, photo }) => {
+type Props = {
+  url: string;
+  photo: {
+    title: string;
+    description: string;
+    width: number;
+    height: number;
+  };
+};
+
+const Photo = ({ url, photo }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -36,8 +48,8 @@ const Photo = ({ url, photo }) => {
 };
 
 const Category = () => {
-  const router = useRouter();
-  const { category } = router.query;
+  const params = useParams();
+  const { category } = params;
   const data = photoData.data.filter((item) => item.category === category)[0];
 
   if (data)
