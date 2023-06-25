@@ -10,8 +10,8 @@ import { PostData, Metadata } from './types';
 
 const postsDirectory = path.join(process.cwd(), '/articles');
 
-export async function getAllTags() {
-  const allIds = await getAllPostIds();
+export function getAllTags() {
+  const allIds = getAllPostIds();
 
   let tagCount: { [key: string]: number } = {};
   // Iterate through each post, putting all found tags into `tags`
@@ -34,7 +34,7 @@ export async function getAllTags() {
   return tagCount;
 }
 
-export async function getSimilarPostsData(id: string): Promise<PostData[]> {
+export function getSimilarPostsData(id: string): PostData[] {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data: originalData } = matter(fileContents);
