@@ -6,7 +6,7 @@ import { PostData } from '@lib/types';
 import Post from '@components/Thumbnails/Post';
 import Hero from '@components/Hero';
 import Tag from '@components/Tag';
-import ReturnToTop from './ReturnToTop';
+import ReturnToTop from '@components/ReturnToTop';
 
 import css from './Tags.module.scss';
 

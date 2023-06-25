@@ -1,0 +1,27 @@
+@use '@styles/_globals.module' as *;
+
+.toTop {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $secondary-500;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  @include smartphone {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

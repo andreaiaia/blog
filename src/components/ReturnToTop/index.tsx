@@ -1,19 +1,18 @@
 'use client';
-
 import React from 'react';
 
-import css from './Tags.module.scss';
+import css from './ReturnToTop.module.scss';
 
 const ReturnToTop = () => {
-  const returnToTop = () => {
+  const toTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // for smoothly scrolling
+      behavior: 'smooth',
     });
   };
 
   return (
-    <button className={css.toTop} onClick={() => returnToTop()}>
+    <button className={css.toTop} onClick={() => toTop()}>
       Return to top
     </button>
   );
