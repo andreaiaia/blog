@@ -1,9 +1,8 @@
-@use '../../styles/_globals.module' as *;
+@use '@styles/_globals.module' as *;
 
 .meta {
   display: flex;
   align-items: flex-end;
-  // text-transform: capitalize;
   font-size: 0.8rem;
 
   .readingtime {

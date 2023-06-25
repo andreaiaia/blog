@@ -1,5 +1,4 @@
-@use '../../styles/_globals.module' as *;
-@use '../../styles/layout.scss' as *;
+@use '@styles/_globals.module' as *;
 
 .nav {
   grid-column: 8 / 12;
