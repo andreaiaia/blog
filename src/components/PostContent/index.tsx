@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 import ReactMarkdown from 'react-markdown';
 import Prism from 'prismjs';
-require('prismjs/components/prism-shell-session');
+require('prismjs/components/prism-bash');
 
 import css from './PostContent.module.scss';
 
