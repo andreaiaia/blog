@@ -3,8 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-// import remarkMdx from 'remark-mdx';
-import html from 'remark-html';
+import remarkMdx from 'remark-mdx';
 import prism from 'remark-prism';
 import emoji from 'remark-emoji';
 import readingTime from 'reading-time';
@@ -32,12 +31,11 @@ export function getSortedPostsData() {
       ) as unknown as { data: Metadata; content: string };
       const stats = readingTime(content);
       const formattedDate = formatDate(data.date);
-      const tags = data.tag.split(',');
 
       return {
         id,
         ...data,
-        tags,
+        tags: data.tags,
         stats,
         formattedDate,
       } as PostData;
@@ -74,10 +72,9 @@ export async function getPostData(id: string): Promise<FullPost> {
   ) as unknown as { data: Metadata; content: string };
   const stats = readingTime(content);
   const formattedDate = formatDate(data.date);
-  const tags = data.tag.split(',');
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkMdx)
     .use(emoji, { accessible: true })
     .process(content);
   // .use(prism, { plugins: ['line-numbers'] })
@@ -87,7 +84,6 @@ export async function getPostData(id: string): Promise<FullPost> {
     id,
     content: contentHtml,
     data,
-    tags,
     stats,
     formattedDate,
   };

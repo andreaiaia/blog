@@ -19,8 +19,8 @@ export function getAllTags() {
     const fullPath = path.join(postsDirectory, `${post.params.id}.mdx`);
     const source = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(source);
-    if (data.tag) {
-      data.tag.split(',').forEach((tag: string) => {
+    if (data.tags) {
+      data.tags.forEach((tag: string) => {
         const formattedTag = kebabCase(tag);
         if (formattedTag in tagCount) {
           tagCount[formattedTag] += 1;
@@ -38,7 +38,6 @@ export function getSimilarPostsData(id: string): PostData[] {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data: originalData } = matter(fileContents);
-  const originalPostTags = originalData.tag.split(',');
 
   const fileNames = fs.readdirSync(postsDirectory);
   const regex = new RegExp(/\.mdx$/, 'i');
@@ -54,12 +53,11 @@ export function getSimilarPostsData(id: string): PostData[] {
       ) as unknown as { data: Metadata; content: string };
       const stats = readingTime(content);
       const formattedDate = formatDate(data.date);
-      const tags = data.tag.split(',');
 
       return {
         id,
         ...data,
-        tags,
+        tags: data.tags,
         stats,
         formattedDate,
       };
@@ -67,10 +65,10 @@ export function getSimilarPostsData(id: string): PostData[] {
 
   return allPostsData
     .sort((a, b) => {
-      const commonElementsWithA = originalPostTags.filter((element: string) =>
+      const commonElementsWithA = originalData.tags.filter((element: string) =>
         a.tags.includes(element)
       );
-      const commonElementsWithB = originalPostTags.filter((element: string) =>
+      const commonElementsWithB = originalData.tags.filter((element: string) =>
         b.tags.includes(element)
       );
 

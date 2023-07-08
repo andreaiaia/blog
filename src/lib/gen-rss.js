@@ -28,7 +28,7 @@ async function generate() {
           url: '/posts/' + name.replace(/\.mdx?/, ''),
           date: frontmatter.data.date,
           description: frontmatter.data.description,
-          tags: frontmatter.data.tag.split(','),
+          tags: frontmatter.data.tags,
           author: 'Andrea Fromont',
         });
       })
