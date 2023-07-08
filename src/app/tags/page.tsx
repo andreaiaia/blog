@@ -30,23 +30,18 @@ const TaggedPosts = ({ allPostsData, tag }: TaggedPostsProps) => {
     <ul className={css.posts}>
       {allPostsData
         .filter(({ tags }) => tags.includes(tag))
-        .map(
-          (
-            { id, formattedDate, title, author, tag, description, stats, pic },
-            index
-          ) => (
-            <li key={`post-${tag}-${index}`}>
-              <Post
-                slug={id}
-                date={formattedDate}
-                title={title}
-                description={description}
-                stats={stats}
-                postPic={pic}
-              />
-            </li>
-          )
-        )}
+        .map(({ id, formattedDate, title, description, stats, pic }, index) => (
+          <li key={`post-${tag}-${index}`}>
+            <Post
+              slug={id}
+              date={formattedDate}
+              title={title}
+              description={description}
+              stats={stats}
+              postPic={pic}
+            />
+          </li>
+        ))}
     </ul>
   );
 };
