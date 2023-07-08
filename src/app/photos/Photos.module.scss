@@ -1,0 +1,78 @@
+@use '@styles/_globals.module' as *;
+
+$gap: 1rem;
+
+.hero {
+  padding: 6rem 0;
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    @include h2;
+    margin-top: 0;
+  }
+}
+
+.container {
+  @include container;
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2rem;
+
+  & > a {
+    flex-basis: 350px;
+  }
+
+  @include breakpoint($tablet-landscape) {
+    & > a {
+      flex-basis: 300px;
+    }
+  }
+
+  @include smartphone {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery {
+  padding: 2rem 1rem 0;
+}
+
+.img {
+  position: relative;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.photoDescription {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  line-height: 1.5rem;
+  transition: 0.3s ease-in-out;
+  color: $white;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  &.show {
+    opacity: 1;
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+}
+
+.picTitle {
+  @include h3;
+  color: $white;
+}

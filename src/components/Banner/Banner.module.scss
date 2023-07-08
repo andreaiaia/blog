@@ -1,0 +1,24 @@
+@use '@styles/_globals.module' as *;
+
+.banner {
+  background-color: $light-l;
+  margin: 1rem 0 2rem;
+
+  @include dark {
+    background-color: $light-d;
+  }
+
+  & > div {
+    @include container;
+    padding: 6rem 2rem;
+  }
+
+  h1 {
+    @include h2;
+    margin: 0 0 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

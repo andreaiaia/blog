@@ -1,0 +1,26 @@
+@use '@styles/_globals.module' as *;
+
+.container {
+  @include container;
+  padding: 0 0 2rem;
+  margin-top: 4rem;
+
+  @include smartphone {
+    padding: 0;
+  }
+
+  h2 {
+    @include h3;
+    margin-bottom: 2rem;
+  }
+}
+
+.posts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @include tabletPortrait {
+    justify-content: space-evenly;
+  }
+}

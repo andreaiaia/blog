@@ -1,0 +1,18 @@
+@use '@styles/_globals.module' as *;
+
+.tag {
+  color: $black;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  transition: 0.3s ease-in-out;
+  background-color: $primary-200;
+
+  @include dark {
+    background-color: $primary-500;
+  }
+
+  @include smartphone {
+    font-size: 0.9rem;
+  }
+}

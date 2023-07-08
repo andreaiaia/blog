@@ -1,0 +1,59 @@
+@use './_globals.module' as *;
+
+.hero {
+  & > div {
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+
+    @include tabletPortrait {
+      justify-items: center;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.greetings {
+  margin: 2rem 0;
+
+  h1 {
+    @include smartphone {
+      // font-size: 2.25rem;
+    }
+  }
+
+  p {
+    @include h3;
+
+    @include smartphone {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.CTAs {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .homeCta {
+    @include smartphone {
+      font-size: 1rem;
+    }
+  }
+}
+
+.pic {
+  transform: rotate(5deg);
+  justify-self: end;
+
+  @include tabletPortrait {
+    justify-self: center;
+  }
+}
+
+.accent {
+  color: $primary-500;
+}

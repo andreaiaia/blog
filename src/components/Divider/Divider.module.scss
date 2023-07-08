@@ -1,0 +1,26 @@
+@use '@styles/_globals.module' as *;
+
+.separator {
+  border: 2px solid $black;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+
+  @include dark {
+    border-color: $white;
+  }
+
+  &.small {
+    border-width: 1px;
+    width: 4rem;
+  }
+
+  &.medium {
+    border-width: 2px;
+    width: 100px;
+  }
+
+  &.large {
+    border-width: 2px;
+    width: 200px;
+  }
+}
