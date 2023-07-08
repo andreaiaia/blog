@@ -11,7 +11,7 @@ import css from './PostHero.module.scss';
 type Data = {
   title: string;
   description: string;
-  tag: string;
+  tags: string[];
   pic: string;
 };
 
@@ -22,8 +22,6 @@ type Props = {
 };
 
 const PostHero = ({ date, data, stats }: Props) => {
-  const tags = data.tag.split(',');
-
   return (
     <section className={css.hero}>
       <div className={css.postPic}>
@@ -37,7 +35,7 @@ const PostHero = ({ date, data, stats }: Props) => {
       </div>
       <div className={css.postData}>
         <div className={css.tags}>
-          {tags.map((tag, index) => {
+          {data.tags.map((tag, index) => {
             return <Tag key={index} tag={tag} to={`/tags#${tag}`} />;
           })}
         </div>
