@@ -7,6 +7,7 @@ import Divider from '@components/Divider';
 import { SimpleList } from '@components/PostsList';
 import PostHero from '@components/Hero/PostHero';
 import ProgressBar from '@components/ProgressBar';
+import PostContent from '@components/PostContent';
 
 import css from '../Blog.module.scss';
 
@@ -46,10 +47,7 @@ const Post = async ({ params }: PostProps) => {
       <div className={css.container}>
         <PostHero data={data} date={formattedDate} stats={stats} />
         <Divider />
-        <article
-          className={css.postContent}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <PostContent markdownContent={content} />
         <SimpleList posts={similarPosts} title="You may also like" />
       </div>
     </main>
