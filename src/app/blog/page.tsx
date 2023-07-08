@@ -8,8 +8,8 @@ import { SimpleList } from '@components/PostsList';
 
 import css from './Blog.module.scss';
 
-async function getData() {
-  const posts: PostData[] = await getSortedPostsData();
+function getData() {
+  const posts: PostData[] = getSortedPostsData();
 
   return posts;
 }
