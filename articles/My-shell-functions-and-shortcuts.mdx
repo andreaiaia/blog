@@ -83,7 +83,7 @@ Being dumb as only I can be, I would often create the new branch not from the ma
 
 Thanks to this function, I no longer have that problem, as it always creates branches starting from main.
 
-```sh[class="line-numbers"]
+```sh
 # make new branch from main regardless of current branch
 function mkbranch() {
     git switch main; echo;
@@ -97,7 +97,7 @@ I wrote this function instead because I was annoyed with always having to do the
 
 Now when I see that a PR has been approved and merged on main, I run this command and (after resolving any conflicts), go back to my code as if nothing happened.
 
-```sh[class="line-numbers"]
+```sh
 # update the current branch with changes from main
 function forward() {
     branch_name=$(git branch --show-current);
@@ -118,7 +118,7 @@ At this point, the hunt for the process that is occupying my precious port 3000 
 
 After googling twice for the command to find the disrespectful process, I decided to create a little function that is easier to remember.
 
-```sh[class="line-numbers"]
+```sh
 # find who is using ports 3000 and 3001 (usually node)
 function findPort() {
     echo "running on port " $1 ":"; echo;
@@ -134,7 +134,7 @@ It's a simple function to be executed weekly (or maybe to be done by a cron job)
 
 Not only is it a really convenient function, but it was the function that inspired me to write all my personalized functions and aliases, so a big high five :hand: to LordGordon!
 
-```sh[class="line-numbers"]
+```sh
 # update brew packages routine
 function brewWeekly() {
     brew update; echo;
