@@ -7,8 +7,6 @@ author: Andrea Bianchi
 pic: /images/photos/misc/Apricot-Blossom.webp
 ---
 
-import Code from '@components/code';
-
 As a front-end web developer, I find myself using the shell quite a lot throughout the day, usually typing the same couple of commands.
 
 Therefore, I have created some aliases and functions to make my job easier and to type less. Here are some of my favorites:
@@ -85,8 +83,7 @@ Being dumb as only I can be, I would often create the new branch not from the ma
 
 Thanks to this function, I no longer have that problem, as it always creates branches starting from main.
 
-<Code lang="sh" lineNumbers>
-```
+```sh[class="line-numbers"]
 # make new branch from main regardless of current branch
 function mkbranch() {
     git switch main; echo;
@@ -95,7 +92,6 @@ function mkbranch() {
     gpsup; echo;
 }
 ```
-</Code>
 
 I wrote this function instead because I was annoyed with always having to do the same roundabout to update my feature branches when my colleagues released something on main.
 

@@ -3,7 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import remarkMdx from 'remark-mdx';
+// import remarkMdx from 'remark-mdx';
+import html from 'remark-html';
 import prism from 'remark-prism';
 import emoji from 'remark-emoji';
 import readingTime from 'reading-time';
@@ -74,10 +75,10 @@ export async function getPostData(id: string): Promise<FullPost> {
   const formattedDate = formatDate(data.date);
 
   const processedContent = await remark()
-    .use(remarkMdx)
+    .use(html)
     .use(emoji, { accessible: true })
+    .use(prism, { plugins: ['line-numbers'] })
     .process(content);
-  // .use(prism, { plugins: ['line-numbers'] })
   const contentHtml = processedContent.toString();
 
   return {
