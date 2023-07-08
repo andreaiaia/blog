@@ -5,7 +5,7 @@ export type Metadata = {
   date: string;
   description: string;
   author: string;
-  tag: string;
+  tags: string[];
   pic: string;
 };
 
@@ -18,16 +18,8 @@ export type PostData = Metadata & {
 
 export type FullPost = {
   id: string;
-  tags: string[];
   stats: ReadTimeResults;
   formattedDate: string;
-  data: {
-    title: string;
-    date: string;
-    description: string;
-    author: string;
-    tag: string;
-    pic: string;
-  };
+  data: Metadata;
   content: string;
 };
