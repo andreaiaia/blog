@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { getPhotos } from '@lib/photos';
+
 import { Polaroid } from '@components/Thumbnails';
 import Hero from '@components/Hero';
 
@@ -7,8 +9,15 @@ import photoData from './photos-index.json';
 
 import css from './Photos.module.scss';
 
+async function getData() {
+  const photos = await getPhotos();
+
+  return photos;
+}
+
 const index = () => {
   const data = photoData.data;
+  const photos = getData();
 
   return (
     <main>
