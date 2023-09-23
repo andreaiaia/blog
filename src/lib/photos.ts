@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import Flickr from 'flickr-sdk';
-import { useSelectedLayoutSegments } from 'next/navigation';
 
 export async function getPhotos() {
   const flickr = new Flickr(
