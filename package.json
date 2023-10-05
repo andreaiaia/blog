@@ -29,8 +29,7 @@
     "sass": "^1.57.1",
     "server-only": "^0.0.1",
     "sharp": "^0.32.0",
-    "slugify": "^1.6.6",
-    "yarn": "^1.22.19"
+    "slugify": "^1.6.6"
   },
   "prettier": {
     "arrowParens": "always",
