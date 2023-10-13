@@ -80,6 +80,13 @@
       "description": "I can't help but keep looking at the sky, watching the stars makes me feel closer to infinity.",
       "photos": [
         {
+          "filepath": "astrophotography/crescent-moon.webp",
+          "title": "Crescent Moon",
+          "description": "The Crescent Moon on a pitch black sky.",
+          "width": 1440,
+          "height": 1440
+        },
+        {
           "filepath": "astrophotography/Mineral-Moon-First-Quarter-2023.04.webp",
           "title": "First Quarter",
           "description": "The First Quarter of the Moon in all its majestic beauty.",
