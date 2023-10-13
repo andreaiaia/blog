@@ -22,8 +22,7 @@
 
   blockquote {
     line-height: 1.4;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
     background-color: $light-l;
     margin: 1.5rem 0;
     padding: 1.2rem;
@@ -31,14 +30,7 @@
     quotes: '\201C''\201D''\2018''\2019';
 
     em {
-      letter-spacing: normal;
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 1rem;
-
-      &::before {
-        content: '— ';
-      }
+      line-height: 1.5;
     }
 
     p {
