@@ -38,7 +38,9 @@ export function getSortedPostsData() {
     });
 
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    const aDate = new Date(a.date);
+    const bDate = new Date(b.date);
+    if (aDate < bDate) {
       return 1;
     } else {
       return -1;
