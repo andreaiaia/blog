@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import Flickr from 'flickr-sdk';
 
 export async function getPhotos() {
