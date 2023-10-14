@@ -11,7 +11,7 @@
 
   p:not(:last-child):after {
     content: '•';
-    padding: 0 0.5rem;
+    padding: 0 6px;
     @include extralight;
   }
 }
