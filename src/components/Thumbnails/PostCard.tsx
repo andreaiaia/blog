@@ -5,7 +5,7 @@ import { PostPropsType } from './types';
 import PostMetadata from '@components/PostMetadata';
 import Divider from '@components/Divider';
 
-import styles from './PostCard.module.scss';
+import css from './PostCard.module.scss';
 
 const PostCard = ({
   slug,
@@ -17,22 +17,22 @@ const PostCard = ({
 }: PostPropsType) => {
   return (
     <div
-      className={styles.container}
+      className={css.container}
       style={{
         background: `url(${postPic})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <Link href={`/blog/${slug}`} className={styles.content}>
-        <div className={styles.article}>
-          <p className={styles.title}>{title}</p>
-          <Divider size="small" cname={styles.divider} />
-          <p className={styles.description}>{description}</p>
+      <Link href={`/blog/${slug}`} className={css.content}>
+        <div className={css.article}>
+          <p className={css.title}>{title}</p>
+          <Divider size="small" cname={css.divider} />
+          <p className={css.description}>{description}</p>
         </div>
-        <div className={styles.data}>
+        <div className={css.data}>
           <div>
-            <PostMetadata date={date} stats={stats} cname={styles.metadata} />
+            <PostMetadata date={date} stats={stats} cname={css.metadata} />
           </div>
         </div>
       </Link>
