@@ -196,6 +196,12 @@ $gap: 1rem;
   }
 }
 
+@mixin littleSmartphone() {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin tabletPortrait() {
   @media screen and (max-width: $tablet-portrait) and (pointer: coarse) {
     @content;

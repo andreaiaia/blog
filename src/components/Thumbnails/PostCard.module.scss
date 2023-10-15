@@ -22,8 +22,11 @@
   }
 
   @include smartphone {
-    width: 300px;
-    height: 500px;
+    width: 350px;
+  }
+
+  @include littleSmartphone {
+    width: 325px;
   }
 }
 
@@ -38,7 +41,7 @@
   display: grid;
   grid-template-rows: repeat(1fr, 2);
   @include smartphone {
-    padding: 2rem 0 1rem;
+    padding: 2rem 1rem 1rem;
   }
 }
 
@@ -74,7 +77,6 @@
   width: 100%;
   justify-self: center;
   align-self: end;
-  padding: 0 0.5rem;
 
   & > div {
     display: flex;
