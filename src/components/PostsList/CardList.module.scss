@@ -23,7 +23,7 @@
 
 .posts {
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   overflow-x: scroll;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
@@ -32,22 +32,21 @@
   }
   scroll-padding: 0 50%;
   scroll-snap-type: x mandatory;
-  // width: 100%;
   margin: auto;
   padding: 0 3rem;
 
   li {
-    margin: 1rem 1rem 2rem;
+    margin: 1rem 0 2rem;
     scroll-snap-align: center;
     display: inline-block;
   }
 
   @include smartphone {
     padding: 0 1rem;
-    gap: 0;
+    gap: 1.5rem;
 
     li {
-      margin: 1rem 0.8rem 2rem;
+      margin: 1rem 0 2rem;
     }
   }
 }
