@@ -1,10 +1,10 @@
 import React from 'react';
-
-import { GitHub, Instagram, Linkedin, Rss } from 'react-feather';
+import Link from 'next/link';
 
 import ThemeSwitcher from '@components/ThemeSwitcher';
 import NotByAi from './NotByAi';
 
+import { GitHub, Instagram, Linkedin, Rss } from 'react-feather';
 import css from './Footer.module.scss';
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className={css.footer}>
       <div className={css.content}>
-        <ul className={css.links}>
+        <ul className={css.socialLinks}>
           <li>
             <a href="/feed.xml">
               <Rss className={css.icon} />
@@ -38,8 +38,16 @@ const Footer = () => {
         <small className={css.credits}>
           <time>{YEAR}</time> © Andrea Bianchi.
         </small>
-        <div>
+        <div className={css.themeSwitcher}>
           <ThemeSwitcher />
+        </div>
+        <div className={css.otherLinks}>
+          <p className={css.smallTitle}>Links</p>
+          <ul>
+            <li className={css.footerLink}>
+              <Link href="/blog/bookmarks">Bookmarks</Link>
+            </li>
+          </ul>
         </div>
         <div className={css.notAiBadge}>
           <a href="https://notbyai.fyi/">
