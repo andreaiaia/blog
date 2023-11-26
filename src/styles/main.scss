@@ -22,6 +22,48 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'merriweatherbold';
+  src: url('/fonts/merriweather-bold-webfont.woff2') format('woff2'),
+    url('/fonts/merriweather-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'merriweatherbold_italic';
+  src: url('/fonts/merriweather-bolditalic-webfont.woff2') format('woff2'),
+    url('/fonts/merriweather-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'merriweatheritalic';
+  src: url('/fonts/merriweather-italic-webfont.woff2') format('woff2'),
+    url('/fonts/merriweather-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'merriweatherlight';
+  src: url('/fonts/merriweather-light-webfont.woff2') format('woff2'),
+    url('/fonts/merriweather-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'merriweatherlight_italic';
+  src: url('/fonts/merriweather-lightitalic-webfont.woff2') format('woff2'),
+    url('/fonts/merriweather-lightitalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'merriweatherregular';
+  src: url('/fonts/merriweather-regular-webfont.woff2') format('woff2'),
+    url('/fonts/merriweather-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
   background-color: $white;
