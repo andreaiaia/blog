@@ -12,11 +12,27 @@
     margin-bottom: 0.5rem;
   }
 
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-top: 1rem;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      p {
+        display: inline;
+      }
+    }
+  }
+
   a {
     color: $primary-500;
+    transition: ease-in-out 0.2s;
 
-    @include dark {
-      color: $primary-500;
+    &:hover {
+      color: $primary-600;
+      text-decoration: underline;
     }
   }
 
@@ -53,6 +69,7 @@
   & > p:first-child::first-letter {
     color: $primary-500;
     // initial-letter: 4; at the moment is not compatible with most browsers
+    // https://caniuse.com/css-initial-letter
     font-size: 4rem;
     line-height: 4rem;
     float: left;
