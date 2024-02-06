@@ -14,6 +14,8 @@
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/svelte": "^5.0.3",
+    "@astrojs/vercel": "^7.1.1",
     "@next/codemod": "^14.0.3",
     "@types/prismjs": "^1.26.3",
     "astro": "^4.3.3",
@@ -35,7 +37,8 @@
     "sass": "^1.69.5",
     "server-only": "^0.0.1",
     "sharp": "^0.32.6",
-    "slugify": "^1.6.6"
+    "slugify": "^1.6.6",
+    "svelte": "^4.2.10"
   },
   "prettier": {
     "arrowParens": "always",
