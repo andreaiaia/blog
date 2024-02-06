@@ -3,13 +3,20 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "echo 'local network url: ' $(ipconfig getifaddr en0) && next dev",
-    "build": "node ./src/lib/gen-rss.js && next build",
-    "start": "next start"
+    "dev": "echo 'local network url: ' $(ipconfig getifaddr en0) && astro dev",
+    "build": "node ./src/lib/gen-rss.js && astro check && astro build",
+    "start": "astro dev",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.0.5",
     "@next/codemod": "^14.0.3",
     "@types/prismjs": "^1.26.3",
+    "astro": "^4.3.3",
     "framer-motion": "^10.16.5",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",

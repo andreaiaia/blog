@@ -6,7 +6,7 @@ import { getAllPostIds } from './posts';
 import kebabCase from './utils/kebabCase';
 import readingTime from 'reading-time';
 import { formatDate } from './utils/formatDate';
-import { PostData, Metadata } from './types';
+import type { PostData, Metadata } from './types';
 
 const postsDirectory = path.join(process.cwd(), '/articles');
 
