@@ -1,10 +1,9 @@
-import React from 'react';
 import Image from 'next/image';
 
 import PostMetadata from '@components/PostMetadata';
 import Tag from '@components/Tag';
 
-import { StatsType } from '@components/types';
+import type { StatsType } from '@components/types';
 
 import css from './PostHero.module.scss';
 

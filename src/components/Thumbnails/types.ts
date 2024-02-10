@@ -1,5 +1,5 @@
-import { StaticImageData } from 'next/image';
-import { StatsType } from '../types';
+import type { StaticImageData } from 'next/image';
+import type { StatsType } from '../types';
 
 export type PolaroidPropsType = {
   src: string | StaticImageData;

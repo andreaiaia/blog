@@ -1,7 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { PostPropsType } from './types';
+import type { PostPropsType } from './types';
 
 import PostMetadata from '@components/PostMetadata';
 

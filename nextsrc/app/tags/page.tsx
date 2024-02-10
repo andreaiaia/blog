@@ -1,7 +1,6 @@
-import React from 'react';
 import { getAllTags } from '@lib/tags';
 import { getSortedPostsData } from '@lib/posts';
-import { PostData } from '@lib/types';
+import type { PostData } from '@lib/types';
 
 import Post from '@components/Thumbnails/Post';
 import Hero from '@components/Hero';

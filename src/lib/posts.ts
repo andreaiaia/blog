@@ -4,7 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { formatDate } from './utils/formatDate';
-import { PostData, Metadata, FullPost } from './types';
+import type { PostData, Metadata, FullPost } from './types';
 
 const postsDirectory = path.join(process.cwd(), '/articles');
 

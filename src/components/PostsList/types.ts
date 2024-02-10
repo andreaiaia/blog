@@ -1,4 +1,4 @@
-import { StatsType } from '../types';
+import type { StatsType } from '../types';
 
 export type Post = {
   id: string;

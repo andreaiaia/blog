@@ -1,7 +1,5 @@
-import React from 'react';
-
 import { getSortedPostsData } from '@lib/posts';
-import { PostData } from '@lib/types';
+import type { PostData } from '@lib/types';
 
 import Hero from '@components/Hero';
 import { SimpleList } from '@components/PostsList';

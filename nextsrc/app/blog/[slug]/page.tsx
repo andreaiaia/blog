@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { getPostData } from '@lib/posts';
 import { getSimilarPostsData } from '@lib/tags';
 
@@ -13,7 +11,7 @@ import css from '../Blog.module.scss';
 
 async function getData(slug: string) {
   const postData = await getPostData(slug);
-  const similarPosts = await getSimilarPostsData(slug);
+  const similarPosts = getSimilarPostsData(slug);
 
   return {
     postData,

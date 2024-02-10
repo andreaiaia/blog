@@ -1,5 +1,4 @@
-import React from 'react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { getLatestPostsData } from '@lib/posts';
@@ -12,8 +11,8 @@ import { CardList } from '@components/PostsList';
 import Matera from '/public/images/photos/matera/thumbnail.webp';
 import css from '@styles/Home.module.scss';
 
-async function getData() {
-  const postsData = await getLatestPostsData();
+function getData() {
+  const postsData = getLatestPostsData();
 
   return postsData;
 }

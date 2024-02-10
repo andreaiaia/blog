@@ -1,5 +1,4 @@
-import React from 'react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { getLatestPostsData } from '@lib/posts';
 
 import Hero from '@components/Hero';
@@ -7,8 +6,8 @@ import { CardList } from '@components/PostsList';
 
 import css from '@styles/NotFound.module.scss';
 
-async function getData() {
-  const postsData = await getLatestPostsData();
+function getData() {
+  const postsData = getLatestPostsData();
 
   return postsData;
 }

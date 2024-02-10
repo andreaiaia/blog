@@ -1,5 +1,3 @@
-import React from 'react';
-
 import styles from './NotByAi.module.scss';
 
 const NotByAi = () => {

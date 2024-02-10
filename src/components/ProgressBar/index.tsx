@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 import css from './ProgressBar.module.scss';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import css from './Button.module.scss';
 
 type PropsType = {

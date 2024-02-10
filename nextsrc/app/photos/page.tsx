@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Polaroid } from '@components/Thumbnails';
 import Hero from '@components/Hero';
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { StatsType } from '@components/types';
+import type { StatsType } from '@components/types';
 
 import styles from './PostMetadata.module.scss';
 

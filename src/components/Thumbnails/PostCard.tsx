@@ -1,6 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
-import { PostPropsType } from './types';
+import type { PostPropsType } from './types';
 
 import PostMetadata from '@components/PostMetadata';
 import Divider from '@components/Divider';

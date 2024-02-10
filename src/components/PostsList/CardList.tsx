@@ -1,6 +1,6 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { Props, Post } from './types';
+import { useState, useEffect } from 'react';
+import type { Props, Post } from './types';
 
 import { PostCard } from '@components/Thumbnails';
 
