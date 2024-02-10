@@ -19,13 +19,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "incremental": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "baseUrl": ".",
+    "baseUrl": "/Users/dindjarin/code/blog",
     "paths": {
       "@components/*": [
         "src/components/*"
@@ -36,7 +36,8 @@
       "@styles/*": [
         "src/styles/*"
       ]
-    }
+    },
+    "jsxImportSource": "react"
   },
   "include": [
     "next-env.d.ts",
