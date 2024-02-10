@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import ThemeSwitcher from '@components/ThemeSwitcher';
 import NotByAi from './NotByAi';
 
@@ -44,7 +42,7 @@ const Footer = () => {
           <p className={css.smallTitle}>Links</p>
           <ul>
             <li className={css.footerLink}>
-              <Link href="/blog/bookmarks">Bookmarks</Link>
+              <a href="/blog/bookmarks">Bookmarks</a>
             </li>
           </ul>
         </div>

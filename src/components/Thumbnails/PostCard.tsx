@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { PostPropsType } from './types';
 
 import PostMetadata from '@components/PostMetadata';
@@ -23,7 +22,7 @@ const PostCard = ({
         backgroundPosition: 'center',
       }}
     >
-      <Link href={`/blog/${slug}`} className={css.content}>
+      <a href={`/blog/${slug}`} className={css.content}>
         <div className={css.article}>
           <p className={css.title}>{title}</p>
           <Divider size="small" cname={css.divider} />
@@ -34,7 +33,7 @@ const PostCard = ({
             <PostMetadata date={date} stats={stats} cname={css.metadata} />
           </div>
         </div>
-      </Link>
+      </a>
     </div>
   );
 };

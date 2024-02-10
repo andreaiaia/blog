@@ -1,6 +1,4 @@
 'use client';
-import React from 'react';
-
 import css from './ReturnToTop.module.scss';
 
 const ReturnToTop = () => {

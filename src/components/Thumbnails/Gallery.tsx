@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { Image } from 'astro:assets';
 import type { GalleryPropsType, ImagePropsType } from './types';
 
 import styles from './Gallery.module.scss';
@@ -7,7 +6,7 @@ import styles from './Gallery.module.scss';
 const GalleryImage = ({ src, alt }: ImagePropsType) => (
   <>
     <Image
-      className={styles.img}
+      class={styles.img}
       src={src}
       alt={alt || ''}
       width={350}
@@ -21,9 +20,9 @@ const Gallery = ({ src, alt, to }: GalleryPropsType) => {
   return (
     <div className={styles.container}>
       {to ? (
-        <Link href={to}>
+        <a href={to}>
           <GalleryImage src={src} alt={alt} />
-        </Link>
+        </a>
       ) : (
         <div>
           <GalleryImage src={src} alt={alt} />

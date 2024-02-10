@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import styles from './Tag.module.scss';
 
 type Props = {
@@ -17,9 +15,9 @@ const Tag = ({ tag, to, anchor }: Props) => {
     );
   else
     return (
-      <Link href={to || '#'} className={styles.tag}>
+      <a href={to || '#'} className={styles.tag}>
         {tag}
-      </Link>
+      </a>
     );
 };
 

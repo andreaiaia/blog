@@ -1,6 +1,3 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-
 import { getLatestPostsData } from '@lib/posts';
 
 import { Polaroid } from '@components/Thumbnails';
@@ -17,10 +14,6 @@ function getData() {
   return postsData;
 }
 
-export const metadata: Metadata = {
-  title: 'Home - Andrea',
-};
-
 const Home = () => {
   const postsData = getData();
 
@@ -36,10 +29,10 @@ const Home = () => {
           </p>
           <div className={css.CTAs}>
             <Button cname={css.homeCta}>
-              <Link href="/blog">Read my Blog</Link>
+              <a href="/blog">Read my Blog</a>
             </Button>
             <Button cname={css.homeCta} secondary>
-              <Link href="/photos">See my Photos</Link>
+              <a href="/photos">See my Photos</a>
             </Button>
           </div>
         </div>

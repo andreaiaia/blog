@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 import Navbar from '@components/Navbar';
 import ThemeSwitcher from '@components/ThemeSwitcher';
@@ -43,9 +42,9 @@ const Header = () => {
     <header id="top" className={headerStyle}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/">
+          <a href="/">
             <Logo />
-          </Link>
+          </a>
         </div>
         <Navbar />
         <div className={styles.themeSwitcher}>

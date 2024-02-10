@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { Image } from 'astro:assets';
 
 import PostMetadata from '@components/PostMetadata';
 import Tag from '@components/Tag';
@@ -27,7 +27,8 @@ const PostHero = ({ date, data, stats }: Props) => {
         <Image
           src={data.pic}
           alt={data.description}
-          fill
+          width={300}
+          height={300}
           sizes="(max-width: 768px) 300px,
                   500px"
         />

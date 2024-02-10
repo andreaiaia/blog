@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { Image } from 'astro:assets';
 import type { PolaroidPropsType, ImagePropsType } from './types';
 
 import styles from './Polaroid.module.scss';
@@ -10,7 +9,8 @@ const PolaroidImage = ({ src, alt }: ImagePropsType) => (
       <Image
         src={src}
         alt={alt || ''}
-        fill
+        width={300}
+        height={300}
         sizes="(max-width: 768px) 300px,
                   500px"
       />
@@ -23,12 +23,12 @@ const PolaroidImage = ({ src, alt }: ImagePropsType) => (
 
 const Polaroid = ({ src, alt, cname, to }: PolaroidPropsType) => {
   return to ? (
-    <Link
+    <a
       className={`${styles.container} ${styles.link} ${cname || ''}`}
       href={to || '#'}
     >
       <PolaroidImage src={src} alt={alt} />
-    </Link>
+    </a>
   ) : (
     <div className={`${styles.container} ${cname || ''}`}>
       <PolaroidImage src={src} alt={alt} />

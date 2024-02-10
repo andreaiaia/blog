@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+// import { usePathname } from 'next/navigation';
 
 import styles from './NavItems.module.scss';
 
@@ -44,19 +43,20 @@ type NavLinkProps = {
 };
 
 export const NavLink = ({ href, onClick, children }: NavLinkProps) => {
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
-  const isActive = pathname === href;
+  // const isActive = pathname === href;
+  const isActive = false;
 
   return (
     <li className={styles.link}>
-      <Link
+      <a
         href={href}
         onClick={onClick}
         className={isActive ? styles.active : ''}
       >
         {children}
-      </Link>
+      </a>
     </li>
   );
 };

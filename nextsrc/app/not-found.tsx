@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { getLatestPostsData } from '@lib/posts';
 
 import Hero from '@components/Hero';
@@ -11,10 +10,6 @@ function getData() {
 
   return postsData;
 }
-
-export const metadata: Metadata = {
-  title: 'Not Found - Andrea',
-};
 
 const pageNotFound = () => {
   const postsData = getData();
