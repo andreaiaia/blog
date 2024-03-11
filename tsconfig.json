@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "strictNullChecks": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -41,6 +42,10 @@
     "src/app/Theme.jsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "to-migrate/*"
+  ],
+  "types": [
+    "@cloudflare/workers-types/2023-07-01"
   ]
 }

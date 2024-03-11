@@ -1,4 +1,5 @@
 {
+  "name": "andreabianchi.me",
   "version": "2.2.0",
   "private": true,
   "license": "MIT",
@@ -6,18 +7,20 @@
     "dev": "echo 'local network url: ' $(ipconfig getifaddr en0) && astro dev",
     "build": "node ./src/lib/gen-rss.js && astro check && astro build",
     "start": "astro dev",
-    "preview": "astro preview",
+    "preview": "astro build && wrangler pages dev ./dist",
+    "deploy": "astro build && wrangler pages deploy ./dist",
+    "build-cf-types": "wrangler types",
     "astro": "astro"
   },
   "type": "module",
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/cloudflare": "^9.1.0",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/react": "^3.0.10",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/svelte": "^5.0.3",
-    "@astrojs/vercel": "^7.1.1",
     "@types/prismjs": "^1.26.3",
     "@types/react-dom": "^18.2.19",
     "astro": "^4.3.3",
@@ -47,10 +50,12 @@
     "semi": false
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240222.0",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.55",
     "@types/react-responsive-masonry": "^2.1.3",
     "eslint": "^8.54.0",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "wrangler": "^3.32.0"
   }
 }

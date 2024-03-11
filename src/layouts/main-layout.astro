@@ -1,6 +1,6 @@
 ---
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+// import Header from '@components/Header'
+// import Footer from '@components/Footer'
 
 const { title, description } = Astro.props
 ---
@@ -15,8 +15,8 @@ const { title, description } = Astro.props
   </head>
 
   <body>
-    <Header client:only="react" />
+    <!-- <Header client:only="react" /> -->
     <slot />
-    <Footer />
+    <!-- <Footer /> -->
   </body>
 </html>
