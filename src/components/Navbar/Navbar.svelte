@@ -1,27 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
-  import FullNav from './FullNav.svelte'
-  import MobileNav from './MobileNav.svelte'
-
-  let width = null
-
-  onMount(() => {
-    width = window.innerWidth
-
-    const handleResize = () => {
-      width = window.innerWidth
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  })
+  import css from './Navbar.module.scss'
+  import NavItems from './NavItems.svelte'
 </script>
 
-{#if width && width <= 600}
-  <MobileNav />
-{:else}
-  <FullNav />
-{/if}
+<nav class={css.nav}>
+  <NavItems />
+</nav>
