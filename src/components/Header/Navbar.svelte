@@ -21,7 +21,7 @@
     }
   ]
 
-  let open = true
+  let open
 
   const handleMenu = () => {
     open = !open
@@ -30,12 +30,18 @@
 
   onMount(() => {
     pathname = window.location.pathname
+    const windowWidth = window.innerWidth
+
+    open = windowWidth > 600
 
     const handleRouteChange = (event) => {
       pathname = event.detail.url
     }
 
     window.addEventListener('routechange', handleRouteChange)
+    window.addEventListener('resize', () => {
+      open = window.innerWidth > 600
+    })
 
     return () => {
       window.removeEventListener('routechange', handleRouteChange)

@@ -30,6 +30,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     position: absolute;
+    display: flex;
     top: 76px;
     right: 0;
     z-index: 1;
