@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import Logo from '@components/Logo/Logo.svelte'
-  import Navbar from '@components/Navbar/Navbar.svelte'
+  import Navbar from './Navbar.svelte'
 
   import css from './Header.module.scss'
 

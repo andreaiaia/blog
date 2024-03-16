@@ -33,29 +33,19 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   // Layout
-  @include mainGrid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include smartphone {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .logo {
-  grid-column: 1 / 5;
-  justify-self: start;
-
   & svg {
     width: 150px;
     height: 60px;
-  }
-
-  @include smartphone {
-    grid-column: 1 / 9;
-  }
-}
-
-.themeSwitcher {
-  grid-column: 12 / 13;
-  justify-self: end;
-
-  @include smartphone {
-    justify-self: end;
-    padding-right: 0.5rem;
   }
 }
