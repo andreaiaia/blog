@@ -47,13 +47,6 @@ body {
 	min-height: 100vh;
 }
 
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-
 h1,
 h2,
 h3,
@@ -88,10 +81,6 @@ h5 {
 strong,
 b {
 	font-weight: 700;
-}
-
-p {
-	margin-bottom: 1em;
 }
 
 .prose p {
@@ -147,10 +136,6 @@ hr {
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
-	}
-
-	main {
-		padding: 1em;
 	}
 }
 
