@@ -1,15 +1,39 @@
 ---
 import MainLayout from '../layouts/main-layout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import { getLatestPostsData } from '../lib/posts'
+// import { getLatestPostsData } from '../lib/posts'
+
+import Hero from '../components/Hero/Hero.svelte'
+import Button from '../components/Button/Button.svelte'
+import Polaroid from '../components/Polaroid/Polaroid.svelte'
 
 import Matera from '../../public/images/photos/matera/thumbnail.webp'
 
 import css from '../styles/Home.module.scss'
 
-const postsData = getLatestPostsData()
+// const postsData = getLatestPostsData()
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main></main>
+  <main>
+    <Hero cname={css.hero} background='transparent'>
+      <div class={css.greetings}>
+        <h1>Hello, my name is Andrea</h1>
+        <p>
+          I&apos;m a <span class={css.accent}>Front-End Developer</span>{' '}
+          from Matera, Italy and in my free time I love taking{' '}
+          <span class={css.accent}>photos</span>.
+        </p>
+        <div class={css.CTAs}>
+          <Button cname={css.homeCta}>
+            <a href='/blog'>Read my Blog</a>
+          </Button>
+          <Button cname={css.homeCta} secondary>
+            <a href='/photos'>See my Photos</a>
+          </Button>
+        </div>
+      </div>
+      <Polaroid cname={css.pic} src={Matera} alt='My home, Matera' />
+    </Hero>
+  </main>
 </MainLayout>
