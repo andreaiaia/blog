@@ -1,11 +1,13 @@
 ---
 import MainLayout from '../layouts/main-layout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import '../styles/normalize.css'
-import '../styles/global.css'
-import '../styles/main.scss'
-import '../styles/_globals.module.scss'
-import '../styles/Home.module.scss'
+import { getLatestPostsData } from '../lib/posts'
+
+import Matera from '../../public/images/photos/matera/thumbnail.webp'
+
+import css from '../styles/Home.module.scss'
+
+const postsData = getLatestPostsData()
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
