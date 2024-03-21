@@ -6,6 +6,10 @@
 
   display: flex;
   align-items: center;
+
+  @include smartphone {
+    background-color: $white;
+  }
 }
 
 $duration: 0.2s;
