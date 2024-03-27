@@ -1,17 +1,28 @@
 @use './_globals.module' as *;
 
-.hero {
-  & > div {
-    min-height: 70vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: start;
-    align-items: center;
+.homepageHero {
+  background-image: url('https://live.staticflickr.com/65535/53615364513_33f22b5e64_k.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  padding-top: calc(76px);
+  min-height: max(100vh, 800px);
 
-    @include tabletPortrait {
-      justify-items: center;
-      grid-template-columns: 1fr;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  & > div {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: $white;
+    text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding-top: 8rem;
   }
 }
 

@@ -5,7 +5,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 
 import Hero from '../components/Hero/Hero.svelte'
 import Button from '../components/Button/Button.svelte'
-import Polaroid from '../components/Polaroid/Polaroid.svelte'
 
 import Matera from '../../public/images/photos/matera/thumbnail.webp'
 
@@ -16,7 +15,8 @@ import css from '../styles/Home.module.scss'
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
-    <Hero cname={css.hero} background='transparent'>
+    <section class={css.homepageHero}></section>
+    <Hero background='transparent'>
       <div class={css.greetings}>
         <h1>This website is WIP</h1>
         <p>
@@ -39,8 +39,7 @@ import css from '../styles/Home.module.scss'
             <a href='/photos'>See my Photos</a>
           </Button>
         </div>
-      </div>
-      <Polaroid cname={css.pic} src={Matera} alt='My home, Matera' /> -->
+      </div> -->
     </Hero>
   </main>
 </MainLayout>

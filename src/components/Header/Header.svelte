@@ -8,6 +8,11 @@
   let mounted = false
   let prevScroll = 0
   let headerStyle = css.header
+  let open
+
+  const handleMenu = () => {
+    open = !open
+  }
 
   const headerStyles = {
     top: `${css.header}`,
@@ -37,14 +42,14 @@
   })
 </script>
 
-<header id="top" class={headerStyle}>
+<header id="top" class={open ? `${headerStyle} ${css.open}` : `${headerStyle}`}>
   <div class={css.container}>
     <div class={css.logo}>
       <a href="/">
         <Logo />
       </a>
     </div>
-    <Navbar />
+    <Navbar {open} {handleMenu} />
     <!-- <div class={css.themeSwitcher}>
       <ThemeSwitcher />
     </div> -->

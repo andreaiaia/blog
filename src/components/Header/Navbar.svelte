@@ -4,6 +4,9 @@
 
   import css from './Navbar.module.scss'
 
+  export let open
+  export let handleMenu
+
   let pathname = ''
 
   const pages = [
@@ -20,13 +23,6 @@
       href: '/blog'
     }
   ]
-
-  let open
-
-  const handleMenu = () => {
-    open = !open
-    console.log('clicked')
-  }
 
   onMount(() => {
     pathname = window.location.pathname
