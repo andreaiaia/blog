@@ -4,28 +4,38 @@
 .footer {
   width: 100%;
   overflow: hidden;
-  background-color: $secondary-100;
-  position: absolute;
-  bottom: 0;
-
-  @include dark {
-    background-color: $light-d;
-  }
+  background-color: $background;
+  color: $white;
 }
 
 .content {
   @include container;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   @include smartphone {
-    padding: 1rem;
     flex-direction: column;
+    padding: 1rem;
     gap: 1rem;
   }
+}
+
+.title {
+  @include title;
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
 .socialLinks {
@@ -47,23 +57,10 @@
   }
 }
 
-.themeSwitcher {
-  @include smartphone {
-    line-height: 0;
-  }
-}
-
-.otherLinks {
+.links {
   & > ul {
     list-style-type: disc;
     list-style-position: inside;
-  }
-
-  .smallTitle {
-    padding: 1rem 0 1rem;
-    font-size: 1.2rem;
-    text-decoration: underline;
-    font-weight: 800;
   }
 
   .footerLink {
