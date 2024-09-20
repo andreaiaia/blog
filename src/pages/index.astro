@@ -2,13 +2,83 @@
 import HomeLayout from '../layouts/HomeLayout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 
+import Logo from '../components/Logo/Logo.svelte'
+import Navbar from '../components/Header/Navbar.svelte'
 import Footer from '../components/Footer/Footer.svelte'
 
 import css from '../styles/Home.module.scss'
+
+let open
+
+const handleMenu = () => {
+  open = !open
+}
 ---
 
 <HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <header></header>
-  <main>Blank canvas</main>
-  <Footer />
+  <header class={css.header}>
+    <div class={css.container}>
+      <div class={css.logo}>
+        <a href='/'>
+          <Logo />
+        </a>
+      </div>
+      <Navbar client:load {open} {handleMenu} />
+    </div>
+  </header>
+  <main class={css.main}>
+    <section class=`${css.section} ${css.fullScreen}`>
+      <img
+        class={css.image}
+        src='https://live.staticflickr.com/65535/54009336535_7e69687ff3_o.jpg'
+        alt='An apricot blossom.'
+      />
+    </section>
+
+    <section class={css.parallaxContainer}>
+      <div class=`${css.parallax} ${css.parallax2}` id='parallax2'></div>
+      <a class={css.cta}>photographer</a>
+    </section>
+
+    <section class=`${css.section} ${css.fullScreen}` id='section3'>
+      <img
+        class={css.image}
+        src='https://live.staticflickr.com/65535/54006609658_e50112462b_o.jpg'
+        alt='A starry landscape with a comet in the center.'
+      />
+      <a class={css.ctaSecondary}>developer</a>
+    </section>
+
+    <section class={css.parallaxContainer}>
+      <div class=`${css.parallax} ${css.parallax4}` id='parallax4'></div>
+      <a class={css.cta}>blogger</a>
+    </section>
+  </main>
+  <Footer addStyle={css.footer} />
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const parallax2 = document.getElementById('parallax2')
+      const parallax4 = document.getElementById('parallax4')
+      const section3 = document.getElementById('section3')
+      const section3Top = section3 ? section3.getBoundingClientRect().top : 0
+
+      // Quando la terza sezione entra in vista, l'immagine 4 viene portata sopra l'immagine 2 e viceversa in base alla direzione dello scroll
+      if (section3Top <= 0) {
+        if (parallax2) {
+          parallax2.style.zIndex = '0'
+        }
+        if (parallax4) {
+          parallax4.style.zIndex = '1'
+        }
+      } else {
+        if (parallax2) {
+          parallax2.style.zIndex = '1'
+        }
+        if (parallax4) {
+          parallax4.style.zIndex = '0'
+        }
+      }
+    })
+  </script>
 </HomeLayout>

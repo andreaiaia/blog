@@ -1,1 +1,98 @@
 @use './_globals.module' as *;
+
+.main {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+  z-index: 3;
+
+  .container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    & svg {
+      width: 150px;
+      height: 60px;
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 3;
+}
+
+.fullScreen {
+  height: 100vh;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.cta {
+  @include button('primary', 'big');
+  z-index: 2;
+}
+
+.ctaSecondary {
+  @include button('secondary', 'big');
+  z-index: 2;
+}
+
+.parallaxContainer {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.parallax2 {
+  background-image: url('https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg');
+}
+.parallax4 {
+  background-image: url('https://live.staticflickr.com/65535/54006646455_0bb28f8d4c_o.jpg');
+}
