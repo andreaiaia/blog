@@ -7,10 +7,12 @@
     LinkedinIcon
   } from 'svelte-feather-icons'
 
+  export let addStyle = ''
+
   const YEAR = new Date().getFullYear()
 </script>
 
-<footer class={css.footer}>
+<footer class={`${css.footer} ${addStyle}`}>
   <div class={css.content}>
     <div class={css.row}>
       <p class={css.title}>powered by A.I. - Andrea Intelligence</p>
