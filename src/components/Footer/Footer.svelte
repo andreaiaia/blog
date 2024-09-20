@@ -43,7 +43,7 @@
         </li>
       </ul>
       <small class={css.credits}>
-        <time>{YEAR}</time> © Andrea Bianchi.
+        <time>{YEAR}</time> © Andrea Bianchi
       </small>
     </div>
   </div>

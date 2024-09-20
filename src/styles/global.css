@@ -142,18 +142,18 @@ hr {
 }
 
 @font-face {
-	font-family: 'PlusJakartaSans var';
+	font-family: 'PlusJakartaSans';
 	font-style: normal;
-	font-weight: 100 900;
+	font-weight: 100 200 300 400 500 600 700 800 900;
 	font-display: block;
 	src: url('/fonts/plusjakartasans-variablefont_wght.woff') format('woff'),
 		url('/fonts/plusjakartasans-variablefont_wght.woff2') format('woff2');
 }
 
 @font-face {
-	font-family: 'PlusJakartaSans var';
+	font-family: 'PlusJakartaSans';
 	font-style: italic;
-	font-weight: 100 900;
+	font-weight: 100 200 300 400 500 600 700 800 900;
 	font-display: block;
 	src: url('/fonts/plusjakartasans-italic-variablefont_wght.woff') format('woff'),
 		url('/fonts/plusjakartasans-italic-variablefont_wght.woff2') format('woff2');

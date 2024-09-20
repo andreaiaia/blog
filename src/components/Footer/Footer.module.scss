@@ -57,29 +57,7 @@
   }
 }
 
-.links {
-  & > ul {
-    list-style-type: disc;
-    list-style-position: inside;
-  }
-
-  .footerLink {
-    color: $primary-500;
-    width: fit-content;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background-color: $primary-500;
-      transition: width 0.3s;
-    }
-
-    &:hover {
-      &:after {
-        width: 100%;
-      }
-    }
-  }
+.credits {
+  font-family: 'PlusJakartaSans';
+  font-weight: bold;
 }
