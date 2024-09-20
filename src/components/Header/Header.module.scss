@@ -1,5 +1,5 @@
-@use '@styles/_globals.module' as *;
-@use '@styles/layout.scss' as *;
+@use '../../styles/globals.module' as *;
+@use '../../styles/layout.scss' as *;
 
 .header {
   position: fixed;
