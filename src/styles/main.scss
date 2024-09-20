@@ -1,68 +1,66 @@
 @use './_globals.module' as *;
 
 @font-face {
-  font-family: 'Inter var';
+  font-family: 'PlusJakartaSans var';
   font-style: normal;
   font-weight: 100 900;
   font-display: block;
-  src: url('/fonts/Inter-roman.latin.var.woff2') format('woff2');
+  src: url('/fonts/plusjakartasans-variablefont_wght.woff') format('woff'),
+    url('/fonts/plusjakartasans-variablefont_wght.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Inter var';
+  font-family: 'PlusJakartaSans var';
   font-style: italic;
   font-weight: 100 900;
   font-display: block;
-  src: url('/fonts/Inter-italic.latin.var.woff2') format('woff2');
+  src: url('/fonts/plusjakartasans-italic-variablefont_wght.woff')
+      format('woff'),
+    url('/fonts/plusjakartasans-italic-variablefont_wght.woff2') format('woff2');
+  font-named-instance: 'Italic';
+}
+
+@font-face {
+  font-family: 'DMSerifDisplay';
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url('/fonts/dmserifdisplay-regular.woff2') format('woff2'),
+    url('/fonts/dmserifdisplay-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'IBMPlexSerif';
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url('/fonts/ibmplexserif-regular.woff2') format('woff2'),
+    url('/fonts/ibmplexserif-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'IBMPlexSerif';
+  font-style: italic;
+  font-weight: normal;
+  font-display: block;
+  src: url('/fonts/ibmplexserif-italic.woff2') format('woff2'),
+    url('/fonts/ibmplexserif-italic.woff') format('woff');
   font-named-instance: 'Italic';
 }
 @font-face {
-  font-family: 'caveatregular';
-  src: url('/fonts/caveat-variablefont_wght-webfont.woff2') format('woff2'),
-    url('/fonts/caveat-variablefont_wght-webfont.woff') format('woff');
-  font-weight: normal;
+  font-family: 'IBMPlexSerif';
   font-style: normal;
+  font-weight: bold;
+  font-display: block;
+  src: url('/fonts/ibmplexserif-bold.woff2') format('woff2'),
+    url('/fonts/ibmplexserif-bold.woff') format('woff');
+  font-named-instance: 'Bold';
 }
 @font-face {
-  font-family: 'merriweatherbold';
-  src: url('/fonts/merriweather-bold-webfont.woff2') format('woff2'),
-    url('/fonts/merriweather-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatherbold_italic';
-  src: url('/fonts/merriweather-bolditalic-webfont.woff2') format('woff2'),
-    url('/fonts/merriweather-bolditalic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatheritalic';
-  src: url('/fonts/merriweather-italic-webfont.woff2') format('woff2'),
-    url('/fonts/merriweather-italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatherlight';
-  src: url('/fonts/merriweather-light-webfont.woff2') format('woff2'),
-    url('/fonts/merriweather-light-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatherlight_italic';
-  src: url('/fonts/merriweather-lightitalic-webfont.woff2') format('woff2'),
-    url('/fonts/merriweather-lightitalic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatherregular';
-  src: url('/fonts/merriweather-regular-webfont.woff2') format('woff2'),
-    url('/fonts/merriweather-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'IBMPlexSerif';
+  font-style: italic;
+  font-weight: bold;
+  src: url('/fonts/ibmplexserif-bolditalic.woff2') format('woff2'),
+    url('/fonts/ibmplexserif-bolditalic.woff') format('woff');
+  font-named-instance: 'Bold Italic';
 }
 
 html {
@@ -83,9 +81,7 @@ html {
 }
 
 body {
-  font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'IBMPlexSerif', Times, serif;
   -webkit-font-smoothing: subpixel-antialiased;
   font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
     'cv03' 1, 'cv04' 1;
