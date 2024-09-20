@@ -11,12 +11,12 @@
 
   const pages = [
     {
-      name: 'Home',
-      href: '/'
+      name: 'Photo',
+      href: '/photo'
     },
     {
-      name: 'Photos',
-      href: '/photos'
+      name: 'Dev',
+      href: '/dev'
     },
     {
       name: 'Blog',
