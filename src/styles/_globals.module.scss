@@ -3,7 +3,13 @@ $white: hsl(0, 0%, 96%);
 $black: hsl(0, 0%, 10%);
 $info: hsl(206, 46%, 37%);
 
-$background: hsl(217, 30%, 20%);
+$footer-background: hsl(217, 30%, 20%);
+$footer-background-opaque: hsla(217, 30%, 20%, 0.7);
+$background: hsl(0, 0%, 10%);
+$background-opaque: hsla(0, 0%, 10%, 0.7);
+
+$primary: hsl(45, 100%, 55%);
+$primary-opaque: hsla(45, 100%, 55%, 0.7);
 
 // Light theme colors
 $light-l: hsl(45, 100%, 96%);
@@ -146,26 +152,46 @@ $gap: 1rem;
 }
 
 //buttons presets
-@mixin button($type: 'primary-500', $size: 'normal') {
-  line-height: normal;
+@mixin button($type: 'primary', $size: 'normal') {
+  cursor: pointer;
+  position: relative;
   padding: 0.8rem 1rem;
   border-radius: 12px;
-  background-color: $primary-500;
-  color: $white;
-  transition: 0.3s ease-in-out;
+  font-family: 'PlusJakartaSans';
+  font-weight: bold;
+  transition: all 0.3s ease;
 
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-
-  @include dark {
-    background-color: $primary-500;
-    color: $black;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1; /* overlay sotto il testo del bottone */
   }
 
-  &:hover {
-    transform: translateY(-10px);
+  &:hover::before {
+    opacity: 1;
+  }
+
+  @if $type == 'primary' {
+    background-color: $primary-opaque;
+
+    &::before {
+      background-color: $primary;
+    }
+  }
+  @if $type == 'secondary' {
+    background-color: $background-opaque;
+    color: $white;
+
+    &::before {
+      background-color: hsla(0, 0%, 0%, 1);
+    }
   }
 
   @if $size == 'small' {
@@ -173,17 +199,6 @@ $gap: 1rem;
   }
   @if $size == 'big' {
     font-size: 1.5rem;
-  }
-
-  @if $type == 'secondary-500' {
-    border-radius: 10px;
-    background-color: $info;
-    color: $secondary-500;
-
-    @include dark {
-      background-color: $info;
-      color: $secondary-500;
-    }
   }
 }
 
