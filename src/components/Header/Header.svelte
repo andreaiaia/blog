@@ -5,6 +5,7 @@
 
   import css from './Header.module.scss'
 
+  export let addStyle = ''
   let mounted = false
   let prevScroll = 0
   let headerStyle = css.header
@@ -42,7 +43,12 @@
   })
 </script>
 
-<header id="top" class={open ? `${headerStyle} ${css.open}` : `${headerStyle}`}>
+<header
+  id="top"
+  class={open
+    ? `${addStyle} ${headerStyle} ${css.open}`
+    : `${headerStyle} ${addStyle}`}
+>
   <div class={css.container}>
     <div class={css.logo}>
       <a href="/">
@@ -50,8 +56,5 @@
       </a>
     </div>
     <Navbar {open} {handleMenu} />
-    <!-- <div class={css.themeSwitcher}>
-      <ThemeSwitcher />
-    </div> -->
   </div>
 </header>
