@@ -1,0 +1,21 @@
+---
+import '../styles/normalize.css'
+import '../styles/global.css'
+import '../styles/main.scss'
+import '../styles/_globals.module.scss'
+
+const { title, description } = Astro.props
+---
+
+<html lang='it'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

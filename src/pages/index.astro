@@ -1,45 +1,14 @@
 ---
-import MainLayout from '../layouts/main-layout.astro'
+import HomeLayout from '../layouts/HomeLayout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-// import { getLatestPostsData } from '../lib/posts'
 
-import Hero from '../components/Hero/Hero.svelte'
-import Button from '../components/Button/Button.svelte'
-
-import Matera from '../../public/images/photos/matera/thumbnail.webp'
+import Footer from '../components/Footer/Footer.svelte'
 
 import css from '../styles/Home.module.scss'
-
-// const postsData = getLatestPostsData()
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main>
-    <section class={css.homepageHero}></section>
-    <Hero background='transparent'>
-      <div class={css.greetings}>
-        <h1>This website is WIP</h1>
-        <p>
-          The links to other pages are not working. It's gonna be a long
-          migration, apologies for the inconvenience.
-        </p>
-      </div>
-      <!-- <div class={css.greetings}>
-        <h1>Hello, my name is Andrea</h1>
-        <p>
-          I&apos;m a <span class={css.accent}>Front-End Developer</span>{' '}
-          from Matera, Italy and in my free time I love taking{' '}
-          <span class={css.accent}>photos</span>.
-        </p>
-        <div class={css.CTAs}>
-          <Button cname={css.homeCta}>
-            <a href='/blog'>Read my Blog</a>
-          </Button>
-          <Button cname={css.homeCta} secondary>
-            <a href='/photos'>See my Photos</a>
-          </Button>
-        </div>
-      </div> -->
-    </Hero>
-  </main>
-</MainLayout>
+<HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <header></header>
+  <main>Blank canvas</main>
+  <Footer />
+</HomeLayout>
