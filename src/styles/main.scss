@@ -1,79 +1,11 @@
 @use './_globals.module' as *;
 
-@font-face {
-  font-family: 'PlusJakartaSans var';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: block;
-  src: url('/fonts/plusjakartasans-variablefont_wght.woff') format('woff'),
-    url('/fonts/plusjakartasans-variablefont_wght.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'PlusJakartaSans var';
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: block;
-  src: url('/fonts/plusjakartasans-italic-variablefont_wght.woff')
-      format('woff'),
-    url('/fonts/plusjakartasans-italic-variablefont_wght.woff2') format('woff2');
-  font-named-instance: 'Italic';
-}
-
-@font-face {
-  font-family: 'DMSerifDisplay';
-  font-style: normal;
-  font-weight: normal;
-  font-display: block;
-  src: url('/fonts/dmserifdisplay-regular.woff2') format('woff2'),
-    url('/fonts/dmserifdisplay-regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'IBMPlexSerif';
-  font-style: normal;
-  font-weight: normal;
-  font-display: block;
-  src: url('/fonts/ibmplexserif-regular.woff2') format('woff2'),
-    url('/fonts/ibmplexserif-regular.woff') format('woff');
-}
-@font-face {
-  font-family: 'IBMPlexSerif';
-  font-style: italic;
-  font-weight: normal;
-  font-display: block;
-  src: url('/fonts/ibmplexserif-italic.woff2') format('woff2'),
-    url('/fonts/ibmplexserif-italic.woff') format('woff');
-  font-named-instance: 'Italic';
-}
-@font-face {
-  font-family: 'IBMPlexSerif';
-  font-style: normal;
-  font-weight: bold;
-  font-display: block;
-  src: url('/fonts/ibmplexserif-bold.woff2') format('woff2'),
-    url('/fonts/ibmplexserif-bold.woff') format('woff');
-  font-named-instance: 'Bold';
-}
-@font-face {
-  font-family: 'IBMPlexSerif';
-  font-style: italic;
-  font-weight: bold;
-  src: url('/fonts/ibmplexserif-bolditalic.woff2') format('woff2'),
-    url('/fonts/ibmplexserif-bolditalic.woff') format('woff');
-  font-named-instance: 'Bold Italic';
-}
-
 html {
   background-color: $white;
   color: $black;
   position: relative;
   min-height: 100%;
   scroll-behavior: smooth;
-
-  &[data-theme='dark'] {
-    background-color: $black;
-    color: $white;
-  }
 
   @media print {
     background-color: #fff;
@@ -126,8 +58,4 @@ blockquote {
 
 details summary {
   cursor: pointer;
-}
-
-img.next-image {
-  margin: 0;
 }
