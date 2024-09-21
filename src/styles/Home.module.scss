@@ -18,12 +18,11 @@
 .header {
   position: absolute;
   top: 0;
-  display: block;
   width: 100%;
-
   padding: 0.5rem 2rem;
-  background-color: transparent;
   z-index: 3;
+  background-color: transparent;
+  color: $white;
 
   .container {
     max-width: 1200px;
@@ -34,10 +33,9 @@
   }
 
   .logo {
-    & svg {
-      width: 150px;
-      height: 60px;
-    }
+    font-family: 'DMSerifDisplay';
+    font-size: 3rem;
+    letter-spacing: -2px;
   }
 }
 
@@ -46,7 +44,7 @@
   z-index: 3;
 }
 
-.fullScreen {
+.imageSection {
   height: 100vh;
 }
 
@@ -57,42 +55,86 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
 }
 
 .cta {
-  @include button('primary', 'big');
-  z-index: 2;
-}
-
-.ctaSecondary {
-  @include button('secondary', 'big');
-  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 10%, 0.2);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .parallaxContainer {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  .parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effetto parallasse */
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 2rem;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .text {
+      flex: 1;
+      max-width: 30%;
+      text-align: center;
+      font-size: 1.5rem;
+      color: $black;
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        margin: 1rem 0;
+      }
+    }
+
+    .imageWrapper {
+      flex: 1;
+      max-width: 40%;
+      display: flex;
+      justify-content: center;
+
+      @media screen and (max-width: 768px) {
+        max-width: 80%;
+        margin: 2rem 0;
+      }
+
+      .placeholderImage {
+        width: auto;
+        height: 640px;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
-.parallax {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.parallax2 {
-  background-image: url('https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg');
-}
-.parallax4 {
-  background-image: url('https://live.staticflickr.com/65535/54006646455_0bb28f8d4c_o.jpg');
+.blackText {
+  color: $black;
 }

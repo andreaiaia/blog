@@ -2,13 +2,13 @@
 import HomeLayout from '../layouts/HomeLayout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 
-import Logo from '../components/Logo/Logo.svelte'
 import Navbar from '../components/Header/Navbar.svelte'
 import Footer from '../components/Footer/Footer.svelte'
+import CtaLink from '../components/CtaLink/CtaLink.svelte'
 
 import css from '../styles/Home.module.scss'
 
-let open
+let open = false
 
 const handleMenu = () => {
   open = !open
@@ -19,66 +19,129 @@ const handleMenu = () => {
   <header class={css.header}>
     <div class={css.container}>
       <div class={css.logo}>
-        <a href='/'>
-          <Logo />
-        </a>
+        <a href='/'> andrea </a>
       </div>
       <Navbar client:load {open} {handleMenu} />
     </div>
   </header>
+
   <main class={css.main}>
-    <section class=`${css.section} ${css.fullScreen}`>
+    <section class={`${css.section} ${css.imageSection}`}>
       <img
         class={css.image}
-        src='https://live.staticflickr.com/65535/54009336535_7e69687ff3_o.jpg'
-        alt='An apricot blossom.'
+        alt='The famous Sassi of Matera.'
+        src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
+        srcset='
+          https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg 400w,
+          https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg 800w,
+          https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg 1024w,
+          https://live.staticflickr.com/65535/53031067536_bfd55d6349_h.jpg 1600w,
+          https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg 2560w
+        '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        loading='lazy'
       />
     </section>
 
     <section class={css.parallaxContainer}>
-      <div class=`${css.parallax} ${css.parallax2}` id='parallax2'></div>
-      <a class={css.cta} href='/photo'>photographer</a>
+      <div class={`${css.parallax} ${css.parallax2}`} id='parallax2'>
+        <div class={css.content}>
+          <div class={css.text}>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class={css.imageWrapper}>
+            <img
+              class={css.placeholderImage}
+              alt='A picture of me, Andrea.'
+              src='https://live.staticflickr.com/65535/54011217904_c31d250eb6_z.jpg'
+              srcset='
+                https://live.staticflickr.com/65535/54011217904_c31d250eb6_n.jpg 320w,
+                https://live.staticflickr.com/65535/54011217904_c31d250eb6_z.jpg 640w,
+                https://live.staticflickr.com/65535/54011217904_c31d250eb6_b.jpg 1024w,
+                https://live.staticflickr.com/65535/54011217904_bbac7c5fda_o.jpg 2048w
+              '
+              sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+              loading='lazy'
+            />
+          </div>
+          <div class={css.text}>
+            <p>
+              Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class=`${css.section} ${css.fullScreen}` id='section3'>
+    <section class={`${css.section} ${css.imageSection}`} id='section3'>
       <img
         class={css.image}
-        src='https://live.staticflickr.com/65535/54006609658_e50112462b_o.jpg'
-        alt='A starry landscape with a comet in the center.'
+        alt='A noir scene in the centre of Matera.'
+        loading='lazy'
+        src='https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg'
+        srcset='
+          https://live.staticflickr.com/65535/54006225101_1749ed2a75_w.jpg 400w,
+          https://live.staticflickr.com/65535/54006225101_1749ed2a75_c.jpg 800w,
+          https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg 1024w,
+          https://live.staticflickr.com/65535/54006225101_ccdaed9f1c_h.jpg 1600w,
+          https://live.staticflickr.com/65535/54006225101_544aca891c_o.jpg 2560w
+        '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
       />
-      <a class={css.ctaSecondary} href='/dev'>developer</a>
+      <div class={css.cta}>
+        <CtaLink linkTo='/photo' text='discover my photography'>
+          discover my <br /> photography
+        </CtaLink>
+      </div>
     </section>
 
     <section class={css.parallaxContainer}>
-      <div class=`${css.parallax} ${css.parallax4}` id='parallax4'></div>
-      <a class={css.cta} href='/blog'>blogger</a>
+      <div class={`${css.parallax} ${css.parallax4}`} id='parallax4'>
+        <div class={css.content}>
+          <div class={css.text}>
+            <p>
+              In condimentum facilisis porta. Sed nec diam eu diam mattis
+              viverra.
+            </p>
+          </div>
+          <div class={css.imageWrapper}>
+            <img
+              src='https://via.placeholder.com/400x600'
+              alt='Placeholder image'
+              class={css.placeholderImage}
+              loading='lazy'
+            />
+          </div>
+          <div class={css.text}>
+            <p>
+              Nulla fringilla, orci ac euismod semper, magna diam porttitor
+              mauris.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class={`${css.section} ${css.imageSection}`} id='section5'>
+      <img
+        class={css.image}
+        alt='The famous Sassi of Matera.'
+        loading='lazy'
+        src='https://live.staticflickr.com/65535/54005483235_6475633bce_b.jpg'
+        srcset='
+          https://live.staticflickr.com/65535/54005483235_6475633bce_w.jpg 400w,
+          https://live.staticflickr.com/65535/54005483235_6475633bce_c.jpg 800w,
+          https://live.staticflickr.com/65535/54005483235_6475633bce_b.jpg 1024w,
+          https://live.staticflickr.com/65535/54005483235_a54b187904_h.jpg 1600w,
+          https://live.staticflickr.com/65535/54005483235_c0691def5a_o.jpg 2560w
+        '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+      />
+      <div class={css.cta}>
+        <CtaLink linkTo='/blog' text='read my blog'> read my blog </CtaLink>
+      </div>
     </section>
   </main>
+
   <Footer addStyle={css.footer} />
-
-  <script>
-    window.addEventListener('scroll', function () {
-      const parallax2 = document.getElementById('parallax2')
-      const parallax4 = document.getElementById('parallax4')
-      const section3 = document.getElementById('section3')
-      const section3Top = section3 ? section3.getBoundingClientRect().top : 0
-
-      // Quando la terza sezione entra in vista, l'immagine 4 viene portata sopra l'immagine 2 e viceversa in base alla direzione dello scroll
-      if (section3Top <= 0) {
-        if (parallax2) {
-          parallax2.style.zIndex = '0'
-        }
-        if (parallax4) {
-          parallax4.style.zIndex = '1'
-        }
-      } else {
-        if (parallax2) {
-          parallax2.style.zIndex = '1'
-        }
-        if (parallax4) {
-          parallax4.style.zIndex = '0'
-        }
-      }
-    })
-  </script>
 </HomeLayout>
