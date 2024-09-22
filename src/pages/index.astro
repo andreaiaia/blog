@@ -16,6 +16,29 @@ const handleMenu = () => {
 ---
 
 <HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <style>
+    @keyframes animateIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    [data-animate-on-scroll] {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    [data-animate-on-scroll].animate {
+      animation: animateIn 1s ease-in-out forwards;
+    }
+  </style>
+  <script
+    src='https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
+  ></script>
   <body>
     <header class={css.header}>
       <div class={css.container}>
@@ -44,17 +67,17 @@ const handleMenu = () => {
         />
         <div class={css.cta}>
           <h1 class={css.title}>
-            Benvenuto nel mio <span class={css.accent}>sito</span>
+            benvenuto nel mio <span class={css.accent}>sito</span>
           </h1>
         </div>
       </section>
 
-      <section class={css.section}>
+      <section class={`${css.section} ${css.appearOnScroll}`}>
         <div class={css.content}>
-          <div class={css.text}>
+          <div class={css.text} data-animate-on-scroll>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
-          <div class={css.photoWrapper}>
+          <div class={css.photoWrapper} data-animate-on-scroll>
             <img
               class={css.photo}
               alt='A picture of me, Andrea.'
@@ -68,7 +91,7 @@ const handleMenu = () => {
               loading='lazy'
             />
           </div>
-          <div class={css.text}>
+          <div class={css.text} data-animate-on-scroll>
             <p>
               Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.
             </p>
@@ -98,15 +121,15 @@ const handleMenu = () => {
         </a>
       </section>
 
-      <section class={css.section}>
+      <section class={`${css.section} ${css.appearOnScroll}`}>
         <div class={css.content}>
-          <div class={css.text}>
+          <div class={css.text} data-animate-on-scroll>
             <p>
               In condimentum facilisis porta. Sed nec diam eu diam mattis
               viverra.
             </p>
           </div>
-          <div class={css.photoWrapper}>
+          <div class={css.photoWrapper} data-animate-on-scroll>
             <img
               class={css.photo}
               alt='Placeholder image'
@@ -114,7 +137,7 @@ const handleMenu = () => {
               loading='lazy'
             />
           </div>
-          <div class={css.text}>
+          <div class={css.text} data-animate-on-scroll>
             <p>
               Nulla fringilla, orci ac euismod semper, magna diam porttitor
               mauris.
@@ -126,7 +149,7 @@ const handleMenu = () => {
       <section class={css.section}>
         <img
           class={css.photoBackground}
-          alt='The famous Sassi of Matera.'
+          alt='The inside of a Japanese temple.'
           loading='lazy'
           src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
           srcset='
@@ -142,8 +165,31 @@ const handleMenu = () => {
           <CtaText linkTo='/blog' text='read my blog'> read my blog </CtaText>
         </a>
       </section>
+
+      <Footer addStyle={css.footer} />
     </main>
 
-    <Footer addStyle={css.footer} />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const elements = document.querySelectorAll('[data-animate-on-scroll]')
+
+        const observerOptions = {
+          threshold: 0.1
+        }
+
+        const observer = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate')
+              observer.unobserve(entry.target)
+            }
+          })
+        }, observerOptions)
+
+        elements.forEach(function (element) {
+          observer.observe(element)
+        })
+      })
+    </script>
   </body>
 </HomeLayout>

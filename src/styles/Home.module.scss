@@ -34,6 +34,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: hsl(0, 0%, 98%);
 }
 
 .photoBackground {
@@ -130,6 +131,6 @@
 .title {
   color: $white;
   font-family: 'DMSerifDisplay';
-  font-size: 5rem;
+  font-size: 4rem;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
 }
