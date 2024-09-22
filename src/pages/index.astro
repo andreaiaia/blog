@@ -16,35 +16,40 @@ const handleMenu = () => {
 ---
 
 <HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <header class={css.header}>
-    <div class={css.container}>
-      <div class={css.logo}>
-        <a href='/'> andrea </a>
+  <body>
+    <header class={css.header}>
+      <div class={css.container}>
+        <div class={css.logo}>
+          <a href='/'> andrea </a>
+        </div>
+        <Navbar client:load {open} {handleMenu} />
       </div>
-      <Navbar client:load {open} {handleMenu} />
-    </div>
-  </header>
+    </header>
 
-  <main class={css.main}>
-    <section class={`${css.section} ${css.imageSection}`}>
-      <img
-        class={css.image}
-        alt='The famous Sassi of Matera.'
-        src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
-        srcset='
-          https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg 400w,
-          https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg 800w,
-          https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg 1024w,
-          https://live.staticflickr.com/65535/53031067536_bfd55d6349_h.jpg 1600w,
-          https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg 2560w
-        '
-        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-        loading='lazy'
-      />
-    </section>
+    <main>
+      <section class={css.section}>
+        <img
+          class={css.image}
+          alt='The famous Sassi of Matera.'
+          src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
+          srcset='
+            https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg 400w,
+            https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg 800w,
+            https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg 1024w,
+            https://live.staticflickr.com/65535/53031067536_bfd55d6349_h.jpg 1600w,
+            https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg 2560w
+          '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+          loading='lazy'
+        />
+        <div class={css.cta}>
+          <h1 class={css.title}>
+            Benvenuto nel mio <span class={css.accent}>sito</span>
+          </h1>
+        </div>
+      </section>
 
-    <section class={css.parallaxContainer}>
-      <div class={`${css.parallax} ${css.parallax2}`} id='parallax2'>
+      <section class={css.section}>
         <div class={css.content}>
           <div class={css.text}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -53,14 +58,13 @@ const handleMenu = () => {
             <img
               class={css.placeholderImage}
               alt='A picture of me, Andrea.'
-              src='https://live.staticflickr.com/65535/54011217904_c31d250eb6_z.jpg'
+              src='https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg'
               srcset='
-                https://live.staticflickr.com/65535/54011217904_c31d250eb6_n.jpg 320w,
-                https://live.staticflickr.com/65535/54011217904_c31d250eb6_z.jpg 640w,
-                https://live.staticflickr.com/65535/54011217904_c31d250eb6_b.jpg 1024w,
-                https://live.staticflickr.com/65535/54011217904_bbac7c5fda_o.jpg 2048w
-              '
-              sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+                  https://live.staticflickr.com/65535/54013003105_8307dc4e1f_w.jpg 400w,
+                  https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg 800w,
+                  https://live.staticflickr.com/65535/54013003105_2419bebd25_h.jpg 1600w
+                '
+              sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, 60vw'
               loading='lazy'
             />
           </div>
@@ -70,33 +74,31 @@ const handleMenu = () => {
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class={`${css.section} ${css.imageSection}`} id='section3'>
-      <img
-        class={css.image}
-        alt='A noir scene in the centre of Matera.'
-        loading='lazy'
-        src='https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg'
-        srcset='
-          https://live.staticflickr.com/65535/54006225101_1749ed2a75_w.jpg 400w,
-          https://live.staticflickr.com/65535/54006225101_1749ed2a75_c.jpg 800w,
-          https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg 1024w,
-          https://live.staticflickr.com/65535/54006225101_ccdaed9f1c_h.jpg 1600w,
-          https://live.staticflickr.com/65535/54006225101_544aca891c_o.jpg 2560w
-        '
-        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-      />
-      <div class={css.cta}>
-        <CtaLink linkTo='/photo' text='discover my photography'>
-          discover my <br /> photography
-        </CtaLink>
-      </div>
-    </section>
+      <section class={css.section}>
+        <img
+          class={css.image}
+          alt='A noir scene in the centre of Matera.'
+          loading='lazy'
+          src='https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg'
+          srcset='
+            https://live.staticflickr.com/65535/54006225101_1749ed2a75_w.jpg 400w,
+            https://live.staticflickr.com/65535/54006225101_1749ed2a75_c.jpg 800w,
+            https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54006225101_ccdaed9f1c_h.jpg 1600w,
+            https://live.staticflickr.com/65535/54006225101_544aca891c_o.jpg 2560w
+          '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        />
+        <div class={css.cta}>
+          <CtaLink linkTo='/photo' text='discover my photography'>
+            discover my <br /> photography
+          </CtaLink>
+        </div>
+      </section>
 
-    <section class={css.parallaxContainer}>
-      <div class={`${css.parallax} ${css.parallax4}`} id='parallax4'>
+      <section class={css.section}>
         <div class={css.content}>
           <div class={css.text}>
             <p>
@@ -106,9 +108,9 @@ const handleMenu = () => {
           </div>
           <div class={css.imageWrapper}>
             <img
-              src='https://via.placeholder.com/400x600'
-              alt='Placeholder image'
               class={css.placeholderImage}
+              alt='Placeholder image'
+              src='https://via.placeholder.com/400x600'
               loading='lazy'
             />
           </div>
@@ -119,29 +121,29 @@ const handleMenu = () => {
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class={`${css.section} ${css.imageSection}`} id='section5'>
-      <img
-        class={css.image}
-        alt='The famous Sassi of Matera.'
-        loading='lazy'
-        src='https://live.staticflickr.com/65535/54005483235_6475633bce_b.jpg'
-        srcset='
-          https://live.staticflickr.com/65535/54005483235_6475633bce_w.jpg 400w,
-          https://live.staticflickr.com/65535/54005483235_6475633bce_c.jpg 800w,
-          https://live.staticflickr.com/65535/54005483235_6475633bce_b.jpg 1024w,
-          https://live.staticflickr.com/65535/54005483235_a54b187904_h.jpg 1600w,
-          https://live.staticflickr.com/65535/54005483235_c0691def5a_o.jpg 2560w
-        '
-        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-      />
-      <div class={css.cta}>
-        <CtaLink linkTo='/blog' text='read my blog'> read my blog </CtaLink>
-      </div>
-    </section>
-  </main>
+      <section class={`${css.section} ${css.imageSection}`}>
+        <img
+          class={css.image}
+          alt='The famous Sassi of Matera.'
+          loading='lazy'
+          src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
+          srcset='
+            https://live.staticflickr.com/65535/54013159715_5de34845e8_w.jpg 400w,
+            https://live.staticflickr.com/65535/54013159715_5de34845e8_c.jpg 800w,
+            https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54013159715_55f8c90ec3_h.jpg 1600w,
+            https://live.staticflickr.com/65535/54013159715_d1b3b01654_o.jpg 2560w
+          '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        />
+        <div class=`${css.cta} ${css.opaqueBackground}`>
+          <CtaLink linkTo='/blog' text='read my blog'> read my blog </CtaLink>
+        </div>
+      </section>
+    </main>
 
-  <Footer addStyle={css.footer} />
+    <Footer addStyle={css.footer} />
+  </body>
 </HomeLayout>
