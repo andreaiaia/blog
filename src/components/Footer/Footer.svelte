@@ -15,7 +15,11 @@
 <footer class={`${css.footer} ${addStyle}`}>
   <div class={css.content}>
     <div class={css.row}>
-      <p class={css.title}>powered by A.I. - Andrea Intelligence</p>
+      <p class={css.title}>
+        powered by AI -
+        <span class={css.accent}>A</span>ndrea
+        <span class={css.accent}>I</span>ntelligence
+      </p>
     </div>
     <div class={css.row}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
