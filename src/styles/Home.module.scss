@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.image {
+.photoBackground {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,6 +44,10 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.fixToBottom {
+  object-position: bottom;
 }
 
 .cta {
@@ -81,25 +85,38 @@
   @media screen and (max-width: 768px) {
     max-width: 100%;
     margin: 1rem 0;
+    display: flex;
+    align-items: center;
   }
 }
 
-.imageWrapper {
+.photoWrapper {
   flex: 1;
-  max-width: 40%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
 
-  @media screen and (max-width: 768px) {
-    max-width: 80%;
-    margin: 2rem 0;
+.photo {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 769px) {
+  .photo {
+    max-width: 500px;
+    max-height: 600px;
   }
 }
 
-.placeholderImage {
-  width: auto;
-  height: 640px;
-  object-fit: cover;
+@media screen and (max-width: 768px) {
+  .photo {
+    max-width: 80%;
+    max-height: 60vh;
+  }
 }
 
 .opaqueBackground {

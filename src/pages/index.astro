@@ -4,7 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 
 import Navbar from '../components/Header/Navbar.svelte'
 import Footer from '../components/Footer/Footer.svelte'
-import CtaLink from '../components/CtaLink/CtaLink.svelte'
+import CtaText from '../components/CtaText/CtaText.svelte'
 
 import css from '../styles/Home.module.scss'
 
@@ -29,7 +29,7 @@ const handleMenu = () => {
     <main>
       <section class={css.section}>
         <img
-          class={css.image}
+          class={css.photoBackground}
           alt='The famous Sassi of Matera.'
           src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
           srcset='
@@ -54,9 +54,9 @@ const handleMenu = () => {
           <div class={css.text}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
-          <div class={css.imageWrapper}>
+          <div class={css.photoWrapper}>
             <img
-              class={css.placeholderImage}
+              class={css.photo}
               alt='A picture of me, Andrea.'
               src='https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg'
               srcset='
@@ -78,24 +78,24 @@ const handleMenu = () => {
 
       <section class={css.section}>
         <img
-          class={css.image}
+          class={`${css.photoBackground} ${css.fixToBottom}`}
           alt='A noir scene in the centre of Matera.'
           loading='lazy'
-          src='https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg'
+          src='https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_b.jpg'
           srcset='
-            https://live.staticflickr.com/65535/54006225101_1749ed2a75_w.jpg 400w,
-            https://live.staticflickr.com/65535/54006225101_1749ed2a75_c.jpg 800w,
-            https://live.staticflickr.com/65535/54006225101_1749ed2a75_b.jpg 1024w,
-            https://live.staticflickr.com/65535/54006225101_ccdaed9f1c_h.jpg 1600w,
-            https://live.staticflickr.com/65535/54006225101_544aca891c_o.jpg 2560w
+            https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_w.jpg 400w,
+            https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_c.jpg 800w,
+            https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54013358015_00460da7de_h.jpg 1600w,
+            https://live.staticflickr.com/65535/54013358015_a7105e0fda_o.jpg 2560w
           '
           sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
         />
-        <div class={css.cta}>
-          <CtaLink linkTo='/photo' text='discover my photography'>
+        <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
+          <CtaText text='discover my photography'>
             discover my <br /> photography
-          </CtaLink>
-        </div>
+          </CtaText>
+        </a>
       </section>
 
       <section class={css.section}>
@@ -106,9 +106,9 @@ const handleMenu = () => {
               viverra.
             </p>
           </div>
-          <div class={css.imageWrapper}>
+          <div class={css.photoWrapper}>
             <img
-              class={css.placeholderImage}
+              class={css.photo}
               alt='Placeholder image'
               src='https://via.placeholder.com/400x600'
               loading='lazy'
@@ -123,9 +123,9 @@ const handleMenu = () => {
         </div>
       </section>
 
-      <section class={`${css.section} ${css.imageSection}`}>
+      <section class={css.section}>
         <img
-          class={css.image}
+          class={css.photoBackground}
           alt='The famous Sassi of Matera.'
           loading='lazy'
           src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
@@ -138,9 +138,9 @@ const handleMenu = () => {
           '
           sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
         />
-        <div class=`${css.cta} ${css.opaqueBackground}`>
-          <CtaLink linkTo='/blog' text='read my blog'> read my blog </CtaLink>
-        </div>
+        <a href='/blog' class=`${css.cta} ${css.opaqueBackground}`>
+          <CtaText linkTo='/blog' text='read my blog'> read my blog </CtaText>
+        </a>
       </section>
     </main>
 
