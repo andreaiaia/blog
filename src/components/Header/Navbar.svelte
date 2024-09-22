@@ -11,15 +11,15 @@
 
   const pages = [
     {
-      name: 'Photo',
+      name: 'photo',
       href: '/photo'
     },
     {
-      name: 'Dev',
+      name: 'dev',
       href: '/dev'
     },
     {
-      name: 'Blog',
+      name: 'blog',
       href: '/blog'
     }
   ]
