@@ -45,9 +45,10 @@ import css from '../styles/Home.module.scss'
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
         loading='lazy'
       />
-      <div class={css.cta}>
-        <h1 class={css.title}>
-          benvenuto nel mio <span class={css.accent}>sito</span>
+      <div class={`${css.cta} ${css.opaqueBackground}`}>
+        <h1 class={css.title} data-animate-on-scroll>
+          To photograph is to capture the <span class={css.accent}>essence</span
+          > of a moment
         </h1>
       </div>
     </section>
@@ -93,9 +94,7 @@ import css from '../styles/Home.module.scss'
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
       />
       <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
-        <CtaText text='discover my photography'>
-          discover my <br /> photography
-        </CtaText>
+        <CtaText addStyle={css.photoCta} text='discover my photography' />
       </a>
     </section>
 
@@ -138,8 +137,8 @@ import css from '../styles/Home.module.scss'
           '
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
       />
-      <a href='/blog' class=`${css.cta} ${css.opaqueBackground}`>
-        <CtaText linkTo='/blog' text='read my blog'> read my blog </CtaText>
+      <a href='/blog' class={`${css.cta} ${css.opaqueBackground}`}>
+        <CtaText text='read my blog' />
       </a>
     </section>
   </main>
