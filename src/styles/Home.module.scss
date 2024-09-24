@@ -2,7 +2,7 @@
 
 .section {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 2rem;
+  gap: 3rem;
 
   .text {
     flex: 1;
@@ -49,53 +50,42 @@
     color: $black;
   }
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
+  .photoWrapper {
+    display: flex;
     justify-content: center;
+    align-items: center;
+  }
+
+  .photo {
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
     height: 100%;
+    gap: 0;
 
     .text {
       max-width: 100%;
-      margin: 1rem 0;
+      margin: 3rem 0;
       display: flex;
       align-items: center;
       font-size: 1.5rem;
     }
-  }
 
-  @media screen and (min-width: 769px) {
-    .text:last-child {
-      text-align: left;
+    .photo {
+      max-width: unset;
+      max-height: 450px;
     }
   }
-}
 
-.photoWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.photo {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-
-@media screen and (min-width: 769px) {
-  .photo {
-    max-width: 500px;
-    max-height: 600px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .photo {
-    max-width: 80%;
-    max-height: 60vh;
+  @media screen and (max-width: 768px) {
+    .photo {
+      max-width: 300px;
+    }
   }
 }
 
