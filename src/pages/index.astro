@@ -149,14 +149,16 @@ import css from '../styles/Home.module.scss'
       const elements = document.querySelectorAll('[data-animate-on-scroll]')
 
       const observerOptions = {
-        threshold: 0.1
+        threshold: 0.01 // Rendi la soglia ancora più bassa per assicurare il trigger
       }
 
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
+          console.log(entry) // Logga ogni entry per vedere se viene rilevata
           if (entry.isIntersecting) {
+            console.log('Element is intersecting')
             entry.target.classList.add('animate')
-            observer.unobserve(entry.target)
+            observer.unobserve(entry.target) // Interrompe l'osservazione una volta animato
           }
         })
       }, observerOptions)
