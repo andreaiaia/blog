@@ -1,48 +1,25 @@
 @use '../../styles/globals.module' as *;
-@use '../../styles/layout.scss' as *;
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
-  display: block;
   width: 100%;
-  // Header style
-  padding: 0;
-  // transition: all 0.3s ease-in-out;
-  background-color: transparent;
+  padding: 0.5rem 2rem;
   z-index: 1;
+  background-color: transparent;
+  color: $white;
 
-  &.background {
-    background-color: $white;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  .container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
   }
 
-  &.hidden {
-    top: -80px;
-  }
-}
-
-.container {
-  @include container;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  // Layout
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  & svg {
-    width: 150px;
-    height: 60px;
-  }
-}
-
-.open {
-  @include smartphone {
-    background-color: $white;
+  .logo {
+    font-family: 'DMSerifDisplay';
+    font-size: 3rem;
+    letter-spacing: -2px;
   }
 }
