@@ -26,8 +26,6 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
@@ -65,6 +63,10 @@ h4 {
 
 h5 {
 	font-size: 1.25em;
+}
+
+p {
+	line-height: 1.2;
 }
 
 strong,

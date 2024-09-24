@@ -71,6 +71,7 @@ $gap: 1rem;
 // container tag template
 @mixin container() {
   display: block;
+  width: 100%;
   max-width: 1200px;
   padding: 0 2rem;
   margin-left: auto;

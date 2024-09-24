@@ -15,16 +15,26 @@
 <footer class={`${css.footer} ${addStyle}`}>
   <div class={css.content}>
     <div class={css.row}>
-      <p class={css.title}>
+      <h2 class={css.title}>
         powered by AI <span class={css.desktopOnly}>-</span>
         <span class={css.mobileOnly}> <br /></span>
         <span class={css.accent}>A</span>ndrea
         <span class={css.accent}>I</span>ntelligence
-      </p>
+      </h2>
     </div>
     <div class={css.row}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
+      <div class={css.text}>
+        <p>
+          All the contents in this website are 100% made by me, Andrea Bianchi.
+          AI is only used to provide a better English translation, since its not
+          my native language.
+        </p>
+        <p>
+          All the images are taken by me, unless otherwise stated, and are
+          covered by copyright. The use of the images is allowed only for
+          personal use. Any other use is forbidden.
+        </p>
+      </div>
     </div>
     <div class={`${css.row} ${css.linksRow}`}>
       <ul class={css.socialLinks}>
