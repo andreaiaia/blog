@@ -16,7 +16,8 @@
   <div class={css.content}>
     <div class={css.row}>
       <p class={css.title}>
-        powered by AI -
+        powered by AI <span class={css.desktopOnly}>-</span>
+        <span class={css.mobileOnly}> <br /></span>
         <span class={css.accent}>A</span>ndrea
         <span class={css.accent}>I</span>ntelligence
       </p>
@@ -25,7 +26,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
     </div>
-    <div class={css.row}>
+    <div class={`${css.row} ${css.linksRow}`}>
       <ul class={css.socialLinks}>
         <li>
           <a href="/feed.xml">
