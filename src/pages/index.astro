@@ -27,7 +27,7 @@ import css from '../styles/Home.module.scss'
     }
   </style>
   <script
-    src='https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
+    src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
   ></script>
   <main>
     <section class={css.section}>
@@ -149,16 +149,14 @@ import css from '../styles/Home.module.scss'
       const elements = document.querySelectorAll('[data-animate-on-scroll]')
 
       const observerOptions = {
-        threshold: 0.01 // Rendi la soglia ancora più bassa per assicurare il trigger
+        threshold: 0.1
       }
 
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
-          console.log(entry) // Logga ogni entry per vedere se viene rilevata
           if (entry.isIntersecting) {
-            console.log('Element is intersecting')
             entry.target.classList.add('animate')
-            observer.unobserve(entry.target) // Interrompe l'osservazione una volta animato
+            observer.unobserve(entry.target)
           }
         })
       }, observerOptions)
