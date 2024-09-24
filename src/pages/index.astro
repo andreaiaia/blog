@@ -4,31 +4,32 @@ import CtaText from '../components/CtaText/CtaText.svelte'
 import css from '../styles/Home.module.scss'
 ---
 
-<BaseLayout>
-  <style>
-    @keyframes animateIn {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    [data-animate-on-scroll] {
+<style>
+  @keyframes animateIn {
+    from {
       opacity: 0;
       transform: translateY(50px);
-      will-change: opacity, transform; /* Forza il repaint */
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  [data-animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform; /* Forza il repaint */
+  }
 
-    [data-animate-on-scroll].animate {
-      animation: animateIn 1s ease-in-out forwards;
-    }
-  </style>
-  <script
-    src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
-  ></script>
+  [data-animate-on-scroll].animate {
+    animation: animateIn 1s ease-in-out forwards;
+  }
+</style>
+<script
+  src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+></script>
+
+<BaseLayout>
   <main>
     <section class={css.section}>
       <img
@@ -144,13 +145,12 @@ import css from '../styles/Home.module.scss'
   </main>
 
   <script>
+    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const observerOptions = {
+      threshold: 0.1
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
-      const elements = document.querySelectorAll('[data-animate-on-scroll]')
-
-      const observerOptions = {
-        threshold: 0.1
-      }
-
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
