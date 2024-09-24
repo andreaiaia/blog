@@ -6,5 +6,5 @@
 </script>
 
 <p class={`${css.cta} ${addStyle}`} data-text={text}>
-  <slot />
+  {text}
 </p>
