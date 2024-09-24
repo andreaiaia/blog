@@ -1,29 +1,5 @@
 @use './_globals.module' as *;
 
-.header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 0.5rem 2rem;
-  z-index: 1;
-  background-color: transparent;
-  color: $white;
-
-  .container {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .logo {
-    font-family: 'DMSerifDisplay';
-    font-size: 3rem;
-    letter-spacing: -2px;
-  }
-}
-
 .footer {
   position: relative;
 }

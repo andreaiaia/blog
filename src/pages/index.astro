@@ -2,17 +2,11 @@
 import HomeLayout from '../layouts/HomeLayout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 
-import Navbar from '../components/Header/Navbar.svelte'
+import Header from '../components/Header/Header.svelte'
 import Footer from '../components/Footer/Footer.svelte'
 import CtaText from '../components/CtaText/CtaText.svelte'
 
 import css from '../styles/Home.module.scss'
-
-let open = false
-
-const handleMenu = () => {
-  open = !open
-}
 ---
 
 <HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -40,14 +34,7 @@ const handleMenu = () => {
     src='https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
   ></script>
   <body>
-    <header class={css.header}>
-      <div class={css.container}>
-        <div class={css.logo}>
-          <a href='/'> andrea </a>
-        </div>
-        <Navbar client:load {open} {handleMenu} />
-      </div>
-    </header>
+    <Header client:load />
 
     <main>
       <section class={css.section}>
