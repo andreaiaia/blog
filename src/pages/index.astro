@@ -1,15 +1,10 @@
 ---
-import HomeLayout from '../layouts/HomeLayout.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-
-import Header from '../components/Header/Header.svelte'
-import Footer from '../components/Footer/Footer.svelte'
+import BaseLayout from '../layouts/BaseLayout.astro'
 import CtaText from '../components/CtaText/CtaText.svelte'
-
 import css from '../styles/Home.module.scss'
 ---
 
-<HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout>
   <style>
     @keyframes animateIn {
       from {
@@ -33,150 +28,141 @@ import css from '../styles/Home.module.scss'
   <script
     src='https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
   ></script>
-  <body>
-    <Header client:load />
-
-    <main>
-      <section class={css.section}>
-        <img
-          class={css.photoBackground}
-          alt='The famous Sassi of Matera.'
-          src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
-          srcset='
+  <main>
+    <section class={css.section}>
+      <img
+        class={css.photoBackground}
+        alt='The famous Sassi of Matera.'
+        src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
+        srcset='
             https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg 400w,
             https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg 800w,
             https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg 1024w,
             https://live.staticflickr.com/65535/53031067536_bfd55d6349_h.jpg 1600w,
             https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg 2560w
           '
-          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-          loading='lazy'
-        />
-        <div class={css.cta}>
-          <h1 class={css.title}>
-            benvenuto nel mio <span class={css.accent}>sito</span>
-          </h1>
-        </div>
-      </section>
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        loading='lazy'
+      />
+      <div class={css.cta}>
+        <h1 class={css.title}>
+          benvenuto nel mio <span class={css.accent}>sito</span>
+        </h1>
+      </div>
+    </section>
 
-      <section class={`${css.section} ${css.appearOnScroll}`}>
-        <div class={css.content}>
-          <div class={css.text} data-animate-on-scroll>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div class={css.photoWrapper} data-animate-on-scroll>
-            <img
-              class={css.photo}
-              alt='A picture of me, Andrea.'
-              src='https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg'
-              srcset='
+    <section class={`${css.section} ${css.appearOnScroll}`}>
+      <div class={css.content}>
+        <div class={css.text} data-animate-on-scroll>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class={css.photoWrapper} data-animate-on-scroll>
+          <img
+            class={css.photo}
+            alt='A picture of me, Andrea.'
+            src='https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg'
+            srcset='
                   https://live.staticflickr.com/65535/54013003105_8307dc4e1f_w.jpg 400w,
                   https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg 800w,
                   https://live.staticflickr.com/65535/54013003105_2419bebd25_h.jpg 1600w
                 '
-              sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, 60vw'
-              loading='lazy'
-            />
-          </div>
-          <div class={css.text} data-animate-on-scroll>
-            <p>
-              Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.
-            </p>
-          </div>
+            sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, 60vw'
+            loading='lazy'
+          />
         </div>
-      </section>
+        <div class={css.text} data-animate-on-scroll>
+          <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+        </div>
+      </div>
+    </section>
 
-      <section class={css.section}>
-        <img
-          class={`${css.photoBackground} ${css.fixToBottom}`}
-          alt='A noir scene in the centre of Matera.'
-          loading='lazy'
-          src='https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_b.jpg'
-          srcset='
+    <section class={css.section}>
+      <img
+        class={`${css.photoBackground} ${css.fixToBottom}`}
+        alt='A noir scene in the centre of Matera.'
+        loading='lazy'
+        src='https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_b.jpg'
+        srcset='
             https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_w.jpg 400w,
             https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_c.jpg 800w,
             https://live.staticflickr.com/65535/54013358015_f0a62c2a7c_b.jpg 1024w,
             https://live.staticflickr.com/65535/54013358015_00460da7de_h.jpg 1600w,
             https://live.staticflickr.com/65535/54013358015_a7105e0fda_o.jpg 2560w
           '
-          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-        />
-        <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
-          <CtaText text='discover my photography'>
-            discover my <br /> photography
-          </CtaText>
-        </a>
-      </section>
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+      />
+      <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
+        <CtaText text='discover my photography'>
+          discover my <br /> photography
+        </CtaText>
+      </a>
+    </section>
 
-      <section class={`${css.section} ${css.appearOnScroll}`}>
-        <div class={css.content}>
-          <div class={css.text} data-animate-on-scroll>
-            <p>
-              In condimentum facilisis porta. Sed nec diam eu diam mattis
-              viverra.
-            </p>
-          </div>
-          <div class={css.photoWrapper} data-animate-on-scroll>
-            <img
-              class={css.photo}
-              alt='Placeholder image'
-              src='https://via.placeholder.com/400x600'
-              loading='lazy'
-            />
-          </div>
-          <div class={css.text} data-animate-on-scroll>
-            <p>
-              Nulla fringilla, orci ac euismod semper, magna diam porttitor
-              mauris.
-            </p>
-          </div>
+    <section class={`${css.section} ${css.appearOnScroll}`}>
+      <div class={css.content}>
+        <div class={css.text} data-animate-on-scroll>
+          <p>
+            In condimentum facilisis porta. Sed nec diam eu diam mattis viverra.
+          </p>
         </div>
-      </section>
+        <div class={css.photoWrapper} data-animate-on-scroll>
+          <img
+            class={css.photo}
+            alt='Placeholder image'
+            src='https://via.placeholder.com/400x600'
+            loading='lazy'
+          />
+        </div>
+        <div class={css.text} data-animate-on-scroll>
+          <p>
+            Nulla fringilla, orci ac euismod semper, magna diam porttitor
+            mauris.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <section class={css.section}>
-        <img
-          class={css.photoBackground}
-          alt='The inside of a Japanese temple.'
-          loading='lazy'
-          src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
-          srcset='
+    <section class={css.section}>
+      <img
+        class={css.photoBackground}
+        alt='The inside of a Japanese temple.'
+        loading='lazy'
+        src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
+        srcset='
             https://live.staticflickr.com/65535/54013159715_5de34845e8_w.jpg 400w,
             https://live.staticflickr.com/65535/54013159715_5de34845e8_c.jpg 800w,
             https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg 1024w,
             https://live.staticflickr.com/65535/54013159715_55f8c90ec3_h.jpg 1600w,
             https://live.staticflickr.com/65535/54013159715_d1b3b01654_o.jpg 2560w
           '
-          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-        />
-        <a href='/blog' class=`${css.cta} ${css.opaqueBackground}`>
-          <CtaText linkTo='/blog' text='read my blog'> read my blog </CtaText>
-        </a>
-      </section>
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+      />
+      <a href='/blog' class=`${css.cta} ${css.opaqueBackground}`>
+        <CtaText linkTo='/blog' text='read my blog'> read my blog </CtaText>
+      </a>
+    </section>
+  </main>
 
-      <Footer addStyle={css.footer} />
-    </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('[data-animate-on-scroll]')
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const elements = document.querySelectorAll('[data-animate-on-scroll]')
+      const observerOptions = {
+        threshold: 0.1
+      }
 
-        const observerOptions = {
-          threshold: 0.1
-        }
-
-        const observer = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate')
-              observer.unobserve(entry.target)
-            }
-          })
-        }, observerOptions)
-
-        elements.forEach(function (element) {
-          observer.observe(element)
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate')
+            observer.unobserve(entry.target)
+          }
         })
+      }, observerOptions)
+
+      elements.forEach(function (element) {
+        observer.observe(element)
       })
-    </script>
-  </body>
-</HomeLayout>
+    })
+  </script>
+</BaseLayout>
