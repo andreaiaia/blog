@@ -5,7 +5,12 @@
 
   function toggleMenu() {
     menuOpen = !menuOpen
-    console.log(menuOpen)
+
+    if (menuOpen) {
+      document.body.classList.add('no-scroll')
+    } else {
+      document.body.classList.remove('no-scroll')
+    }
   }
 </script>
 

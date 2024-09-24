@@ -16,6 +16,11 @@
 		0 16px 32px rgba(var(--gray), 33%);
 }
 
+/* This avoids the scrolling when the navbar is open */
+.no-scroll {
+	overflow: hidden;
+}
+
 body {
 	font-family: 'IBMPlexSerif', serif;
 	margin: 0;
