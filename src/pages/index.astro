@@ -19,6 +19,7 @@ import css from '../styles/Home.module.scss'
     [data-animate-on-scroll] {
       opacity: 0;
       transform: translateY(50px);
+      will-change: opacity, transform; /* Forza il repaint */
     }
 
     [data-animate-on-scroll].animate {
