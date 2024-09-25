@@ -76,14 +76,6 @@ $gap: 1rem;
   padding: 0 2rem;
   margin-left: auto;
   margin-right: auto;
-
-  & > section {
-    padding-bottom: $gap;
-  }
-
-  @include smartphone {
-    padding: 0 1rem;
-  }
 }
 
 @mixin main() {

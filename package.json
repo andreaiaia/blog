@@ -15,21 +15,20 @@
   "type": "module",
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@astrojs/cloudflare": "^9.1.0",
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.0.5",
-    "@astrojs/svelte": "^5.0.3",
-    "astro": "^4.3.3",
+    "@astrojs/cloudflare": "^11.1.0",
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/svelte": "^5.7.1",
+    "astro": "^4.15.9",
     "gray-matter": "^4.0.3",
     "reading-time": "^1.5.0",
     "remark-emoji": "^4.0.1",
     "rss": "^1.2.2",
-    "sass": "^1.69.5",
+    "sass": "^1.79.3",
     "server-only": "^0.0.1",
     "slugify": "^1.6.6",
-    "svelte": "^4.2.10",
-    "svelte-feather-icons": "^4.1.0"
+    "svelte": "^4.2.19"
   },
   "prettier": {
     "arrowParens": "always",
@@ -39,16 +38,16 @@
     "semi": false
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240222.0",
-    "@types/node": "^20.10.0",
-    "eslint": "^8.54.0",
-    "eslint-plugin-import": "^2.29.1",
+    "@cloudflare/workers-types": "^4.20240924.0",
+    "@types/node": "^20.16.7",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "svelte-feather-icons": "^4.1.0",
     "svelte-motion": "^0.12.2",
-    "typescript": "^5.3.2",
-    "wrangler": "^3.32.0"
+    "typescript": "^5.6.2",
+    "wrangler": "^3.78.9"
   }
 }

@@ -23,6 +23,11 @@
   @include container;
   padding-top: 3rem;
   padding-bottom: 5rem;
+
+  @include smartphone {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .posts {
