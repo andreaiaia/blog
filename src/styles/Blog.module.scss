@@ -1,0 +1,33 @@
+@use './_globals.module' as *;
+
+.titleSection {
+  width: 100%;
+  background-color: $primary;
+
+  .content {
+    @include container;
+    font-family: 'DMSerifDisplay';
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    color: $black;
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-family: 'PlusJakartaSans';
+    }
+  }
+}
+
+.feed {
+  @include container;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.posts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

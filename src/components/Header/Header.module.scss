@@ -4,6 +4,9 @@
   position: absolute;
   top: 0;
   width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0.5rem 2rem;
   z-index: 1;
   background-color: transparent;
@@ -23,4 +26,9 @@
     letter-spacing: -2px;
     z-index: 1;
   }
+}
+
+.solid {
+  position: initial;
+  color: $black;
 }

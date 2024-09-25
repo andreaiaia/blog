@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import CtaText from '../components/CtaText/CtaText.svelte'
 import css from '../styles/Home.module.scss'
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 ---
 
 <style>
@@ -29,7 +31,11 @@ import css from '../styles/Home.module.scss'
   src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
 ></script>
 
-<BaseLayout>
+<BaseLayout
+  title={SITE_TITLE}
+  descrition={SITE_DESCRIPTION}
+  headerMode='transparent'
+>
   <main>
     <section class={css.section}>
       <img

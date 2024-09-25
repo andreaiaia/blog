@@ -1,0 +1,77 @@
+@use '../../styles/globals.module' as *;
+
+.container {
+  display: block;
+  transition: all 0.2s ease;
+
+  @include laptop {
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &:hover {
+      .title::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.content {
+  width: 340px;
+
+  .title {
+    position: relative;
+    display: inline-block;
+    @include h3;
+    font-size: 1.3rem;
+    letter-spacing: -0.03em;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: $primary-500;
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+.image {
+  position: relative;
+  height: 200px;
+  width: 350px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.metadata {
+  position: absolute;
+  width: 100%;
+
+  & > div {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 4px 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: $white;
+    opacity: 0.9;
+  }
+
+  .meta {
+    color: $black;
+  }
+}
