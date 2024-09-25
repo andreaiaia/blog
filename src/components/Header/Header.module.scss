@@ -28,7 +28,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-family: 'DMSerifDisplay';
     font-size: 3rem;
     letter-spacing: -2px;
-    z-index: 1;
+    z-index: 11;
     transition: color 0.3s ease-in-out;
   }
 
@@ -133,6 +133,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+    z-index: 10;
 
     li {
       margin: 20px 0;
@@ -190,6 +191,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .closeIcon {
-  z-index: 1;
+  z-index: 11;
   color: $white;
 }
