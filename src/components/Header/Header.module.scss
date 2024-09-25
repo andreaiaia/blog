@@ -107,8 +107,8 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
 
   .line {
     width: 100%;
@@ -190,11 +190,5 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .closeIcon {
-  display: inline-block;
   z-index: 1;
-}
-
-.icon {
-  display: inline-block;
-  margin: 0rem;
 }

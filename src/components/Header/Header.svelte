@@ -38,9 +38,9 @@
         aria-label="Toggle menu"
       >
         {#if menuOpen}
-          <XIcon class={css.closeIcon} />
+          <XIcon size="1.5x" class={css.closeIcon} />
         {:else}
-          <MenuIcon class={css.icon} />
+          <MenuIcon size="1.5x" />
         {/if}
       </button>
     </nav>
