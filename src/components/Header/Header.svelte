@@ -1,6 +1,6 @@
 <script>
   import css from './Header.module.scss'
-  import { MenuIcon, XIcon, GithubIcon } from 'svelte-feather-icons'
+  import { MenuIcon, XIcon } from 'svelte-feather-icons'
 
   export let addStyle = ''
   export let headerMode = 'solid'
@@ -40,7 +40,7 @@
         {#if menuOpen}
           <XIcon class={css.closeIcon} />
         {:else}
-          <GithubIcon class={css.icon} />
+          <MenuIcon class={css.icon} />
         {/if}
       </button>
     </nav>
