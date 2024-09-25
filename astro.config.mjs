@@ -4,12 +4,10 @@ import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
 import cloudflare from '@astrojs/cloudflare';
 
-import react from '@astrojs/react';
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), svelte(), react()],
+  integrations: [mdx(), sitemap(), svelte()],
   output: 'server',
   adapter: cloudflare({
     runtime: {
