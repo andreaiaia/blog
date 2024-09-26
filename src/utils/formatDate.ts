@@ -4,14 +4,14 @@ type optionsType = {
   day: 'numeric' | '2-digit' | undefined;
 };
 
-const formatDate = (date: string) => {
+const formatDate = (date: Date) => {
   const options: optionsType = {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   };
 
-  return new Intl.DateTimeFormat('en-US', options).format(new Date(date));
+  return new Intl.DateTimeFormat('en-US', options).format(date);
 };
 
 export { formatDate };

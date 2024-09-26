@@ -1,20 +1,59 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
-import BlogPost from '../../layouts/BlogHome.astro'
+import AstroBlog from '../../layouts/AstroBlog.astro';
+export const prerender = true;
+// import BlogPost from '../../layouts/BlogPost.astro'
+// import Tag from '../../components/Tag/Tag.svelte'
+// import css from './Post.module.scss'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
+  
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: post
+    props: { post }
   }))
 }
-type Props = CollectionEntry<'blog'>
+type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props
 const { Content } = await post.render()
 ---
 
-<BlogPost {...post.data}>
+<AstroBlog {...post.data}>
   <Content />
-</BlogPost>
+</AstroBlog>
+
+<!-- <BlogPost {...post.data}>
+  <article class={css.container}>
+    <section class={css.postHead}>
+      <img class={css.postImage} src="https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg" alt="prova">
+      <div class={css.postMetadata}>
+        <div class={css.tags}>
+          <Tag to="#">
+            tags
+          </Tag>
+        </div>
+        <h1>{JSON.stringify(Astro)}</h1>
+        <p>Prova descrizione</p>
+        <div class={css.stats}>
+          <p>Sep 24, 2024</p> • <p>10 min read</p>
+        </div>
+      </div>
+    </section>
+    <section class={css.content}>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
+      </p>
+    </section>
+  </article>
+</BlogPost> -->
