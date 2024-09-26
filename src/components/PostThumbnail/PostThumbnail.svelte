@@ -1,19 +1,25 @@
 <script>
+  import { formatDate } from '../../utils/formatDate'
   import css from './PostThumbnail.module.scss'
-  // import PostMetadata from '../PostMetadata/PostMetadata.svelte'
 
   export let post = {}
 </script>
 
-<a class={css.container} href={`/blog/${post.slug}`}>
-  <div class={css.image}>
-    <img src={post.data.image} alt={post.data.title} />
-    <div class={css.metadata}>
-      <!-- <PostMetadata cname={css.meta} date={post.data.date} /> -->
+<div class={css.article}>
+  <div class={css.container}>
+    <div class={css.head}>
+      <time class={css.date} datetime={post.data.date}
+        >{formatDate(post.data.date)}
+      </time>
+      <a class={css.image} href={`/blog/${post.slug}`}>
+        <img src={post.data.image} alt={post.data.title} />
+      </a>
+    </div>
+    <div class={css.content}>
+      <h2 class={css.title}>
+        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+      </h2>
+      <p class={css.description}>{post.data.description}</p>
     </div>
   </div>
-  <div class={css.content}>
-    <p class={css.title}>{post.data.title}</p>
-    <p class={css.description}>{post.data.description}</p>
-  </div>
-</a>
+</div>
