@@ -1,17 +1,9 @@
 <script>
   import css from './Tag.module.scss'
 
-  export let tag
-  export let to
-  export let anchor
+  export let href
 </script>
 
-{#if anchor}
-  <a href={to} class={css.tag}>
-    {tag}
-  </a>
-{:else}
-  <a href={to || '#'} class={css.tag}>
-    {tag}
-  </a>
-{/if}
+<a href={href || '#'} class={css.tag}>
+  <slot />
+</a>
