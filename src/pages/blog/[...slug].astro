@@ -1,10 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
-import AstroBlog from '../../layouts/AstroBlog.astro';
 export const prerender = true;
-// import BlogPost from '../../layouts/BlogPost.astro'
-// import Tag from '../../components/Tag/Tag.svelte'
-// import css from './Post.module.scss'
+import BlogPost from '../../layouts/BlogPost.astro'
+import Tag from '../../components/Tag/Tag.svelte'
+import css from './Post.module.scss'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -20,11 +19,7 @@ const post = Astro.props
 const { Content } = await post.render()
 ---
 
-<AstroBlog {...post.data}>
-  <Content />
-</AstroBlog>
-
-<!-- <BlogPost {...post.data}>
+<BlogPost {...post.data}>
   <article class={css.container}>
     <section class={css.postHead}>
       <img class={css.postImage} src="https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg" alt="prova">
@@ -56,4 +51,4 @@ const { Content } = await post.render()
       </p>
     </section>
   </article>
-</BlogPost> -->
+</BlogPost>
