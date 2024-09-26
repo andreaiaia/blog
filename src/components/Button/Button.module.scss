@@ -2,8 +2,8 @@
 
 .button {
   padding: 1rem;
-  background-color: $primary-500;
-  border: 2px solid $primary-500;
+  background-color: $primary;
+  border: 2px solid $primary;
   border-radius: 8px;
   font-size: 1.2rem;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
@@ -11,31 +11,14 @@
 
   @include laptop {
     &:hover {
-      box-shadow: 0 5px 10px -5px $primary-900;
-    }
-  }
-
-  @include dark {
-    color: $black;
-
-    &:hover {
-      box-shadow: 0 5px 10px -5px $primary-400;
+      box-shadow: 0 5px 10px -5px $black;
     }
   }
 
   &.secondary {
-    background-color: $secondary-100;
-    border: 2px solid $secondary-500;
-
-    @include dark {
-      background-color: transparent;
-      color: $secondary-500;
-    }
-
     @include laptop {
       &:hover {
         color: $black;
-        box-shadow: 0 0 40px 40px $secondary-500 inset;
       }
     }
   }

@@ -10,11 +10,9 @@
     @include h1;
     font-size: 7rem;
     margin: 0;
-    color: $secondary-300;
   }
 
   h1 {
     @include h2;
-    color: $secondary-500;
   }
 }
