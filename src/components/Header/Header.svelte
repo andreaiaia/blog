@@ -1,19 +1,19 @@
 <script>
-  import css from './Header.module.scss'
-  import { MenuIcon, XIcon } from 'svelte-feather-icons'
+  import css from './Header.module.scss';
+  import { MenuIcon, XIcon } from 'svelte-feather-icons';
 
-  export let addStyle = ''
-  export let headerMode = 'solid'
+  export let addStyle = '';
+  export let headerMode = 'solid';
 
-  let menuOpen = false
+  let menuOpen = false;
 
   function toggleMenu() {
-    menuOpen = !menuOpen
+    menuOpen = !menuOpen;
 
     if (menuOpen) {
-      document.body.classList.add('no-scroll')
+      document.body.classList.add('no-scroll');
     } else {
-      document.body.classList.remove('no-scroll')
+      document.body.classList.remove('no-scroll');
     }
   }
 </script>
