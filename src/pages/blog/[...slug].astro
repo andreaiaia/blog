@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import FormattedDate from '../../components/FormattedDate/FormattedDate.svelte';
 
 import Tag from '../../components/Tag/Tag.svelte'
 import css from './Post.module.scss'
@@ -26,14 +27,18 @@ const { Content } = await post.render();
       <img class={css.postImage} src={image} alt="prova">
       <div class={css.postMetadata}>
         <div class={css.tags}>
-          <Tag href="#">
-            {JSON.stringify(tags)}
-          </Tag>
+          {tags.map((tag) => (
+            <Tag href="#">
+              {tag}
+            </Tag>
+          ))}
         </div>
         <h1>{title}</h1>
         <p>{description}</p>
         <div class={css.stats}>
-          <p>{date.toLocaleString()}</p> • <p>10 min read</p>
+          <FormattedDate date={date} />
+          <p>•</p>
+          <p>10 min read</p>
         </div>
       </div>
     </section>
