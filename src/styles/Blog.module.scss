@@ -2,14 +2,14 @@
 
 .titleSection {
   width: 100%;
-  background-color: $primary;
+  background-color: var(--primary);
 
   .content {
     @include container;
     font-family: 'DMSerifDisplay';
     padding-top: 3rem;
     padding-bottom: 4rem;
-    color: $black;
+    color: var(--black);
 
     p {
       font-size: 1.5rem;

@@ -1,24 +1,3 @@
-// Colors
-$white: hsl(0, 0%, 96%);
-$black: hsl(0, 0%, 10%);
-// Backgrounds
-$background: hsl(0, 0%, 10%);
-$background-opaque: hsla(0, 0%, 10%, 0.25);
-// primary colors
-$primary: hsl(45, 100%, 55%);
-$primary-opaque: hsla(45, 100%, 55%, 0.5);
-$primary-tint: hsl(45, 100%, 85%);
-$primary-tone: hsl(45, 100%, 75%);
-// shades
-$shade: hsl(0, 0%, 35%);
-$light-shade: hsl(0, 0%, 85%);
-$shadow: hsl(0, 0%, 25%);
-$light-shadow: hsl(0, 0%, 55%);
-// semantic colors
-$success: hsl(152, 100%, 34%);
-$warning: hsl(53, 100%, 46%);
-$danger: hsl(357, 100%, 49%);
-
 // breakpoints
 $smartphone: 600px;
 $tablet-portrait: 850px;
@@ -104,57 +83,6 @@ $gap: 1rem;
 }
 @mixin boldest() {
   font-variation-settings: 'wght' 850;
-}
-
-//buttons presets
-@mixin button($type: 'primary', $size: 'normal') {
-  cursor: pointer;
-  position: relative;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  font-family: 'PlusJakartaSans';
-  font-weight: bold;
-  transition: all 0.3s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: -1; /* overlay sotto il testo del bottone */
-  }
-
-  &:hover::before {
-    opacity: 1;
-  }
-
-  @if $type == 'primary' {
-    background-color: $primary-opaque;
-
-    &::before {
-      background-color: $primary;
-    }
-  }
-  @if $type == 'secondary' {
-    background-color: $background-opaque;
-    color: $white;
-
-    &::before {
-      background-color: hsla(0, 0%, 0%, 1);
-    }
-  }
-
-  @if $size == 'small' {
-    padding: 0.5rem 0.8rem;
-  }
-  @if $size == 'big' {
-    font-size: 1.5rem;
-  }
 }
 
 // media query mixin

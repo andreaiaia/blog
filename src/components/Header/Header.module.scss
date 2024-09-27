@@ -12,7 +12,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding: 0.5rem 0;
   z-index: 1;
   background-color: transparent;
-  color: $white;
+  color: var(--white);
 
   .container {
     max-width: 1200px;
@@ -71,7 +71,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     left: 0;
     right: 0;
     height: 3px;
-    background-color: $primary;
+    background-color: var(--primary);
   }
 
   &:before {
@@ -113,7 +113,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   .line {
     width: 100%;
     height: 3px;
-    background-color: $white;
+    background-color: var(--white);
     transition: all 0.3s ease;
   }
 }
@@ -125,7 +125,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     right: 0;
     height: 100vh;
     width: 100%;
-    background-color: $black;
+    background-color: var(--black);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -139,14 +139,14 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       margin: 20px 0;
 
       a {
-        color: $white;
+        color: var(--white);
         font-size: 2rem;
       }
     }
   }
 
   .link {
-    border-bottom: 1px solid $primary;
+    border-bottom: 1px solid var(--primary);
     padding: 0 2rem 2rem;
 
     &:last-child {
@@ -167,7 +167,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 .change {
   &.line:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
-    background-color: $white;
+    background-color: var(--white);
   }
 
   &.line:nth-child(2) {
@@ -176,21 +176,21 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &.line:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
-    background-color: $white;
+    background-color: var(--white);
   }
 }
 
 .solid {
   position: initial;
-  background-color: $white;
-  color: $black;
+  background-color: var(--white);
+  color: var(--black);
 
   .menuLogo {
-    color: $white;
+    color: var(--white);
   }
 }
 
 .closeIcon {
   z-index: 11;
-  color: $white;
+  color: var(--white);
 }

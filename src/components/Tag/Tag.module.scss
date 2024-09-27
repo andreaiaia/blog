@@ -2,10 +2,10 @@
 
 .tag {
   font-family: 'PlusJakartaSans';
-  color: $black;
+  color: var(--black);
   border-radius: 5px;
   padding: 6px 12px;
   font-size: 0.9rem;
   transition: 0.3s ease-in-out;
-  background-color: $light-shade;
+  background-color: var(--light-shade);
 }

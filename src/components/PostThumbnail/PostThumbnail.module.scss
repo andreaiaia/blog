@@ -13,7 +13,7 @@
       transform: translateY(-4px);
 
       .title a {
-        text-decoration-color: $primary;
+        text-decoration-color: var(--primary);
       }
     }
   }
@@ -27,8 +27,8 @@
     z-index: 1;
     top: 16px;
     left: 16px;
-    background-color: $black;
-    color: $white;
+    background-color: var(--black);
+    color: var(--white);
     padding: 8px 12px;
     border-radius: 4px;
     font-family: 'PlusJakartaSans';
@@ -47,7 +47,7 @@
     padding-bottom: 62%;
     border-radius: 8px;
     overflow: hidden;
-    background: $white;
+    background: var(--white);
     width: 100%;
     height: 100%;
 
@@ -72,7 +72,7 @@
   a {
     transition: all 0.35s;
     text-decoration: underline;
-    text-decoration-color: $white;
+    text-decoration-color: var(--white);
     text-decoration-thickness: 2px;
   }
 }
