@@ -1,54 +1,45 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content'
-export const prerender = true;
-import BlogPost from '../../layouts/BlogPost.astro'
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
 import Tag from '../../components/Tag/Tag.svelte'
 import css from './Post.module.scss'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog')
-  
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post }
-  }))
+	const posts = await getCollection('blog');
+
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
 }
 type Props = CollectionEntry<'blog'>;
 
-const post = Astro.props
-const { Content } = await post.render()
+const post = Astro.props;
+const { title, description, date, tags, image } = post.data;
+const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-  <article class={css.container}>
+	  <article class={css.container}>
     <section class={css.postHead}>
-      <img class={css.postImage} src="https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg" alt="prova">
+      <img class={css.postImage} src={image} alt="prova">
       <div class={css.postMetadata}>
         <div class={css.tags}>
-          <Tag to="#">
-            tags
+          <Tag href="#">
+            {JSON.stringify(tags)}
           </Tag>
         </div>
-        <h1>{JSON.stringify(Astro)}</h1>
-        <p>Prova descrizione</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
         <div class={css.stats}>
-          <p>Sep 24, 2024</p> • <p>10 min read</p>
+          <p>{date.toLocaleString()}</p> • <p>10 min read</p>
         </div>
       </div>
     </section>
     <section class={css.content}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti labore mollitia incidunt explicabo modi optio autem, a dolorem voluptates reiciendis id, illum suscipit! Porro laborum placeat itaque ipsum magni!
-      </p>
+			<Content />
     </section>
   </article>
+	
 </BlogPost>
