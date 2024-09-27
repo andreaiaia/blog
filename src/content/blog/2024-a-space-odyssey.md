@@ -3,8 +3,7 @@ title: '2024: A Space Odyssey'
 date: '2023/10/14'
 description: La lettera di accompagnamento al mio calendario astrofotografico.
 tags: ['photograhy', 'astro']
-author: Andrea Bianchi
-pic: /images/photos/astrophotography/crescent-moon.webp
+image: 'https://live.staticflickr.com/65535/54005468042_8a6232d53c_b.jpg'
 ---
 
 > _Sempre caro mi fu quest’ermo colle,_  
