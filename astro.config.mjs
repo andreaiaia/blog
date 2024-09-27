@@ -12,7 +12,7 @@ export default defineConfig({
   output: 'server',
   adapter: cloudflare({
     runtime: {
-      mode: 'local',
+      mode: 'production',
     },
   }),
   markdown: {
