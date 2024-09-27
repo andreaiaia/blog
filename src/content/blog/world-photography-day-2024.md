@@ -23,5 +23,3 @@ But the subtractive power of photography doesn’t stop there. As Dorothea Lange
 There’s still much more to say about this art form, which perhaps more than any other has defined the contemporary age, but I’d say it’s time to go out and photograph something.
 
 Good light!
-
-Let me know if you’d like any further adjustments!
