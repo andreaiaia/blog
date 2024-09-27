@@ -21,6 +21,8 @@
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/svelte": "^5.7.1",
     "astro": "^4.15.9",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0",
     "sass": "^1.79.3",
     "svelte": "^4.2.19",
     "svelte-preprocess": "^6.0.3",
