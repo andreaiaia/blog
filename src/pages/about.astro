@@ -1,62 +1,115 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import css from '../styles/About.module.scss'
 ---
+
+<style>
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  [data-animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform; /* Forza il repaint */
+  }
+
+  [data-animate-on-scroll].animate {
+    animation: animateIn 1s ease-in-out forwards;
+  }
+</style>
+<script
+  src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+></script>
 
 <BaseLayout
   title={SITE_TITLE}
   descrition={SITE_DESCRIPTION}
-  headerMode='solid'
+	headerMode='transparent'
 >
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<main>
+	<section>
+		<section class={css.section}>
+      <img
+        class={css.photoBackground}
+        alt='A self-portrait in the Murgia Materana.'
+        src='https://live.staticflickr.com/65535/54027190348_24da5b9ed6_b.jpg'
+        srcset='
+            https://live.staticflickr.com/65535/54027190348_24da5b9ed6_w.jpg 400w,
+            https://live.staticflickr.com/65535/54027190348_24da5b9ed6_c.jpg 800w,
+            https://live.staticflickr.com/65535/54027190348_24da5b9ed6_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54027190348_f83d213404_k.jpg 2048w,
+          '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        loading='lazy'
+      />
+      <div class={`${css.cta} ${css.opaqueBackground}`}>
+        <h1 class={css.title} data-animate-on-scroll>
+          About me
+        </h1>
+				<p data-animate-on-scroll>
+					Capturing the World, One Frame at a Time
+				</p>
+      </div>
+    </section>
+	</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+	<section class={css.section}>
+		<div class={css.bio}>
+			<h2 data-animate-on-scroll>Who am I</h2>
+			<div class={css.text} data-animate-on-scroll>
+				<p>
+					I became passionate about photography in 2012, when I read an article on a blog and discovered that, by using a long exposure time, it was possible to capture the trails of moving cars.
+				</p>
+				<p>
+					I immediately grabbed my father’s camera, a Nikon D50 from 2005, went outside, placed the camera on a wall, figured out how to set the shutter speed to 30 seconds, and took the photo you see here.
+				</p>
+				<p> 
+					It’s not much, but the excitement I felt when taking that photo is the same feeling that still accompanies me every time I press the shutter button.
+				</p>
+			</div>
+		</div>
+		<div data-animate-on-scroll>
+      <img
+				class={css.photo}
+        alt='The photo that started it all, a long exposure of moving cars in Matera&apos;s Sassi.'
+        src='https://live.staticflickr.com/65535/54027456455_40c5370047_z.jpg'
+        srcset='
+            https://live.staticflickr.com/65535/54027456455_40c5370047_n.jpg 320w,
+            https://live.staticflickr.com/65535/54027456455_40c5370047_z.jpg 640w,
+            https://live.staticflickr.com/65535/54027456455_40c5370047_b.jpg 1024w,
+          '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw'
+        loading='lazy'
+      />		</div>
+	</section>
+</main>
+  <script>
+    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const observerOptions = {
+      threshold: 0.1
+    }
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, observerOptions)
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+      elements.forEach(function (element) {
+        observer.observe(element)
+      })
+    })
+  </script>
 </BaseLayout>
