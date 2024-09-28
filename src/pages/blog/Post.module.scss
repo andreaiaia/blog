@@ -2,13 +2,14 @@
 
 .container {
   @include container;
+  margin-top: 16px;
   margin-bottom: 80px;
 }
 
 .postHead {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 2rem;
+  margin-bottom: 48px;
   align-items: center;
 
   @media screen and (max-width: 1024px) {
