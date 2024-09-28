@@ -10,11 +10,11 @@ import '../styles/_globals.module.scss'
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description } = Astro.props;
+const { title, description, image, lang } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang || 'en'}>
 	  <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -25,14 +25,13 @@ const { title, description } = Astro.props;
     <meta property='og:url' content={Astro.url} />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <!-- <meta property='og:image' content={new URL(image, Astro.url)} /> -->
-
+    <meta property='og:image' content={new URL(image || '', Astro.url)} />
     <!-- Twitter -->
     <meta property='twitter:card' content='summary_large_image' />
     <meta property='twitter:url' content={Astro.url} />
     <meta property='twitter:title' content={title} />
     <meta property='twitter:description' content={description} />
-    <!-- <meta property='twitter:image' content={new URL(image, Astro.url)} /> -->
+    <meta property='twitter:image' content={new URL(image || '', Astro.url)} />
   </head>
 
   <body>

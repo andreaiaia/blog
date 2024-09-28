@@ -4,6 +4,7 @@ date: '2023/10/14'
 description: La lettera di accompagnamento al mio calendario astrofotografico.
 tags: ['photograhy', 'astro']
 image: 'https://live.staticflickr.com/65535/54005468042_8a6232d53c_b.jpg'
+lang: 'it'
 ---
 
 > _Sempre caro mi fu quest’ermo colle,_  
@@ -13,8 +14,7 @@ image: 'https://live.staticflickr.com/65535/54005468042_8a6232d53c_b.jpg'
 > _spazi di là da quella, e sovrumani_  
 > _silenzi, e profondissima quiete_  
 > _io nel pensier mi fingo, ove per poco_  
-> _il cor non si spaura. […]_
-> <cite>L'infinito -- Giacomo Leopardi</cite>
+> _il cor non si spaura. […]_ > <cite>L'infinito -- Giacomo Leopardi</cite>
 
 Credo che tutti dobbiamo, almeno una volta nella vita, provare il brivido di ammirare un cielo completamente buio e vedere sopra le nostre teste lo spettacolo della Via Lattea, con la sua infinità di stelle, le nebulose che si intrecciano nel centro galattico e le costellazioni che coprono tutta la volta celeste.
 
