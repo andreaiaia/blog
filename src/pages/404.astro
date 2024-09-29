@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CtaText from '../components/CtaText/CtaText.svelte'
+import css from '../styles/Home.module.scss'
+---
+
+<style>
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  [data-animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform; /* Forza il repaint */
+  }
+
+  [data-animate-on-scroll].animate {
+    animation: animateIn 1s ease-in-out forwards;
+  }
+</style>
+<script
+  src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+></script>
+
+<BaseLayout
+  title="404 - Page not found"
+  descrition="The page you are looking for does not exist."
+  headerMode='transparent'
+>
+  <main>
+    <section class={css.section}>
+      <img
+        class={css.photoBackground}
+        alt='The famous Sassi of Matera.'
+        src='https://live.staticflickr.com/65535/54029645355_ff8b17ae05_b.jpg'
+        srcset='
+            https://live.staticflickr.com/65535/54029645355_ff8b17ae05_w.jpg 400w,
+            https://live.staticflickr.com/65535/54029645355_ff8b17ae05_c.jpg 800w,
+            https://live.staticflickr.com/65535/54029645355_ff8b17ae05_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54029645355_cdeae1d8eb_k.jpg 2040w
+          '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        loading='lazy'
+      />
+      <div class={css.notFound}>
+        <h1 class={css.title} data-animate-on-scroll>
+          404 <br /> Page not found
+        </h1>
+        <p class={css.description} data-animate-on-scroll>
+          The page you are looking for does not exist.
+        </p>
+        <a class={css.backToHome} href="/"  data-animate-on-scroll>
+          <CtaText
+            text='Go back to the home page'
+          />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const observerOptions = {
+      threshold: 0.1
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, observerOptions)
+
+      elements.forEach(function (element) {
+        observer.observe(element)
+      })
+    })
+  </script>
+</BaseLayout>

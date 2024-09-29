@@ -121,3 +121,35 @@
 .photoCta {
   max-width: 13ch;
 }
+
+.notFound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px;
+  text-align: center;
+  background-color: var(--background-more-opaque);
+
+  .description {
+    font-family: 'PlusJakartaSans';
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--white);
+    padding-bottom: 32px;
+  }
+
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+
+    .backToHome > * {
+      font-size: 2rem;
+      max-width: 15ch;
+    }
+  }
+}
