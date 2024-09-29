@@ -1,0 +1,47 @@
+@use './_globals.module' as *;
+
+.section {
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.photoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.cta {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  color: var(--white);
+  &:hover {
+    background-color: var(--background-more-opaque);
+  }
+
+  h2 {
+    font-family: 'DMSerifDisplay';
+    border-left: unset;
+    padding: 0 32px;
+  }
+}
