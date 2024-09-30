@@ -99,16 +99,11 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     a {
-      color: var(--white);
       transition: none;
     }
 
     &:hover::before {
       top: 100%;
-    }
-
-    &:hover a {
-      color: var(--white);
     }
   }
 }
