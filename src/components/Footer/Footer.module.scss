@@ -28,6 +28,14 @@
   width: 100%;
 }
 
+.title {
+  font-family: 'DMSerifDisplay';
+  font-size: 2rem;
+  margin: 0;
+  border-left: unset;
+  padding-left: unset;
+}
+
 .text {
   font-family: 'IBMPlexSans';
   font-size: 1.2rem;
@@ -39,6 +47,7 @@
 }
 
 .linksRow {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,14 +56,6 @@
     flex-direction: column;
     gap: 1rem;
   }
-}
-
-.title {
-  @include title;
-  font-size: 2rem;
-  margin: 0;
-  border-left: unset;
-  padding-left: unset;
 }
 
 .desktopOnly {

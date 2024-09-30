@@ -1,15 +1,15 @@
 <script>
-  import css from './Footer.module.scss'
+  import css from './Footer.module.scss';
   import {
     RssIcon,
     InstagramIcon,
     GithubIcon,
-    LinkedinIcon
-  } from 'svelte-feather-icons'
+    LinkedinIcon,
+  } from 'svelte-feather-icons';
 
-  export let addStyle = ''
+  export let addStyle = '';
 
-  const YEAR = new Date().getFullYear()
+  const YEAR = new Date().getFullYear();
 </script>
 
 <footer class={`${css.footer} ${addStyle}`}>
@@ -36,7 +36,7 @@
         </p>
       </div>
     </div>
-    <div class={`${css.row} ${css.linksRow}`}>
+    <div class={css.linksRow}>
       <ul class={css.socialLinks}>
         <li>
           <a href="/feed.xml">
