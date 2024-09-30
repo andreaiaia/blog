@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import CtaText from '../components/CtaText/CtaText.svelte'
-import css from '../styles/Home.module.scss'
+import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte'
+import css from '../styles/NotFound.module.scss'
 ---
 
 <style>
@@ -57,7 +57,7 @@ import css from '../styles/Home.module.scss'
           The page you are looking for does not exist.
         </p>
         <a class={css.backToHome} href="/"  data-animate-on-scroll>
-          <CtaText
+          <TextHoverAnimation addStyle={css.photoCta}
             text='Go back to the home page'
           />
         </a>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import CtaText from '../components/CtaText/CtaText.svelte'
+import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte'
 import css from '../styles/Home.module.scss'
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
@@ -103,7 +103,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
       />
       <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
-        <CtaText addStyle={css.photoCta} text='discover my photography' />
+        <TextHoverAnimation addStyle={css.photoCta} text='discover my photography' />
       </a>
     </section>
 
@@ -144,7 +144,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
       />
       <a href='/blog' class={`${css.cta} ${css.opaqueBackground}`}>
-        <CtaText text='read my blog' />
+        <TextHoverAnimation addStyle={css.photoCta} text='read my blog' />
       </a>
     </section>
   </main>

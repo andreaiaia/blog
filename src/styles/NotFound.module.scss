@@ -1,18 +1,73 @@
 @use './_globals.module' as *;
 
-.pageNotFound {
-  margin-top: 1rem;
-  padding: 4rem 0;
+@use './_globals.module' as *;
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.photoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .title {
-  p {
-    @include h1;
-    font-size: 7rem;
-    margin: 0;
+  color: var(--white);
+  font-family: 'DMSerifDisplay';
+  font-size: 3rem;
+  max-width: 600px;
+  text-align: center;
+  padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.25rem;
+    max-width: 19ch;
+  }
+}
+
+.photoCta {
+  font-family: 'DMSerifDisplay';
+  font-size: 3rem;
+}
+
+.notFound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px;
+  text-align: center;
+  background-color: var(--background-more-opaque);
+
+  .description {
+    font-family: 'PlusJakartaSans';
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--white);
+    padding-bottom: 32px;
   }
 
-  h1 {
-    @include h2;
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+
+    .backToHome > * {
+      font-size: 2rem;
+      max-width: 15ch;
+    }
   }
 }
