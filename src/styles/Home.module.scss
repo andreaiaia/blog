@@ -166,4 +166,8 @@
   .icon {
     color: var(--black);
   }
+
+  @media screen and (max-width: 768px) {
+    bottom: 96px;
+  }
 }
