@@ -1,6 +1,7 @@
 <script>
-  import css from './Header.module.scss';
   import { MenuIcon, XIcon } from 'svelte-feather-icons';
+  import TextHoverAnimation from '../TextHoverAnimation/TextHoverAnimation.svelte';
+  import css from './Header.module.scss';
 
   export let addStyle = '';
   export let headerMode = 'solid';
@@ -27,9 +28,15 @@
     </div>
     <nav class={css.navbar}>
       <ul class={`${css.navLinks} ${menuOpen ? css.active : ''}`}>
-        <li class={css.link}><a href="/about">about</a></li>
-        <li class={css.link}><a href="/photo">photo</a></li>
-        <li class={css.link}><a href="/blog">blog</a></li>
+        <li class={css.link}>
+          <a href="/about"> about </a>
+        </li>
+        <li class={css.link}>
+          <a href="/photo">photo</a>
+        </li>
+        <li class={css.link}>
+          <a href="/blog">blog</a>
+        </li>
       </ul>
       <button
         class={css.hamburger}

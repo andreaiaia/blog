@@ -61,43 +61,55 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 .link {
   display: inline-block;
   position: relative;
-  text-decoration: none;
 
-  &:before,
-  &:after {
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 2px 8px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  &::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    top: 100%;
     background-color: var(--primary);
+    z-index: 0;
+    transition: top 0.3s ease-in-out;
   }
 
-  &:before {
-    opacity: 0;
-    transform: translateY(-$distance);
-    transition: transform 0s $easeOutBack, opacity 0s;
+  &:hover::before {
+    top: 0;
   }
 
-  &:after {
-    opacity: 0;
-    transform: translateY(calc($distance/2));
-    transition: transform $duration $easeOutBack, opacity $duration;
+  &:hover a {
+    color: var(--black);
   }
 
-  &:hover,
-  &:focus {
-    &:before,
-    &:after {
-      opacity: 1;
-      transform: translateY(0);
+  /* Disabilita animazione su dispositivi touch */
+  @media (hover: none) {
+    &::before {
+      top: 100%;
+      transition: none;
     }
-    &:before {
-      transition: transform $duration $easeOutBack, opacity $duration;
+
+    a {
+      color: var(--white);
+      transition: none;
     }
-    &:after {
-      transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+
+    &:hover::before {
+      top: 100%;
+    }
+
+    &:hover a {
+      color: var(--white);
     }
   }
 }
