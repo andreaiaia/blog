@@ -32,6 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .content {
@@ -154,5 +155,15 @@
       font-size: 2rem;
       max-width: 15ch;
     }
+  }
+}
+
+.swipeIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: calc(50% - 16px);
+
+  .icon {
+    color: var(--black);
   }
 }

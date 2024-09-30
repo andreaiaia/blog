@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte'
+import ArrowDownCircleIcon from '../components/Icons/ArrowDownCircleIcon.svelte'
 import css from '../styles/Home.module.scss'
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
@@ -37,7 +38,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
   headerMode='transparent'
 >
   <main>
-    <section class={css.section}>
+    <section class={css.section} id="welcome">
       <img
         class={css.photoBackground}
         alt='The famous Sassi of Matera.'
@@ -52,15 +53,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
         loading='lazy'
       />
-      <div class={`${css.cta} ${css.opaqueBackground}`}>
+      <div class={css.cta}>
         <h1 class={css.title} data-animate-on-scroll>
           To photograph is to capture the <span class={css.accent}>essence</span
           > of a moment
         </h1>
+        <a class={css.swipeIndicator} href="#greetings" data-animate-on-scroll>
+          <ArrowDownCircleIcon size="32" class={css.icon} />
+        </a>
       </div>
     </section>
 
-    <section class={css.section}>
+    <section class={css.section} id="greetings">
       <div class={css.content}>
         <div class={css.text} data-animate-on-scroll>
           <p>
@@ -87,7 +91,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
       </div>
     </section>
 
-    <section class={css.section}>
+    <section class={css.section} id="photo-cta">
       <img
         class={`${css.photoBackground} ${css.fixToBottom}`}
         alt='A noir scene in the centre of Matera.'
@@ -107,7 +111,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
       </a>
     </section>
 
-    <section class={css.section}>
+    <section class={css.section} id="blog-introduction">
       <div class={css.content}>
         <div class={css.text} data-animate-on-scroll>
           <p>Photography is my art, my way of seeing the world</p>
@@ -128,7 +132,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
       </div>
     </section>
 
-    <section class={css.section}>
+    <section class={css.section} id="blog-cta">
       <img
         class={css.photoBackground}
         alt='The inside of a Japanese temple.'
