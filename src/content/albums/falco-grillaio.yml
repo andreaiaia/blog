@@ -1,0 +1,26 @@
+title: "Flying among humans - Falco Grillaio"
+description: "An ode to the Lesser Kestrel, a small falcon that passes the summer in the old town of Matera, Italy."
+cover:
+  w400: "https://live.staticflickr.com/65535/54005265978_b3010a61f2_w.jpg"
+  w800: "https://live.staticflickr.com/65535/54005265978_b3010a61f2_c.jpg"
+  w1024: "https://live.staticflickr.com/65535/54005265978_b3010a61f2_b.jpg"
+  w1600: "https://live.staticflickr.com/65535/54005265978_f7bfed23a3_h.jpg"
+  w2560: "https://live.staticflickr.com/65535/54005265978_fa6e062677_o.jpg"
+coverAlt: "A Lesser Kestrel Flying in Matera."
+images:
+  - srcset:
+      w400: "https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg"
+      w800: "https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg"
+      w1024: "https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg"
+      w1600: "https://live.staticflickr.com/65535/53031067536_bfd55d6349_h.jpg"
+      w2560: "https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg"
+    description: "A beautiful sunset over the mountains"
+    alt: "Sunset over mountains"
+  - srcset:
+      w400: "https://live.staticflickr.com/65535/53031067537_70fd0f2bda_w.jpg"
+      w800: "https://live.staticflickr.com/65535/53031067537_70fd0f2bda_c.jpg"
+      w1024: "https://live.staticflickr.com/65535/53031067537_70fd0f2bda_b.jpg"
+      w1600: "https://live.staticflickr.com/65535/53031067537_bfd55d6349_h.jpg"
+      w2560: "https://live.staticflickr.com/65535/53031067537_8e13b8da44_o.jpg"
+    description: "The sandy beach on a sunny day"
+    alt: "Sandy beach"

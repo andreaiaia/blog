@@ -1,0 +1,29 @@
+---
+import GalleryLayout from '../../layouts/GalleryLayout.astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import css from '../../styles/Photo.module.scss';
+
+export async function getStaticPaths() {
+	const albums = await getCollection('albums');
+
+  return albums.map((album: CollectionEntry<'albums'>) => ({
+		params: { id: album.id },
+		props: album,
+	}));
+}
+type Props = CollectionEntry<'albums'>;
+
+const album = Astro.props;
+const { title, description, cover, coverAlt, images } = album.data;
+---
+<GalleryLayout title={title} description={description}>
+  <section class={css.postHead}>
+    <div class={css.postMetadata}>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  </section>
+  <article class={css.container}>
+
+</article>
+</GalleryLayout>
