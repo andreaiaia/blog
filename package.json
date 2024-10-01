@@ -20,19 +20,19 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/svelte": "^5.7.1",
-    "astro": "^4.15.9",
+    "astro": "^4.15.10",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
-    "sass": "^1.79.3",
+    "sass": "^1.79.4",
     "svelte": "^4.2.19",
     "svelte-preprocess": "^6.0.3",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240925.0",
-    "@types/node": "^22.7.3",
+    "@types/node": "^22.7.4",
     "eslint": "^9.11.1",
     "svelte-feather-icons": "^4.1.0",
-    "wrangler": "^3.78.10"
+    "wrangler": "^3.79.0"
   }
 }
