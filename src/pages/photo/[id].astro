@@ -1,6 +1,7 @@
 ---
 import GalleryLayout from '../../layouts/GalleryLayout.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { PhotoGallery } from '../../components/Gallery/Gallery';
 import css from '../../styles/Gallery.module.scss';
 
 export async function getStaticPaths() {
@@ -24,12 +25,13 @@ const { title, description, images } = album.data;
     </div>
   </section>
   <article class={css.gallery}>
-    <div>
+    <!-- <div>
       {images.map((image) => {
         const { srcset, alt } = image;
         return (
           <a href={srcset.w1024}>
             <img 
+              class={css.image}
               alt={alt}
               src={srcset.w1024}
               srcset={`
@@ -45,6 +47,7 @@ const { title, description, images } = album.data;
           </a>
         )
       })}
-    </div>
+    </div> -->
+    <PhotoGallery images={images} />
   </article>
 </GalleryLayout>
