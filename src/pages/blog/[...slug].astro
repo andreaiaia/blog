@@ -4,7 +4,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
 import FormattedDate from '../../components/FormattedDate/FormattedDate.svelte';
 
 import Tag from '../../components/Tag/Tag.svelte'
-import css from './Post.module.scss'
+import css from '../../styles/Post.module.scss';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');

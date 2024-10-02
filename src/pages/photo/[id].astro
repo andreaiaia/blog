@@ -1,7 +1,7 @@
 ---
 import GalleryLayout from '../../layouts/GalleryLayout.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import css from '../../styles/Photo.module.scss';
+import css from '../../styles/Gallery.module.scss';
 
 export async function getStaticPaths() {
 	const albums = await getCollection('albums');
@@ -13,17 +13,38 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<'albums'>;
 
-const album = Astro.props;
+const album: CollectionEntry<'albums'> = Astro.props;
 const { title, description, cover, coverAlt, images } = album.data;
 ---
 <GalleryLayout title={title} description={description}>
-  <section class={css.postHead}>
-    <div class={css.postMetadata}>
+  <section class={css.head}>
+    <div>
       <h1>{title}</h1>
-      <p>{description}</p>
+      <p class={css.description}>{description}</p>
     </div>
   </section>
-  <article class={css.container}>
-
-</article>
+  <article class={css.gallery}>
+    <div>
+      {images.map((image) => {
+        const { srcset, alt } = image;
+        return (
+          <a href={srcset.w1024}>
+            <img 
+              alt={alt}
+              src={srcset.w1024}
+              srcset={`
+                ${srcset.w400} 400w,
+                ${srcset.w800} 800w,
+                ${srcset.w1024} 1024w,
+                ${srcset.w1600} 1600w,
+                ${srcset.w2560} 2560w,
+              `}
+              sizes="(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw"
+              loading="lazy"
+            />
+          </a>
+        )
+      })}
+    </div>
+  </article>
 </GalleryLayout>
