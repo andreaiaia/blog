@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'albums'>;
 
 const album: CollectionEntry<'albums'> = Astro.props;
-const { title, description, cover, coverAlt, images } = album.data;
+const { title, description, images } = album.data;
 ---
 <GalleryLayout title={title} description={description}>
   <section class={css.head}>
