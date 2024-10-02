@@ -25,29 +25,6 @@ const { title, description, images } = album.data;
     </div>
   </section>
   <article class={css.gallery}>
-    <!-- <div>
-      {images.map((image) => {
-        const { srcset, alt } = image;
-        return (
-          <a href={srcset.w1024}>
-            <img 
-              class={css.image}
-              alt={alt}
-              src={srcset.w1024}
-              srcset={`
-                ${srcset.w400} 400w,
-                ${srcset.w800} 800w,
-                ${srcset.w1024} 1024w,
-                ${srcset.w1600} 1600w,
-                ${srcset.w2560} 2560w,
-              `}
-              sizes="(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw"
-              loading="lazy"
-            />
-          </a>
-        )
-      })}
-    </div> -->
     <PhotoGallery images={images} />
   </article>
 </GalleryLayout>
