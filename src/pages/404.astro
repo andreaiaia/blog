@@ -38,7 +38,7 @@ import css from '../styles/NotFound.module.scss'
     <section class={css.section}>
       <img
         class={css.photoBackground}
-        alt='The famous Sassi of Matera.'
+        alt='The sun setting behind the Murgia Plateau.'
         src='https://live.staticflickr.com/65535/54029645355_ff8b17ae05_b.jpg'
         srcset='
             https://live.staticflickr.com/65535/54029645355_ff8b17ae05_w.jpg 400w,
@@ -49,7 +49,7 @@ import css from '../styles/NotFound.module.scss'
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
         loading='lazy'
       />
-      <div class={css.notFound}>
+      <div class={`${css.notFound} ${css.opaqueBackground}`}>
         <h1 class={css.title} data-animate-on-scroll>
           404 <br /> Page not found
         </h1>
