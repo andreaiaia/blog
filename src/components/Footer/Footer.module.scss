@@ -97,3 +97,11 @@
 .accent {
   color: var(--primary);
 }
+
+.link {
+  border-bottom: 1px solid var(--primary);
+
+  &:hover {
+    color: var(--primary);
+  }
+}

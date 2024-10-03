@@ -34,6 +34,12 @@
           covered by copyright. The use of the images is allowed only for
           personal use. Any other use is forbidden.
         </p>
+        <p>
+          All my images are hosted on <a
+            class={css.link}
+            href="https://www.flickr.com/people/andreaiaia/">Flickr</a
+          >.
+        </p>
       </div>
     </div>
     <div class={css.linksRow}>
