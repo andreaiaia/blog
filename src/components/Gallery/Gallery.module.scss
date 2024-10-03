@@ -2,10 +2,11 @@
 
 .masonryGrid {
   display: flex;
-  margin-left: -10px; /* Spazio negativo per l'offset delle colonne */
   max-width: 1200px;
   width: auto;
   margin: 32px auto 64px;
+  padding: 32px;
+  padding-left: 16px;
 
   img {
     display: block;
