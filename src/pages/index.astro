@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte'
+import ArrowDownCircleIcon from '../components/Icons/ArrowDownCircleIcon.svelte'
+import css from '../styles/Home.module.scss'
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+---
+
+<style>
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  [data-animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform; /* Forza il repaint */
+  }
+
+  [data-animate-on-scroll].animate {
+    animation: animateIn 1s ease-in-out forwards;
+  }
+</style>
+<script
+  src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+></script>
+
+<BaseLayout
+  title={SITE_TITLE}
+  descrition={SITE_DESCRIPTION}
+  headerMode='transparent'
+>
+  <main>
+    <section class={css.section} id="welcome">
+      <img
+        class={css.photoBackground}
+        alt='The famous Sassi of Matera.'
+        src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
+        srcset='
+            https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg 400w,
+            https://live.staticflickr.com/65535/53031067536_70fd0f2bda_c.jpg 800w,
+            https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg 1024w,
+            https://live.staticflickr.com/65535/53031067536_bfd55d6349_h.jpg 1600w,
+            https://live.staticflickr.com/65535/53031067536_8e13b8da44_o.jpg 2560w
+          '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+        loading='lazy'
+      />
+      <div class={`${css.cta} ${css.opaqueBackground}`}>
+        <h1 class={css.title} data-animate-on-scroll>
+          To photograph is to capture the <span class={css.accent}>essence</span
+          > of a moment
+        </h1>
+        <a class={css.swipeIndicator} href="#greetings" data-animate-on-scroll>
+          <ArrowDownCircleIcon size="32" class={css.icon} />
+        </a>
+      </div>
+    </section>
+
+    <section class={css.section} id="greetings">
+      <div class={css.content}>
+        <div class={css.text} data-animate-on-scroll>
+          <p>
+            Ciao! I am <span class={css.textAccent}>Andrea</span>
+          </p>
+        </div>
+        <div class={css.photoWrapper} data-animate-on-scroll>
+          <img
+            class={css.photo}
+            alt='A picture of me, Andrea.'
+            src='https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg'
+            srcset='
+                  https://live.staticflickr.com/65535/54013003105_8307dc4e1f_w.jpg 400w,
+                  https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg 800w,
+                  https://live.staticflickr.com/65535/54013003105_2419bebd25_h.jpg 1600w
+                '
+            sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, 60vw'
+            loading='lazy'
+          />
+        </div>
+        <div class={css.text} data-animate-on-scroll>
+          <p>I love creating photos that reflect the soul of a moment</p>
+        </div>
+      </div>
+    </section>
+
+    <section class={css.section} id="photo-cta">
+      <img
+        class={`${css.photoBackground} ${css.fixToBottom}`}
+        alt='A noir scene in the centre of Matera.'
+        loading='lazy'
+        src='https://live.staticflickr.com/65535/54018458935_4f8b16c157_b.jpg'
+        srcset='
+            https://live.staticflickr.com/65535/54018458935_4f8b16c157_w.jpg 400w,
+            https://live.staticflickr.com/65535/54018458935_4f8b16c157_c.jpg 800w,
+            https://live.staticflickr.com/65535/54018458935_4f8b16c157_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54018458935_0d797c37ea_h.jpg 1600w,
+            https://live.staticflickr.com/65535/54018458935_c6d5de9175_o.jpg 2560w
+          '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+      />
+      <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
+        <TextHoverAnimation addStyle={css.photoCta} text='discover my photography' />
+      </a>
+    </section>
+
+    <section class={css.section} id="blog-introduction">
+      <div class={css.content}>
+        <div class={css.text} data-animate-on-scroll>
+          <p>Photography is my art, my way of seeing the world</p>
+        </div>
+        <div class={css.photoWrapper} data-animate-on-scroll>
+          <img
+            class={css.photo}
+            alt='A man stands behind a dress, looking like he is wearing it, in a tipical market in Matera.'
+            src='https://live.staticflickr.com/65535/54018853856_2d12c4da06_z.jpg'
+            loading='lazy'
+          />
+        </div>
+        <div class={css.text} data-animate-on-scroll>
+          <p>
+            My blog is where I share my thoughts on photography and much more
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class={css.section} id="blog-cta">
+      <img
+        class={css.photoBackground}
+        alt='The inside of a Japanese temple.'
+        loading='lazy'
+        src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
+        srcset='
+            https://live.staticflickr.com/65535/54013159715_5de34845e8_w.jpg 400w,
+            https://live.staticflickr.com/65535/54013159715_5de34845e8_c.jpg 800w,
+            https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg 1024w,
+            https://live.staticflickr.com/65535/54013159715_55f8c90ec3_h.jpg 1600w,
+            https://live.staticflickr.com/65535/54013159715_d1b3b01654_o.jpg 2560w
+          '
+        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+      />
+      <a href='/blog' class={`${css.cta} ${css.opaqueBackground}`}>
+        <TextHoverAnimation addStyle={css.photoCta} text='read my blog' />
+      </a>
+    </section>
+  </main>
+
+  <script>
+    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const observerOptions = {
+      threshold: 0.1
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, observerOptions)
+
+      elements.forEach(function (element) {
+        observer.observe(element)
+      })
+    })
+  </script>
+</BaseLayout>

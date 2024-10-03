@@ -1,0 +1,249 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+:root {
+	--white: hsl(0, 0%, 96%);
+	--black: hsl(0, 0%, 10%);
+	--background: hsl(0, 0%, 10%);
+	--background-opaque: hsla(0, 0%, 10%, 0.25);
+	--background-more-opaque: hsla(0, 0%, 10%, 0.5);
+	--primary: hsl(45, 100%, 55%);
+	--primary-opaque: hsla(45, 100%, 55%, 0.5);
+	--primary-tint: hsl(45, 70%, 90%);
+	--primary-tone: hsl(45, 100%, 75%);
+	--shade: hsl(0, 0%, 35%);
+	--light-shade: hsl(0, 0%, 85%);
+	--shadow: hsl(0, 0%, 0%, 25%);
+	--light-shadow: hsl(0, 0%, 0%, 55%);
+	--success: hsl(120, 100%, 40%);
+	--warning: hsl(53, 100%, 45%);
+	--danger: hsl(0, 100%, 50%);
+	--box-shadow: 0 2px 6px var(--shade), 0 8px 24px var(--shade),
+		0 16px 32px var(--shade);
+}
+
+@font-face {
+	font-family: 'PlusJakartaSans';
+	font-style: normal;
+	font-weight: 100 200 300 400 500 600 700 800 900;
+	font-display: block;
+	src: url('/fonts/plusjakartasans-variablefont_wght.woff') format('woff'),
+		url('/fonts/plusjakartasans-variablefont_wght.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'PlusJakartaSans';
+	font-style: italic;
+	font-weight: 100 200 300 400 500 600 700 800 900;
+	font-display: block;
+	src: url('/fonts/plusjakartasans-italic-variablefont_wght.woff') format('woff'),
+		url('/fonts/plusjakartasans-italic-variablefont_wght.woff2') format('woff2');
+	font-named-instance: 'Italic';
+}
+
+@font-face {
+	font-family: 'DMSerifDisplay';
+	font-style: normal;
+	font-weight: normal;
+	font-display: block;
+	src: url('/fonts/dmserifdisplay-regular.woff2') format('woff2'),
+		url('/fonts/dmserifdisplay-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'IBMPlexSerif';
+	font-style: normal;
+	font-weight: normal;
+	font-display: block;
+	src: url('/fonts/ibmplexserif-regular.woff2') format('woff2'),
+		url('/fonts/ibmplexserif-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'IBMPlexSerif';
+	font-style: italic;
+	font-weight: normal;
+	font-display: block;
+	src: url('/fonts/ibmplexserif-italic.woff2') format('woff2'),
+		url('/fonts/ibmplexserif-italic.woff') format('woff');
+	font-named-instance: 'Italic';
+}
+
+@font-face {
+	font-family: 'IBMPlexSerif';
+	font-style: normal;
+	font-weight: bold;
+	font-display: block;
+	src: url('/fonts/ibmplexserif-bold.woff2') format('woff2'),
+		url('/fonts/ibmplexserif-bold.woff') format('woff');
+	font-named-instance: 'Bold';
+}
+
+@font-face {
+	font-family: 'IBMPlexSerif';
+	font-style: italic;
+	font-weight: bold;
+	src: url('/fonts/ibmplexserif-bolditalic.woff2') format('woff2'),
+		url('/fonts/ibmplexserif-bolditalic.woff') format('woff');
+	font-named-instance: 'Bold Italic';
+}
+
+/* This avoids the scrolling when the navbar is open */
+.no-scroll {
+	overflow: hidden;
+}
+
+html {
+	background-color: var(--white);
+	color: var(--black);
+	position: relative;
+	min-height: 100%;
+	scroll-behavior: smooth;
+
+	@media print {
+		background-color: #fff;
+	}
+}
+
+body {
+	font-family: 'IBMPlexSerif', Times, serif;
+	-webkit-font-smoothing: subpixel-antialiased;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: var(--black);
+	font-size: 20px;
+	line-height: 1.7;
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	color: inherit;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 3.052em;
+}
+
+h2 {
+	font-family: 'PlusJakartaSans';
+	font-weight: 900;
+	font-size: 2.441em;
+
+	position: relative;
+	padding-left: 16px;
+	margin-top: 2.25rem;
+	margin-bottom: 1rem;
+	border-left: 4px solid var(--primary);
+}
+
+h3 {
+	font-family: 'PlusJakartaSans';
+	font-weight: 100;
+	font-size: 1.953em;
+	text-transform: uppercase;
+	margin-top: 1.5rem;
+	margin-bottom: 0.8rem;
+}
+
+h4 {
+	font-size: 1.563em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+p {
+	line-height: 1.2;
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+.prose p {
+	margin-bottom: 2em;
+}
+
+textarea {
+	width: 100%;
+	font-size: 16px;
+}
+
+input {
+	font-size: 16px;
+}
+
+table {
+	width: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+code {
+	padding: 2px 5px;
+	background-color: rgb(var(--light-shade));
+	border-radius: 2px;
+}
+
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+
+pre>code {
+	all: unset;
+}
+
+blockquote {
+	border-left: 4px solid var(--primary);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--light-shade));
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}

@@ -1,0 +1,44 @@
+@use './_globals.module' as *;
+
+.titleSection {
+  width: 100%;
+  background-color: var(--primary);
+
+  .content {
+    @include container;
+    font-family: 'DMSerifDisplay';
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    color: var(--black);
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-family: 'PlusJakartaSans';
+    }
+  }
+}
+
+.feed {
+  @include container;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  z-index: 0;
+
+  @include smartphone {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+
+  li {
+    width: 100%;
+  }
+}

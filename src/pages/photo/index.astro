@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import css from '../../styles/Photo.module.scss'
+---
+
+<style>
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  [data-animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(15px);
+    will-change: opacity, transform; /* Forza il repaint */
+  }
+
+  [data-animate-on-scroll].animate {
+    animation: animateIn 1s ease-in-out forwards;
+  }
+</style>
+<script
+  src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+></script>
+
+<BaseLayout
+  title="Andrea&apos;s Photography"
+  descrition="Andrea&apos;s Photography: capturing the essence of a moment"
+  headerMode='solid'
+>
+  <main>
+    <article class={css.album}>
+      <a class={css.content} href="/photo/falco-grillaio">
+        <img
+          class={css.photoBackground}
+          alt='A Lesser Kestrel Flying in Matera.'
+          src='https://live.staticflickr.com/65535/54005265978_b3010a61f2_b.jpg'
+          srcset='
+              https://live.staticflickr.com/65535/54005265978_b3010a61f2_w.jpg 400w,
+              https://live.staticflickr.com/65535/54005265978_b3010a61f2_c.jpg 800w,
+              https://live.staticflickr.com/65535/54005265978_b3010a61f2_b.jpg 1024w,
+              https://live.staticflickr.com/65535/54005265978_f7bfed23a3_h.jpg 1600w,
+              https://live.staticflickr.com/65535/54005265978_fa6e062677_o.jpg 2560w
+            '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+          loading='lazy'
+        />
+        <div class={css.cta}>
+          <h2 class={css.title} data-animate-on-scroll>
+            Falco Grillaio
+          </h2>
+        </div>
+      </a>
+    </article>
+    <article class={css.album}>
+      <a class={css.content} href="/photo/japan">
+        <img
+          class={css.photoBackground}
+          alt='The inside of a Japanese temple.'
+          src='https://live.staticflickr.com/65535/54005483235_6475633bce_b.jpg'
+          srcset='
+              https://live.staticflickr.com/65535/54005483235_6475633bce_w.jpg 400w,
+              https://live.staticflickr.com/65535/54005483235_6475633bce_c.jpg 800w,
+              https://live.staticflickr.com/65535/54005483235_6475633bce_b.jpg 1024w,
+              https://live.staticflickr.com/65535/54005483235_a54b187904_h.jpg 1600w,
+              https://live.staticflickr.com/65535/54005483235_c0691def5a_o.jpg 2560w
+            '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+          loading='lazy'
+        />
+        <div class={css.cta}>
+          <h2 class={css.title} data-animate-on-scroll>
+            In the Land of the Rising Sun
+          </h2>
+        </div>
+      </a>
+    </article>
+    <article class={css.album}>
+      <a class={css.content} href="/photo/landscape">
+        <img
+          class={css.photoBackground}
+          alt='A green hill with a blue background in Basilicata in February.'
+          src='https://live.staticflickr.com/65535/54006540043_ba2a359971_b.jpg'
+          srcset='
+              https://live.staticflickr.com/65535/54006540043_ba2a359971_w.jpg 400w,
+              https://live.staticflickr.com/65535/54006540043_ba2a359971_c.jpg 800w,
+              https://live.staticflickr.com/65535/54006540043_ba2a359971_b.jpg 1024w,
+              https://live.staticflickr.com/65535/54006540043_daa4803eb7_h.jpg 1600w,
+              https://live.staticflickr.com/65535/54006540043_b493fb7fbe_o.jpg 2560w
+            '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+          loading='lazy'
+        />
+        <div class={css.cta}>
+          <h2 class={css.title} data-animate-on-scroll>
+            Shapes of Landscapes
+          </h2>
+        </div>
+      </a>
+    </article>
+    <article class={css.album}>
+      <a class={css.content} href="/photo/matera">
+        <img
+          class={css.photoBackground}
+          alt='The famous Sassi of Matera.'
+          src='https://live.staticflickr.com/65535/54006646455_9a96eb6bed_b.jpg'
+          srcset='
+              https://live.staticflickr.com/65535/54006646455_9a96eb6bed_w.jpg 400w,
+              https://live.staticflickr.com/65535/54006646455_9a96eb6bed_c.jpg 800w,
+              https://live.staticflickr.com/65535/54006646455_9a96eb6bed_b.jpg 1024w,
+              https://live.staticflickr.com/65535/54006646455_1fc835a33e_h.jpg 1600w,
+              https://live.staticflickr.com/65535/54006646455_0bb28f8d4c_o.jpg 2560w
+            '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+          loading='lazy'
+        />
+        <div class={css.cta}>
+          <h2 class={css.title} data-animate-on-scroll>
+            Matera - the city of Sassi
+          </h2>
+        </div>
+      </a>
+    </article>
+    <article class={css.album}>
+      <a class={css.content} href="/photo/astrophotography">
+        <img
+          class={css.photoBackground}
+          alt='M42 - Orion Nebula.'
+          src='https://live.staticflickr.com/65535/54006170681_837bbcecab_b.jpg'
+          srcset='
+              https://live.staticflickr.com/65535/54006170681_837bbcecab_w.jpg 400w,
+              https://live.staticflickr.com/65535/54006170681_837bbcecab_c.jpg 800w,
+              https://live.staticflickr.com/65535/54006170681_837bbcecab_b.jpg 1024w,
+              https://live.staticflickr.com/65535/54006170681_7d43bfa0f1_h.jpg 1600w,
+              https://live.staticflickr.com/65535/54006170681_d1d2c25b7b_o.jpg 2560w
+            '
+          sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+          loading='lazy'
+        />
+        <div class={css.cta}>
+          <h2 class={css.title} data-animate-on-scroll>
+            Per aspera ad astra
+          </h2>
+        </div>
+      </a>
+    </article>
+  </main>
+
+  <script>
+    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const observerOptions = {
+      threshold: 0.1
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, observerOptions)
+
+      elements.forEach(function (element) {
+        observer.observe(element)
+      })
+    })
+  </script>
+</BaseLayout>

@@ -1,0 +1,20 @@
+@use '../../styles/globals.module' as *;
+
+.masonryGrid {
+  display: flex;
+  max-width: 1200px;
+  width: auto;
+  margin: 32px auto 64px;
+  padding: 32px;
+  padding-left: 16px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.masonryGridColumn {
+  padding-left: 10px; /* Spazio tra le colonne */
+  background-clip: padding-box;
+}

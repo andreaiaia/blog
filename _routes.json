@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "pattern": "/blog/*",
+      "serve": "/blog/[slug].html",
+      "status": 200
+    }
+  ]
+}

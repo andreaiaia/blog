@@ -1,0 +1,51 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import FormattedDate from '../../components/FormattedDate/FormattedDate.svelte';
+
+import Tag from '../../components/Tag/Tag.svelte'
+import css from '../../styles/Post.module.scss';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+
+  return posts.map((post: CollectionEntry<'blog'>) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { title, description, date, tags, image } = post.data;
+const { Content, remarkPluginFrontmatter } = await post.render();
+const readingTime = remarkPluginFrontmatter.minutesRead;
+---
+
+<BlogPost {...post.data}>
+	  <article class={css.container}>
+    <section class={css.postHead}>
+      <img class={css.postImage} src={image} alt="prova">
+      <div class={css.postMetadata}>
+        <div class={css.tags}>
+          {tags.map((tag) => (
+            <Tag href="#">
+              {tag}
+            </Tag>
+          ))}
+        </div>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <div class={css.stats}>
+          <FormattedDate date={date} />
+          <p>•</p>
+          <p>{readingTime}</p>
+        </div>
+      </div>
+    </section>
+    <section class={css.content}>
+			<Content />
+    </section>
+  </article>
+	
+</BlogPost>

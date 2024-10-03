@@ -1,59 +1,173 @@
 @use './_globals.module' as *;
 
-.hero {
-  & > div {
-    min-height: 70vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: start;
-    align-items: center;
-
-    @include tabletPortrait {
-      justify-items: center;
-      grid-template-columns: 1fr;
-    }
-  }
-}
-
-.greetings {
-  margin: 2rem 0;
-
-  h1 {
-    @include smartphone {
-      // font-size: 2.25rem;
-    }
-  }
-
-  p {
-    @include h3;
-
-    @include smartphone {
-      font-size: 1.2rem;
-    }
-  }
-}
-
-.CTAs {
+.section {
+  position: relative;
+  min-height: 100vh;
   display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
 
-  .homeCta {
-    @include smartphone {
-      font-size: 1rem;
+.photoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fixToBottom {
+  object-position: bottom;
+}
+
+.cta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 3rem;
+
+  .text {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 2;
+  }
+
+  .photoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo {
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
+    height: 100%;
+    gap: 0;
+
+    .text {
+      max-width: 100%;
+      margin: 3rem 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+
+    .photo {
+      max-width: unset;
+      max-height: 450px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .photo {
+      max-width: 300px;
     }
   }
 }
 
-.pic {
-  transform: rotate(5deg);
-  justify-self: end;
-
-  @include tabletPortrait {
-    justify-self: center;
-  }
+.opaqueBackground {
+  background-color: var(--background-opaque);
 }
 
 .accent {
-  color: $primary-500;
+  color: var(--primary);
+}
+
+.textAccent {
+  color: var(--black);
+  background-color: var(--primary);
+  font-weight: bold;
+  padding: 0 8px;
+  line-height: 1.6;
+}
+
+.title {
+  color: var(--white);
+  font-family: 'DMSerifDisplay';
+  font-size: 3rem;
+  max-width: 600px;
+  text-align: center;
+  padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.25rem;
+    max-width: 19ch;
+  }
+}
+
+.photoCta {
+  max-width: 13ch;
+  font-family: 'DMSerifDisplay';
+  font-size: 3rem;
+}
+
+.notFound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px;
+  text-align: center;
+  background-color: var(--background-more-opaque);
+
+  .description {
+    font-family: 'PlusJakartaSans';
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--white);
+    padding-bottom: 32px;
+  }
+
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+
+    .backToHome > * {
+      font-size: 2rem;
+      max-width: 15ch;
+    }
+  }
+}
+
+.swipeIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: calc(50% - 16px);
+
+  .icon {
+    color: var(--black);
+  }
+
+  @media screen and (max-width: 768px) {
+    bottom: 96px;
+  }
 }

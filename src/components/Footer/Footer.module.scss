@@ -1,44 +1,82 @@
-@use '@styles/_globals.module' as *;
-@use '@styles/layout.scss' as *;
+@use '../../styles/globals.module' as *;
 
 .footer {
   width: 100%;
   overflow: hidden;
-  background-color: $secondary-100;
-
-  @include dark {
-    background-color: $light-d;
-  }
+  background-color: var(--background);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
   @include container;
-  @include mainGrid;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 3rem 2rem;
 
   @include smartphone {
-    grid-template-columns: repeat(5, 1fr);
+    padding: 3rem 1rem;
+  }
+}
+
+.row {
+  width: 100%;
+}
+
+.title {
+  font-family: 'DMSerifDisplay';
+  font-size: 2rem;
+  margin: 0;
+  border-left: unset;
+  padding-left: unset;
+}
+
+.text {
+  font-family: 'IBMPlexSans';
+  font-size: 1.2rem;
+  max-width: 66ch;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.linksRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include smartphone {
+    flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+  }
+}
+
+.desktopOnly {
+  @include smartphone {
+    display: none;
+  }
+}
+
+.mobileOnly {
+  @media screen and (min-width: 769px) {
+    display: none;
   }
 }
 
 .socialLinks {
-  grid-column: 1 / 5;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: start;
+  display: flex;
+  gap: 2rem;
 
   & > li {
     transition: 0.3s ease-in-out;
     cursor: pointer;
-  }
-
-  @include smartphone {
-    grid-column: 1 / 5;
-    justify-items: center;
   }
 }
 
@@ -52,79 +90,18 @@
 }
 
 .credits {
-  grid-column: 9 / 12;
-  justify-self: end;
-
-  @include smartphone {
-    grid-row: 2;
-    grid-column: 1 / 6;
-    justify-self: center;
-  }
+  font-family: 'PlusJakartaSans';
+  font-weight: bold;
 }
 
-.themeSwitcher {
-  grid-column: 12 / 13;
-  justify-self: center;
-  align-self: center;
-
-  @include smartphone {
-    grid-row: 1;
-    grid-column: 5 / 6;
-    line-height: 0;
-    justify-self: center;
-  }
+.accent {
+  color: var(--primary);
 }
 
-.otherLinks {
-  grid-row: 2;
-  grid-column: 1 / 13;
+.link {
+  border-bottom: 1px solid var(--primary);
 
-  & > ul {
-    list-style-type: disc;
-    list-style-position: inside;
-  }
-
-  .smallTitle {
-    padding: 1rem 0 1rem;
-    font-size: 1.2rem;
-    text-decoration: underline;
-    font-weight: 800;
-  }
-
-  .footerLink {
-    color: $primary-500;
-    width: fit-content;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background-color: $primary-500;
-      transition: width 0.3s;
-    }
-
-    &:hover {
-      &:after {
-        width: 100%;
-      }
-    }
-  }
-
-  @include smartphone {
-    grid-row: 3;
-    grid-column: 1 / 6;
-  }
-}
-
-.notAiBadge {
-  grid-row: 3;
-  grid-column: 11 / 13;
-  justify-self: end;
-
-  @include smartphone {
-    grid-row: 4;
-    grid-column: 1 / 6;
-    justify-self: center;
+  &:hover {
+    color: var(--primary);
   }
 }
