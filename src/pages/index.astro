@@ -18,6 +18,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
       transform: translateY(0);
     }
   }
+
+  #swipeIndicator {
+    animation: animateIn 1s ease-in-out;
+  }
+
   [data-animate-on-scroll] {
     opacity: 0;
     transform: translateY(50px);
@@ -58,7 +63,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
           To photograph is to capture the <span class={css.accent}>essence</span
           > of a moment
         </h1>
-        <a class={css.swipeIndicator} href="#greetings" data-animate-on-scroll>
+        <a class={css.swipeIndicator} href="#greetings" id="swipeIndicator">
           <ArrowDownCircleIcon size="32" class={css.icon} />
         </a>
       </div>
