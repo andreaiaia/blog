@@ -26,7 +26,7 @@ const { title, description, images } = album.data;
       </div>
     </section>
     <div class={css.gallery}>
-      <Gallery images={images} />
+      <Gallery images={images} client:load />
     </div>
   </article>
 </GalleryLayout>
