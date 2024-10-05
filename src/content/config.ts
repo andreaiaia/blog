@@ -9,6 +9,7 @@ const blog = defineCollection({
     date: z.coerce.date(), // Transform string to Date object
     image: z.string().optional(),
     lang: z.string().optional(),
+    published: z.boolean().optional(),
   }),
 });
 
@@ -17,6 +18,8 @@ const albums = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
+    date: z.coerce.date(),
+    published: z.boolean(),
     cover: z.object({
       w400: z.string(),
       w800: z.string(),
@@ -24,7 +27,7 @@ const albums = defineCollection({
       w1600: z.string(),
       w2560: z.string(),
     }),
-    coverAlt: z.string().optional(),
+    coverAlt: z.string(),
     images: z.array(
       z.object({
         srcset: z.object({
@@ -35,7 +38,7 @@ const albums = defineCollection({
           w2560: z.string(),
         }),
         description: z.string().optional(),
-        alt: z.string().optional(),
+        alt: z.string(),
       })
     ),
   }),

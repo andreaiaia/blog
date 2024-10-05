@@ -5,7 +5,7 @@ import Gallery from '../../components/Gallery/Gallery.svelte';
 import css from '../../styles/Gallery.module.scss';
 
 export async function getStaticPaths() {
-	const albums = await getCollection('albums');
+	const albums = (await getCollection('albums')).filter(({ data }) => data.published);
 
   return albums.map((album: CollectionEntry<'albums'>) => ({
 		params: { id: album.id },
