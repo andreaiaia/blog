@@ -5,6 +5,7 @@ description: La lettera di accompagnamento al mio calendario astrofotografico.
 tags: ['photograhy', 'astro']
 image: 'https://live.staticflickr.com/65535/54005468042_8a6232d53c_b.jpg'
 lang: 'it'
+published: true
 ---
 
 > _Sempre caro mi fu quest’ermo colle,_  

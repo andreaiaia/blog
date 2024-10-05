@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import PostThumbnail from '../../components/PostThumbnail/PostThumbnail.svelte'
 import css from '../../styles/Blog.module.scss'
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog')).filter(({data}) => data.published).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 )
 ---

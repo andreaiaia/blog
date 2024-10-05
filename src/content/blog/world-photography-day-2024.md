@@ -4,6 +4,8 @@ description: 'Considerations on the art of photography on World Photography Day.
 date: '2024/08/19'
 tags: ['photograhy']
 image: 'https://live.staticflickr.com/65535/53031240804_00d02890b3_b.jpg'
+lang: 'en'
+published: true
 ---
 
 Today is World Photography Day.
