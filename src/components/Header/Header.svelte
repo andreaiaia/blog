@@ -1,6 +1,5 @@
 <script>
   import { MenuIcon, XIcon } from 'svelte-feather-icons';
-  import TextHoverAnimation from '../TextHoverAnimation/TextHoverAnimation.svelte';
   import css from './Header.module.scss';
 
   export let addStyle = '';
