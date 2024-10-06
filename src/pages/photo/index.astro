@@ -45,15 +45,13 @@ const albums = (await getCollection('albums')).filter(({data}) => data.published
           <img
             class={css.photoBackground}
             alt={data.coverAlt}
-            src={data.cover.w1024}
+            src={data.cover}
             srcset={`
-                ${data.cover.w400} 400w,
-                ${data.cover.w800} 800w,
-                ${data.cover.w1024} 1024w,
-                ${data.cover.w1600} 1600w,
-                ${data.cover.w2560} 2560w
+                ${data.cover}w.jpg 400w,
+                ${data.cover}c.jpg 800w,
+                ${data.cover}b.jpg 1024w,
               `}
-            sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
+            sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw'
             loading='lazy'
           />
           <div class={css.cta}>

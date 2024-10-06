@@ -91,7 +91,7 @@
 	font-named-instance: 'Bold Italic';
 }
 
-/* This avoids the scrolling when the navbar is open */
+/* This avoids the scrolling when the navbar or the lightbox are open */
 .no-scroll {
 	overflow: hidden;
 }

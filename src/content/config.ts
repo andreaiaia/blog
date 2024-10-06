@@ -20,23 +20,11 @@ const albums = defineCollection({
     description: z.string().optional(),
     date: z.coerce.date(),
     published: z.boolean(),
-    cover: z.object({
-      w400: z.string(),
-      w800: z.string(),
-      w1024: z.string(),
-      w1600: z.string(),
-      w2560: z.string(),
-    }),
+    cover: z.string(),
     coverAlt: z.string(),
     images: z.array(
       z.object({
-        srcset: z.object({
-          w400: z.string(),
-          w800: z.string(),
-          w1024: z.string(),
-          w1600: z.string(),
-          w2560: z.string(),
-        }),
+        baseUrl: z.string(),
         description: z.string().optional(),
         alt: z.string(),
       })

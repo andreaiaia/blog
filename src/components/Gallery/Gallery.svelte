@@ -8,23 +8,22 @@
   const openLightbox = (image) => {
     currentImage = image;
     showLightbox = true;
+    document.body.classList.add('no-scroll');
   };
 
   const closeLightbox = () => {
-    console.log('closeLightbox');
     showLightbox = false;
     currentImage = null;
+    document.body.classList.remove('no-scroll');
   };
 
   const nextImage = () => {
-    console.log('nextImage');
     const currentIndex = images.indexOf(currentImage);
     const nextIndex = (currentIndex + 1) % images.length;
     currentImage = images[nextIndex];
   };
 
   const prevImage = () => {
-    console.log('prevImage');
     const currentIndex = images.indexOf(currentImage);
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
     currentImage = images[prevIndex];
@@ -46,11 +45,11 @@
     >
       <img
         alt={image.alt}
-        src={image.srcset.w800}
+        src={image.baseUrl + 'c.jpg'}
         srcset={`
-          ${image.srcset.w400} 400w,
-          ${image.srcset.w800} 800w,
-          ${image.srcset.w1024} 1024w,
+          ${image.baseUrl}w.jpg 400w,
+          ${image.baseUrl}c.jpb 800w,
+          ${image.baseUrl}b.jpg 1024w,
         `}
         sizes="1024px"
         loading="lazy"
@@ -68,32 +67,28 @@
       tabindex="0"
       on:keydown={handleKeyDown}
     >
-      <!-- svelte-ignore a11y-no-redundant-roles -->
-      <button
+      <img
         class={css.lightboxContent}
-        on:click|stopPropagation
-        role="button"
-        aria-label="Lightbox content"
-      >
-        <img src={currentImage.srcset.w1024} alt={currentImage.alt} />
-      </button>
+        src={currentImage.baseUrl + 'b.jpg'}
+        alt={currentImage.alt}
+      />
 
       <button
-        class={css.closeButton}
+        class={`${css.button} ${css.closeButton}`}
         on:click|stopPropagation={closeLightbox}
         aria-label="Close lightbox"
       >
         ✕
       </button>
       <button
-        class={css.prevButton}
+        class={`${css.button} ${css.prevButton}`}
         on:click|stopPropagation={prevImage}
         aria-label="Previous image"
       >
         ←
       </button>
       <button
-        class={css.nextButton}
+        class={`${css.button} ${css.nextButton}`}
         on:click|stopPropagation={nextImage}
         aria-label="Next image"
       >
