@@ -26,8 +26,8 @@
       <div class={css.text}>
         <p>
           All the contents in this website are 100% made by me, Andrea Bianchi.
-          AI is only used to provide a better English translation, since its not
-          my native language.
+          AI is only used to provide a better English translation, since it's
+          not my native language.
         </p>
         <p>
           All the images are taken by me, unless otherwise stated, and are
