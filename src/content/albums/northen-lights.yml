@@ -2,8 +2,8 @@ title: "Napapiiri"
 description: "A photo story of my trip to Lapland, chasing the northern lights."
 date: "2024-12-01"
 published: true
-cover: "https://live.staticflickr.com/65535/54187276833_08e802fe81_" # + "w" || "c" || "b" + ".jpg"
-coverHD: "https://live.staticflickr.com/65535/54187276833_00e3cc52d0_k.jpg" # 2048px
+cover: "https://live.staticflickr.com/65535/54189025858_956ce623b9_" # + "w" || "c" || "b" + ".jpg"
+coverHD: "https://live.staticflickr.com/65535/54189025858_ed2069e19e_k.jpg" # 2048px
 coverAlt: "The northen lights above a cozy cottage."
 images:
   - baseUrl: "https://live.staticflickr.com/65535/54187474180_067fc33466_"
