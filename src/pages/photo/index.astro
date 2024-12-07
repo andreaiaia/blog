@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
-import BaseLayout from '../../layouts/BaseLayout.astro'
-import css from '../../styles/Photo.module.scss'
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import css from '../../styles/Photo.module.scss';
 
-const albums = (await getCollection('albums')).filter(({data}) => data.published).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-)
+const albums = (await getCollection('albums'))
+  .filter(({ data }) => data.published)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <style>
@@ -34,55 +34,58 @@ const albums = (await getCollection('albums')).filter(({data}) => data.published
 ></script>
 
 <BaseLayout
-  title="Andrea&apos;s Photography"
-  descrition="Andrea&apos;s Photography: capturing the essence of a moment"
+  title="Andrea's Photography"
+  descrition="Andrea's Photography: capturing the essence of a moment"
   headerMode='solid'
 >
   <main>
-    {albums.map(({id, data}) => (
-      <article class={css.album}>
-        <a class={css.content} href={`/photo/${id}`}>
-          <img
-            class={css.photoBackground}
-            alt={data.coverAlt}
-            src={data.cover}
-            srcset={`
+    {
+      albums.map(({ id, data }) => (
+        <article class={css.album}>
+          <a class={css.content} href={`/photo/${id}`}>
+            <img
+              class={css.photoBackground}
+              alt={data.coverAlt}
+              src={data.cover}
+              srcset={`
                 ${data.cover}w.jpg 400w,
                 ${data.cover}c.jpg 800w,
                 ${data.cover}b.jpg 1024w,
+                ${data.coverHD} 1200w
               `}
-            sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw'
-            loading='lazy'
-          />
-          <div class={css.cta}>
-            <h2 class={css.title} data-animate-on-scroll>
-              {data.title}
-            </h2>
-          </div>
-        </a>
-      </article>
-    ))}
+              sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw'
+              loading='lazy'
+            />
+            <div class={css.cta}>
+              <h2 class={css.title} data-animate-on-scroll>
+                {data.title}
+              </h2>
+            </div>
+          </a>
+        </article>
+      ))
+    }
   </main>
 
   <script>
-    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const elements = document.querySelectorAll('[data-animate-on-scroll]');
     const observerOptions = {
-      threshold: 0.1
-    }
+      threshold: 0.1,
+    };
 
     document.addEventListener('DOMContentLoaded', function () {
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate')
-            observer.unobserve(entry.target)
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
           }
-        })
-      }, observerOptions)
+        });
+      }, observerOptions);
 
       elements.forEach(function (element) {
-        observer.observe(element)
-      })
-    })
+        observer.observe(element);
+      });
+    });
   </script>
 </BaseLayout>

@@ -21,6 +21,7 @@ const albums = defineCollection({
     date: z.coerce.date(),
     published: z.boolean(),
     cover: z.string(),
+    coverHD: z.string(),
     coverAlt: z.string(),
     images: z.array(
       z.object({

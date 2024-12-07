@@ -3,6 +3,7 @@ description: "An ode to the Falco Grillaio (Lesser Kestrel), a small falcon that
 date: "2024-10-05"
 published: true
 cover: "https://live.staticflickr.com/65535/54005265978_b3010a61f2_"
+coverHD: "https://live.staticflickr.com/65535/54005265978_01c2a0239a_k.jpg" # 2048px
 coverAlt: "A Lesser Kestrel Flying in Matera."
 images:
   - baseUrl: "https://live.staticflickr.com/65535/54005362864_22cc792443_"

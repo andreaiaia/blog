@@ -3,6 +3,7 @@ description: "A gallery of my astrophotography work"
 date: "2024-10-01"
 published: true
 cover: "https://live.staticflickr.com/65535/54006170681_837bbcecab_" # + "w" || "c" || "b" + ".jpg"
+coverHD: "https://live.staticflickr.com/65535/54006170681_38c2fa6794_k.jpg" # 2048px
 coverAlt: "Messier 42 - The Orion Nebula."
 images:
   - baseUrl: "https://live.staticflickr.com/65535/54006170681_837bbcecab_"

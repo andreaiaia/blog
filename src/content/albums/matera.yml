@@ -3,6 +3,7 @@ description: "Pictures taken out and about in Matera, my hometown."
 date: "2024-10-02"
 published: true
 cover: "https://live.staticflickr.com/65535/54006646455_9a96eb6bed_"
+coverHD: "https://live.staticflickr.com/65535/54006646455_e2ef8a2066_k.jpg" # 2048px
 coverAlt: "A scene in the famous Sassi of Matera."
 images:
   - baseUrl: "https://live.staticflickr.com/65535/53615364513_df36a3247f_"

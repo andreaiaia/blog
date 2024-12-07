@@ -3,6 +3,7 @@ description: "My landscape photographs from around the world."
 date: "2024-10-03"
 published: true
 cover: "https://live.staticflickr.com/65535/54006540043_ba2a359971_"
+coverHD: "https://live.staticflickr.com/65535/54006540043_7638b6eb0e_k.jpg" # 2048px
 coverAlt: "A green hill with a blue background in Basilicata in February."
 images:
   - baseUrl: "https://live.staticflickr.com/65535/54006540043_ba2a359971_"

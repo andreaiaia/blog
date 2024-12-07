@@ -3,6 +3,7 @@ description: "A collection of images taken during my trip to Japan in 2024."
 date: "2024-10-04"
 published: true
 cover: "https://live.staticflickr.com/65535/54005483235_6475633bce_"
+coverHD: "https://live.staticflickr.com/65535/54005483235_a1a5ccddeb_k.jpg" # 2048px
 coverAlt: "The inside of a Japanese temple"
 images:
   - baseUrl: "https://live.staticflickr.com/65535/54004151792_04e81dd772_"
