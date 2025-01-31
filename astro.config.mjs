@@ -10,7 +10,7 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), svelte(), react()],
-  output: 'hybrid',
+  output: 'static',
   adapter: cloudflare(),
   markdown: {
     remarkPlugins: [remarkReadingTime],
