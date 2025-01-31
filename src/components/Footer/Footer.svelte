@@ -5,6 +5,7 @@
     InstagramIcon,
     GithubIcon,
     LinkedinIcon,
+    YoutubeIcon,
   } from 'svelte-feather-icons';
 
   export let addStyle = '';
@@ -52,6 +53,11 @@
         <li>
           <a href="https://instagram.com/andreaiaia" target="_blank">
             <InstagramIcon class={css.icon} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@andrea.bianchi" target="_blank">
+            <YoutubeIcon class={css.icon} />
           </a>
         </li>
         <li>
