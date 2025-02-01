@@ -5,18 +5,21 @@ import Gallery from '../../components/Gallery/Gallery.svelte';
 import css from '../../styles/Gallery.module.scss';
 
 export async function getStaticPaths() {
-	const albums = (await getCollection('albums')).filter(({ data }) => data.published);
+  const albums = (await getCollection('albums')).filter(
+    ({ data }) => data.published
+  );
 
   return albums.map((album: CollectionEntry<'albums'>) => ({
-		params: { id: album.id },
-		props: album,
-	}));
+    params: { id: album.id },
+    props: album,
+  }));
 }
 type Props = CollectionEntry<'albums'>;
 
 const album = Astro.props;
 const { title, description, images } = album.data;
 ---
+
 <GalleryLayout title={title} description={description}>
   <article>
     <section class={css.head}>

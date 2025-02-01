@@ -1,38 +1,36 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import FormattedDate from '../../components/FormattedDate/FormattedDate.svelte';
 
-import Tag from '../../components/Tag/Tag.svelte'
+import Tag from '../../components/Tag/Tag.svelte';
 import css from '../../styles/Post.module.scss';
 
 export async function getStaticPaths() {
-	const posts = (await getCollection('blog')).filter(({ data }) => data.published);
+  const posts = (await getCollection('blog')).filter(
+    ({ data }) => data.published
+  );
 
   return posts.map((post: CollectionEntry<'blog'>) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+    params: { slug: post.id },
+    props: post,
+  }));
 }
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { title, description, date, tags, image } = post.data;
-const { Content, remarkPluginFrontmatter } = await post.render();
+const { Content, remarkPluginFrontmatter } = await render(post);
 const readingTime = remarkPluginFrontmatter.minutesRead;
 ---
 
 <BlogPost {...post.data}>
-	  <article class={css.container}>
+  <article class={css.container}>
     <section class={css.postHead}>
-      <img class={css.postImage} src={image} alt="prova">
+      <img class={css.postImage} src={image} alt='prova' />
       <div class={css.postMetadata}>
         <div class={css.tags}>
-          {tags.map((tag) => (
-            <Tag href="#">
-              {tag}
-            </Tag>
-          ))}
+          {tags.map((tag: string) => <Tag href='#'>{tag}</Tag>)}
         </div>
         <h1>{title}</h1>
         <p>{description}</p>
@@ -44,8 +42,7 @@ const readingTime = remarkPluginFrontmatter.minutesRead;
       </div>
     </section>
     <section class={css.content}>
-			<Content />
+      <Content />
     </section>
   </article>
-	
 </BlogPost>

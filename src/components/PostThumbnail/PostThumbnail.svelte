@@ -3,7 +3,7 @@
   import css from './PostThumbnail.module.scss';
 
   export let post: {
-    slug: string;
+    id: string;
     data: {
       title: string;
       description: string;
@@ -19,13 +19,13 @@
       <div class={css.date}>
         <FormattedDate date={post.data.date} />
       </div>
-      <a class={css.image} href={`/blog/${post.slug}`}>
+      <a class={css.image} href={`/blog/${post.id}`}>
         <img src={post.data.image} alt={post.data.title} />
       </a>
     </div>
     <div class={css.content}>
       <h2 class={css.title}>
-        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        <a href={`/blog/${post.id}`}>{post.data.title}</a>
       </h2>
       <p class={css.description}>{post.data.description}</p>
     </div>
