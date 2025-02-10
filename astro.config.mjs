@@ -7,7 +7,11 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://andreabianchi.me',
+  i18n: {
+    locales: ['en', 'it'],
+    defaultLocale: 'it',
+  },
   integrations: [mdx(), sitemap(), svelte()],
   output: 'static',
   adapter: cloudflare(),
