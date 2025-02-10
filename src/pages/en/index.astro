@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte';
-import ArrowDownCircleIcon from '../components/Icons/ArrowDownCircleIcon.svelte';
-import css from '../styles/Home.module.scss';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TextHoverAnimation from '../../components/TextHoverAnimation/TextHoverAnimation.svelte';
+import ArrowDownCircleIcon from '../../components/Icons/ArrowDownCircleIcon.svelte';
+import css from '../../styles/Home.module.scss';
 
-import { IT } from '../consts';
+import { EN } from '../../consts';
 ---
 
 <style>
@@ -38,15 +38,15 @@ import { IT } from '../consts';
 ></script>
 
 <BaseLayout
-  title={IT.SITE_TITLE}
-  descrition={IT.SITE_DESCRIPTION}
+  title={EN.SITE_TITLE}
+  descrition={EN.SITE_DESCRIPTION}
   headerMode='transparent'
 >
   <main>
     <section class={css.section} id='welcome'>
       <img
         class={css.photoBackground}
-        alt='I famosi Sassi Matera.'
+        alt='The famous Sassi of Matera.'
         src='https://live.staticflickr.com/65535/53031067536_70fd0f2bda_b.jpg'
         srcset='
             https://live.staticflickr.com/65535/53031067536_70fd0f2bda_w.jpg 400w,
@@ -60,7 +60,7 @@ import { IT } from '../consts';
       />
       <div class={`${css.cta} ${css.opaqueBackground}`}>
         <h1 class={css.title} data-animate-on-scroll>
-          Frase ad <span class={css.accent}>effetto</span>
+          Frase ad <span class={css.accent}>effect</span>
         </h1>
         <a class={css.swipeIndicator} href='#greetings' id='swipeIndicator'>
           <ArrowDownCircleIcon size='32' class={css.icon} />
@@ -72,13 +72,13 @@ import { IT } from '../consts';
       <div class={css.content}>
         <div class={css.text} data-animate-on-scroll>
           <p>
-            Ciao! Io sono <span class={css.textAccent}>Andrea</span>
+            Ciao! I am <span class={css.textAccent}>Andrea</span>
           </p>
         </div>
         <div class={css.photoWrapper} data-animate-on-scroll>
           <img
             class={css.photo}
-            alt='Una foto di me, Andrea.'
+            alt='A picture of me, Andrea.'
             src='https://live.staticflickr.com/65535/54013003105_8307dc4e1f_c.jpg'
             srcset='
                   https://live.staticflickr.com/65535/54013003105_8307dc4e1f_w.jpg 400w,
@@ -90,7 +90,7 @@ import { IT } from '../consts';
           />
         </div>
         <div class={css.text} data-animate-on-scroll>
-          <p>Amo creare foto che imbriglino l&apos;essenza di un istante</p>
+          <p>I love creating photos that reflect the soul of a moment</p>
         </div>
       </div>
     </section>
@@ -98,7 +98,7 @@ import { IT } from '../consts';
     <section class={css.section} id='photo-cta'>
       <img
         class={`${css.photoBackground} ${css.fixToBottom}`}
-        alt='A scena noir nel centro di Matera.'
+        alt='A noir scene in the centre of Matera.'
         loading='lazy'
         src='https://live.staticflickr.com/65535/54018458935_4f8b16c157_b.jpg'
         srcset='
@@ -113,7 +113,7 @@ import { IT } from '../consts';
       <a href='/photo' class={`${css.cta} ${css.opaqueBackground}`}>
         <TextHoverAnimation
           addStyle={css.photoCta}
-          text='scopri la mia fotografia'
+          text='discover my photography'
         />
       </a>
     </section>
@@ -121,18 +121,20 @@ import { IT } from '../consts';
     <section class={css.section} id='blog-introduction'>
       <div class={css.content}>
         <div class={css.text} data-animate-on-scroll>
-          <p>La fotografia è la mia arte, il mio modo di esprimermi</p>
+          <p>Photography is my art, my way of seeing the world</p>
         </div>
         <div class={css.photoWrapper} data-animate-on-scroll>
           <img
             class={css.photo}
-            alt='Un uomo sosta dietro un abito esposto, sembrando che lo indossi, in un mercato a Matera.'
+            alt='A man stands behind a dress, looking like he is wearing it, in a tipical market in Matera.'
             src='https://live.staticflickr.com/65535/54018853856_2d12c4da06_z.jpg'
             loading='lazy'
           />
         </div>
         <div class={css.text} data-animate-on-scroll>
-          <p>Nel mio blog scrivo di fotografia e tanto altro</p>
+          <p>
+            My blog is where I share my thoughts on photography and much more
+          </p>
         </div>
       </div>
     </section>
@@ -140,7 +142,7 @@ import { IT } from '../consts';
     <section class={css.section} id='blog-cta'>
       <img
         class={css.photoBackground}
-        alt='Gli interni di un templio in Giappone.'
+        alt='The inside of a Japanese temple.'
         loading='lazy'
         src='https://live.staticflickr.com/65535/54013159715_5de34845e8_b.jpg'
         srcset='
@@ -153,7 +155,7 @@ import { IT } from '../consts';
         sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
       />
       <a href='/blog' class={`${css.cta} ${css.opaqueBackground}`}>
-        <TextHoverAnimation addStyle={css.photoCta} text='vai al blog' />
+        <TextHoverAnimation addStyle={css.photoCta} text='read my blog' />
       </a>
     </section>
   </main>
