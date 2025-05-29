@@ -1,0 +1,33 @@
+---
+title: 'Napapiiri'
+description: 'A photo story of my trip to Lapland, chasing the northern lights.'
+date: '2024-12-01'
+published: true
+cover: '../../assets/albums/northen-lights/northen-lights-14.jpg'
+coverAlt: 'The northen lights above a cozy cottage.'
+images:
+  - file: '../../assets/albums/northen-lights/northen-lights-7.jpg'
+    alt: 'Snowy boat near the shore of a frozen lake.'
+  - file: '../../assets/albums/northen-lights/northen-lights-1.jpg'
+    alt: 'My first ever northern lights sighting.'
+  - file: '../../assets/albums/northen-lights/northen-lights-4.jpg'
+    alt: 'Northen lights over a frozen lake.'
+  - file: '../../assets/albums/northen-lights/northen-lights-6.jpg'
+    alt: 'The northen lights directly above my head.'
+  - file: '../../assets/albums/northen-lights/northen-lights-3.jpg'
+    alt: 'Northen lights behind a couple of boats.'
+  - file: '../../assets/albums/northen-lights/northen-lights-14.jpg'
+    alt: 'Northen lights over a cozy cottage.'
+  - file: '../../assets/albums/northen-lights/northen-lights-13.jpg'
+    alt: 'A EV charging station in a surreal landscape.'
+  - file: '../../assets/albums/northen-lights/northen-lights-2.jpg'
+    alt: 'A parking lot in the middle of nowhere.'
+  - file: '../../assets/albums/northen-lights/northen-lights-10.jpg'
+    alt: "Wild animal's footprints in the snow."
+  - file: '../../assets/albums/northen-lights/northen-lights-11.jpg'
+    alt: 'The rapids of the river near Janiskoski.'
+  - file: '../../assets/albums/northen-lights/northen-lights-8.jpg'
+    alt: 'Reflections over a frozen lake.'
+  - file: '../../assets/albums/northen-lights/northen-lights-12.jpg'
+    alt: 'A sun setting behind the forest.'
+---
