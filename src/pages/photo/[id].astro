@@ -1,7 +1,6 @@
 ---
 import GalleryLayout from '../../layouts/GalleryLayout.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import Gallery from '../../components/Gallery/Gallery.svelte';
 import css from '../../styles/Gallery.module.scss';
 
@@ -30,14 +29,14 @@ const { title, description, images } = album.data;
       </div>
     </section>
     <div class={css.gallery}>
-      <!-- <Gallery images={images} client:load /> -->
-      {
+      <Gallery images={images} client:load />
+      <!-- {
         images.map(({ file, alt }) => (
           <div class={css.imageDiv}>
             <Image src={file} alt={alt} loading={'lazy'} />
           </div>
         ))
-      }
+      } -->
     </div>
   </article>
 </GalleryLayout>

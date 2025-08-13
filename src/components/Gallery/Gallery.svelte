@@ -1,5 +1,6 @@
 <script>
   import css from './Gallery.module.scss';
+  import CFImage from '../CFImage/CFImage.svelte';
   export let images = [];
 
   let currentImage = null;
@@ -43,16 +44,10 @@
       class={css.imageButton}
       aria-label="Open image in lightbox"
     >
-      <img
+      <CFImage
+        src={image.file}
         alt={image.alt}
-        src={image.baseUrl + 'c.jpg'}
-        srcset={`
-          ${image.baseUrl}w.jpg 400w,
-          ${image.baseUrl}c.jpb 800w,
-          ${image.baseUrl}b.jpg 1024w,
-        `}
-        sizes="1024px"
-        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 33vw"
       />
     </button>
   {/each}
@@ -69,7 +64,7 @@
     >
       <img
         class={css.lightboxContent}
-        src={currentImage.baseUrl + 'b.jpg'}
+        src={currentImage.file}
         alt={currentImage.alt}
       />
 

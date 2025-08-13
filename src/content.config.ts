@@ -18,21 +18,20 @@ const blog = defineCollection({
 });
 
 const albums = defineCollection({
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string().optional(),
-      date: z.coerce.date(),
-      published: z.boolean(),
-      cover: image(),
-      coverAlt: z.string(),
-      images: z.array(
-        z.object({
-          file: image(),
-          alt: z.string(),
-        })
-      ),
-    }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    date: z.coerce.date(),
+    published: z.boolean(),
+    cover: z.string(),
+    coverAlt: z.string(),
+    images: z.array(
+      z.object({
+        file: z.string(),
+        alt: z.string(),
+      })
+    ),
+  }),
 });
 
 export const collections = { blog, albums };
