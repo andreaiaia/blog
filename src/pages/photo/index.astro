@@ -45,7 +45,7 @@ const albums = (await getCollection('albums'))
         <article class={css.album}>
           <a class={css.content} href={`/photo/${id}`}>
             <CFImage
-              class={css.photoBackground}
+              className={css.photoBackground}
               alt={data.coverAlt}
               src={data.cover}
             />

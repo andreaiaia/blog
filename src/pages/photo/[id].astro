@@ -30,13 +30,6 @@ const { title, description, images } = album.data;
     </section>
     <div class={css.gallery}>
       <Gallery images={images} client:load />
-      <!-- {
-        images.map(({ file, alt }) => (
-          <div class={css.imageDiv}>
-            <Image src={file} alt={alt} loading={'lazy'} />
-          </div>
-        ))
-      } -->
     </div>
   </article>
 </GalleryLayout>

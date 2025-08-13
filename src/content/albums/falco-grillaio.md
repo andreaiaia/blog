@@ -3,10 +3,10 @@ title: 'Flying among humans'
 description: 'An ode to the Falco Grillaio (Lesser Kestrel), a small falcon that passes the summer in the old town of Matera, Italy.'
 date: '2024-10-05'
 published: true
-cover: 'grillaio/nella-murgia.jpg'
+cover: 'grillaio/nella-gravina.jpg'
 coverAlt: 'A Lesser Kestrel Flying in Matera.'
 images:
-  - file: 'grillaio/nella-murgia.jpg'
+  - file: 'grillaio/nella-gravina.jpg'
     alt: 'A Lesser Kestrel flying in the Murgia Materana'
   - file: 'grillaio/con-preda.jpg'
     alt: 'A Lesser Kestrel flying with a little mouse in its claws'

@@ -62,11 +62,15 @@
       tabindex="0"
       on:keydown={handleKeyDown}
     >
-      <img
-        class={css.lightboxContent}
-        src={currentImage.file}
-        alt={currentImage.alt}
-      />
+      {#key currentImage.file}
+        <CFImage
+          className={css.lightboxContent}
+          src={currentImage.file}
+          alt={currentImage.alt}
+          widths={[1200]}
+          sizes="90vw"
+        />
+      {/key}
 
       <button
         class={`${css.button} ${css.closeButton}`}
