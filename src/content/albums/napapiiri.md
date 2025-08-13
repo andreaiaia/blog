@@ -1,0 +1,33 @@
+---
+title: 'Napapiiri'
+description: 'A photo story of my trip to Lapland, chasing the northern lights.'
+date: '2024-12-01'
+published: true
+cover: 'napapiiri/aurora-6.jpg'
+coverAlt: 'The northen lights above a cozy cottage.'
+images:
+  - file: 'napapiiri/barca.jpg'
+    alt: 'Snowy boat near the shore of a frozen lake.'
+  - file: 'napapiiri/aurora-1.jpg'
+    alt: 'My first ever northern lights sighting.'
+  - file: 'napapiiri/aurora-3.jpg'
+    alt: 'Northen lights over a frozen lake.'
+  - file: 'napapiiri/aurora-5.jpg'
+    alt: 'The northen lights directly above my head.'
+  - file: 'napapiiri/aurora-2.jpg'
+    alt: 'Northen lights behind a couple of boats.'
+  - file: 'napapiiri/aurora-6.jpg'
+    alt: 'Northen lights over a cozy cottage.'
+  - file: 'napapiiri/ricarica-auto.jpg'
+    alt: 'A EV charging station in a surreal landscape.'
+  - file: 'napapiiri/parcheggio.jpg'
+    alt: 'A parking lot in the middle of nowhere.'
+  - file: 'napapiiri/orme.jpg'
+    alt: "Wild animal's footprints in the snow."
+  - file: 'napapiiri/rapide.jpg'
+    alt: 'The rapids of the river near Janiskoski.'
+  - file: 'napapiiri/casa-sul-lago.jpg'
+    alt: 'Reflections of a house over a frozen lake.'
+  - file: 'napapiiri/tramonto.jpg'
+    alt: 'A sun setting behind the forest.'
+---
