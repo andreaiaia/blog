@@ -1,0 +1,42 @@
+---
+const {
+  src, // percorso R2 es: "viaggi/islanda/aurora.jpg"
+  alt = '',
+  widths = [480, 800, 1200],
+  sizes = '100vw',
+  className = '',
+  dpr = 1,
+  quality = 85,
+} = Astro.props;
+
+// Variabili d'ambiente pubbliche (devono iniziare con PUBLIC_)
+const SITE = import.meta.env.PUBLIC_SITE_URL;
+const ASSETS = import.meta.env.PUBLIC_ASSETS_BASE;
+
+// Opzioni comuni per trasformazioni Cloudflare
+const opts = `format=auto,metadata=none,quality=${quality},dpr=${dpr}`;
+
+// URL originale su R2
+const origin = `${ASSETS}/${src.replace(/^\//, '')}`;
+
+// Srcset responsive
+const srcset = widths
+  .map(
+    (w: number) => `${SITE}/cdn-cgi/image/${opts},width=${w}/${origin} ${w}w`
+  )
+  .join(', ');
+
+// Immagine di default (seconda taglia se presente)
+const defaultWidth = widths[Math.min(1, widths.length - 1)];
+const defaultSrc = `${SITE}/cdn-cgi/image/${opts},width=${defaultWidth}/${origin}`;
+---
+
+<img
+  src={defaultSrc}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  loading='lazy'
+  decoding='async'
+  class={className}
+/>
