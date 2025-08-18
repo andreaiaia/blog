@@ -1,6 +1,7 @@
 <script lang="ts">
   import FormattedDate from '../FormattedDate/FormattedDate.svelte';
   import css from './PostThumbnail.module.scss';
+  import CFImage from '../CFImage/CFImage.svelte';
 
   export let post: {
     id: string;
@@ -20,7 +21,7 @@
         <FormattedDate date={post.data.date} />
       </div>
       <a class={css.image} href={`/blog/${post.id}`}>
-        <img src={post.data.image} alt={post.data.title} />
+        <CFImage src={post.data.image} alt={post.data.title} />
       </a>
     </div>
     <div class={css.content}>

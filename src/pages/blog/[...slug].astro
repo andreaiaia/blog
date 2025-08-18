@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import FormattedDate from '../../components/FormattedDate/FormattedDate.svelte';
+import CFImage from '../../components/CFImage/CFImage.svelte';
 
 import Tag from '../../components/Tag/Tag.svelte';
 import css from '../../styles/Post.module.scss';
@@ -27,7 +28,7 @@ const readingTime = remarkPluginFrontmatter.minutesRead;
 <BlogPost {...post.data}>
   <article class={css.container}>
     <section class={css.postHead}>
-      <img class={css.postImage} src={image} alt='prova' />
+      <CFImage className={css.postImage} src={image} alt={title} />
       <div class={css.postMetadata}>
         <div class={css.tags}>
           {tags.map((tag: string) => <Tag href='#'>{tag}</Tag>)}
