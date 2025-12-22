@@ -43,6 +43,11 @@
   font-family: 'PlusJakartaSans';
   margin-left: 42px;
 
+  .tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
   h1 {
     font-family: 'DMSerifDisplay';
     margin-bottom: 1rem;
@@ -112,5 +117,16 @@
     p {
       margin-bottom: 0;
     }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: #ffd600;
+    text-underline-offset: 0.2em;
+    transition: all 0.2s;
+  }
+
+  a:hover {
+    background-color: var(--primary);
   }
 }
