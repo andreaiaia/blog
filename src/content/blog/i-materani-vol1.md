@@ -1,0 +1,42 @@
+---
+title: 'I Materani'
+date: '2025/05/24'
+description: I made my first zine!
+tags: ['photograhy', 'matera', 'zine', 'reflections', 'announcement']
+image: 'matera/sassi-con-nuvole.jpg'
+lang: 'en'
+published: true
+---
+
+I’m very happy to announce that I’ve finally made my first zine, **I Materani**!
+The zine is the culmination of a journey of exploration, both of my city and of my photography. It is a journey of reconciliation with a city I’ve always experienced only halfway, but it’s also a journey of discovery of what this city is today and how the people of Matera relate to the environment around them.
+
+Without going on too long, I’ll leave you with the introduction to the zine.
+
+## I Materani
+
+What does it mean to be _materano_? I don’t think I’ve ever truly understood it.
+When I was a child, people used to say that “you can only really call yourself _materano_ if you’ve eaten focaccia from Paoluccio and stroked Gino Millelire’s head.” Of the two, I’ve only done the first.
+
+I grew up in the Sassi, in a sort of in-between era. They weren’t yet overrun by tourists, but they weren’t the ones described by Carlo Levi either. They were being reborn, slowly redeveloped. My grandmother didn’t believe it: “_I’ll never come visit you at home, it’s disgusting there_,” she used to say to my father after he bought the house.
+
+I think it was the Sassi themselves that sparked my passion for photography: when you live surrounded by so much beauty, sooner or later art finds its way inside you.
+
+My relationship with Matera has always been one of love and hate. I couldn’t wait to leave. I imagined living in Belgium, where my mother is from: summers aren’t suffocating there, and you’re at the center of the continent—everything is close, and opportunities seem endless.
+
+Here, instead, things seem motionless. Everyone obsessed with the Festa della Bruna, which for me as a child meant nothing but inconvenience, barricades, and chaos.
+And that slowness: in moving, in doing, in changing.
+
+Then I left. And little by little I realized that the lifestyle I criticized so much was, in the end, the only one I truly knew how to live. I can’t rush from a thousand appointments the way you do in Milan. Nor can I keep up with a city like Bologna, which is constantly changing yet never loses its soul: there you feel that things are moving, even if you don’t always know where they’re taking you.
+
+And every year, coming back for the Festa della Bruna, I would see all my friends again, even those who lived far away: like an unwritten appointment, respected by everyone.
+
+With this zine, I’d like to finally make peace with this city. I want to explore the bond—which I believe still exists—between the people of Matera and the Sassi, even though today almost everyone has moved out to make room for B&Bs.
+
+I don’t want the Sassi to become just a postcard, another Venice, another Disneyland.
+
+And above all, I want to understand how it’s possible to love a city that constantly pushes you to leave, but then never truly lets you go.
+
+## The zine
+
+If this introduction has sparked your interest, you can write to me on [Instagram](https://www.instagram.com/andreaiaia/) or on [Telegram](https://t.me/andreaiaia) to receive a copy.
