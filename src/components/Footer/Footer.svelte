@@ -9,18 +9,14 @@
   } from 'svelte-feather-icons';
 
   export let addStyle = '';
-
-  const YEAR = new Date().getFullYear();
 </script>
 
 <footer class={`${css.footer} ${addStyle}`}>
   <div class={css.content}>
     <div class={css.row}>
       <h2 class={css.title}>
-        powered by AI <span class={css.desktopOnly}>-</span>
-        <span class={css.mobileOnly}> <br /></span>
         <span class={css.accent}>A</span>ndrea
-        <span class={css.accent}>I</span>ntelligence
+        <span class={css.accent}>B</span>ianchi
       </h2>
     </div>
     <div class={css.row}>
@@ -32,8 +28,7 @@
         </p>
         <p>
           All the images are taken by me, unless otherwise stated, and are
-          covered by copyright. The use of the images is allowed only for
-          personal use. Any other use is forbidden.
+          covered by copyright. Any use of the images is forbidden.
         </p>
       </div>
     </div>
@@ -66,7 +61,7 @@
         </li>
       </ul>
       <small class={css.credits}>
-        <time>{YEAR}</time> © Andrea Bianchi
+        <time>{new Date().getFullYear()}</time> © Andrea Bianchi
       </small>
     </div>
   </div>
