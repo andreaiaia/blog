@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import css from '../styles/About.module.scss'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import CFImage from '../components/CFImage/CFImage.astro';
+import css from '../styles/About.module.scss';
 ---
 
 <style>
@@ -32,84 +33,78 @@ import css from '../styles/About.module.scss'
 <BaseLayout
   title={SITE_TITLE}
   descrition={SITE_DESCRIPTION}
-	headerMode='transparent'
+  headerMode='transparent'
 >
-<main>
-	<section>
-		<section class={css.section}>
-      <img
-        class={css.photoBackground}
-        alt='A self-portrait in the Murgia Materana.'
-        src='https://live.staticflickr.com/65535/54027190348_24da5b9ed6_b.jpg'
-        srcset='
-            https://live.staticflickr.com/65535/54027190348_24da5b9ed6_w.jpg 400w,
-            https://live.staticflickr.com/65535/54027190348_24da5b9ed6_c.jpg 800w,
-            https://live.staticflickr.com/65535/54027190348_24da5b9ed6_b.jpg 1024w,
-            https://live.staticflickr.com/65535/54027190348_f83d213404_k.jpg 2048w,
-          '
-        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw, (max-width: 1600px) 60vw, 50vw'
-        loading='lazy'
-      />
-      <div class={`${css.cta} ${css.opaqueBackground}`}>
-        <h1 class={css.title} data-animate-on-scroll>
-          About me
-        </h1>
-				<p data-animate-on-scroll>
-					Capturing the World, One Frame at a Time
-				</p>
+  <main>
+    <section>
+      <section class={css.section}>
+        <CFImage
+          className={css.photoBackground}
+          src='matera/cattedrale-tramonto.jpg'
+          alt='The sun setting behind the bell tower of the cathedral of Matera.'
+          widths={[480, 800, 1200, 2400]}
+          sizes='100vw'
+        />
+        <div class={`${css.cta} ${css.opaqueBackground}`}>
+          <h1 class={css.title} data-animate-on-scroll>About me</h1>
+          <p data-animate-on-scroll>Capturing the World, One Frame at a Time</p>
+        </div>
+      </section>
+    </section>
+
+    <section class={css.section}>
+      <div class={css.bio}>
+        <h2 data-animate-on-scroll>Who am I</h2>
+        <div class={css.text} data-animate-on-scroll>
+          <p>
+            I became passionate about photography in 2012, when I read an
+            article on a blog and discovered that, by using a long exposure
+            time, it was possible to capture the trails of moving cars.
+          </p>
+          <p>
+            I immediately grabbed my father’s camera, a Nikon D50 from 2005,
+            went outside, placed the camera on a wall, figured out how to set
+            the shutter speed to 30 seconds, and took the photo you see here.
+          </p>
+          <p>
+            It’s not much, but the excitement I felt when taking that photo is
+            the same feeling that still accompanies me every time I press the
+            shutter button.
+          </p>
+        </div>
+      </div>
+      <div data-animate-on-scroll>
+        <CFImage
+          className={css.photo}
+          src='misc/la-mia-prima-foto.jpg'
+          alt='The photo that started it all, a long exposure of moving cars in Matera'
+          s
+          Sassi.'
+          widths={[480, 800, 1200]}
+          sizes='100vw'
+        />
       </div>
     </section>
-	</section>
-
-	<section class={css.section}>
-		<div class={css.bio}>
-			<h2 data-animate-on-scroll>Who am I</h2>
-			<div class={css.text} data-animate-on-scroll>
-				<p>
-					I became passionate about photography in 2012, when I read an article on a blog and discovered that, by using a long exposure time, it was possible to capture the trails of moving cars.
-				</p>
-				<p>
-					I immediately grabbed my father’s camera, a Nikon D50 from 2005, went outside, placed the camera on a wall, figured out how to set the shutter speed to 30 seconds, and took the photo you see here.
-				</p>
-				<p> 
-					It’s not much, but the excitement I felt when taking that photo is the same feeling that still accompanies me every time I press the shutter button.
-				</p>
-			</div>
-		</div>
-		<div data-animate-on-scroll>
-      <img
-				class={css.photo}
-        alt='The photo that started it all, a long exposure of moving cars in Matera&apos;s Sassi.'
-        src='https://live.staticflickr.com/65535/54027456455_40c5370047_z.jpg'
-        srcset='
-            https://live.staticflickr.com/65535/54027456455_40c5370047_n.jpg 320w,
-            https://live.staticflickr.com/65535/54027456455_40c5370047_z.jpg 640w,
-            https://live.staticflickr.com/65535/54027456455_40c5370047_b.jpg 1024w,
-          '
-        sizes='(max-width: 400px) 100vw, (max-width: 800px) 100vw, (max-width: 1200px) 80vw'
-        loading='lazy'
-      />		</div>
-	</section>
-</main>
+  </main>
   <script>
-    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const elements = document.querySelectorAll('[data-animate-on-scroll]');
     const observerOptions = {
-      threshold: 0.1
-    }
+      threshold: 0.1,
+    };
 
     document.addEventListener('DOMContentLoaded', function () {
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate')
-            observer.unobserve(entry.target)
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
           }
-        })
-      }, observerOptions)
+        });
+      }, observerOptions);
 
       elements.forEach(function (element) {
-        observer.observe(element)
-      })
-    })
+        observer.observe(element);
+      });
+    });
   </script>
 </BaseLayout>
