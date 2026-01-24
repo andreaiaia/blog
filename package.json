@@ -20,20 +20,20 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/svelte": "^7.2.5",
-    "astro": "^5.16.13",
+    "astro": "^5.16.15",
     "mdast-util-to-string": "^4.0.0",
     "photoswipe": "^5.4.4",
     "reading-time": "^1.5.0",
     "sass": "^1.97.3",
-    "svelte": "^5.48.0",
+    "svelte": "^5.48.1",
     "svelte-preprocess": "^6.0.3",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260122.0",
+    "@cloudflare/workers-types": "^4.20260124.0",
     "@types/node": "^25.0.10",
     "eslint": "^9.39.2",
     "svelte-feather-icons": "^4.2.0",
-    "wrangler": "^4.59.3"
+    "wrangler": "^4.60.0"
   }
 }
