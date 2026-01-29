@@ -1,0 +1,13 @@
+.figureWithCaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: var(--shade);
+  text-align: center;
+}

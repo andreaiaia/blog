@@ -1,0 +1,20 @@
+---
+import CFImage from './CFImage.astro';
+import styles from './CFImageWithCaption.module.scss';
+
+const { src, alt, caption, widths, sizes, className, dpr, quality } =
+  Astro.props;
+---
+
+<figure class={styles.figureWithCaption}>
+  <CFImage
+    src={src}
+    alt={alt}
+    widths={widths}
+    sizes={sizes}
+    className={className}
+    dpr={dpr}
+    quality={quality}
+  />
+  <figcaption class={styles.caption}>{caption || alt}</figcaption>
+</figure>
