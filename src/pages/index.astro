@@ -53,10 +53,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         sizes='100vw'
       />
       <div class={`${css.cta} ${css.opaqueBackground}`}>
-        <h1 class={css.title} data-animate-on-scroll>
-          To photograph is to capture the <span class={css.accent}>essence</span
-          > of a moment
-        </h1>
+        <div data-animate-on-scroll>
+          <h1 class={css.title}>
+            beautiful things <span class={css.accent}>don&apos;t ask</span> for attention
+          </h1>
+          <p class={css.quoteOrigin}>(The Secret Life of Walter Mitty, 2013)</p>
+        </div>
         <a class={css.swipeIndicator} href='#greetings' id='swipeIndicator'>
           <ArrowDownCircleIcon size='32' addStyles={css.icon} />
         </a>

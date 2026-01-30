@@ -28,13 +28,13 @@
     <nav class={css.navbar}>
       <ul class={`${css.navLinks} ${menuOpen ? css.active : ''}`}>
         <li class={css.link}>
-          <a href="/about"> about </a>
+          <a href="/blog">blog</a>
         </li>
         <li class={css.link}>
           <a href="/photo">photo</a>
         </li>
         <li class={css.link}>
-          <a href="/blog">blog</a>
+          <a href="/about"> about </a>
         </li>
       </ul>
       <button

@@ -110,14 +110,16 @@
   color: var(--white);
   font-family: 'DMSerifDisplay';
   font-size: 3rem;
-  max-width: 600px;
   text-align: center;
-  padding: 1rem;
+  padding: 0 1rem;
+}
 
-  @media screen and (max-width: 768px) {
-    font-size: 2.25rem;
-    max-width: 19ch;
-  }
+.quoteOrigin {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .photoCta {
@@ -160,14 +162,13 @@
 
 .swipeIndicator {
   position: absolute;
-  bottom: 32px;
-  left: calc(50% - 16px);
+  bottom: 64px;
 
   .icon {
     color: var(--black);
   }
 
   @media screen and (max-width: 768px) {
-    bottom: 96px;
+    bottom: 128px;
   }
 }
