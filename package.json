@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260210.0",
-    "@types/node": "^25.2.2",
+    "@types/node": "^25.2.3",
     "eslint": "^10.0.0",
     "svelte-feather-icons": "^4.2.0",
     "wrangler": "^4.64.0"
