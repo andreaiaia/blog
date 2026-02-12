@@ -13,6 +13,13 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'cloudflare',
   }),
+  i18n: {
+    defaultLocale: 'it',
+    locales: ['it', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },

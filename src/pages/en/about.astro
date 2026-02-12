@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { useTranslations } from '../i18n/utils';
-import CFImage from '../components/CFImage/CFImage.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import CFImage from '../../components/CFImage/CFImage.astro';
 import css from '../styles/About.module.scss';
 
-const t = useTranslations('it');
+const t = useTranslations('en');
 ---
 
 <style>
@@ -36,7 +36,7 @@ const t = useTranslations('it');
   title={t('site.title')}
   descrition={t('site.description')}
   headerMode='transparent'
-  lang='it'
+  lang='en'
 >
   <main>
     <section>

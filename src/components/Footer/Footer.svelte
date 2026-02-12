@@ -7,8 +7,10 @@
     LinkedinIcon,
     YoutubeIcon,
   } from 'svelte-feather-icons';
+  import { translations } from '../../i18n/ui';
 
   export let addStyle = '';
+  export let lang = 'it';
 </script>
 
 <footer class={`${css.footer} ${addStyle}`}>
@@ -22,13 +24,10 @@
     <div class={css.row}>
       <div class={css.text}>
         <p>
-          All the contents in this website are 100% made by me, Andrea Bianchi.
-          AI is only used to provide a better English translation, since it's
-          not my native language.
+          {translations[lang].madeBy}
         </p>
         <p>
-          All the images are taken by me, unless otherwise stated, and are
-          covered by copyright. Any use of the images is forbidden.
+          {translations[lang].copyright}
         </p>
       </div>
     </div>

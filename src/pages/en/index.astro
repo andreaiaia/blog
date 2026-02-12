@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { useTranslations } from '../i18n/utils';
-import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte';
-import ArrowDownCircleIcon from '../components/Icons/ArrowDownCircleIcon.svelte';
-import CFImage from '../components/CFImage/CFImage.astro';
-import css from '../styles/Home.module.scss';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import TextHoverAnimation from '../../components/TextHoverAnimation/TextHoverAnimation.svelte';
+import ArrowDownCircleIcon from '../../components/Icons/ArrowDownCircleIcon.svelte';
+import CFImage from '../../components/CFImage/CFImage.astro';
+import css from '../../styles/Home.module.scss';
 
-const t = useTranslations('it');
+const t = useTranslations('en');
 ---
 
 <style>
@@ -43,14 +43,14 @@ const t = useTranslations('it');
   title={t('site.title')}
   descrition={t('site.description')}
   headerMode='transparent'
-  lang='it'
+  lang='en'
 >
   <main>
     <section class={css.section} id='welcome'>
       <CFImage
         className={css.photoBackground}
         src='matera/sassi-laputa.jpg'
-        alt='I famosi Sassi di Matera.'
+        alt='The famous Sassi of Matera.'
         widths={[480, 800, 1200, 2400]}
         sizes='100vw'
       />
@@ -71,20 +71,20 @@ const t = useTranslations('it');
       <div class={css.content}>
         <div class={css.text} data-animate-on-scroll>
           <p>
-            Ciao! Io sono <span class={css.textAccent}>Andrea</span>
+            Ciao! I am <span class={css.textAccent}>Andrea</span>
           </p>
         </div>
         <div class={css.photoWrapper} data-animate-on-scroll>
           <CFImage
             className={css.photo}
             src='me/profile-pic.jpg'
-            alt='Una fotografia di me, Andrea.'
+            alt='A picture of me, Andrea.'
             widths={[480, 800]}
             sizes='100vw'
           />
         </div>
         <div class={css.text} data-animate-on-scroll>
-          <p>Amo scattare fotografie che riflettano l'anima di un istante</p>
+          <p>I love creating photos that reflect the soul of a moment</p>
         </div>
       </div>
     </section>
@@ -93,14 +93,14 @@ const t = useTranslations('it');
       <CFImage
         className={css.photoBackground}
         src='paesaggi/paesaggio-lucano-1.jpg'
-        alt='Una fotografia fine-art di un tipico paesaggio collinare Lucano.'
+        alt='A fine-art picture of a typical hillside landscape in Basilicata, Italy.'
         widths={[480, 800, 1200, 1600]}
         sizes='100vw'
       />
       <a href='/photo' class={css.cta}>
         <TextHoverAnimation
           addStyle={css.photoCta}
-          text='sfoglia le mie fotografie'
+          text='discover my photography'
         />
       </a>
     </section>
@@ -108,24 +108,20 @@ const t = useTranslations('it');
     <section class={css.section} id='blog-introduction'>
       <div class={css.content}>
         <div class={css.text} data-animate-on-scroll>
-          <p>
-            La fotografia è la mia arte, il mio modo di mostrarvi come guardo il
-            mondo
-          </p>
+          <p>Photography is my art, my way of seeing the world</p>
         </div>
         <div class={css.photoWrapper} data-animate-on-scroll>
           <CFImage
             className={css.photo}
             src='street/mercatino-bruna-vestito-appeso.jpg'
-            alt="Un uomo sosta dietro un abito appeso, dando l'impressione di indossarlo."
+            alt='A man stands behind a dress, looking like he is wearing it, in a tipical market in Matera.'
             widths={[480, 800, 1200]}
             sizes='100vw'
           />
         </div>
         <div class={css.text} data-animate-on-scroll>
           <p>
-            Il mio blog è il posto dove condivido i miei pensieri sulla
-            fotografia e altro ancora
+            My blog is where I share my thoughts on photography and much more
           </p>
         </div>
       </div>
@@ -135,12 +131,12 @@ const t = useTranslations('it');
       <CFImage
         className={css.photoBackground}
         src='paesaggi/craco-alba-lunare.jpg'
-        alt='La luna sorge, vista da Craco.'
+        alt='The moon rising seen from Craco.'
         widths={[480, 800, 1200, 1600]}
         sizes='100vw'
       />
       <a href='/blog' class={`${css.cta} ${css.opaqueBackground}`}>
-        <TextHoverAnimation addStyle={css.photoCta} text='leggi il blog' />
+        <TextHoverAnimation addStyle={css.photoCta} text='read my blog' />
       </a>
     </section>
   </main>

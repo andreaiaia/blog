@@ -12,7 +12,7 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     date: z.coerce.date(), // Transform string to Date object
     image: z.string(),
-    lang: z.string().optional(),
+    lang: z.enum(['it', 'en']).default('it'),
     published: z.boolean(),
   }),
 });
