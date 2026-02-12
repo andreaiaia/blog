@@ -1,0 +1,222 @@
+@use '../../styles/globals.module' as *;
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: hsl(45, 70%, 100%);
+  margin: 2rem 0;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+// Altezza fissa con scroll
+.fixedHeight .container {
+  min-height: 400px;
+  max-height: 400px;
+}
+
+.fixedHeight .column {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fixedHeight .columnContent {
+  height: 100%;
+  overflow-y: auto;
+}
+
+// Altezza dinamica senza scroll
+.dynamicHeight .container {
+  min-height: auto;
+}
+
+.dynamicHeight .column {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.dynamicHeight .columnContent {
+  overflow-y: visible;
+  min-height: 100%;
+}
+
+// Forziamo il container a prendere l'altezza dalle colonne
+.dynamicHeight .container::before {
+  content: '';
+  display: block;
+  padding-bottom: 0;
+}
+
+.column {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Label
+  &::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+.columnContent {
+  padding: 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+
+    &:hover {
+      background: #94a3b8;
+    }
+  }
+
+  // Typography reset per markdown
+  :global {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 1em;
+      line-height: 1.7;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Stati: mostra colonna left
+.wrapper[data-state='left'] {
+  .columnLeft {
+    transform: translateX(0);
+    position: relative;
+  }
+
+  .columnRight {
+    transform: translateX(100%);
+  }
+
+  .chevronLeft {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    padding: 0;
+  }
+}
+
+// Stati: mostra colonna right
+.wrapper[data-state='right'] {
+  .columnLeft {
+    transform: translateX(-100%);
+  }
+
+  .columnRight {
+    transform: translateX(0);
+    position: relative;
+  }
+
+  .chevronRight {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    padding: 0;
+  }
+}
+
+// Override per altezza dinamica: la colonna visibile diventa relative
+.dynamicHeight[data-state='left'] {
+  .columnLeft {
+    position: relative;
+  }
+
+  .columnRight {
+    position: absolute;
+  }
+}
+
+.dynamicHeight[data-state='right'] {
+  .columnLeft {
+    position: absolute;
+  }
+
+  .columnRight {
+    position: relative;
+  }
+}
+
+// Chevron Buttons
+.chevronBtn {
+  position: relative;
+  z-index: 20;
+  background: hsl(45, 100%, 95%);
+  border: none;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--shade);
+
+  &:hover {
+    background: var(--primary-tone);
+    color: var(--black);
+  }
+
+  &:active {
+    background: var(--primary-tone);
+    color: var(--black);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+}
