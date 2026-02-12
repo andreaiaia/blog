@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import css from '../../styles/Photo.module.scss';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import CFImage from '../../components/CFImage/CFImage.svelte';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import css from '../../../styles/Photo.module.scss';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import CFImage from '../../../components/CFImage/CFImage.svelte';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -40,7 +40,7 @@ const albums = (await getCollection('albums'))
 
 <BaseLayout
   title={t('nav.photo')}
-  descrition="La mia fotografia: cercare l'essenza di un istante"
+  descrition='My photography: capturing the essence of a moment'
   headerMode='solid'
   lang={lang}
 >

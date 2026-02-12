@@ -1,9 +1,9 @@
 ---
-import GalleryLayout from '../../layouts/GalleryLayout.astro';
-import { getLangFromUrl } from '../../i18n/utils';
+import GalleryLayout from '../../../layouts/GalleryLayout.astro';
+import { getLangFromUrl } from '../../../i18n/utils';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import Gallery from '../../components/Gallery/Gallery.svelte';
-import css from '../../styles/Gallery.module.scss';
+import Gallery from '../../../components/Gallery/Gallery.svelte';
+import css from '../../../styles/Gallery.module.scss';
 
 const lang = getLangFromUrl(Astro.url);
 
