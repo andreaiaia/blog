@@ -1,28 +1,27 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostThumbnail from '../../components/PostThumbnail/PostThumbnail.svelte';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import css from '../../styles/Blog.module.scss';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostThumbnail from '../../../components/PostThumbnail/PostThumbnail.svelte';
+import { useTranslations } from '../../../i18n/utils';
+import css from '../../../styles/Blog.module.scss';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = useTranslations('en');
 
 const posts = (await getCollection('blog'))
-  .filter(({ data }) => data.published && data.lang === lang)
+  .filter(({ data }) => data.published && data.lang === 'en')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout
   title={t('nav.blog')}
-  description='Il blog personale di Andrea'
+  description="Andrea's personal blog"
   headerMode='solid'
 >
   <main>
     <section class={css.titleSection}>
       <div class={css.content}>
         <h1>Blog</h1>
-        <p>Il mio piccolo angolo del web!</p>
+        <p>My little corner of the web!</p>
       </div>
     </section>
     <section class={css.feed}>
