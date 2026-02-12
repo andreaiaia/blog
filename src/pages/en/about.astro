@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { useTranslations } from '../../i18n/utils';
 import CFImage from '../../components/CFImage/CFImage.astro';
-import css from '../styles/About.module.scss';
+import css from '../../styles/About.module.scss';
 
 const t = useTranslations('en');
 ---
@@ -44,37 +44,35 @@ const t = useTranslations('en');
         <CFImage
           className={css.photoBackground}
           src='matera/cattedrale-tramonto.jpg'
-          alt='Il sole tramonta dietro il campanile della cattedrale di Matera.'
+          alt='The sun sets behind the bell tower of the cathedral of Matera.'
           widths={[480, 800, 1200, 2400]}
           sizes='100vw'
         />
         <div class={`${css.cta} ${css.opaqueBackground}`}>
-          <h1 class={css.title} data-animate-on-scroll>Chi sono</h1>
-          <p data-animate-on-scroll>Esploro il mondo, uno scatto alla volta</p>
+          <h1 class={css.title} data-animate-on-scroll>About me</h1>
+          <p data-animate-on-scroll>Capturing the world, one frame at time.</p>
         </div>
       </section>
     </section>
 
     <section class={css.section}>
       <div class={css.bio}>
-        <h2 data-animate-on-scroll>Mi presento</h2>
+        <h2 data-animate-on-scroll>Who am I</h2>
         <div class={css.text} data-animate-on-scroll>
           <p>
-            Mi sono appassionato di fotografia dal 2012, quando ho letto un
-            articolo su un blog e ho scoperto che, usando un tempo di
-            esposizione lungo, era possibile catturare le scie delle auto in
-            movimento.
+            I became passionate about photography in 2012, when I read an
+            article on a blog and discovered that, by using a long exposure
+            time, it was possible to capture the trails of moving cars.
           </p>
           <p>
-            Ho subito preso la macchina fotografica di mio padre, una Nikon D50
-            del 2005, sono uscito, ho appoggiato la macchina fotografica su un
-            muro, ho capito come impostare il tempo di esposizione a 30 secondi
-            e ho scattato la foto che vedete qui sotto.
+            I immediately grabbed my father’s camera, a Nikon D50 from 2005,
+            went outside, placed the camera on a wall, figured out how to set
+            the shutter speed to 30 seconds, and took the photo you see here.
           </p>
           <p>
-            Non è molto, ma l’emozione che ho provato scattando quella foto è la
-            stessa emozione che ancora oggi mi accompagna ogni volta che premo
-            il pulsante di scatto.
+            It’s not much, but the excitement I felt when taking that photo is
+            the same feeling that still accompanies me every time I press the
+            shutter button.
           </p>
         </div>
       </div>
@@ -82,9 +80,7 @@ const t = useTranslations('en');
         <CFImage
           className={css.photo}
           src='misc/la-mia-prima-foto.jpg'
-          alt='La foto da cui è iniziato tutto, una lunga esposizione di automobili in movimento a Matera'
-          s
-          Sassi.'
+          alt='The picture that started it all, a long exposure of cars moving in Matera'
           widths={[480, 800, 1200]}
           sizes='100vw'
         />
