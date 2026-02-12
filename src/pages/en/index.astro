@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { useTranslations } from '../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import TextHoverAnimation from '../../components/TextHoverAnimation/TextHoverAnimation.svelte';
 import ArrowDownCircleIcon from '../../components/Icons/ArrowDownCircleIcon.svelte';
 import CFImage from '../../components/CFImage/CFImage.astro';
 import css from '../../styles/Home.module.scss';
 
-const t = useTranslations('en');
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <style>
@@ -43,7 +44,7 @@ const t = useTranslations('en');
   title={t('site.title')}
   descrition={t('site.description')}
   headerMode='transparent'
-  lang='en'
+  lang={lang}
 >
   <main>
     <section class={css.section} id='welcome'>

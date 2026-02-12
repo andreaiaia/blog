@@ -2,13 +2,14 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostThumbnail from '../../../components/PostThumbnail/PostThumbnail.svelte';
-import { useTranslations } from '../../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 import css from '../../../styles/Blog.module.scss';
 
-const t = useTranslations('en');
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const posts = (await getCollection('blog'))
-  .filter(({ data }) => data.published && data.lang === 'en')
+  .filter(({ data }) => data.published && data.lang === lang)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
