@@ -22,7 +22,7 @@
   <div class={css.container}>
     <div class={css.head}>
       <div class={css.date}>
-        <FormattedDate date={post.data.date} />
+        <FormattedDate date={post.data.date} {lang} />
       </div>
       <a
         class={css.image}
