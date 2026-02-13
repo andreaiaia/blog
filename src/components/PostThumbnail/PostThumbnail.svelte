@@ -10,8 +10,12 @@
       description: string;
       date: Date;
       image: string;
+      lang?: string; // aggiunto per multilingua
     };
   };
+
+  // Variabile per gestire la lingua del post
+  export let lang: string = post.data.lang ?? 'it';
 </script>
 
 <div class={css.article}>
@@ -20,13 +24,18 @@
       <div class={css.date}>
         <FormattedDate date={post.data.date} />
       </div>
-      <a class={css.image} href={`/blog/${post.id}`}>
+      <a
+        class={css.image}
+        href={`${lang !== 'it' ? `/${lang}` : ''}/blog/${post.id}`}
+      >
         <CFImage src={post.data.image} alt={post.data.title} />
       </a>
     </div>
     <div class={css.content}>
       <h2 class={css.title}>
-        <a href={`/blog/${post.id}`}>{post.data.title}</a>
+        <a href={`${lang !== 'it' ? `/${lang}` : ''}/blog/${post.id}`}
+          >{post.data.title}</a
+        >
       </h2>
       <p class={css.description}>{post.data.description}</p>
     </div>
