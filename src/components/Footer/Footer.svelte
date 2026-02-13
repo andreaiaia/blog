@@ -7,19 +7,28 @@
     LinkedinIcon,
     YoutubeIcon,
   } from 'svelte-feather-icons';
+
   import { translations } from '../../i18n/ui';
 
   export let addStyle = '';
   export let lang = 'it';
+  export let alternateLangUrl = '/';
 </script>
 
 <footer class={`${css.footer} ${addStyle}`}>
   <div class={css.content}>
-    <div class={css.row}>
+    <div class={css.titleRow}>
       <h2 class={css.title}>
         <span class={css.accent}>A</span>ndrea
         <span class={css.accent}>B</span>ianchi
       </h2>
+      <a
+        href={alternateLangUrl}
+        class={css.langBtn}
+        aria-label={lang === 'it' ? 'Switch Language' : 'Cambia lingua'}
+      >
+        {lang === 'it' ? 'switch to EN 🇬🇧' : 'passa a IT 🇮🇹'}
+      </a>
     </div>
     <div class={css.row}>
       <div class={css.text}>

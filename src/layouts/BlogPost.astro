@@ -3,19 +3,21 @@ import type { CollectionEntry } from 'astro:content';
 
 import Header from '../components/Header/Header.svelte';
 import Footer from '../components/Footer/Footer.svelte';
+import { getAlternateLangUrl } from '../i18n/utils';
 
-import '../styles/normalize.css'
-import '../styles/global.css'
-import '../styles/_globals.module.scss'
+import '../styles/normalize.css';
+import '../styles/global.css';
+import '../styles/_globals.module.scss';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, image, lang } = Astro.props;
+const alternateLangUrl = getAlternateLangUrl(Astro.url.pathname, lang);
 ---
 
 <!doctype html>
 <html lang={lang || 'en'}>
-	  <head>
+  <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <title>{title}</title>
@@ -39,6 +41,6 @@ const { title, description, image, lang } = Astro.props;
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} alternateLangUrl={alternateLangUrl} />
   </body>
 </html>

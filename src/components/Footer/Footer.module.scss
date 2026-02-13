@@ -28,6 +28,18 @@
   width: 100%;
 }
 
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  @include smartphone {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 .title {
   font-family: 'DMSerifDisplay';
   font-size: 2rem;
@@ -85,6 +97,22 @@
 
   @include smartphone {
     margin: 0.5rem;
+  }
+}
+
+.langBtn {
+  border: 1px solid var(--primary);
+  color: var(--white);
+  font-family: 'PlusJakartaSans';
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--black);
   }
 }
 
