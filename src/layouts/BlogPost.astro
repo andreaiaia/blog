@@ -3,15 +3,16 @@ import type { CollectionEntry } from 'astro:content';
 
 import Header from '../components/Header/Header.astro';
 import Footer from '../components/Footer/Footer.svelte';
-import { getAlternateLangUrl } from '../i18n/utils';
+import { getAlternateLangUrl, getLangFromUrl } from '../i18n/utils';
 
 import '../styles/normalize.css';
 import '../styles/global.css';
 import '../styles/_globals.module.scss';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog-en' | 'blog-it'>['data'];
 
-const { title, description, image, lang } = Astro.props;
+const { title, description, image } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 const alternateLangUrl = getAlternateLangUrl(Astro.url.pathname, lang);
 ---
 

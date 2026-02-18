@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   }));
 }
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<'blog-en'>;
 
 const post = Astro.props;
 const { title, description, date, tags, image } = post.data;
