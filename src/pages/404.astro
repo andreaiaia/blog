@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import TextHoverAnimation from '../components/TextHoverAnimation/TextHoverAnimation.svelte'
-import css from '../styles/NotFound.module.scss'
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TextHoverAnimation from '@/components/TextHoverAnimation/TextHoverAnimation.svelte';
+import css from '@/styles/NotFound.module.scss';
 ---
 
 <style>
@@ -30,8 +30,8 @@ import css from '../styles/NotFound.module.scss'
 ></script>
 
 <BaseLayout
-  title="404 - Page not found"
-  descrition="The page you are looking for does not exist."
+  title='404 - Page not found'
+  descrition='The page you are looking for does not exist.'
   headerMode='transparent'
 >
   <main>
@@ -56,8 +56,9 @@ import css from '../styles/NotFound.module.scss'
         <p class={css.description} data-animate-on-scroll>
           The page you are looking for does not exist.
         </p>
-        <a class={css.backToHome} href="/"  data-animate-on-scroll>
-          <TextHoverAnimation addStyle={css.photoCta}
+        <a class={css.backToHome} href='/' data-animate-on-scroll>
+          <TextHoverAnimation
+            addStyle={css.photoCta}
             text='Go back to the home page'
           />
         </a>
@@ -66,24 +67,24 @@ import css from '../styles/NotFound.module.scss'
   </main>
 
   <script>
-    const elements = document.querySelectorAll('[data-animate-on-scroll]')
+    const elements = document.querySelectorAll('[data-animate-on-scroll]');
     const observerOptions = {
-      threshold: 0.1
-    }
+      threshold: 0.1,
+    };
 
     document.addEventListener('DOMContentLoaded', function () {
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate')
-            observer.unobserve(entry.target)
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
           }
-        })
-      }, observerOptions)
+        });
+      }, observerOptions);
 
       elements.forEach(function (element) {
-        observer.observe(element)
-      })
-    })
+        observer.observe(element);
+      });
+    });
   </script>
 </BaseLayout>

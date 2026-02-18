@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import css from '../../../styles/Photo.module.scss';
-import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
-import CFImage from '../../../components/CFImage/CFImage.svelte';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import css from '@/styles/Photo.module.scss';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import CFImage from '@/components/CFImage/CFImage.svelte';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

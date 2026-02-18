@@ -8,7 +8,7 @@
     YoutubeIcon,
   } from 'svelte-feather-icons';
 
-  import { translations } from '../../i18n/ui';
+  import { translations } from '@/i18n/ui';
 
   export let addStyle = '';
   export let lang = 'it';

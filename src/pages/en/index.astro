@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import TextHoverAnimation from '../../components/TextHoverAnimation/TextHoverAnimation.svelte';
-import ArrowDownCircleIcon from '../../components/Icons/ArrowDownCircleIcon.svelte';
-import CFImage from '../../components/CFImage/CFImage.astro';
-import css from '../../styles/Home.module.scss';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import TextHoverAnimation from '@/components/TextHoverAnimation/TextHoverAnimation.svelte';
+import ArrowDownCircleIcon from '@/components/Icons/ArrowDownCircleIcon.svelte';
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/Home.module.scss';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

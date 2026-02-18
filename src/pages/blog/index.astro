@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostThumbnail from '../../components/PostThumbnail/PostThumbnail.svelte';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import css from '../../styles/Blog.module.scss';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostThumbnail from '@/components/PostThumbnail/PostThumbnail.svelte';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import css from '@/styles/Blog.module.scss';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
