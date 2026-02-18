@@ -7,10 +7,10 @@ import Tag from '../../components/Tag/Tag.svelte';
 import css from '../../styles/Post.module.scss';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).filter(
-    ({ data }) => data.published && data.lang === 'it'
+  const posts = (await getCollection('blog-it')).filter(
+    ({ data }) => data.published
   );
-  return posts.map((post: CollectionEntry<'blog'>) => ({
+  return posts.map((post: CollectionEntry<'blog-it'>) => ({
     params: { slug: post.id },
     props: post,
   }));

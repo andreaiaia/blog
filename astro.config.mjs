@@ -5,10 +5,19 @@ import svelte from '@astrojs/svelte';
 import cloudflare from '@astrojs/cloudflare';
 import { remarkReadingTime } from './remark-reading-time.mjs';
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), svelte()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    svelte(),
+    icon({
+      iconDir: 'node_modules/@iconify/json/json',
+    }),
+  ],
   output: 'static',
   adapter: cloudflare({
     imageService: 'cloudflare',

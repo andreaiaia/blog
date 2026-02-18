@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-import Header from '../components/Header/Header.svelte';
+import Header from '../components/Header/Header.astro';
 import Footer from '../components/Footer/Footer.svelte';
 import { getAlternateLangUrl } from '../i18n/utils';
 
@@ -37,7 +37,7 @@ const alternateLangUrl = getAlternateLangUrl(Astro.url.pathname, lang);
   </head>
 
   <body>
-    <Header client:load headerMode='solid' />
+    <Header headerMode='solid' />
     <main>
       <slot />
     </main>

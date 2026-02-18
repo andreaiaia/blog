@@ -8,8 +8,8 @@ import css from '../../styles/Blog.module.scss';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const posts = (await getCollection('blog'))
-  .filter(({ data }) => data.published && data.lang === lang)
+const posts = (await getCollection('blog-it'))
+  .filter(({ data }) => data.published)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 

@@ -1,0 +1,104 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import css from './Header.module.scss';
+
+interface Props {
+  addStyle?: string;
+  headerMode?: 'solid' | 'transparent';
+}
+
+const { addStyle = '', headerMode = 'solid' } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navLinks = [
+  { href: lang === 'it' ? '/blog' : `/${lang}/blog`, label: t('nav.blog') },
+  { href: lang === 'it' ? '/photo' : `/${lang}/photo`, label: t('nav.photo') },
+  { href: lang === 'it' ? '/about' : `/${lang}/about`, label: t('nav.about') },
+];
+const homeLink = lang === 'it' ? '/' : `/${lang}`;
+
+const iconSize = 24;
+---
+
+<style>
+  .header-menu-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+</style>
+
+<header
+  class:list={[css.header, addStyle, { [css.solid]: headerMode === 'solid' }]}
+>
+  <div class={css.container}>
+    <div class={css.logo}>
+      <a href={homeLink}>andrea</a>
+    </div>
+
+    <nav class={css.navbar}>
+      <ul class={css.navLinks} data-menu>
+        {
+          navLinks.map((link) => (
+            <li class={css.link}>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <button
+        class={css.hamburger}
+        data-toggle
+        aria-expanded='false'
+        aria-label={t('nav.toggleMenu')}
+      >
+        <Icon
+          name='lucide:menu'
+          width={iconSize}
+          height={iconSize}
+          data-icon='menu'
+        />
+        <Icon
+          name='lucide:x'
+          width={iconSize}
+          height={iconSize}
+          class={css.closeIcon}
+          data-icon='close'
+          style='display: none;'
+        />
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function initMenu() {
+    const toggle = document.querySelector('[data-toggle]') as HTMLButtonElement;
+    const menu = document.querySelector('[data-menu]') as HTMLUListElement;
+    const menuIcon = document.querySelector(
+      '[data-icon="menu"]'
+    ) as HTMLElement;
+    const closeIcon = document.querySelector(
+      '[data-icon="close"]'
+    ) as HTMLElement;
+
+    if (!toggle || !menu || !menuIcon || !closeIcon) return;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('header-menu-active');
+
+      menuIcon.style.display = isOpen ? 'block' : 'none';
+      closeIcon.style.display = isOpen ? 'none' : 'block';
+      document.body.classList.toggle('no-scroll', !isOpen);
+    });
+  }
+
+  initMenu();
+  document.addEventListener('astro:page-load', initMenu);
+</script>
