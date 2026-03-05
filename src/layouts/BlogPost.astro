@@ -35,6 +35,11 @@ const alternateLangUrl = getAlternateLangUrl(Astro.url.pathname, lang);
     <meta property='twitter:title' content={title} />
     <meta property='twitter:description' content={description} />
     <meta property='twitter:image' content={new URL(image || '', Astro.url)} />
+    <!-- Analytics -->
+    <script
+      defer
+      src='https://cloud.umami.is/script.js'
+      data-website-id='a9430e6c-d81c-496b-a486-a073439d114c'></script>
   </head>
 
   <body>
