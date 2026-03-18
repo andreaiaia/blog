@@ -14,28 +14,28 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
     "@astrojs/svelte": "^7.2.5",
-    "@iconify-json/lucide": "^1.2.95",
-    "astro": "^5.18.0",
+    "@iconify-json/lucide": "^1.2.98",
+    "astro": "^5.18.1",
     "astro-icon": "^1.1.5",
     "mdast-util-to-string": "^4.0.0",
     "photoswipe": "^5.4.4",
     "reading-time": "^1.5.0",
-    "sass": "^1.97.3",
-    "svelte": "^5.53.7",
+    "sass": "^1.98.0",
+    "svelte": "^5.54.0",
     "svelte-preprocess": "^6.0.3",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260305.1",
-    "@types/node": "^25.3.3",
-    "eslint": "^10.0.2",
+    "@cloudflare/workers-types": "^4.20260317.1",
+    "@types/node": "^25.5.0",
+    "eslint": "^10.0.3",
     "svelte-feather-icons": "^4.2.0",
-    "wrangler": "^4.70.0"
+    "wrangler": "^4.75.0"
   }
 }
