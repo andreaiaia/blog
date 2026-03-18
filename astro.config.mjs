@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
@@ -31,6 +32,13 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkReadingTime],
+  },
+  vite: {
+    resolve: {
+      alias: {
+        debug: fileURLToPath(new URL('./src/stubs/debug.js', import.meta.url)),
+      },
+    },
   },
   css: {
     preprocessorOptions: {

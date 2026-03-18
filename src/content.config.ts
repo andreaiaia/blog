@@ -27,23 +27,11 @@ const blogEn = defineCollection({
   schema: blogSchema,
 });
 
-// const blog = defineCollection({
-//   loader: glob({
-//     pattern: '**/[^_]*.{md,mdx}',
-//     base: './src/content/blog',
-//   }),
-//   schema: z.object({
-//     title: z.string(),
-//     description: z.string(),
-//     tags: z.array(z.string()),
-//     date: z.coerce.date(), // Transform string to Date object
-//     image: z.string(),
-//     lang: z.enum(['it', 'en']).default('it'),
-//     published: z.boolean(),
-//   }),
-// });
-
 const albums = defineCollection({
+  loader: glob({
+    pattern: '**/[^_]*.md',
+    base: './src/content/albums',
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),

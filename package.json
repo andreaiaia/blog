@@ -9,8 +9,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro build && wrangler pages dev ./dist",
-    "deploy": "astro build && wrangler pages deploy ./dist",
+    "preview": "astro build && wrangler pages dev ./dist/client",
+    "deploy": "astro build && wrangler pages deploy ./dist/client",
     "astro": "astro"
   },
   "dependencies": {
