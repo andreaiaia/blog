@@ -4,9 +4,7 @@
   display: block;
   margin-bottom: 32px;
   will-change: transform;
-  transition: transform 0.2s ease;
-  padding-left: 16px;
-  padding-right: 16px;
+  transition: transform 0.3s ease;
 
   @include laptop {
     &:hover {

@@ -230,6 +230,28 @@ hr {
 	}
 }
 
+/* ─── Scroll-reveal animation (used on homepage) ────────────────────────── */
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-aos] {
+  opacity: 0;
+  transform: translateY(50px);
+  will-change: opacity, transform;
+}
+
+[data-aos].animate {
+  animation: animateIn 1s ease-in-out forwards;
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;

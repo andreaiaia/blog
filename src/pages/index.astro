@@ -1,41 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import TextHoverAnimation from '@/components/TextHoverAnimation/TextHoverAnimation.svelte';
-import ArrowDownCircleIcon from '@/components/Icons/ArrowDownCircleIcon.svelte';
 import CFImage from '@/components/CFImage/CFImage.astro';
+import PostThumbnail from '@/components/PostThumbnail/PostThumbnail.svelte';
 import css from '@/styles/Home.module.scss';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const allAlbums = await getCollection('albums');
+const albums = allAlbums
+  .filter((a) => a.data.published)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 4);
+
+const allPosts = await getCollection('blog-it');
+const posts = allPosts
+  .filter((p) => p.data.published)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
 ---
 
-<style>
-  @keyframes animateIn {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  #swipeIndicator {
-    animation: animateIn 1s ease-in-out;
-  }
-
-  [data-animate-on-scroll] {
-    opacity: 0;
-    transform: translateY(50px);
-    will-change: opacity, transform; /* Forza il repaint */
-  }
-
-  [data-animate-on-scroll].animate {
-    animation: animateIn 1s ease-in-out forwards;
-  }
-</style>
 <script
   src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
 ></script>
@@ -47,6 +33,7 @@ const t = useTranslations(lang);
   lang={lang}
 >
   <main>
+    <!-- ─── Hero ──────────────────────────────────────────────────────────── -->
     <section class={css.section} id='welcome'>
       <CFImage
         className={css.photoBackground}
@@ -55,116 +42,202 @@ const t = useTranslations(lang);
         widths={[480, 800, 1200, 2400]}
         sizes='100vw'
       />
-      <div class={`${css.cta} ${css.opaqueBackground}`}>
-        <div data-animate-on-scroll>
-          <h1 class={css.title}>
-            beautiful things <span class={css.accent}>don&apos;t ask</span> for attention
-          </h1>
-          <p class={css.quoteOrigin}>(The Secret Life of Walter Mitty, 2013)</p>
+      <div class={css.heroGradient}></div>
+      <div class={css.heroContainer}>
+        <div class={css.heroBottomContent} data-aos>
+          <div class={css.heroLeft}>
+            <p class={css.heroLabel}>{t('home.identity')}</p>
+            <h1 class={css.heroTitle}>
+              beautiful things <span class={css.accent}>don&apos;t ask</span> for
+              attention
+            </h1>
+          </div>
+          <div class={css.heroCaption}>
+            <strong>{t('home.heroCaptionLocation')}</strong>
+            {t('home.heroCaption')}
+          </div>
         </div>
-        <a class={css.swipeIndicator} href='#greetings' id='swipeIndicator'>
-          <ArrowDownCircleIcon size='32' addStyles={css.icon} />
+        <a class={css.scrollLineWrap} href='#intro'>
+          <div class={css.scrollLine}></div>
         </a>
       </div>
     </section>
 
-    <section class={css.section} id='greetings'>
-      <div class={css.content}>
-        <div class={css.text} data-animate-on-scroll>
-          <p>
-            Ciao! Io sono <span class={css.textAccent}>Andrea</span>
-          </p>
+    <!-- ─── Intro ─────────────────────────────────────────────────────────── -->
+    <section class={css.introSection} id='intro'>
+      <div class={css.introInner}>
+        <div data-aos>
+          <p class={css.sectionTag}>{t('home.introLabel')}</p>
+          <h2 class={css.introHeadline}>
+            Cerco le storie che i luoghi
+            <em>non vogliono dire</em>
+          </h2>
+          <div class={css.introBio}>
+            <p>{t('home.aboutText')}</p>
+            <p>{t('home.introBio2')}</p>
+          </div>
         </div>
-        <div class={css.photoWrapper} data-animate-on-scroll>
-          <CFImage
-            className={css.photo}
-            src='me/profile-pic.jpg'
-            alt='Una fotografia di me, Andrea.'
-            widths={[480, 800]}
-            sizes='100vw'
-          />
-        </div>
-        <div class={css.text} data-animate-on-scroll>
-          <p>Amo scattare fotografie che riflettano l'anima di un istante</p>
-        </div>
-      </div>
-    </section>
-
-    <section class={css.section} id='photo-cta'>
-      <CFImage
-        className={css.photoBackground}
-        src='paesaggi/paesaggio-lucano-1.jpg'
-        alt='Una fotografia fine-art di un tipico paesaggio collinare Lucano.'
-        widths={[480, 800, 1200, 1600]}
-        sizes='100vw'
-      />
-      <a href='/photo' class={css.cta}>
-        <TextHoverAnimation
-          addStyle={css.photoCta}
-          text='sfoglia le mie fotografie'
-        />
-      </a>
-    </section>
-
-    <section class={css.section} id='blog-introduction'>
-      <div class={css.content}>
-        <div class={css.text} data-animate-on-scroll>
-          <p>
-            La fotografia è la mia arte, il mio modo di mostrarvi come guardo il
-            mondo
-          </p>
-        </div>
-        <div class={css.photoWrapper} data-animate-on-scroll>
-          <CFImage
-            className={css.photo}
-            src='street/mercatino-bruna-vestito-appeso.jpg'
-            alt="Un uomo sosta dietro un abito appeso, dando l'impressione di indossarlo."
-            widths={[480, 800, 1200]}
-            sizes='100vw'
-          />
-        </div>
-        <div class={css.text} data-animate-on-scroll>
-          <p>
-            Il mio blog è il posto dove condivido i miei pensieri sulla
-            fotografia e altro ancora
-          </p>
+        <div class={css.introRight} data-aos>
+          <div class={css.profileImgWrap}>
+            <CFImage
+              className={css.profileImg}
+              src='me/profile-pic.jpg'
+              alt='Una fotografia di me, Andrea.'
+              widths={[480, 800]}
+              sizes='(max-width: 850px) 100vw, 45vw'
+            />
+          </div>
+          <p class={css.profileCaption}>{t('home.profileCaption')}</p>
         </div>
       </div>
     </section>
 
-    <section class={css.section} id='blog-cta'>
-      <CFImage
-        className={css.photoBackground}
-        src='paesaggi/craco-alba-lunare.jpg'
-        alt='La luna sorge, vista da Craco.'
-        widths={[480, 800, 1200, 1600]}
-        sizes='100vw'
-      />
-      <a href='/blog' class={`${css.cta} ${css.opaqueBackground}`}>
-        <TextHoverAnimation addStyle={css.photoCta} text='leggi il blog' />
-      </a>
+    <!-- ─── Reportage strip ───────────────────────────────────────────────── -->
+    <section class={css.reportageStrip} id='reportage'>
+      <div class={css.reportageInner}>
+        <div data-aos>
+          <p class={css.reportageQuote}>
+            &quot;Beautiful things don&apos;t ask for attention&quot;
+          </p>
+          <p class={css.reportageQuoteAttribution}>
+            — The Secret Life of Walter Mitty (2013)
+          </p>
+        </div>
+        <div data-aos>
+          <p class={css.reportageStatement}>{t('home.reportageStatement')}</p>
+          <div class={css.tagsList}>
+            <span class={css.tag}>Documentario</span>
+            <span class={css.tag}>Reportage</span>
+            <span class={css.tag}>Sud Italia</span>
+            <span class={css.tag}>Paesaggio umano</span>
+            <span class={css.tag}>Street</span>
+            <span class={css.tag}>Natura</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Photography ───────────────────────────────────────────────────── -->
+    <section class={css.photoSection} id='photography'>
+      <div class={css.sectionHeader} data-aos>
+        <h2 class={css.sectionTitle}>Fotografie recenti</h2>
+        <a href='/photo' class={css.viewAllLink}>{t('home.viewAll')}</a>
+      </div>
+      <div class={css.photoGridNew} data-aos>
+        {
+          albums[0] && (
+            <a
+              href={`/photo/${albums[0].id}`}
+              class={`${css.photoCardNew} ${css.photoCardTall}`}
+            >
+              <CFImage
+                className={css.photoCardNewImg}
+                src={albums[0].data.cover}
+                alt={albums[0].data.coverAlt}
+                widths={[480, 800, 1200]}
+                sizes='(max-width: 768px) 100vw, 50vw'
+              />
+              <div class={css.photoCardNewOverlay}>
+                <span class={css.photoCardLabel}>{albums[0].data.title}</span>
+              </div>
+            </a>
+          )
+        }
+        {
+          albums[1] && (
+            <a href={`/photo/${albums[1].id}`} class={css.photoCardNew}>
+              <CFImage
+                className={css.photoCardNewImg}
+                src={albums[1].data.cover}
+                alt={albums[1].data.coverAlt}
+                widths={[480, 800]}
+                sizes='(max-width: 768px) 50vw, 25vw'
+              />
+              <div class={css.photoCardNewOverlay}>
+                <span class={css.photoCardLabel}>{albums[1].data.title}</span>
+              </div>
+            </a>
+          )
+        }
+        {
+          albums[2] && (
+            <a href={`/photo/${albums[2].id}`} class={css.photoCardNew}>
+              <CFImage
+                className={css.photoCardNewImg}
+                src={albums[2].data.cover}
+                alt={albums[2].data.coverAlt}
+                widths={[480, 800]}
+                sizes='(max-width: 768px) 50vw, 25vw'
+              />
+              <div class={css.photoCardNewOverlay}>
+                <span class={css.photoCardLabel}>{albums[2].data.title}</span>
+              </div>
+            </a>
+          )
+        }
+        {
+          albums[3] && (
+            <a href={`/photo/${albums[3].id}`} class={css.photoCardNew}>
+              <CFImage
+                className={css.photoCardNewImg}
+                src={albums[3].data.cover}
+                alt={albums[3].data.coverAlt}
+                widths={[480, 800]}
+                sizes='(max-width: 768px) 50vw, 25vw'
+              />
+              <div class={css.photoCardNewOverlay}>
+                <span class={css.photoCardLabel}>{albums[3].data.title}</span>
+              </div>
+            </a>
+          )
+        }
+        <a href='/photo' class={css.photoCardCtaCell}>
+          <span class={css.photoCardCtaText}>
+            Vedi<br />tutti i<br />progetti →
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── Blog ──────────────────────────────────────────────────────────── -->
+    <section class={css.blogSection} id='blog'>
+      <div class={css.blogInner}>
+        <div class={css.sectionHeader} data-aos>
+          <h2 class={css.sectionTitle}>Dal blog</h2>
+          <a href='/blog' class={css.viewAllLink}>{t('home.viewAllBlog')}</a>
+        </div>
+        <div class={css.blogGridEqual} data-aos>
+          {posts.map((post) => <PostThumbnail post={post} />)}
+        </div>
+      </div>
     </section>
   </main>
 
-  <script>
-    const elements = document.querySelectorAll('[data-animate-on-scroll]');
-    const observerOptions = {
-      threshold: 0.1,
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
+  <script is:inline>
+    (function () {
+      function setup() {
+        var elements = document.querySelectorAll('[data-aos]');
+        var observer = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.07 }
+        );
+        elements.forEach(function (el) {
+          observer.observe(el);
         });
-      }, observerOptions);
+      }
 
-      elements.forEach(function (element) {
-        observer.observe(element);
-      });
-    });
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+      } else {
+        setup();
+      }
+    })();
   </script>
 </BaseLayout>

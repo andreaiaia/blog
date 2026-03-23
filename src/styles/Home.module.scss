@@ -1,12 +1,21 @@
 @use './_globals.module' as *;
 
+// ─── Base ──────────────────────────────────────────────────────────────────
+
 .section {
   position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--background);
+}
+
+.heroContainer {
+  position: absolute;
+  inset: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .photoBackground {
@@ -19,107 +28,8 @@
   object-position: center;
 }
 
-.fixToBottom {
-  object-position: bottom;
-}
-
-.cta {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
-  gap: 3rem;
-
-  .text {
-    flex: 1;
-    max-width: 30%;
-    text-align: center;
-    font-size: 1.8rem;
-    line-height: 2;
-  }
-
-  .photoWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .photo {
-    width: auto;
-    height: auto;
-    max-width: 500px;
-    object-fit: cover;
-  }
-
-  @media screen and (max-width: 1080px) {
-    flex-direction: column;
-    height: 100%;
-    gap: 0;
-
-    .text {
-      max-width: 100%;
-      margin: 3rem 0;
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-    }
-
-    .photo {
-      max-width: unset;
-      max-height: 450px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .photo {
-      max-width: 300px;
-    }
-  }
-}
-
-.opaqueBackground {
-  background-color: var(--background-opaque);
-}
-
 .accent {
   color: var(--primary);
-}
-
-.textAccent {
-  color: var(--black);
-  background-color: var(--primary);
-  font-weight: bold;
-  padding: 0 8px;
-  line-height: 1.6;
-}
-
-.title {
-  color: var(--white);
-  font-family: 'DMSerifDisplay';
-  font-size: 3rem;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-.quoteOrigin {
-  color: var(--white);
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  text-align: center;
-  padding: 0 1rem;
 }
 
 .photoCta {
@@ -127,6 +37,600 @@
   font-family: 'DMSerifDisplay';
   font-size: 3rem;
 }
+
+// ─── Hero ──────────────────────────────────────────────────────────────────
+
+.heroGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 14, 12, 0.88) 0%,
+    rgba(15, 14, 12, 0.22) 55%,
+    rgba(15, 14, 12, 0.08) 100%
+  );
+  z-index: 1;
+}
+
+.heroBottomContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0 2.5rem 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-end;
+  gap: 2rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem 5rem;
+  }
+}
+
+.heroLabel {
+  font-family: 'PlusJakartaSans';
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--primary);
+    flex-shrink: 0;
+  }
+}
+
+.heroTitle {
+  font-family: 'DMSerifDisplay';
+  font-size: clamp(2.6rem, 6vw, 5.5rem);
+  font-weight: normal;
+  line-height: 1.05;
+  color: var(--white);
+  margin: 0 0 0.8rem;
+}
+
+.heroQuoteOrigin {
+  font-family: 'PlusJakartaSans';
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: rgba(250, 248, 244, 0.42);
+  margin: 0;
+}
+
+.heroCaption {
+  font-family: 'PlusJakartaSans';
+  font-weight: 300;
+  font-size: 0.63rem;
+  color: rgba(250, 248, 244, 0.38);
+  letter-spacing: 0.1em;
+  line-height: 1.75;
+  text-align: right;
+  max-width: 18ch;
+
+  strong {
+    display: block;
+    color: rgba(250, 248, 244, 0.62);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.58rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scrollLineWrap {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: block;
+  text-decoration: none;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 3rem;
+  background: rgba(250, 248, 244, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    animation: scrollDown 1.8s ease-in-out infinite;
+  }
+}
+
+// ─── Intro / About ─────────────────────────────────────────────────────────
+
+.introSection {
+  background-color: var(--background);
+  color: var(--white);
+}
+
+.introInner {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 5rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+
+  @media screen and (max-width: 850px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 5rem 2rem;
+  }
+}
+
+.sectionTag {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--light-shade);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  &::before {
+    content: attr(data-num);
+    color: var(--primary);
+  }
+}
+
+.introHeadline {
+  font-family: 'DMSerifDisplay';
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: normal;
+  line-height: 1.15;
+  margin: 0 0 2rem;
+
+  em {
+    font-style: italic;
+    color: var(--primary);
+  }
+}
+
+.introBio {
+  font-family: 'PlusJakartaSans';
+  font-weight: 300;
+  font-size: 0.97rem;
+  line-height: 1.82;
+
+  p + p {
+    margin-top: 1.2rem;
+  }
+}
+
+.introRight {
+  @media screen and (max-width: 850px) {
+    order: -1;
+  }
+}
+
+.profileImgWrap {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 50%;
+    height: 50%;
+    border: 1px solid var(--primary-opaque);
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+.profileImg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.profileCaption {
+  margin-top: 1rem;
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--light-shade);
+  text-transform: uppercase;
+}
+
+// ─── Reportage strip ───────────────────────────────────────────────────────
+
+.reportageStrip {
+  background-color: var(--white);
+  padding: 7rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: 'REPORTAGE';
+    position: absolute;
+    right: -3rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'DMSerifDisplay';
+    font-size: 9rem;
+    color: rgba(0, 0, 0, 0.035);
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 0;
+  }
+}
+
+.reportageInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: 850px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.reportageQuote {
+  font-family: 'IBMPlexSerif';
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: normal;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+.reportageQuoteAttribution {
+  font-family: 'PlusJakartaSans';
+  font-size: rem-calc(12px);
+  margin-top: 1rem;
+}
+
+.reportageStatement {
+  font-family: 'PlusJakartaSans';
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin: 0 0 2.5rem;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: 'PlusJakartaSans';
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background-color: var(--primary);
+  border: 1px solid var(--primary-opaque);
+  padding: 0.3rem 0.7rem;
+  white-space: nowrap;
+}
+
+.sectionTitle {
+  font-family: 'DMSerifDisplay';
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0;
+
+  em {
+    font-style: italic;
+    color: var(--primary);
+  }
+}
+
+.viewAllLink {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.63rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--shade);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+
+  &::after {
+    content: '→';
+  }
+
+  &:hover {
+    color: var(--black);
+  }
+}
+
+// ─── Photography section (light) ───────────────────────────────────────────
+
+.photoSection {
+  background-color: var(--background);
+  padding: 7rem 2.5rem;
+
+  .sectionTitle {
+    color: var(--white);
+  }
+
+  .viewAllLink {
+    color: var(--light-shade);
+
+    &:hover {
+      color: var(--white);
+    }
+  }
+}
+
+.sectionHeader {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.photoGridNew {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 280px 220px;
+  gap: 0.7rem;
+
+  @media screen and (max-width: 1080px) {
+    grid-template-rows: 240px 180px;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 160px 160px;
+  }
+}
+
+.photoCardNew {
+  position: relative;
+  overflow: hidden;
+  background: var(--shade);
+  text-decoration: none;
+  display: block;
+
+  &:hover .photoCardNewImg {
+    transform: scale(1.04);
+  }
+
+  &:hover .photoCardNewOverlay {
+    opacity: 1;
+  }
+}
+
+.photoCardTall {
+  grid-row: 1 / 3;
+
+  @media screen and (max-width: 768px) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+}
+
+.photoCardNewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.photoCardNewOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(to top, rgba(15, 14, 12, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.photoCardLabel {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.85);
+}
+
+.photoCardCtaCell {
+  background: var(--shade);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.25s;
+
+  &:hover {
+    background: hsl(0, 0%, 5%);
+  }
+
+  &:hover .photoCardCtaText {
+    color: var(--shadow);
+  }
+}
+
+.photoCardCtaText {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  text-align: center;
+  line-height: 1.8;
+  transition: color 0.2s;
+}
+
+// ─── Blog section (light) ──────────────────────────────────────────────────
+
+.blogSection {
+  background-color: var(--white);
+  padding: 7rem 2.5rem;
+}
+
+.blogInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogGridEqual {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blogCardEq {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  padding: 2.2rem 2rem 2.2rem 0;
+  border-right: 1px solid var(--primary-tint);
+
+  &:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  &:not(:first-child) {
+    padding-left: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1.8rem 0;
+    border-right: none;
+    border-bottom: 1px solid var(--primary-tint);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:not(:first-child) {
+      padding-left: 0;
+    }
+  }
+}
+
+.blogCardEqImgWrap {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.blogCardEqImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+
+  .blogCardEq:hover & {
+    transform: scale(1.03);
+  }
+}
+
+.blogCardEqMeta {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--shade);
+  margin-bottom: 0.6rem;
+}
+
+.blogCardEqTitle {
+  font-family: 'DMSerifDisplay';
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+
+  .blogCardEq:hover & {
+    color: var(--primary);
+  }
+}
+
+.blogCardEqDesc {
+  font-family: 'IBMPlexSerif';
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--shade);
+  line-height: 1.65;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  flex: 1;
+}
+
+// ─── Notfound (keep) ───────────────────────────────────────────────────────
 
 .notFound {
   position: absolute;
@@ -157,18 +661,5 @@
       font-size: 2rem;
       max-width: 15ch;
     }
-  }
-}
-
-.swipeIndicator {
-  position: absolute;
-  bottom: 64px;
-
-  .icon {
-    color: var(--black);
-  }
-
-  @media screen and (max-width: 768px) {
-    bottom: 128px;
   }
 }

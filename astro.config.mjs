@@ -8,6 +8,8 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 
 import icon from 'astro-icon';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
@@ -20,9 +22,7 @@ export default defineConfig({
     }),
   ],
   output: 'static',
-  adapter: cloudflare({
-    imageService: 'cloudflare',
-  }),
+  adapter: isProd ? cloudflare({ imageService: 'cloudflare' }) : undefined,
   i18n: {
     defaultLocale: 'it',
     locales: ['it', 'en'],
