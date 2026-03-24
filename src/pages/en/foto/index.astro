@@ -38,7 +38,9 @@ const row3 = albums.slice(4);
           },
           { threshold: 0.06 }
         );
-        els.forEach(function (el) { observer.observe(el); });
+        els.forEach(function (el) {
+          observer.observe(el);
+        });
       }
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', setup);
@@ -55,85 +57,101 @@ const row3 = albums.slice(4);
     </div>
 
     <div class={css.grid}>
-
-      {row1.length > 0 && (
-        <div class={`${css.row} ${css.row21}`}>
-          {row1.map(({ id, data }) => (
-            <a class={css.card} href={`/en/photo/${id}`} data-aos>
-              <div class={css.cardThumb}>
-                <CFImage
-                  src={data.cover}
-                  alt={data.coverAlt}
-                  widths={[480, 800, 1200]}
-                  sizes='(max-width: 480px) 100vw, (max-width: 720px) 50vw, 33vw'
-                />
-              </div>
-              <div class={css.cardBody}>
-                {data.category && <span class={css.cardTag}>{data.category}</span>}
-                <div class={css.cardMeta}>
-                  <h2 class={css.cardName}>{data.title}</h2>
-                  <span class={css.cardArrow}>↗</span>
+      {
+        row1.length > 0 && (
+          <div class={`${css.row} ${css.row21}`}>
+            {row1.map(({ id, data }) => (
+              <a class={css.card} href={`/en/photo/${id}`} data-aos>
+                <div class={css.cardThumb}>
+                  <CFImage
+                    src={data.cover}
+                    alt={data.coverAlt}
+                    widths={[480, 800, 1200]}
+                    sizes='(max-width: 480px) 100vw, (max-width: 720px) 50vw, 33vw'
+                  />
                 </div>
-                {data.description && <p class={css.cardDesc}>{data.description}</p>}
-                <div class={css.cardLine} />
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
-
-      {row2.length > 0 && (
-        <div class={`${css.row} ${css.row12}`}>
-          {row2.map(({ id, data }) => (
-            <a class={css.card} href={`/en/photo/${id}`} data-aos>
-              <div class={css.cardThumb}>
-                <CFImage
-                  src={data.cover}
-                  alt={data.coverAlt}
-                  widths={[480, 800, 1200]}
-                  sizes='(max-width: 480px) 100vw, (max-width: 720px) 50vw, 33vw'
-                />
-              </div>
-              <div class={css.cardBody}>
-                {data.category && <span class={css.cardTag}>{data.category}</span>}
-                <div class={css.cardMeta}>
-                  <h2 class={css.cardName}>{data.title}</h2>
-                  <span class={css.cardArrow}>↗</span>
+                <div class={css.cardBody}>
+                  {data.category && (
+                    <span class={css.cardTag}>{data.category}</span>
+                  )}
+                  <div class={css.cardMeta}>
+                    <h2 class={css.cardName}>{data.title}</h2>
+                    <span class={css.cardArrow}>↗</span>
+                  </div>
+                  {data.description && (
+                    <p class={css.cardDesc}>{data.description}</p>
+                  )}
+                  <div class={css.cardLine} />
                 </div>
-                {data.description && <p class={css.cardDesc}>{data.description}</p>}
-                <div class={css.cardLine} />
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
+              </a>
+            ))}
+          </div>
+        )
+      }
 
-      {row3.length > 0 && (
-        <div class={`${css.row} ${css.rowEqual}`}>
-          {row3.map(({ id, data }) => (
-            <a class={css.card} href={`/en/photo/${id}`} data-aos>
-              <div class={css.cardThumb}>
-                <CFImage
-                  src={data.cover}
-                  alt={data.coverAlt}
-                  widths={[360, 480]}
-                  sizes='(max-width: 480px) 50vw, 25vw'
-                />
-              </div>
-              <div class={css.cardBody}>
-                {data.category && <span class={css.cardTag}>{data.category}</span>}
-                <div class={css.cardMeta}>
-                  <h2 class={css.cardName}>{data.title}</h2>
-                  <span class={css.cardArrow}>↗</span>
+      {
+        row2.length > 0 && (
+          <div class={`${css.row} ${css.row12}`}>
+            {row2.map(({ id, data }) => (
+              <a class={css.card} href={`/en/photo/${id}`} data-aos>
+                <div class={css.cardThumb}>
+                  <CFImage
+                    src={data.cover}
+                    alt={data.coverAlt}
+                    widths={[480, 800, 1200]}
+                    sizes='(max-width: 480px) 100vw, (max-width: 720px) 50vw, 33vw'
+                  />
                 </div>
-                {data.description && <p class={css.cardDesc}>{data.description}</p>}
-                <div class={css.cardLine} />
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
+                <div class={css.cardBody}>
+                  {data.category && (
+                    <span class={css.cardTag}>{data.category}</span>
+                  )}
+                  <div class={css.cardMeta}>
+                    <h2 class={css.cardName}>{data.title}</h2>
+                    <span class={css.cardArrow}>↗</span>
+                  </div>
+                  {data.description && (
+                    <p class={css.cardDesc}>{data.description}</p>
+                  )}
+                  <div class={css.cardLine} />
+                </div>
+              </a>
+            ))}
+          </div>
+        )
+      }
 
+      {
+        row3.length > 0 && (
+          <div class={`${css.row} ${css.row21}`}>
+            {row3.map(({ id, data }) => (
+              <a class={css.card} href={`/en/photo/${id}`} data-aos>
+                <div class={css.cardThumb}>
+                  <CFImage
+                    src={data.cover}
+                    alt={data.coverAlt}
+                    widths={[360, 480]}
+                    sizes='(max-width: 480px) 50vw, 25vw'
+                  />
+                </div>
+                <div class={css.cardBody}>
+                  {data.category && (
+                    <span class={css.cardTag}>{data.category}</span>
+                  )}
+                  <div class={css.cardMeta}>
+                    <h2 class={css.cardName}>{data.title}</h2>
+                    <span class={css.cardArrow}>↗</span>
+                  </div>
+                  {data.description && (
+                    <p class={css.cardDesc}>{data.description}</p>
+                  )}
+                  <div class={css.cardLine} />
+                </div>
+              </a>
+            ))}
+          </div>
+        )
+      }
     </div>
   </main>
 </BaseLayout>
