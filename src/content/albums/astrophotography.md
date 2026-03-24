@@ -5,6 +5,8 @@ date: '2024-10-01'
 published: true
 cover: 'astro/pleiades.jpg'
 coverAlt: 'Messier 45 - Pleiades.'
+location: 'Basilicata, IT'
+category: 'Astrofotografia'
 images:
   - file: 'astro/orion-nebula.jpg'
     alt: 'Messier 42 - The Orion Nebula.'

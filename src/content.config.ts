@@ -39,6 +39,8 @@ const albums = defineCollection({
     published: z.boolean(),
     cover: z.string(),
     coverAlt: z.string(),
+    location: z.string().optional(),
+    category: z.string().optional(),
     images: z.array(
       z.object({
         file: z.string(),

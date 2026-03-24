@@ -5,6 +5,8 @@ date: '2024-12-01'
 published: true
 cover: 'napapiiri/aurora-6.jpg'
 coverAlt: 'The northen lights above a cozy cottage.'
+location: 'Finlandia'
+category: 'Paesaggio · Artico'
 images:
   - file: 'napapiiri/barca.jpg'
     alt: 'Snowy boat near the shore of a frozen lake.'

@@ -31,6 +31,11 @@ export const ui = {
     'home.introLabel': 'Chi sono',
     'home.viewAll': 'Vedi tutto',
     'home.viewAllBlog': 'Tutti gli articoli',
+    'photo.mastheadBrand': 'Portfolio',
+    'photo.metaLocation': 'Luogo',
+    'photo.metaYear': 'Anno',
+    'photo.metaPhotos': 'Foto',
+    'photo.tickerCta': 'Chi sono',
   },
   en: {
     'site.title': 'Andrea',
@@ -58,6 +63,11 @@ export const ui = {
     'home.introLabel': 'About me',
     'home.viewAll': 'View all',
     'home.viewAllBlog': 'All articles',
+    'photo.mastheadBrand': 'Portfolios',
+    'photo.metaLocation': 'Location',
+    'photo.metaYear': 'Year',
+    'photo.metaPhotos': 'Photos',
+    'photo.tickerCta': 'About me',
   },
 } as const;
 

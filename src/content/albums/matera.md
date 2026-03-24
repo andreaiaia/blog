@@ -5,6 +5,8 @@ date: '2024-10-02'
 published: true
 cover: 'matera/barisano-2.jpg'
 coverAlt: 'A scene in the famous Sassi of Matera.'
+location: 'Matera, IT'
+category: 'Urban · Basilicata'
 images:
   - file: 'matera/costellazione-sassi.jpg'
     alt: 'The moon setting after the sun behind the Sassi of Matera.'

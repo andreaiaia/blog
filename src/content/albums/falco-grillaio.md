@@ -5,6 +5,8 @@ date: '2024-10-05'
 published: true
 cover: 'grillaio/nella-gravina.jpg'
 coverAlt: 'A Lesser Kestrel Flying in Matera.'
+location: 'Matera, IT'
+category: 'Wildlife · Basilicata'
 images:
   - file: 'grillaio/nella-gravina.jpg'
     alt: 'A Lesser Kestrel flying in the Murgia Materana'
