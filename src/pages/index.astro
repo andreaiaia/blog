@@ -48,8 +48,7 @@ const posts = allPosts
           <div class={css.heroLeft}>
             <p class={css.heroLabel}>{t('home.identity')}</p>
             <h1 class={css.heroTitle}>
-              beautiful things <span class={css.accent}>don&apos;t ask</span> for
-              attention
+              il mondo <br /><em>mi detta</em>
             </h1>
           </div>
           <div class={css.heroCaption}>
@@ -69,12 +68,27 @@ const posts = allPosts
         <div data-aos>
           <p class={css.sectionTag}>{t('home.introLabel')}</p>
           <h2 class={css.introHeadline}>
-            Cerco le storie che i luoghi
-            <em>non vogliono dire</em>
+            Fotografo quello che
+            <em>mi colpisce</em>
           </h2>
           <div class={css.introBio}>
-            <p>{t('home.aboutText')}</p>
-            <p>{t('home.introBio2')}</p>
+            <p>
+              <em>
+                Fotografo quello che mi arriva — un volto, una luce, un momento
+                che non si ripeterà.
+              </em>
+            </p>
+            <p>
+              <em>
+                Non cerco la storia: la storia mi trova, e io provo a tenerla
+                ferma.
+              </em>
+            </p>
+            <p>
+              Dal 2012 giro con una macchina fotografica. Ho imparato guardando,
+              leggendo, sbagliando.
+            </p>
+            <p>Questo blog è il diario di quello che vedo.</p>
           </div>
         </div>
         <div class={css.introRight} data-aos>
@@ -87,7 +101,6 @@ const posts = allPosts
               sizes='(max-width: 850px) 100vw, 45vw'
             />
           </div>
-          <p class={css.profileCaption}>{t('home.profileCaption')}</p>
         </div>
       </div>
     </section>
@@ -104,7 +117,11 @@ const posts = allPosts
           </p>
         </div>
         <div data-aos>
-          <p class={css.reportageStatement}>{t('home.reportageStatement')}</p>
+          <p class={css.reportageStatement}>
+            Mi interessa la fotografia come atto di testimonianza. Il reportage
+            non è inseguire l'eccezionale — è avere la pazienza di aspettare che
+            l'ordinario si riveli.
+          </p>
           <div class={css.tagsList}>
             <span class={css.tag}>Documentario</span>
             <span class={css.tag}>Reportage</span>
@@ -120,7 +137,7 @@ const posts = allPosts
     <!-- ─── Photography ───────────────────────────────────────────────────── -->
     <section class={css.photoSection} id='photography'>
       <div class={css.sectionHeader} data-aos>
-        <h2 class={css.sectionTitle}>Fotografie recenti</h2>
+        <h2 class={css.sectionTitle}>Portfolio</h2>
         <a href='/photo' class={css.viewAllLink}>{t('home.viewAll')}</a>
       </div>
       <div class={css.photoGridNew} data-aos>

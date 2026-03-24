@@ -48,8 +48,8 @@ const posts = allPosts
           <div class={css.heroLeft}>
             <p class={css.heroLabel}>{t('home.identity')}</p>
             <h1 class={css.heroTitle}>
-              beautiful things <span class={css.accent}>don&apos;t ask</span> for
-              attention
+              The world speaks <br />
+              <em>I listen</em>
             </h1>
           </div>
           <div class={css.heroCaption}>
@@ -69,12 +69,26 @@ const posts = allPosts
         <div data-aos>
           <p class={css.sectionTag} data-num='01'>{t('home.introLabel')}</p>
           <h2 class={css.introHeadline}>
-            I look for the stories
-            <em>places don&apos;t want to tell</em>
+            I photograph what <em>moves me</em>
           </h2>
           <div class={css.introBio}>
-            <p>{t('home.aboutText')}</p>
-            <p>{t('home.introBio2')}</p>
+            <p>
+              <em>
+                I photograph what reaches me — a face, a light, a moment that
+                won't come again.
+              </em>
+            </p>
+            <p>
+              <em>
+                I don't look for the story: the story finds me, and I try to
+                hold it still.
+              </em>
+            </p>
+            <p>
+              Since 2012 I've been walking around with a camera. I've learned by
+              looking, reading, and getting things wrong. This blog is the
+              notebook of what I've seen.
+            </p>
           </div>
         </div>
         <div class={css.introRight} data-aos>
@@ -87,7 +101,6 @@ const posts = allPosts
               sizes='(max-width: 850px) 100vw, 45vw'
             />
           </div>
-          <p class={css.profileCaption}>{t('home.profileCaption')}</p>
         </div>
       </div>
     </section>
@@ -104,7 +117,11 @@ const posts = allPosts
           </p>
         </div>
         <div data-aos>
-          <p class={css.reportageStatement}>{t('home.reportageStatement')}</p>
+          <p class={css.reportageStatement}>
+            I'm interested in photography as an act of witness. Reportage isn't
+            chasing the extraordinary — it's having the patience to wait for the
+            ordinary to reveal itself.
+          </p>
           <div class={css.tagsList}>
             <span class={css.tag}>Documentary</span>
             <span class={css.tag}>Reportage</span>
@@ -120,7 +137,7 @@ const posts = allPosts
     <!-- ─── Photography ───────────────────────────────────────────────────── -->
     <section class={css.photoSection} id='photography'>
       <div class={css.sectionHeader} data-aos>
-        <h2 class={css.sectionTitle}>Recent photography</h2>
+        <h2 class={css.sectionTitle}>Portfolios</h2>
         <a href='/en/photo' class={css.viewAllLink}>{t('home.viewAll')}</a>
       </div>
       <div class={css.photoGridNew} data-aos>
@@ -200,7 +217,7 @@ const posts = allPosts
     </section>
 
     <!-- ─── Blog ──────────────────────────────────────────────────────────── -->
-    <section class={css.blogSectionLight} id='blog'>
+    <section class={css.blogSection} id='blog'>
       <div class={css.blogInner}>
         <div class={css.sectionHeader} data-aos>
           <h2 class={css.sectionTitle}>From the blog</h2>

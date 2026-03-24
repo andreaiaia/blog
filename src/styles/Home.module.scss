@@ -99,6 +99,11 @@
   line-height: 1.05;
   color: var(--white);
   margin: 0 0 0.8rem;
+
+  em {
+    font-family: 'IBMPlexSerif';
+    font-weight: 400;
+  }
 }
 
 .heroQuoteOrigin {
@@ -228,10 +233,9 @@
 }
 
 .introBio {
-  font-family: 'PlusJakartaSans';
   font-weight: 300;
-  font-size: 0.97rem;
-  line-height: 1.82;
+  font-size: 1.1rem;
+  line-height: 1.8;
 
   p + p {
     margin-top: 1.2rem;
@@ -267,16 +271,6 @@
   object-fit: cover;
   position: relative;
   z-index: 1;
-}
-
-.profileCaption {
-  margin-top: 1rem;
-  font-family: 'PlusJakartaSans';
-  font-weight: 400;
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  color: var(--light-shade);
-  text-transform: uppercase;
 }
 
 // ─── Reportage strip ───────────────────────────────────────────────────────
@@ -506,7 +500,7 @@
   }
 
   &:hover .photoCardCtaText {
-    color: var(--shadow);
+    color: var(--white);
   }
 }
 
@@ -516,7 +510,7 @@
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
   line-height: 1.8;
   transition: color 0.2s;
