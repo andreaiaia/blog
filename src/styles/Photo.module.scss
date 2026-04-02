@@ -1,196 +1,145 @@
 @use './_globals.module' as *;
 
 .page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 3rem 2rem 6rem;
+  background-color: var(--white);
+  padding: 0 0 6rem;
 }
 
 // ─── Masthead ───────────────────────────────────────────────────────────────
 
 .masthead {
+  @include container;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid var(--background);
-  padding-bottom: 0.6rem;
-  margin-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.15);
+  margin-bottom: 3px;
+}
+
+.mastheadLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .mastheadBrand {
   font-family: 'DMSerifDisplay';
-  font-size: 11px;
-  letter-spacing: 0.3em;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--shade);
+  color: var(--background);
   font-style: normal;
+  line-height: 1;
 }
 
-.mastheadLabel {
-  font-family: 'PlusJakartaSans';
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+.mastheadTagline {
+  font-family: 'IBMPlexSerif';
+  font-size: 0.82rem;
+  font-style: italic;
   color: var(--shade);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.mastheadCount {
+  font-family: 'DMSerifDisplay';
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  line-height: 1;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+
+  @include smartphone {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+}
+
+// ─── Grid ───────────────────────────────────────────────────────────────────
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+}
+
+// ─── Layout classes ─────────────────────────────────────────────────────────
+// Each class defines the column span and row height.
+// twoThirds and oneThird share the same height for visual row consistency.
+
+.entryFull {
+  grid-column: 1 / -1;
+  height: clamp(300px, 55vh, 650px);
+
+  @include smartphone {
+    height: clamp(220px, 60vw, 380px);
+  }
+}
+
+.entryHalf {
+  grid-column: span 3;
+  height: clamp(250px, 45vh, 520px);
+
+  @include smartphone {
+    grid-column: 1 / -1;
+    height: clamp(220px, 60vw, 380px);
+  }
+}
+
+.entryTwoThirds {
+  grid-column: span 4;
+  height: clamp(270px, 50vh, 560px);
+
+  @include smartphone {
+    grid-column: 1 / -1;
+    height: clamp(220px, 60vw, 380px);
+  }
+}
+
+.entryOneThird {
+  grid-column: span 2;
+  height: clamp(270px, 50vh, 560px);
+
+  @include smartphone {
+    grid-column: 1 / -1;
+    height: clamp(220px, 60vw, 380px);
+  }
 }
 
 // ─── Entry ──────────────────────────────────────────────────────────────────
 
 .entry {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 0 2.5rem;
-  align-items: center;
-  padding: 2.75rem 0;
-  border-bottom: 0.5px solid rgba(26, 25, 22, 0.1);
-  cursor: pointer;
+  display: block;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.25s ease;
+  cursor: pointer;
 
-  &:first-of-type {
-    border-top: 0.5px solid rgba(26, 25, 22, 0.1);
-  }
+  @include laptop {
+    &:hover {
+      .entryFrame img {
+        transform: scale(1.04);
+      }
 
-  &:hover {
-    border-bottom-color: rgba(26, 25, 22, 0.3);
+      .entryOverlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 20%,
+          rgba(0, 0, 0, 0.82) 65%,
+          rgba(0, 0, 0, 0.95) 100%
+        );
+      }
 
-    .entryFrame img {
-      transform: scale(1.04);
+      .entryTitle {
+        font-style: italic;
+      }
+
+      .entryArrow {
+        opacity: 1;
+        transform: translate(3px, -3px);
+      }
     }
-
-    .entryTitle {
-      font-style: italic;
-    }
-
-    .entryArrow {
-      opacity: 1;
-      transform: translate(2px, -2px);
-    }
-
-    .ghost {
-      opacity: 0.07;
-    }
   }
-
-  @media (max-width: 760px) {
-    grid-template-columns: 2.5rem 1fr;
-    grid-template-rows: auto auto;
-    gap: 0 1.5rem;
-    align-items: start;
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.entryNum {
-  font-family: 'IBMPlexSerif';
-  font-size: 13px;
-  color: var(--shade);
-  letter-spacing: 0.05em;
-  align-self: start;
-  padding-top: 7px;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-}
-
-.ghost {
-  font-family: 'DMSerifDisplay';
-  font-size: clamp(100px, 14vw, 148px);
-  font-weight: 700;
-  line-height: 1;
-  color: var(--background);
-  opacity: 0.04;
-  position: absolute;
-  bottom: -0.1em;
-  left: -0.04em;
-  letter-spacing: -0.04em;
-  user-select: none;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-
-  @media (max-width: 680px) {
-    font-size: clamp(72px, 18vw, 110px);
-  }
-}
-
-.entryContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.entryCategory {
-  font-family: 'PlusJakartaSans';
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--shade);
-}
-
-.entryTitle {
-  font-family: 'DMSerifDisplay';
-  font-size: 44px;
-  font-weight: normal;
-  line-height: 0.93;
-  color: var(--background);
-  letter-spacing: -0.015em;
-  border-left: none;
-  padding-left: 0;
-  margin: 0;
-
-  @media (max-width: 760px) {
-    font-size: 32px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 28px;
-  }
-}
-
-.entrySubtitle {
-  font-family: 'IBMPlexSerif';
-  font-size: 16px;
-  font-style: italic;
-  color: var(--shade);
-  line-height: 1.5;
-  max-width: 40ch;
-  margin: 0;
-
-  @media (max-width: 760px) {
-    font-size: 14px;
-  }
-}
-
-.entryMeta {
-  display: flex;
-  gap: 2rem;
-  padding-top: 0.1rem;
-}
-
-.metaItem {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.metaLabel {
-  font-family: 'PlusJakartaSans';
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--shade);
-}
-
-.metaValue {
-  font-family: 'PlusJakartaSans';
-  font-size: 12px;
-  color: var(--shade);
-  letter-spacing: 0.03em;
 }
 
 // ─── Photo frame ────────────────────────────────────────────────────────────
@@ -199,8 +148,8 @@
   position: relative;
   overflow: hidden;
   background: var(--background);
-  aspect-ratio: 3 / 2;
-  align-self: center;
+  width: 100%;
+  height: 100%;
 
   img {
     width: 100%;
@@ -210,42 +159,162 @@
     display: block;
     transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+}
 
-  @media (max-width: 760px) {
-    grid-column: 2;
-    grid-row: 2;
-    margin-top: 1.5rem;
-    aspect-ratio: 16 / 9;
+// ─── Overlay ────────────────────────────────────────────────────────────────
+
+.entryOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem 1.4rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.72) 70%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+.entryTop {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entryCategory {
+  font-family: 'PlusJakartaSans';
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.3em 0.7em;
+  backdrop-filter: blur(4px);
+}
+
+.entryNum {
+  font-family: 'DMSerifDisplay';
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.06);
+  letter-spacing: -0.04em;
+  user-select: none;
+  pointer-events: none;
+  margin-left: auto;
+}
+
+.entryBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.entryTitle {
+  font-family: 'DMSerifDisplay';
+  font-weight: normal;
+  line-height: 0.95;
+  color: var(--white);
+  margin: 0;
+  letter-spacing: -0.015em;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+
+  .entryFull & {
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
   }
 
-  @media (max-width: 480px) {
-    grid-column: 1;
-    margin-top: 1.25rem;
-    aspect-ratio: 3 / 2;
+  .entryHalf & {
+    font-size: clamp(1.4rem, 2vw, 2rem);
   }
+
+  .entryTwoThirds & {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+  }
+
+  .entryOneThird & {
+    font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  }
+
+  @include smartphone {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+}
+
+.entrySubtitle {
+  font-family: 'IBMPlexSerif';
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(250, 248, 244, 0.72);
+  line-height: 1.45;
+  margin: 0;
+
+  .entryHalf & {
+    display: none;
+  }
+
+  .entryOneThird & {
+    display: none;
+  }
+
+  @include smartphone {
+    display: none;
+  }
+}
+
+.entryMeta {
+  display: flex;
+  gap: 1.4rem;
+  padding-top: 0.2rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaLabel {
+  font-family: 'PlusJakartaSans';
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.5);
+}
+
+.metaValue {
+  font-family: 'PlusJakartaSans';
+  font-size: 0.68rem;
+  color: rgba(250, 248, 244, 0.85);
+  letter-spacing: 0.04em;
 }
 
 .entryArrow {
   position: absolute;
-  bottom: 9px;
-  right: 11px;
-  font-size: 12px;
-  color: #fff;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: var(--white);
   opacity: 0;
   transition:
     opacity 0.22s ease,
     transform 0.22s ease;
   line-height: 1;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 // ─── Footer ticker ──────────────────────────────────────────────────────────
 
 .ticker {
+  @include container;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 3rem;
+  margin-top: 3px;
 }
 
 .tickerTotal {

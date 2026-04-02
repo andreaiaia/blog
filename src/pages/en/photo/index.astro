@@ -16,6 +16,57 @@ const totalPhotos = albums.reduce(
   (sum, { data }) => sum + data.images.length,
   0
 );
+
+const totalAlbumsFormatted = String(albums.length).padStart(2, '0');
+
+// ─── Layout assignment ───────────────────────────────────────────────────────
+// Cycles through editorial row patterns to avoid predictable repetition.
+// Each pattern is a row: values map to CSS layout classes.
+
+type Layout = 'full' | 'half' | 'twoThirds' | 'oneThird';
+
+const layoutPatterns: Layout[][] = [
+  ['full'],
+  ['half', 'half'],
+  ['twoThirds', 'oneThird'],
+  ['oneThird', 'oneThird', 'oneThird'],
+  ['oneThird', 'twoThirds'],
+];
+
+const LAYOUT_CSS: Record<Layout, string> = {
+  full: css.entryFull,
+  half: css.entryHalf,
+  twoThirds: css.entryTwoThirds,
+  oneThird: css.entryOneThird,
+};
+
+const LAYOUT_SIZES: Record<Layout, string> = {
+  full: '(max-width: 600px) 100vw, 100vw',
+  half: '(max-width: 600px) 100vw, 50vw',
+  twoThirds: '(max-width: 600px) 100vw, 66vw',
+  oneThird: '(max-width: 600px) 100vw, 33vw',
+};
+
+const albumLayouts: Layout[] = [];
+let patternIdx = 0;
+
+while (albumLayouts.length < albums.length) {
+  const remaining = albums.length - albumLayouts.length;
+  let pattern = layoutPatterns[patternIdx % layoutPatterns.length];
+
+  if (remaining < pattern.length) {
+    if (remaining === 1) {
+      pattern = ['full'];
+    } else if (remaining === 2) {
+      pattern = ['half', 'half'];
+    } else {
+      pattern = ['oneThird', 'oneThird', 'oneThird'];
+    }
+  }
+
+  albumLayouts.push(...pattern);
+  patternIdx++;
+}
 ---
 
 <BaseLayout
@@ -52,61 +103,78 @@ const totalPhotos = albums.reduce(
   </script>
   <main class={css.page}>
     <div class={css.masthead}>
-      <span class={css.mastheadBrand}>{t('photo.mastheadBrand')}</span>
-      <span class={css.mastheadLabel}>Index</span>
+      <div class={css.mastheadLeft}>
+        <span class={css.mastheadBrand}>{t('photo.mastheadBrand')}</span>
+        <p class={css.mastheadTagline}>Capturing the essence of a moment</p>
+      </div>
     </div>
 
-    {
-      albums.map(({ id, data }, index) => {
-        const num = String(index + 1).padStart(2, '0');
+    <div class={css.grid}>
+      {
+        albums.map(({ id, data }, index) => {
+          const num = String(index + 1).padStart(2, '0');
+          const layout = albumLayouts[index] ?? 'full';
 
-        return (
-          <a class={css.entry} href={`/en/photo/${id}`} data-aos>
-            <span class={css.ghost}>{num}</span>
-            <div class={css.entryContent}>
-              {data.category && (
-                <span class={css.entryCategory}>{data.category}</span>
-              )}
-              <h2 class={css.entryTitle}>{data.title}</h2>
-              {data.description && (
-                <p class={css.entrySubtitle}>{data.description}</p>
-              )}
-              <div class={css.entryMeta}>
-                {data.location && (
-                  <div class={css.metaItem}>
-                    <span class={css.metaLabel}>{t('photo.metaLocation')}</span>
-                    <span class={css.metaValue}>{data.location}</span>
+          return (
+            <a
+              class={`${css.entry} ${LAYOUT_CSS[layout]}`}
+              href={`/en/photo/${id}`}
+              data-aos
+            >
+              <div class={css.entryFrame}>
+                <CFImage
+                  src={data.cover}
+                  alt={data.coverAlt}
+                  widths={[600, 900, 1400]}
+                  sizes={LAYOUT_SIZES[layout]}
+                />
+                <div class={css.entryOverlay}>
+                  <div class={css.entryTop}>
+                    {data.category && (
+                      <span class={css.entryCategory}>{data.category}</span>
+                    )}
                   </div>
-                )}
-                <div class={css.metaItem}>
-                  <span class={css.metaLabel}>{t('photo.metaYear')}</span>
-                  <span class={css.metaValue}>{data.date.getFullYear()}</span>
+                  <div class={css.entryBottom}>
+                    <h2 class={css.entryTitle}>{data.title}</h2>
+                    {data.description && (
+                      <p class={css.entrySubtitle}>{data.description}</p>
+                    )}
+                    <div class={css.entryMeta}>
+                      {data.location && (
+                        <div class={css.metaItem}>
+                          <span class={css.metaLabel}>
+                            {t('photo.metaLocation')}
+                          </span>
+                          <span class={css.metaValue}>{data.location}</span>
+                        </div>
+                      )}
+                      <div class={css.metaItem}>
+                        <span class={css.metaLabel}>{t('photo.metaYear')}</span>
+                        <span class={css.metaValue}>
+                          {data.date.getFullYear()}
+                        </span>
+                      </div>
+                      <div class={css.metaItem}>
+                        <span class={css.metaLabel}>
+                          {t('photo.metaPhotos')}
+                        </span>
+                        <span class={css.metaValue}>{data.images.length}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class={css.metaItem}>
-                  <span class={css.metaLabel}>{t('photo.metaPhotos')}</span>
-                  <span class={css.metaValue}>{data.images.length}</span>
-                </div>
+                <span class={css.entryArrow}>↗</span>
               </div>
-            </div>
-            <div class={css.entryFrame}>
-              <CFImage
-                src={data.cover}
-                alt={data.coverAlt}
-                widths={[480, 600]}
-                sizes='(max-width: 760px) 100vw, 280px'
-              />
-              <span class={css.entryArrow}>↗</span>
-            </div>
-          </a>
-        );
-      })
-    }
+            </a>
+          );
+        })
+      }
+    </div>
 
     <div class={css.ticker}>
       <span class={css.tickerTotal}>
         {albums.length} series · {totalPhotos} photographs
       </span>
-      <a class={css.tickerCta} href='/en/about'>{t('photo.tickerCta')}</a>
     </div>
   </main>
 </BaseLayout>
