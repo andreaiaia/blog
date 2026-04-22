@@ -15,27 +15,27 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/cloudflare": "^13.1.7",
+    "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/mdx": "^5.0.3",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/svelte": "^8.0.4",
-    "@iconify-json/lucide": "^1.2.101",
-    "astro": "^6.1.4",
+    "@astrojs/svelte": "^8.0.5",
+    "@iconify-json/lucide": "^1.2.102",
+    "astro": "^6.1.8",
     "astro-icon": "^1.1.5",
     "mdast-util-to-string": "^4.0.0",
     "photoswipe": "^5.4.4",
     "reading-time": "^1.5.0",
     "sass": "^1.99.0",
-    "svelte": "^5.55.1",
+    "svelte": "^5.55.4",
     "svelte-preprocess": "^6.0.3",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260405.1",
-    "@types/node": "^25.5.2",
-    "eslint": "^10.2.0",
+    "@cloudflare/workers-types": "^4.20260422.1",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.1",
     "svelte-feather-icons": "^4.2.0",
-    "wrangler": "^4.80.0"
+    "wrangler": "^4.84.1"
   }
 }
