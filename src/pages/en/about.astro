@@ -8,105 +8,123 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<style>
-  @keyframes animateIn {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  [data-animate-on-scroll] {
-    opacity: 0;
-    transform: translateY(50px);
-    will-change: opacity, transform; /* Forza il repaint */
-  }
-
-  [data-animate-on-scroll].animate {
-    animation: animateIn 1s ease-in-out forwards;
-  }
-</style>
 <script
   src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+  integrity='sha384-ac2tY+FDuY06qMD2drYkVmGsfdnlZ+PYRyrM1HEheFY7T+o8lxfTJ7NnRuyX0l7H'
+  crossorigin='anonymous'
 ></script>
 
 <BaseLayout
   title={t('site.title')}
   descrition={t('site.description')}
-  headerMode='transparent'
+  headerMode='solid'
   lang={lang}
 >
-  <main>
-    <section>
-      <section class={css.section}>
-        <CFImage
-          className={css.photoBackground}
-          src='matera/cattedrale-tramonto.jpg'
-          alt='The sun sets behind the bell tower of the cathedral of Matera.'
-          widths={[480, 800, 1200, 2400]}
-          sizes='100vw'
-        />
-        <div class={`${css.cta} ${css.opaqueBackground}`}>
-          <h1 class={css.title} data-animate-on-scroll>About me</h1>
-          <p data-animate-on-scroll>Capturing the world, one frame at time.</p>
-        </div>
-      </section>
-    </section>
+  <main class={css.page}>
+    <div class={css.header} data-aos>
+      <p class={css.sectionTag}>About me</p>
+      <h1 class={css.headline}>
+        Andrea Bianchi —<br /><em>documentary photographer</em>
+      </h1>
+      <p class={css.headerSubtitle}>
+        Out with a camera since 2012.
+      </p>
+    </div>
 
-    <section class={css.section}>
-      <div class={css.bio}>
-        <h2 data-animate-on-scroll>Who am I</h2>
-        <div class={css.text} data-animate-on-scroll>
-          <p>
-            I became passionate about photography in 2012, when I read an
-            article on a blog and discovered that, by using a long exposure
-            time, it was possible to capture the trails of moving cars.
-          </p>
-          <p>
-            I immediately grabbed my father’s camera, a Nikon D50 from 2005,
-            went outside, placed the camera on a wall, figured out how to set
-            the shutter speed to 30 seconds, and took the photo you see here.
-          </p>
-          <p>
-            It’s not much, but the excitement I felt when taking that photo is
-            the same feeling that still accompanies me every time I press the
-            shutter button.
-          </p>
+    <section class={css.bioSection}>
+      <div class={css.bioGrid}>
+        <div data-aos>
+          <div class={css.bioText}>
+            <p>
+              I got into photography in 2012, after reading a blog post about
+              long exposures — how keeping the shutter open could capture the
+              light trails of passing cars.
+            </p>
+            <p>
+              I grabbed my father's Nikon D50, propped it on a wall, set it to
+              30 seconds, and took my first shot. The excitement I felt then is
+              the same I feel every time I press the shutter now.
+            </p>
+            <p>
+              Since then I've photographed in Italy, Japan, Iceland, and
+              Turkey. I'm drawn to photography as an act of witnessing —
+              reportage isn't about chasing the extraordinary, it's about
+              having the patience to let the ordinary reveal itself.
+            </p>
+          </div>
+          <div class={css.originPhotoWrap}>
+            <CFImage
+              className={css.originPhoto}
+              src='misc/la-mia-prima-foto.jpg'
+              alt='The first photo, a long exposure of moving cars in Matera.'
+              widths={[480, 800]}
+              sizes='(max-width: 850px) 100vw, 55vw'
+            />
+            <p class={css.originCaption}>The photo that started it all, 2012.</p>
+          </div>
+        </div>
+        <div class={css.bioPhotoWrap} data-aos>
+          <CFImage
+            className={css.bioPhoto}
+            src='me/profile-pic.jpg'
+            alt='A photograph of me, Andrea.'
+            widths={[480, 800]}
+            sizes='(max-width: 850px) 100vw, 45vw'
+          />
         </div>
       </div>
-      <div data-animate-on-scroll>
-        <CFImage
-          className={css.photo}
-          src='misc/la-mia-prima-foto.jpg'
-          alt='The picture that started it all, a long exposure of cars moving in Matera'
-          widths={[480, 800, 1200]}
-          sizes='100vw'
-        />
+    </section>
+
+    <section class={css.socialSection} data-aos>
+      <p class={css.socialLabel}>Find me on</p>
+      <div class={css.socialLinks}>
+        <a
+          class={css.socialLink}
+          href='TODO_INSTAGRAM'
+          target='_blank'
+          rel='noopener noreferrer'
+        >Instagram</a>
+        <a
+          class={css.socialLink}
+          href='TODO_YOUTUBE'
+          target='_blank'
+          rel='noopener noreferrer'
+        >YouTube</a>
+        <a
+          class={css.socialLink}
+          href='TODO_GITHUB'
+          target='_blank'
+          rel='noopener noreferrer'
+        >GitHub</a>
       </div>
     </section>
   </main>
-  <script>
-    const elements = document.querySelectorAll('[data-animate-on-scroll]');
-    const observerOptions = {
-      threshold: 0.1,
-    };
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
+  <script is:inline>
+    (function () {
+      function setup() {
+        var elements = document.querySelectorAll('[data-aos]');
+        var observer = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.07 }
+        );
+        elements.forEach(function (el) {
+          observer.observe(el);
         });
-      }, observerOptions);
+      }
 
-      elements.forEach(function (element) {
-        observer.observe(element);
-      });
-    });
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+      } else {
+        setup();
+      }
+    })();
   </script>
 </BaseLayout>

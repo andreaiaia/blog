@@ -7,109 +7,126 @@ import css from '@/styles/About.module.scss';
 const t = useTranslations('it');
 ---
 
-<style>
-  @keyframes animateIn {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  [data-animate-on-scroll] {
-    opacity: 0;
-    transform: translateY(50px);
-    will-change: opacity, transform; /* Forza il repaint */
-  }
-
-  [data-animate-on-scroll].animate {
-    animation: animateIn 1s ease-in-out forwards;
-  }
-</style>
 <script
   src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
+  integrity='sha384-ac2tY+FDuY06qMD2drYkVmGsfdnlZ+PYRyrM1HEheFY7T+o8lxfTJ7NnRuyX0l7H'
+  crossorigin='anonymous'
 ></script>
 
 <BaseLayout
   title={t('site.title')}
   descrition={t('site.description')}
-  headerMode='transparent'
+  headerMode='solid'
   lang='it'
 >
-  <main>
-    <section>
-      <section class={css.section}>
-        <CFImage
-          className={css.photoBackground}
-          src='matera/cattedrale-tramonto.jpg'
-          alt='Il sole tramonta dietro il campanile della cattedrale di Matera.'
-          widths={[480, 800, 1200, 2400]}
-          sizes='100vw'
-        />
-        <div class={`${css.cta} ${css.opaqueBackground}`}>
-          <h1 class={css.title} data-animate-on-scroll>Chi sono</h1>
-          <p data-animate-on-scroll>Esploro il mondo, uno scatto alla volta</p>
-        </div>
-      </section>
-    </section>
+  <main class={css.page}>
+    <div class={css.header} data-aos>
+      <p class={css.sectionTag}>Chi sono</p>
+      <h1 class={css.headline}>
+        Andrea Bianchi —<br /><em>fotografo documentario</em>
+      </h1>
+      <p class={css.headerSubtitle}>
+        Dal 2012 in giro con una macchina fotografica.
+      </p>
+    </div>
 
-    <section class={css.section}>
-      <div class={css.bio}>
-        <h2 data-animate-on-scroll>Mi presento</h2>
-        <div class={css.text} data-animate-on-scroll>
-          <p>
-            Mi sono appassionato di fotografia dal 2012, quando ho letto un
-            articolo su un blog e ho scoperto che, usando un tempo di
-            esposizione lungo, era possibile catturare le scie delle auto in
-            movimento.
-          </p>
-          <p>
-            Ho subito preso la macchina fotografica di mio padre, una Nikon D50
-            del 2005, sono uscito, ho appoggiato la macchina fotografica su un
-            muro, ho capito come impostare il tempo di esposizione a 30 secondi
-            e ho scattato la foto che vedete qui sotto.
-          </p>
-          <p>
-            Non è molto, ma l’emozione che ho provato scattando quella foto è la
-            stessa emozione che ancora oggi mi accompagna ogni volta che premo
-            il pulsante di scatto.
-          </p>
+    <section class={css.bioSection}>
+      <div class={css.bioGrid}>
+        <div data-aos>
+          <div class={css.bioText}>
+            <p>
+              Mi sono appassionato di fotografia nel 2012, quando ho letto un
+              articolo su un blog e ho scoperto che, usando un tempo di
+              esposizione lungo, era possibile catturare le scie delle auto in
+              movimento.
+            </p>
+            <p>
+              Ho subito preso la macchina fotografica di mio padre, una Nikon
+              D50 del 2005, sono uscito, ho appoggiato la macchina su un muro e
+              ho scattato la mia prima lunga esposizione. L'emozione di quella
+              foto è la stessa che provo ancora oggi, ogni volta che premo lo
+              scatto.
+            </p>
+            <p>
+              Da allora ho fotografato in Italia, in Giappone, in Islanda, in
+              Turchia. Mi interessa la fotografia come atto di testimonianza —
+              il reportage non è inseguire l'eccezionale, è avere la pazienza
+              di aspettare che l'ordinario si riveli.
+            </p>
+          </div>
+          <div class={css.originPhotoWrap}>
+            <CFImage
+              className={css.originPhoto}
+              src='misc/la-mia-prima-foto.jpg'
+              alt='La prima foto, una lunga esposizione di automobili in movimento a Matera.'
+              widths={[480, 800]}
+              sizes='(max-width: 850px) 100vw, 55vw'
+            />
+            <p class={css.originCaption}>La foto da cui è iniziato tutto, 2012.</p>
+          </div>
+        </div>
+        <div class={css.bioPhotoWrap} data-aos>
+          <CFImage
+            className={css.bioPhoto}
+            src='me/profile-pic.jpg'
+            alt='Una fotografia di me, Andrea.'
+            widths={[480, 800]}
+            sizes='(max-width: 850px) 100vw, 45vw'
+          />
         </div>
       </div>
-      <div data-animate-on-scroll>
-        <CFImage
-          className={css.photo}
-          src='misc/la-mia-prima-foto.jpg'
-          alt='La foto da cui è iniziato tutto, una lunga esposizione di automobili in movimento a Matera'
-          s
-          Sassi.'
-          widths={[480, 800, 1200]}
-          sizes='100vw'
-        />
+    </section>
+
+    <section class={css.socialSection} data-aos>
+      <p class={css.socialLabel}>Trovami su</p>
+      <div class={css.socialLinks}>
+        <a
+          class={css.socialLink}
+          href='TODO_INSTAGRAM'
+          target='_blank'
+          rel='noopener noreferrer'
+        >Instagram</a>
+        <a
+          class={css.socialLink}
+          href='TODO_YOUTUBE'
+          target='_blank'
+          rel='noopener noreferrer'
+        >YouTube</a>
+        <a
+          class={css.socialLink}
+          href='TODO_GITHUB'
+          target='_blank'
+          rel='noopener noreferrer'
+        >GitHub</a>
       </div>
     </section>
   </main>
-  <script>
-    const elements = document.querySelectorAll('[data-animate-on-scroll]');
-    const observerOptions = {
-      threshold: 0.1,
-    };
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
+  <script is:inline>
+    (function () {
+      function setup() {
+        var elements = document.querySelectorAll('[data-aos]');
+        var observer = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.07 }
+        );
+        elements.forEach(function (el) {
+          observer.observe(el);
         });
-      }, observerOptions);
+      }
 
-      elements.forEach(function (element) {
-        observer.observe(element);
-      });
-    });
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+      } else {
+        setup();
+      }
+    })();
   </script>
 </BaseLayout>

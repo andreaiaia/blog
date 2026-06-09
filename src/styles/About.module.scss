@@ -1,96 +1,169 @@
-.section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.page {
   background-color: hsl(0, 0%, 98%);
+  min-height: 100vh;
 }
 
-.photoBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
+// ─── Header ────────────────────────────────────────────────────────────────
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sectionTag {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--shade);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--primary);
+    flex-shrink: 0;
+  }
+}
+
+.headline {
+  font-family: 'DMSerifDisplay';
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: normal;
+  line-height: 1.15;
+  color: var(--black);
+  margin: 0 0 1.5rem;
+
+  em {
+    font-style: italic;
+    color: var(--primary);
+  }
+}
+
+.headerSubtitle {
+  font-family: 'PlusJakartaSans';
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--shade);
+  line-height: 1.6;
+}
+
+// ─── Bio ───────────────────────────────────────────────────────────────────
+
+.bioSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2.5rem;
+}
+
+.bioGrid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 5rem;
+  align-items: start;
+
+  @media screen and (max-width: 850px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.bioText {
+  font-family: 'PlusJakartaSans';
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--black);
+
+  p + p {
+    margin-top: 1.2rem;
+  }
+}
+
+.bioPhotoWrap {
+  @media screen and (max-width: 850px) {
+    order: -1;
+  }
+}
+
+.bioPhoto {
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+
+  @media screen and (max-width: 850px) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.originPhotoWrap {
+  margin-top: 2.5rem;
+}
+
+.originPhoto {
+  display: block;
+  width: 100%;
+  max-height: 380px;
   object-fit: cover;
   object-position: center;
 }
 
-.cta {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.originCaption {
+  font-family: 'IBMPlexSerif';
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--shade);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+// ─── Social ────────────────────────────────────────────────────────────────
+
+.socialSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 6rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.socialLabel {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--shade);
+  margin-bottom: 1rem;
+}
+
+.socialLinks {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  text-align: center;
-  padding: 0 2rem;
-
-  p {
-    font-family: 'PlusJakartaSans';
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    line-height: 1.6;
-  }
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.title {
-  font-family: 'DMSerifDisplay';
-  font-size: 3rem;
-  max-width: 600px;
-  text-align: center;
-  padding: 1rem;
+.socialLink {
+  font-family: 'PlusJakartaSans';
+  font-weight: 400;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  padding: 0.4rem 0.9rem;
+  transition: border-color 0.2s;
 
-  @media screen and (max-width: 768px) {
-    font-size: 2.25rem;
-    max-width: 19ch;
+  &:hover {
+    border-color: var(--black);
   }
-}
-
-.opaqueBackground {
-  background-color: var(--background-opaque);
-}
-
-.bio {
-  margin: 48px auto;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  align-items: flex-start;
-
-  h2 {
-    margin-top: 0;
-  }
-  .text {
-    max-width: 60ch;
-
-    p {
-      font-size: 1.25rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 2rem;
-
-    .text {
-      max-width: 100%;
-    }
-  }
-}
-
-.photo {
-  max-width: 640px;
-  max-height: 450px;
-  object-fit: cover;
-  padding-bottom: 48px;
 }

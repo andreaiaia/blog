@@ -20,6 +20,8 @@ export const ui = {
     'blog.published': 'Pubblicato il',
     'blog.tags': 'Tag',
     'footer.rights': 'Tutti i diritti riservati',
+    'footer.pages': 'Pagine',
+    'footer.follow': 'Seguimi',
     'home.latest': 'Ultimi articoli',
     'photo.albums': 'Album fotografici',
     'home.identity': 'Fotografia documentaria & reportage',
@@ -51,6 +53,8 @@ export const ui = {
     'blog.published': 'Published on',
     'blog.tags': 'Tags',
     'footer.rights': 'All rights reserved',
+    'footer.pages': 'Pages',
+    'footer.follow': 'Follow me',
     'home.latest': 'Latest posts',
     'photo.albums': 'Photo albums',
     'home.identity': 'Documentary & reportage photography',
@@ -73,14 +77,14 @@ export const ui = {
 
 export const translations = {
   en: {
-    madeBy:
-      "All the contents in this website are 100% made by me, Andrea Bianchi. AI is only used to provide a better English translation, since it's not my native language.",
+    madeByMain: 'All contents on this site are 100% made by me.',
+    madeByAi: 'AI is only used to improve the English translation.',
     copyright:
       'All the images are taken by me, unless otherwise stated, and are covered by copyright. Any use of the images is forbidden.',
   },
   it: {
-    madeBy:
-      "Tutti i contenuti di questo sito sono realizzati al 100% da me, Andrea Bianchi. L'AI è usata solo per fornire una migliore traduzione inglese, dato che non è la mia lingua madre.",
+    madeByMain: 'Tutti i contenuti di questo sito sono realizzati al 100% da me.',
+    madeByAi: "L'AI è usata solo per migliorare la traduzione inglese.",
     copyright:
       'Tutte le immagini sono scattate da me, salvo diversa indicazione, e sono coperte da copyright. Qualsiasi utilizzo delle immagini è vietato.',
   },
