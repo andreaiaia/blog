@@ -41,3 +41,4 @@ public/feed.xml
 # wrangler files
 .wrangler
 .dev.vars
+.superpowers/
