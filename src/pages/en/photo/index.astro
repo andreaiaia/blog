@@ -110,7 +110,6 @@ while (albumLayouts.length < albums.length) {
     <div class={css.grid}>
       {
         albums.map(({ id, data }, index) => {
-          const num = String(index + 1).padStart(2, '0');
           const layout = albumLayouts[index] ?? 'full';
 
           return (

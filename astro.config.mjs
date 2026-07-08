@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
 import cloudflare from '@astrojs/cloudflare';
 import { remarkReadingTime } from './remark-reading-time.mjs';
+import { unified } from '@astrojs/markdown-remark';
 
 import icon from 'astro-icon';
 
@@ -31,7 +32,7 @@ export default defineConfig({
     },
   },
   markdown: {
-    remarkPlugins: [remarkReadingTime],
+    processor: unified({ remarkPlugins: [remarkReadingTime] }),
   },
   vite: {
     resolve: {
