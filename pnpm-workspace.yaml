@@ -4,6 +4,9 @@ allowBuilds:
   sharp: true
   svelte-preprocess: true
   workerd: true
+minimumReleaseAgeExclude:
+  - miniflare@4.20260706.0
+  - wrangler@4.108.0
 onlyBuiltDependencies:
   - esbuild
   - svelte-preprocess

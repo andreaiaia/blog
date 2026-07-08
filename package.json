@@ -37,6 +37,6 @@
     "@types/node": "^26.1.0",
     "eslint": "^10.6.0",
     "svelte-feather-icons": "^4.2.0",
-    "wrangler": "^4.107.1"
+    "wrangler": "^4.108.0"
   }
 }
