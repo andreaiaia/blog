@@ -7,6 +7,7 @@ cover: 'paesaggi/olivi-pano.jpg'
 coverAlt: 'A group of Olive trees in the countryside of Matera.'
 location: 'Italia'
 category: 'Paesaggio · Italia'
+section: 'landscape-wildlife'
 images:
   - file: 'paesaggi/finestra-craco.jpg'
     alt: 'The view out of the window of the highest tower of Craco'

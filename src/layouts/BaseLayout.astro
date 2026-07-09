@@ -7,9 +7,16 @@ import '@/styles/normalize.css';
 import '@/styles/global.css';
 import '@/styles/_globals.module.scss';
 
-const { title, description, headerMode, lang = 'it' } = Astro.props;
+const {
+  title,
+  description,
+  headerMode,
+  lang = 'it',
+  image = 'https://andreabianchi.me/cdn-cgi/image/format=jpeg,quality=80,width=1200/https://images.andreabianchi.me/matera/sassi-laputa.jpg',
+} = Astro.props;
 
 const alternateLangUrl = getAlternateLangUrl(Astro.url.pathname, lang);
+const alternateLang = lang === 'it' ? 'en' : 'it';
 ---
 
 <!doctype html>
@@ -19,6 +26,26 @@ const alternateLangUrl = getAlternateLangUrl(Astro.url.pathname, lang);
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <title>{title}</title>
     <meta name='description' content={description} />
+    <link rel='canonical' href={Astro.url} />
+    <link rel='alternate' hreflang={lang} href={Astro.url} />
+    <link
+      rel='alternate'
+      hreflang={alternateLang}
+      href={new URL(alternateLangUrl, Astro.site)}
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={Astro.url} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={new URL(image, Astro.url)} />
+    <meta property='og:locale' content={lang === 'it' ? 'it_IT' : 'en_US'} />
+    <!-- Twitter -->
+    <meta property='twitter:card' content='summary_large_image' />
+    <meta property='twitter:url' content={Astro.url} />
+    <meta property='twitter:title' content={title} />
+    <meta property='twitter:description' content={description} />
+    <meta property='twitter:image' content={new URL(image, Astro.url)} />
     <!-- Analytics -->
     <script
       is:inline

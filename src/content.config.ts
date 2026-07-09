@@ -41,6 +41,7 @@ const albums = defineCollection({
     coverAlt: z.string(),
     location: z.string().optional(),
     category: z.string().optional(),
+    section: z.enum(['landscape-wildlife', 'travel', 'misc']).optional(),
     images: z.array(
       z.object({
         file: z.string(),

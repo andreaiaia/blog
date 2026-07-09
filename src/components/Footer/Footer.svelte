@@ -9,6 +9,7 @@
   } from 'svelte-feather-icons';
   import { useTranslations } from '@/i18n/utils';
   import { translations } from '@/i18n/ui';
+  import { SocialLinks } from '@/utils/constants';
 
   export let lang = 'it';
   export let alternateLangUrl = '/';
@@ -26,10 +27,30 @@
 
   const socialLinks = [
     { href: '/feed.xml', label: 'RSS', Icon: RssIcon, external: false },
-    { href: 'https://instagram.com/andreaiaia', label: 'Instagram', Icon: InstagramIcon, external: true },
-    { href: 'https://www.youtube.com/@andrea.bianchi', label: 'YouTube', Icon: YoutubeIcon, external: true },
-    { href: 'https://github.com/andreaiaia', label: 'GitHub', Icon: GithubIcon, external: true },
-    { href: 'https://linkedin.com/in/andreaiaia/', label: 'LinkedIn', Icon: LinkedinIcon, external: true },
+    {
+      href: SocialLinks.instagram,
+      label: 'Instagram',
+      Icon: InstagramIcon,
+      external: true,
+    },
+    {
+      href: SocialLinks.youtube,
+      label: 'YouTube',
+      Icon: YoutubeIcon,
+      external: true,
+    },
+    {
+      href: SocialLinks.github,
+      label: 'GitHub',
+      Icon: GithubIcon,
+      external: true,
+    },
+    {
+      href: SocialLinks.linkedin,
+      label: 'LinkedIn',
+      Icon: LinkedinIcon,
+      external: true,
+    },
   ];
 </script>
 
@@ -72,14 +93,20 @@
         <a
           href={alternateLangUrl}
           class={css.langLink}
-          aria-label={lang === 'it' ? 'Switch to English' : "Passa all'italiano"}
+          aria-label={lang === 'it'
+            ? 'Switch to English'
+            : "Passa all'italiano"}
         >
-          {lang === 'it' ? 'English' : 'Italiano'}<span class={css.langArrow}> →</span>
+          {lang === 'it' ? 'English' : 'Italiano'}<span class={css.langArrow}>
+            →</span
+          >
         </a>
       </div>
     </div>
     <div class={css.bottomBar}>
-      <span class={css.copy}><time>{new Date().getFullYear()}</time> © Andrea Bianchi</span>
+      <span class={css.copy}
+        ><time>{new Date().getFullYear()}</time> © Andrea Bianchi</span
+      >
       <span class={css.copy}>{t('footer.rights')}</span>
     </div>
   </div>

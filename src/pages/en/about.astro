@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import CFImage from '@/components/CFImage/CFImage.astro';
 import css from '@/styles/About.module.scss';
+import { SocialLinks } from '@/utils/constants';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,12 +13,11 @@ const t = useTranslations(lang);
   is:inline
   src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=IntersectionObserver'
   integrity='sha384-ac2tY+FDuY06qMD2drYkVmGsfdnlZ+PYRyrM1HEheFY7T+o8lxfTJ7NnRuyX0l7H'
-  crossorigin='anonymous'
-></script>
+  crossorigin='anonymous'></script>
 
 <BaseLayout
   title={t('site.title')}
-  descrition={t('site.description')}
+  description={t('site.description')}
   headerMode='solid'
   lang={lang}
 >
@@ -27,9 +27,7 @@ const t = useTranslations(lang);
       <h1 class={css.headline}>
         Andrea Bianchi —<br /><em>documentary photographer</em>
       </h1>
-      <p class={css.headerSubtitle}>
-        Out with a camera since 2012.
-      </p>
+      <p class={css.headerSubtitle}>Out with a camera since 2012.</p>
     </div>
 
     <section class={css.bioSection}>
@@ -47,10 +45,10 @@ const t = useTranslations(lang);
               the same I feel every time I press the shutter now.
             </p>
             <p>
-              Since then I've photographed in Italy, Japan, Iceland, and
-              Turkey. I'm drawn to photography as an act of witnessing —
-              reportage isn't about chasing the extraordinary, it's about
-              having the patience to let the ordinary reveal itself.
+              Since then I've photographed in Italy, Japan, Iceland, and Turkey.
+              I'm drawn to photography as an act of witnessing — reportage isn't
+              about chasing the extraordinary, it's about having the patience to
+              let the ordinary reveal itself.
             </p>
           </div>
           <div class={css.originPhotoWrap}>
@@ -61,7 +59,9 @@ const t = useTranslations(lang);
               widths={[480, 800]}
               sizes='(max-width: 850px) 100vw, 55vw'
             />
-            <p class={css.originCaption}>The photo that started it all, 2012.</p>
+            <p class={css.originCaption}>
+              The photo that started it all, 2012.
+            </p>
           </div>
         </div>
         <div class={css.bioPhotoWrap} data-aos>
@@ -81,22 +81,22 @@ const t = useTranslations(lang);
       <div class={css.socialLinks}>
         <a
           class={css.socialLink}
-          href='TODO_INSTAGRAM'
+          href={SocialLinks.instagram}
           target='_blank'
-          rel='noopener noreferrer'
-        >Instagram</a>
+          rel='noopener noreferrer'>Instagram</a
+        >
         <a
           class={css.socialLink}
-          href='TODO_YOUTUBE'
+          href={SocialLinks.youtube}
           target='_blank'
-          rel='noopener noreferrer'
-        >YouTube</a>
+          rel='noopener noreferrer'>YouTube</a
+        >
         <a
           class={css.socialLink}
-          href='TODO_GITHUB'
+          href={SocialLinks.github}
           target='_blank'
-          rel='noopener noreferrer'
-        >GitHub</a>
+          rel='noopener noreferrer'>GitHub</a
+        >
       </div>
     </section>
   </main>

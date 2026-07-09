@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { useTranslations } from '@/i18n/utils';
 import CFImage from '@/components/CFImage/CFImage.astro';
 import css from '@/styles/About.module.scss';
+import { SocialLinks } from '@/utils/constants';
 
 const t = useTranslations('it');
 ---
@@ -15,7 +16,7 @@ const t = useTranslations('it');
 
 <BaseLayout
   title={t('site.title')}
-  descrition={t('site.description')}
+  description={t('site.description')}
   headerMode='solid'
   lang='it'
 >
@@ -26,7 +27,7 @@ const t = useTranslations('it');
         Andrea Bianchi —<br /><em>fotografo documentario</em>
       </h1>
       <p class={css.headerSubtitle}>
-        Dal 2012 in giro con una macchina fotografica.
+        Dal 2012 giro il mondo con una macchina fotografica.
       </p>
     </div>
 
@@ -84,19 +85,19 @@ const t = useTranslations('it');
       <div class={css.socialLinks}>
         <a
           class={css.socialLink}
-          href='TODO_INSTAGRAM'
+          href={SocialLinks.instagram}
           target='_blank'
           rel='noopener noreferrer'>Instagram</a
         >
         <a
           class={css.socialLink}
-          href='TODO_YOUTUBE'
+          href={SocialLinks.youtube}
           target='_blank'
           rel='noopener noreferrer'>YouTube</a
         >
         <a
           class={css.socialLink}
-          href='TODO_GITHUB'
+          href={SocialLinks.github}
           target='_blank'
           rel='noopener noreferrer'>GitHub</a
         >

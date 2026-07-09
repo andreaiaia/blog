@@ -7,6 +7,7 @@ cover: 'astro/pleiades.jpg'
 coverAlt: 'Messier 45 - Pleiades.'
 location: 'Basilicata, IT'
 category: 'Astrofotografia'
+section: 'misc'
 images:
   - file: 'astro/orion-nebula.jpg'
     alt: 'Messier 42 - The Orion Nebula.'
