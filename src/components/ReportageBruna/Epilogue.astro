@@ -1,0 +1,38 @@
+---
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/ReportageBruna.module.scss';
+
+interface Photo {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+interface Props {
+  kicker: string;
+  title: string;
+  body: string;
+  photos: Photo[];
+}
+
+const { kicker, title, body, photos } = Astro.props;
+---
+
+<section class={css.epilogue}>
+  <p class={css.kicker}>{kicker}</p>
+  <h2 class={css.chapterTitle}>{title}</h2>
+  <p class={css.epilogueBody}>{body}</p>
+  {
+    photos.map((photo) => (
+      <figure class={css.epilogueFigure}>
+        <CFImage
+          src={photo.src}
+          alt={photo.alt}
+          widths={[600, 900, 1400]}
+          sizes='(max-width: 600px) 100vw, 720px'
+        />
+        <figcaption class={css.caption}>{photo.caption}</figcaption>
+      </figure>
+    ))
+  }
+</section>

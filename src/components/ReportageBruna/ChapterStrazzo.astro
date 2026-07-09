@@ -1,0 +1,62 @@
+---
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/ReportageBruna.module.scss';
+
+interface Photo {
+  src: string;
+  alt: string;
+}
+
+interface Phase {
+  title: string;
+  sub: string;
+}
+
+interface Piece extends Photo {
+  caption: string;
+}
+
+interface Props {
+  cart: Photo;
+  phases: Phase[];
+  pieces: Piece[];
+}
+
+const { cart, phases, pieces } = Astro.props;
+---
+
+<section class={css.strazzo} data-strazzo>
+  <div class={css.strazzoStage}>
+    <div class={css.strazzoMosaic}>
+      {
+        pieces.map((piece) => (
+          <figure data-strazzo-piece>
+            <CFImage
+              src={piece.src}
+              alt={piece.alt}
+              widths={[600, 900]}
+              sizes='(max-width: 600px) 100vw, 50vw'
+            />
+            <figcaption>{piece.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+    <figure class={css.strazzoCart} data-strazzo-cart>
+      <CFImage
+        src={cart.src}
+        alt={cart.alt}
+        widths={[900, 1400]}
+        sizes='(max-width: 600px) 100vw, 82vw'
+      />
+    </figure>
+    {
+      phases.map((phase, i) => (
+        <div class={css.strazzoCaption} data-strazzo-caption data-active={i === 0}>
+          <div class={css.strazzoCaptionTitle}>{phase.title}</div>
+          <div class={css.strazzoCaptionSub}>{phase.sub}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>

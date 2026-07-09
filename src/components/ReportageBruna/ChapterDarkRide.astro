@@ -1,0 +1,36 @@
+---
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/ReportageBruna.module.scss';
+
+interface Scene {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+interface Props {
+  scenes: Scene[];
+}
+
+const { scenes } = Astro.props;
+---
+
+<section class={css.ride} data-ride>
+  <div class={css.rideStage}>
+    {
+      scenes.map((scene) => (
+        <figure class={css.rideScene} data-ride-scene>
+          <CFImage
+            src={scene.src}
+            alt={scene.alt}
+            widths={[800, 1200, 1600]}
+            sizes='(max-width: 600px) 100vw, 82vw'
+          />
+          <figcaption class={css.rideCap}>
+            <div class={css.rideCapSub}>{scene.caption}</div>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</section>

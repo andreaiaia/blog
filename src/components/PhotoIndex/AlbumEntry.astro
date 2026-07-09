@@ -1,0 +1,76 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/Photo.module.scss';
+import { useTranslations, getLocalizedPath } from '@/i18n/utils';
+import type { ui } from '@/i18n/ui';
+
+export type Layout = 'full' | 'half' | 'twoThirds' | 'oneThird';
+
+interface Props {
+  album: CollectionEntry<'albums'>;
+  layout: Layout;
+  lang: keyof typeof ui;
+}
+
+const { album, layout, lang } = Astro.props;
+const { id, data } = album;
+const t = useTranslations(lang);
+
+const LAYOUT_CSS: Record<Layout, string> = {
+  full: css.entryFull,
+  half: css.entryHalf,
+  twoThirds: css.entryTwoThirds,
+  oneThird: css.entryOneThird,
+};
+
+const LAYOUT_SIZES: Record<Layout, string> = {
+  full: '(max-width: 600px) 100vw, 100vw',
+  half: '(max-width: 600px) 100vw, 50vw',
+  twoThirds: '(max-width: 600px) 100vw, 66vw',
+  oneThird: '(max-width: 600px) 100vw, 33vw',
+};
+---
+
+<a
+  class={`${css.entry} ${LAYOUT_CSS[layout]}`}
+  href={getLocalizedPath(`/photo/${id}`, lang)}
+  data-aos
+>
+  <div class={css.entryFrame}>
+    <CFImage
+      src={data.cover}
+      alt={data.coverAlt}
+      widths={[600, 900, 1400]}
+      sizes={LAYOUT_SIZES[layout]}
+    />
+    <div class={css.entryOverlay}>
+      <div class={css.entryTop}>
+        {data.category && <span class={css.entryCategory}>{data.category}</span>}
+      </div>
+      <div class={css.entryBottom}>
+        <h3 class={css.entryTitle}>{data.title}</h3>
+        {data.description && (
+          <p class={css.entrySubtitle}>{data.description}</p>
+        )}
+        <div class={css.entryMeta}>
+          {data.location && (
+            <div class={css.metaItem}>
+              <span class={css.metaLabel}>{t('photo.metaLocation')}</span>
+              <span class={css.metaValue}>{data.location}</span>
+            </div>
+          )}
+          <div class={css.metaItem}>
+            <span class={css.metaLabel}>{t('photo.metaYear')}</span>
+            <span class={css.metaValue}>{data.date.getFullYear()}</span>
+          </div>
+          <div class={css.metaItem}>
+            <span class={css.metaLabel}>{t('photo.metaPhotos')}</span>
+            <span class={css.metaValue}>{data.images.length}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class={css.entryArrow}>↗</span>
+  </div>
+</a>

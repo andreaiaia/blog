@@ -1,0 +1,41 @@
+---
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/ReportageBruna.module.scss';
+
+type Item =
+  | { type: 'photo'; src: string; alt: string; caption: string }
+  | { type: 'text'; title: string; body: string };
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class={css.ribbon} data-ribbon>
+  <div class={css.ribbonStage}>
+    <div class={css.ribbonTrack} data-ribbon-track>
+      {
+        items.map((item) =>
+          item.type === 'photo' ? (
+            <figure class={css.ribbonItem}>
+              <CFImage
+                src={item.src}
+                alt={item.alt}
+                widths={[800, 1200]}
+                sizes='(max-width: 600px) 100vw, 70vw'
+              />
+              <figcaption class={css.caption}>{item.caption}</figcaption>
+            </figure>
+          ) : (
+            <div class={`${css.ribbonItem} ${css.ribbonText}`}>
+              <div class={css.ribbonTextTitle}>{item.title}</div>
+              <p>{item.body}</p>
+            </div>
+          )
+        )
+      }
+    </div>
+  </div>
+</section>

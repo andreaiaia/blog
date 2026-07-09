@@ -1,0 +1,16 @@
+---
+import css from '@/styles/Photo.module.scss';
+
+interface Props {
+  title: string;
+  folio: string;
+}
+
+const { title, folio } = Astro.props;
+---
+
+<div class={css.band} data-aos>
+  <h2 class={css.bandTitle}>{title}</h2>
+  <div class={css.bandRule}></div>
+  <span class={css.bandFolio}>{folio}</span>
+</div>

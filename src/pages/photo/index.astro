@@ -3,73 +3,61 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import css from '@/styles/Photo.module.scss';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import CFImage from '@/components/CFImage/CFImage.astro';
+import SectionBand from '@/components/PhotoIndex/SectionBand.astro';
+import ReportageHero from '@/components/PhotoIndex/ReportageHero.astro';
+import ReportageCard from '@/components/PhotoIndex/ReportageCard.astro';
+import AlbumEntry from '@/components/PhotoIndex/AlbumEntry.astro';
+import { sectionLayouts, type SectionKey } from '@/components/PhotoIndex/layouts';
+import {
+  reportages,
+  getFeaturedReportage,
+  getSecondaryReportages,
+} from '@/data/reportages';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Solo gli album assegnati a una sezione compaiono nell'indice; gli altri
+// (es. matera, base del futuro reportage) restano raggiungibili da /photo/[id].
 const albums = (await getCollection('albums'))
-  .filter(({ data }) => data.published)
+  .filter(({ data }) => data.published && data.section)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const totalPhotos = albums.reduce(
-  (sum, { data }) => sum + data.images.length,
-  0
-);
+const featuredReportage = getFeaturedReportage();
+const secondaryReportages = getSecondaryReportages();
 
-// ─── Layout assignment ───────────────────────────────────────────────────────
-// Cycles through editorial row patterns to avoid predictable repetition.
-// Each pattern is a row: values map to CSS layout classes.
+const albumSections = (
+  [
+    {
+      key: 'landscape-wildlife',
+      title: t('photo.section.landscapeWildlife.title'),
+    },
+    {
+      key: 'travel',
+      title: t('photo.section.travel.title'),
+    },
+    {
+      key: 'misc',
+      title: t('photo.section.misc.title'),
+    },
+  ] as { key: SectionKey; title: string }[]
+).map((section) => {
+  const items = albums.filter(({ data }) => data.section === section.key);
+  const photos = items.reduce((sum, { data }) => sum + data.images.length, 0);
 
-type Layout = 'full' | 'half' | 'twoThirds' | 'oneThird';
+  return {
+    ...section,
+    items,
+    layouts: sectionLayouts(section.key, items.length),
+    folio: `${items.length} ${t('photo.folioSeries')} · ${photos} ${t('photo.folioPhotos')}`,
+  };
+});
 
-const layoutPatterns: Layout[][] = [
-  ['full'],
-  ['half', 'half'],
-  ['twoThirds', 'oneThird'],
-  ['oneThird', 'oneThird', 'oneThird'],
-  ['oneThird', 'twoThirds'],
-];
-
-const LAYOUT_CSS: Record<Layout, string> = {
-  full: css.entryFull,
-  half: css.entryHalf,
-  twoThirds: css.entryTwoThirds,
-  oneThird: css.entryOneThird,
-};
-
-const LAYOUT_SIZES: Record<Layout, string> = {
-  full: '(max-width: 600px) 100vw, 100vw',
-  half: '(max-width: 600px) 100vw, 50vw',
-  twoThirds: '(max-width: 600px) 100vw, 66vw',
-  oneThird: '(max-width: 600px) 100vw, 33vw',
-};
-
-const albumLayouts: Layout[] = [];
-let patternIdx = 0;
-
-while (albumLayouts.length < albums.length) {
-  const remaining = albums.length - albumLayouts.length;
-  let pattern = layoutPatterns[patternIdx % layoutPatterns.length];
-
-  if (remaining < pattern.length) {
-    if (remaining === 1) {
-      pattern = ['full'];
-    } else if (remaining === 2) {
-      pattern = ['half', 'half'];
-    } else {
-      pattern = ['oneThird', 'oneThird', 'oneThird'];
-    }
-  }
-
-  albumLayouts.push(...pattern);
-  patternIdx++;
-}
 ---
 
 <BaseLayout
   title={t('nav.photo')}
-  descrition="La mia fotografia: cercare l'essenza di un istante"
+  description="La mia fotografia: cercare l'essenza di un istante"
   headerMode='solid'
   lang={lang}
 >
@@ -100,78 +88,39 @@ while (albumLayouts.length < albums.length) {
     })();
   </script>
   <main class={css.page}>
-    <div class={css.masthead}>
-      <div class={css.mastheadLeft}>
-        <span class={css.mastheadBrand}>{t('photo.mastheadBrand')}</span>
-        <p class={css.mastheadTagline}>Cercare l'essenza di un istante</p>
-      </div>
-    </div>
+    <SectionBand
+      title={t('photo.section.reportage.title')}
+      folio={`${reportages.length} ${t('photo.folioSeries')}`}
+    />
+    <ReportageHero reportage={featuredReportage} lang={lang} />
+    {
+      secondaryReportages.length > 0 && (
+        <div class={css.repRow}>
+          {secondaryReportages.map((reportage) => (
+            <ReportageCard reportage={reportage} lang={lang} />
+          ))}
+        </div>
+      )
+    }
 
-    <div class={css.grid}>
-      {
-        albums.map(({ id, data }, index) => {
-          const layout = albumLayouts[index] ?? 'full';
-
-          return (
-            <a
-              class={`${css.entry} ${LAYOUT_CSS[layout]}`}
-              href={`/photo/${id}`}
-              data-aos
-            >
-              <div class={css.entryFrame}>
-                <CFImage
-                  src={data.cover}
-                  alt={data.coverAlt}
-                  widths={[600, 900, 1400]}
-                  sizes={LAYOUT_SIZES[layout]}
-                />
-                <div class={css.entryOverlay}>
-                  <div class={css.entryTop}>
-                    {data.category && (
-                      <span class={css.entryCategory}>{data.category}</span>
-                    )}
-                  </div>
-                  <div class={css.entryBottom}>
-                    <h2 class={css.entryTitle}>{data.title}</h2>
-                    {data.description && (
-                      <p class={css.entrySubtitle}>{data.description}</p>
-                    )}
-                    <div class={css.entryMeta}>
-                      {data.location && (
-                        <div class={css.metaItem}>
-                          <span class={css.metaLabel}>
-                            {t('photo.metaLocation')}
-                          </span>
-                          <span class={css.metaValue}>{data.location}</span>
-                        </div>
-                      )}
-                      <div class={css.metaItem}>
-                        <span class={css.metaLabel}>{t('photo.metaYear')}</span>
-                        <span class={css.metaValue}>
-                          {data.date.getFullYear()}
-                        </span>
-                      </div>
-                      <div class={css.metaItem}>
-                        <span class={css.metaLabel}>
-                          {t('photo.metaPhotos')}
-                        </span>
-                        <span class={css.metaValue}>{data.images.length}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class={css.entryArrow}>↗</span>
-              </div>
-            </a>
-          );
-        })
-      }
-    </div>
-
-    <div class={css.ticker}>
-      <span class={css.tickerTotal}>
-        {albums.length} serie · {totalPhotos} fotografie
-      </span>
-    </div>
+    {
+      albumSections.map((section) => (
+        <>
+          <SectionBand
+            title={section.title}
+            folio={section.folio}
+          />
+          <div class={css.grid}>
+            {section.items.map((album, index) => (
+              <AlbumEntry
+                album={album}
+                layout={section.layouts[index] ?? 'full'}
+                lang={lang}
+              />
+            ))}
+          </div>
+        </>
+      ))
+    }
   </main>
 </BaseLayout>

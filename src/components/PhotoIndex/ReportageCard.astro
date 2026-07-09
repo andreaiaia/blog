@@ -1,0 +1,34 @@
+---
+import CFImage from '@/components/CFImage/CFImage.astro';
+import css from '@/styles/Photo.module.scss';
+import { useTranslations, getLocalizedPath } from '@/i18n/utils';
+import type { ui } from '@/i18n/ui';
+import type { Reportage } from '@/data/reportages';
+
+interface Props {
+  reportage: Reportage;
+  lang: keyof typeof ui;
+}
+
+const { reportage, lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<a
+  class={css.repCard}
+  href={getLocalizedPath(reportage.href, lang)}
+  data-aos
+>
+  <CFImage
+    src={reportage.cover}
+    alt={reportage.coverAlt}
+    widths={[600, 900, 1400]}
+    sizes='(max-width: 600px) 100vw, 50vw'
+  />
+  <div class={css.repOverlay}>
+    <span class={css.kicker}>{t('photo.reportageKicker')}</span>
+    <h3 class={css.repTitle}>{reportage.title[lang]}</h3>
+    <p class={css.repSubtitle}>{reportage.subtitle[lang]}</p>
+  </div>
+  <span class={css.entryArrow}>↗</span>
+</a>

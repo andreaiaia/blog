@@ -1,0 +1,104 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import css from '@/styles/ReportageBruna.module.scss';
+import { getLangFromUrl } from '@/i18n/utils';
+import Opening from '@/components/ReportageBruna/Opening.astro';
+import Interlude from '@/components/ReportageBruna/Interlude.astro';
+import ChapterDarkRide from '@/components/ReportageBruna/ChapterDarkRide.astro';
+import ChapterRibbon from '@/components/ReportageBruna/ChapterRibbon.astro';
+import ChapterDiorama from '@/components/ReportageBruna/ChapterDiorama.astro';
+import ChapterStrazzo from '@/components/ReportageBruna/ChapterStrazzo.astro';
+import Epilogue from '@/components/ReportageBruna/Epilogue.astro';
+import {
+  opening,
+  darkRide,
+  ribbon,
+  diorama,
+  strazzo,
+  epilogue,
+  type Localized,
+} from '@/data/reportage-bruna';
+
+const lang = getLangFromUrl(Astro.url);
+const loc = (l: Localized) => l[lang];
+---
+
+<BaseLayout
+  title={loc(opening.title)}
+  description={loc(opening.description)}
+  headerMode='solid'
+  lang={lang}
+  image={`https://andreabianchi.me/cdn-cgi/image/format=jpeg,quality=80,width=1200/https://images.andreabianchi.me/${strazzo.cart.src}`}
+>
+  <main
+    class={css.page}
+    data-bruna-root
+    style='--bruna-bg: var(--white); --bruna-fg: var(--black)'
+  >
+    <Opening
+      kicker={loc(opening.kicker)}
+      title={loc(opening.title)}
+      meta={loc(opening.meta)}
+      description={loc(opening.description)}
+      hint={loc(opening.hint)}
+      chapterKicker={loc(darkRide.chapter.kicker)}
+      chapterTitle={loc(darkRide.chapter.title)}
+    />
+
+    <ChapterDarkRide
+      scenes={darkRide.scenes.map((s) => ({
+        src: s.src,
+        alt: s.alt,
+        caption: loc(s.caption),
+      }))}
+    />
+
+    <Interlude
+      kicker={loc(ribbon.chapter.kicker)}
+      title={loc(ribbon.chapter.title)}
+      body={loc(ribbon.interlude)}
+    />
+    <ChapterRibbon
+      items={ribbon.items.map((item) =>
+        item.type === 'photo'
+          ? { ...item, caption: loc(item.caption) }
+          : { type: 'text', title: loc(item.title), body: loc(item.body) }
+      )}
+    />
+
+    <Interlude
+      kicker={loc(diorama.chapter.kicker)}
+      title={loc(diorama.chapter.title)}
+      body={loc(diorama.interlude)}
+    />
+    <ChapterDiorama
+      back={diorama.back}
+      mid={diorama.mid}
+      plateTitle={loc(diorama.plate.title)}
+      plateBody={loc(diorama.plate.body)}
+    />
+
+    <Interlude
+      kicker={loc(strazzo.chapter.kicker)}
+      title={loc(strazzo.chapter.title)}
+      body={loc(strazzo.interlude)}
+    />
+    <ChapterStrazzo
+      cart={strazzo.cart}
+      phases={strazzo.phases.map((p) => ({ title: loc(p.title), sub: loc(p.sub) }))}
+      pieces={strazzo.pieces.map((p) => ({ ...p, caption: loc(p.caption) }))}
+    />
+
+    <Epilogue
+      kicker={loc(epilogue.kicker)}
+      title={loc(epilogue.title)}
+      body={loc(epilogue.body)}
+      photos={epilogue.photos.map((p) => ({ ...p, caption: loc(p.caption) }))}
+    />
+  </main>
+</BaseLayout>
+
+<script>
+  import { initBruna } from '@/components/ReportageBruna/choreography';
+  initBruna();
+</script>

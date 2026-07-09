@@ -1,0 +1,17 @@
+---
+import css from '@/styles/ReportageBruna.module.scss';
+
+interface Props {
+  kicker: string;
+  title: string;
+  body: string;
+}
+
+const { kicker, title, body } = Astro.props;
+---
+
+<section class={css.interlude}>
+  <p class={css.kicker}>{kicker}</p>
+  <h2 class={css.chapterTitle}>{title}</h2>
+  <p class={css.interludeBody}>{body}</p>
+</section>

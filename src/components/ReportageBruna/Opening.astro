@@ -1,0 +1,30 @@
+---
+import css from '@/styles/ReportageBruna.module.scss';
+
+interface Props {
+  kicker: string;
+  title: string;
+  meta: string;
+  description: string;
+  hint: string;
+  chapterKicker: string;
+  chapterTitle: string;
+}
+
+const { kicker, title, meta, description, hint, chapterKicker, chapterTitle } =
+  Astro.props;
+---
+
+<header class={css.opening} data-bruna-opening>
+  <p class={css.kicker}>{kicker}</p>
+  <h1 class={css.openingTitle}>{title}</h1>
+  <p class={css.openingMeta}>{meta}</p>
+  <p class={css.openingDesc}>{description}</p>
+
+  <div class={css.openingChapter}>
+    <p class={css.kicker}>{chapterKicker}</p>
+    <h2 class={css.chapterTitle}>{chapterTitle}</h2>
+  </div>
+
+  <p class={css.scrollHint} data-bruna-hint>{hint} ↓</p>
+</header>
