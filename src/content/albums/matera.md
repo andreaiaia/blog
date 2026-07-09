@@ -1,5 +1,5 @@
 ---
-title: 'Matera - the city of Sassi'
+title: 'I Materani'
 description: 'Pictures taken out and about in Matera, my hometown.'
 date: '2024-10-02'
 published: true
