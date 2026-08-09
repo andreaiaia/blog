@@ -1,5 +1,1 @@
-import { sveltePreprocess } from 'svelte-preprocess';
-
-export default {
-  preprocess: sveltePreprocess(),
-};
+export default {};
