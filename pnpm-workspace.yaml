@@ -1,3 +1,6 @@
+overrides:
+  '@babel/core': ^7.29.6
+
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
