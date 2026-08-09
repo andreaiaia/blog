@@ -31,7 +31,7 @@ const posts = (await getCollection('blog-en'))
         {
           posts.map((post) => (
             <li>
-              <PostThumbnail post={post} />
+              <PostThumbnail post={post} lang={lang} />
             </li>
           ))
         }

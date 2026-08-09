@@ -224,7 +224,7 @@ const posts = allPosts
           <a href='/en/blog' class={css.viewAllLink}>{t('home.viewAllBlog')}</a>
         </div>
         <div class={css.blogGridEqual} data-aos>
-          {posts.map((post) => <PostThumbnail post={post} />)}
+          {posts.map((post) => <PostThumbnail post={post} lang="en" />)}
         </div>
       </div>
     </section>
