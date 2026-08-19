@@ -11,9 +11,6 @@ import icon from 'astro-icon';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-console.log('[DEBUG] PUBLIC_SITE_URL:', JSON.stringify(process.env.PUBLIC_SITE_URL));
-console.log('[DEBUG] PUBLIC_ASSETS_BASE:', JSON.stringify(process.env.PUBLIC_ASSETS_BASE));
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://andreabianchi.me',
