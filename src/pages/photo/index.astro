@@ -12,59 +12,11 @@ const albums = (await getCollection('albums'))
   .filter(({ data }) => data.published)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const totalPhotos = albums.reduce(
-  (sum, { data }) => sum + data.images.length,
-  0
-);
+const entries = albums.map((album, i) => ({ album, i }));
+const leftEntries = entries.filter(({ i }) => i % 2 === 1);
+const rightEntries = entries.filter(({ i }) => i % 2 === 0);
 
-// ─── Layout assignment ───────────────────────────────────────────────────────
-// Cycles through editorial row patterns to avoid predictable repetition.
-// Each pattern is a row: values map to CSS layout classes.
-
-type Layout = 'full' | 'half' | 'twoThirds' | 'oneThird';
-
-const layoutPatterns: Layout[][] = [
-  ['full'],
-  ['half', 'half'],
-  ['twoThirds', 'oneThird'],
-  ['oneThird', 'oneThird', 'oneThird'],
-  ['oneThird', 'twoThirds'],
-];
-
-const LAYOUT_CSS: Record<Layout, string> = {
-  full: css.entryFull,
-  half: css.entryHalf,
-  twoThirds: css.entryTwoThirds,
-  oneThird: css.entryOneThird,
-};
-
-const LAYOUT_SIZES: Record<Layout, string> = {
-  full: '(max-width: 600px) 100vw, 100vw',
-  half: '(max-width: 600px) 100vw, 50vw',
-  twoThirds: '(max-width: 600px) 100vw, 66vw',
-  oneThird: '(max-width: 600px) 100vw, 33vw',
-};
-
-const albumLayouts: Layout[] = [];
-let patternIdx = 0;
-
-while (albumLayouts.length < albums.length) {
-  const remaining = albums.length - albumLayouts.length;
-  let pattern = layoutPatterns[patternIdx % layoutPatterns.length];
-
-  if (remaining < pattern.length) {
-    if (remaining === 1) {
-      pattern = ['full'];
-    } else if (remaining === 2) {
-      pattern = ['half', 'half'];
-    } else {
-      pattern = ['oneThird', 'oneThird', 'oneThird'];
-    }
-  }
-
-  albumLayouts.push(...pattern);
-  patternIdx++;
-}
+const IMAGE_SIZES = '(min-width: 1200px) 544px, 100vw';
 ---
 
 <BaseLayout
@@ -73,105 +25,55 @@ while (albumLayouts.length < albums.length) {
   headerMode='solid'
   lang={lang}
 >
-  <script is:inline>
-    (function () {
-      function setup() {
-        var els = document.querySelectorAll('[data-aos]');
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                e.target.classList.add('animate');
-                observer.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.06 }
-        );
-        els.forEach(function (el) {
-          observer.observe(el);
-        });
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setup);
-      } else {
-        setup();
-      }
-    })();
-  </script>
   <main class={css.page}>
-    <div class={css.masthead}>
-      <div class={css.mastheadLeft}>
-        <span class={css.mastheadBrand}>{t('photo.mastheadBrand')}</span>
-        <p class={css.mastheadTagline}>Cercare l'essenza di un istante</p>
-      </div>
-    </div>
-
-    <div class={css.grid}>
-      {
-        albums.map(({ id, data }, index) => {
-          const layout = albumLayouts[index] ?? 'full';
-
-          return (
-            <a
-              class={`${css.entry} ${LAYOUT_CSS[layout]}`}
-              href={`/photo/${id}`}
-              data-aos
-            >
+    <div class={css.columns}>
+      <div class={css.col}>
+        <div class={css.pageHead} style='order:0'>
+          <h1>{t('photo.pageTitle')}</h1>
+        </div>
+        {
+          leftEntries.map(({ album: { id, data }, i }) => (
+            <a class={css.entry} href={`/photo/${id}`} style={`order:${i + 1}`}>
               <div class={css.entryFrame}>
                 <CFImage
                   src={data.cover}
                   alt={data.coverAlt}
-                  widths={[600, 900, 1400]}
-                  sizes={LAYOUT_SIZES[layout]}
+                  widths={[600, 900, 1200]}
+                  sizes={IMAGE_SIZES}
                 />
-                <div class={css.entryOverlay}>
-                  <div class={css.entryTop}>
-                    {data.category && (
-                      <span class={css.entryCategory}>{data.category}</span>
-                    )}
-                  </div>
-                  <div class={css.entryBottom}>
-                    <h2 class={css.entryTitle}>{data.title}</h2>
-                    {data.description && (
-                      <p class={css.entrySubtitle}>{data.description}</p>
-                    )}
-                    <div class={css.entryMeta}>
-                      {data.location && (
-                        <div class={css.metaItem}>
-                          <span class={css.metaLabel}>
-                            {t('photo.metaLocation')}
-                          </span>
-                          <span class={css.metaValue}>{data.location}</span>
-                        </div>
-                      )}
-                      <div class={css.metaItem}>
-                        <span class={css.metaLabel}>{t('photo.metaYear')}</span>
-                        <span class={css.metaValue}>
-                          {data.date.getFullYear()}
-                        </span>
-                      </div>
-                      <div class={css.metaItem}>
-                        <span class={css.metaLabel}>
-                          {t('photo.metaPhotos')}
-                        </span>
-                        <span class={css.metaValue}>{data.images.length}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class={css.entryArrow}>↗</span>
+              </div>
+              <div class={css.entryCaption}>
+                <h2 class={css.entryTitle}>{data.title}</h2>
+                {data.category && (
+                  <span class={css.entryCategory}>{data.category}</span>
+                )}
               </div>
             </a>
-          );
-        })
-      }
-    </div>
-
-    <div class={css.ticker}>
-      <span class={css.tickerTotal}>
-        {albums.length} serie · {totalPhotos} fotografie
-      </span>
+          ))
+        }
+      </div>
+      <div class={css.col}>
+        {
+          rightEntries.map(({ album: { id, data }, i }) => (
+            <a class={css.entry} href={`/photo/${id}`} style={`order:${i + 1}`}>
+              <div class={css.entryFrame}>
+                <CFImage
+                  src={data.cover}
+                  alt={data.coverAlt}
+                  widths={[600, 900, 1200]}
+                  sizes={IMAGE_SIZES}
+                />
+              </div>
+              <div class={css.entryCaption}>
+                <h2 class={css.entryTitle}>{data.title}</h2>
+                {data.category && (
+                  <span class={css.entryCategory}>{data.category}</span>
+                )}
+              </div>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </main>
 </BaseLayout>
