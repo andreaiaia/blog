@@ -29,6 +29,7 @@
 .groupHead {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
@@ -45,6 +46,10 @@
   flex: 1 1 auto;
   height: 1px;
   background-color: var(--light-shade);
+
+  @include smartphone {
+    display: none;
+  }
 }
 
 .countBadge {
@@ -55,6 +60,10 @@
   border-radius: 8px;
   background-color: var(--primary-tint);
   color: var(--black);
+
+  @include smartphone {
+    display: none;
+  }
 
   span {
     font-family: 'PlusJakartaSans';
@@ -77,6 +86,10 @@
   margin: 0;
   text-transform: capitalize;
   color: var(--black);
+
+  @include smartphone {
+    font-size: 1.7rem;
+  }
 }
 
 .backToTop {
@@ -88,6 +101,10 @@
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: text-decoration-color 0.3s ease, color 0.3s ease;
+
+  @include smartphone {
+    font-size: 0.85rem;
+  }
 
   &:hover {
     color: var(--black);
