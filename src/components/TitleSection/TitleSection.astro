@@ -1,0 +1,90 @@
+---
+import Tag from '@/components/Tag/Tag.svelte';
+import css from './TitleSection.module.scss';
+
+interface FilterOption {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  title: string;
+  filters?: FilterOption[];
+}
+
+const { title, filters } = Astro.props;
+---
+
+<section class={css.titleSection}>
+  <div class={css.content}>
+    <div class={css.rule}>
+      <h1>{title}</h1>
+      <slot />
+      {
+        filters && filters.length > 0 && (
+          <div class={css.filters} data-filter-bar>
+            <button
+              class={css.clearChip}
+              data-filter-clear
+              data-active='false'
+              aria-label='Annulla i filtri'
+            >
+              ×
+            </button>
+            {filters.map((filter) => (
+              <Tag href='#' data-filter-value={filter.value} aria-pressed='false'>
+                {filter.label}
+              </Tag>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function initFilterBars() {
+    document.querySelectorAll<HTMLElement>('[data-filter-bar]').forEach((bar) => {
+      const clearButton = bar.querySelector<HTMLButtonElement>('[data-filter-clear]');
+      const chips = Array.from(
+        bar.querySelectorAll<HTMLElement>('[data-filter-value]')
+      );
+
+      const applyFilters = () => {
+        const active = chips
+          .filter((chip) => chip.getAttribute('aria-pressed') === 'true')
+          .map((chip) => chip.dataset.filterValue);
+
+        document
+          .querySelectorAll<HTMLElement>('[data-filterable]')
+          .forEach((el) => {
+            const tags = (el.dataset.filterTags ?? '').split(',');
+            const show = active.length === 0 || tags.some((tag) => active.includes(tag));
+            el.style.display = show ? '' : 'none';
+          });
+
+        clearButton?.setAttribute('data-active', String(active.length > 0));
+      };
+
+      chips.forEach((chip) => {
+        chip.addEventListener('click', (event) => {
+          event.preventDefault();
+          const isActive = chip.getAttribute('aria-pressed') === 'true';
+          chip.setAttribute('aria-pressed', String(!isActive));
+          applyFilters();
+        });
+      });
+
+      clearButton?.addEventListener('click', () => {
+        chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
+        applyFilters();
+      });
+
+      applyFilters();
+    });
+  }
+
+  initFilterBars();
+  document.addEventListener('astro:page-load', initFilterBars);
+</script>

@@ -1,24 +1,5 @@
 @use './_globals.module' as *;
 
-.titleSection {
-  width: 100%;
-  background-color: var(--primary);
-
-  .content {
-    @include container;
-    font-family: 'DMSerifDisplay';
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-    color: var(--black);
-
-    p {
-      font-size: 1.5rem;
-      line-height: 1.5;
-      font-family: 'PlusJakartaSans';
-    }
-  }
-}
-
 .feed {
   @include container;
   padding-top: 3rem;

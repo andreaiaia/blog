@@ -33,7 +33,7 @@ export const ui = {
     'home.introLabel': 'Chi sono',
     'home.viewAll': 'Vedi tutto',
     'home.viewAllBlog': 'Tutti gli articoli',
-    'photo.pageTitle': 'Portfolio',
+    'photo.pageTitle': 'I miei progetti',
   },
   en: {
     'site.title': 'Andrea',
@@ -63,7 +63,7 @@ export const ui = {
     'home.introLabel': 'About me',
     'home.viewAll': 'View all',
     'home.viewAllBlog': 'All articles',
-    'photo.pageTitle': 'Portfolios',
+    'photo.pageTitle': 'My Projects',
   },
 } as const;
 

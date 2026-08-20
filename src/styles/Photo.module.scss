@@ -6,13 +6,14 @@
 }
 
 // ─── Columns ────────────────────────────────────────────────────────────────
-// Mobile: single column, natural chronological order (pageHead first).
-// Desktop: two independent columns, left one staggered down by the height
-// of pageHead, which lives inside it as real content.
+// Mobile: single column, natural chronological order.
+// Desktop: two aligned columns.
 
 .columns {
   @include container;
   padding-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
@@ -32,22 +33,6 @@
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-
-    &:nth-child(2) {
-      margin-top: 3rem;
-    }
-  }
-}
-
-// ─── Page heading ───────────────────────────────────────────────────────────
-
-.pageHead {
-  margin-bottom: 1.25rem;
-
-  h1 {
-    font-family: 'DMSerifDisplay';
-    font-size: 3.052em;
-    margin: 0;
   }
 }
 

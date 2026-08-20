@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TitleSection from '@/components/TitleSection/TitleSection.astro';
 import css from '@/styles/Photo.module.scss';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import CFImage from '@/components/CFImage/CFImage.astro';
@@ -26,14 +27,16 @@ const IMAGE_SIZES = '(min-width: 1200px) 544px, 100vw';
   lang={lang}
 >
   <main class={css.page}>
+    <TitleSection title={t('photo.pageTitle')} />
     <div class={css.columns}>
       <div class={css.col}>
-        <div class={css.pageHead} style='order:0'>
-          <h1>{t('photo.pageTitle')}</h1>
-        </div>
         {
           leftEntries.map(({ album: { id, data }, i }) => (
-            <a class={css.entry} href={`/en/photo/${id}`} style={`order:${i + 1}`}>
+            <a
+              class={css.entry}
+              href={`/en/photo/${id}`}
+              style={`order:${i + 1}`}
+            >
               <div class={css.entryFrame}>
                 <CFImage
                   src={data.cover}
@@ -55,7 +58,11 @@ const IMAGE_SIZES = '(min-width: 1200px) 544px, 100vw';
       <div class={css.col}>
         {
           rightEntries.map(({ album: { id, data }, i }) => (
-            <a class={css.entry} href={`/en/photo/${id}`} style={`order:${i + 1}`}>
+            <a
+              class={css.entry}
+              href={`/en/photo/${id}`}
+              style={`order:${i + 1}`}
+            >
               <div class={css.entryFrame}>
                 <CFImage
                   src={data.cover}

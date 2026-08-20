@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostThumbnail from '@/components/PostThumbnail/PostThumbnail.svelte';
+import TitleSection from '@/components/TitleSection/TitleSection.astro';
 import { useTranslations } from '@/i18n/utils';
 import css from '@/styles/Blog.module.scss';
 
@@ -20,12 +21,7 @@ const posts = (await getCollection('blog-en'))
   lang={lang}
 >
   <main>
-    <section class={css.titleSection}>
-      <div class={css.content}>
-        <h1>Blog</h1>
-        <p>My little corner of the web!</p>
-      </div>
-    </section>
+    <TitleSection title='Logbook' />
     <section class={css.feed}>
       <ul class={css.posts}>
         {
