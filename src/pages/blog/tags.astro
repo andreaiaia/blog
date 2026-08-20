@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TitleSection from '@/components/TitleSection/TitleSection.astro';
+import PostThumbnail from '@/components/PostThumbnail/PostThumbnail.svelte';
+import Tag from '@/components/Tag/Tag.svelte';
+import Heading2 from '@/components/Heading2/Heading2.astro';
+import { getLangFromUrl } from '@/i18n/utils';
+import css from '@/styles/Tags.module.scss';
+
+const lang = getLangFromUrl(Astro.url);
+
+const posts = (await getCollection('blog-it'))
+  .filter(({ data }) => data.published)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const tagCounts = posts
+  .flatMap((post) => post.data.tags)
+  .reduce<Record<string, number>>((counts, tag) => {
+    counts[tag] = (counts[tag] ?? 0) + 1;
+    return counts;
+  }, {});
+
+const tagGroups = Object.keys(tagCounts)
+  .sort((a, b) => a.localeCompare(b))
+  .map((tag) => ({
+    tag,
+    label: tag.charAt(0).toUpperCase() + tag.slice(1),
+    posts: posts.filter((post) => post.data.tags.includes(tag)),
+  }));
+---
+
+<BaseLayout
+  title='Tag'
+  description='Tutti gli argomenti del blog'
+  headerMode='solid'
+  lang={lang}
+>
+  <main class={css.page}>
+    <TitleSection title='Tag'>
+      <nav class={css.tagIndex} aria-label='Elenco tag'>
+        {
+          tagGroups.map(({ tag, label }) => (
+            <Tag href={`#${tag}`}>
+              {label}
+            </Tag>
+          ))
+        }
+      </nav>
+    </TitleSection>
+    <div class={css.groups}>
+      {
+        tagGroups.map(({ tag, label, posts }) => (
+          <section id={tag} class={css.group}>
+            <div class={css.groupHead}>
+              <div class={css.groupInfoBox}>
+                <div class={css.countBadge}>
+                  <span>{posts.length}</span>
+                  <small>Post</small>
+                </div>
+                <Heading2 accent={false} class={css.groupTitle}>
+                  {label}
+                </Heading2>
+              </div>
+              <div class={css.headRule} />
+              <a href='#' class={css.backToTop}>
+                Torna su
+              </a>
+            </div>
+            <ul class={css.postList}>
+              {posts.map((post) => (
+                <li>
+                  <PostThumbnail post={post} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>

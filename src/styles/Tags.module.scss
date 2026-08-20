@@ -1,0 +1,107 @@
+@use './_globals.module' as *;
+
+.page {
+  background-color: var(--white);
+  padding: 0 0 6rem;
+}
+
+.tagIndex {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.groups {
+  @include container;
+  padding-top: 9rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+}
+
+.group {
+  scroll-margin-top: 6rem;
+}
+
+.groupHead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.groupInfoBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.headRule {
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: var(--light-shade);
+}
+
+.countBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: var(--primary-tint);
+  color: var(--black);
+
+  span {
+    font-family: 'PlusJakartaSans';
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  small {
+    font-family: 'PlusJakartaSans';
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+.groupTitle {
+  font-family: 'DMSerifDisplay';
+  font-size: 2.4rem;
+  margin: 0;
+  text-transform: capitalize;
+  color: var(--black);
+}
+
+.backToTop {
+  font-family: 'PlusJakartaSans';
+  font-size: 1.05rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  color: var(--shade);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    color: var(--black);
+    text-decoration-color: var(--primary);
+  }
+}
+
+.postList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+
+  li {
+    width: 100%;
+  }
+}

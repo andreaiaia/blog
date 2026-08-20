@@ -1,0 +1,14 @@
+---
+import css from './Heading2.module.scss';
+
+interface Props {
+  accent?: boolean;
+  class?: string;
+}
+
+const { accent = true, class: className } = Astro.props;
+---
+
+<h2 class:list={[className, { [css.noAccent]: !accent }]}>
+  <slot />
+</h2>

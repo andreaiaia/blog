@@ -30,7 +30,9 @@ const readingTime = remarkPluginFrontmatter.minutesRead;
       <CFImage className={css.postImage} src={image} alt={title} />
       <div class={css.postMetadata}>
         <div class={css.tags}>
-          {tags.map((tag: string) => <Tag href='#'>{tag}</Tag>)}
+          {tags.map((tag: string) => (
+            <Tag href={`/blog/tags#${encodeURIComponent(tag)}`}>{tag}</Tag>
+          ))}
         </div>
         <h1>{title}</h1>
         <p>{description}</p>
