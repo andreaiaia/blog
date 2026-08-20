@@ -163,6 +163,10 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   .hamburger {
     display: flex;
   }
+
+  .header:has(.navLinks:global(.header-menu-active)) {
+    color: var(--white);
+  }
 }
 
 .active {
