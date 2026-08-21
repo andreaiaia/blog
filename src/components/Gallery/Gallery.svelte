@@ -8,10 +8,15 @@
   const BOX_SPACING = 16;
   const MOBILE_BREAKPOINT = 640;
   const RESIZE_DEBOUNCE = 100;
-  // Matches the .gallery max-width (1200px) minus its 1rem horizontal padding,
-  // so SSR output is already correctly laid out for the common desktop case
-  // before any client-side measurement can run.
-  const DEFAULT_WIDTH = 1168;
+  // .gallery has no CSS padding — position: absolute children ignore an
+  // ancestor's padding entirely (their containing block is the padding box,
+  // whose origin is the *outer* edge of the padding, i.e. the border box),
+  // so the horizontal inset is applied by hand here instead.
+  const GALLERY_PADDING = 16;
+  // Matches the .gallery max-width (1200px), so SSR output is already
+  // correctly laid out for the common desktop case before any client-side
+  // measurement can run.
+  const DEFAULT_WIDTH = 1200;
   // width/height >= this: always its own full-width row.
   const PANORAMA_ASPECT_RATIO = 2;
   // width/height >= this (and below panorama): "horizontal", otherwise "vertical".
@@ -151,13 +156,21 @@
       return { boxes: [], containerHeight: 0 };
     }
 
-    if (width < MOBILE_BREAKPOINT) {
+    const contentWidth = width - GALLERY_PADDING * 2;
+
+    if (contentWidth < MOBILE_BREAKPOINT) {
       // Single column: natural aspect ratio, nothing cropped or paired.
       let top = 0;
       const boxes = images.map((image) => {
         const aspectRatio = image.width / image.height;
-        const height = width / aspectRatio;
-        const box = { aspectRatio, top, left: 0, width, height };
+        const height = contentWidth / aspectRatio;
+        const box = {
+          aspectRatio,
+          top,
+          left: GALLERY_PADDING,
+          width: contentWidth,
+          height,
+        };
         top += height + BOX_SPACING;
         return box;
       });
@@ -169,12 +182,15 @@
     let top = 0;
 
     rows.forEach((rowImages) => {
-      const { boxes: rowBoxes, height } = layoutRow(rowImages, top, width);
+      const { boxes: rowBoxes, height } = layoutRow(rowImages, top, contentWidth);
       rowImages.forEach((image, i) => boxesByImage.set(image, rowBoxes[i]));
       top += height + BOX_SPACING;
     });
 
-    const boxes = images.map((image) => boxesByImage.get(image));
+    const boxes = images.map((image) => {
+      const box = boxesByImage.get(image);
+      return { ...box, left: box.left + GALLERY_PADDING };
+    });
     return { boxes, containerHeight: Math.max(0, top - BOX_SPACING) };
   }
 
@@ -185,12 +201,22 @@
 
   onMount(() => {
     let resizeTimeout;
+    let isFirstMeasurement = true;
 
     const applyLayout = (width) => {
       ({ boxes, containerHeight } = computeLayout(width));
     };
 
+    // Always measure via contentRect (padding already excluded) rather than
+    // mixing in clientWidth (which includes padding) for the first call —
+    // that mismatch under-reported the available width on narrow (mobile)
+    // viewports, where the ~32px padding is a much larger share of the total.
     const resizeObserver = new ResizeObserver(([entry]) => {
+      if (isFirstMeasurement) {
+        isFirstMeasurement = false;
+        applyLayout(entry.contentRect.width);
+        return;
+      }
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(
         () => applyLayout(entry.contentRect.width),
@@ -199,7 +225,6 @@
     });
 
     resizeObserver.observe(containerEl);
-    applyLayout(containerEl.clientWidth);
 
     return () => {
       clearTimeout(resizeTimeout);

@@ -3,7 +3,9 @@
 .gallery {
   position: relative;
   max-width: 1200px;
-  padding: 0 1rem;
+  // No CSS padding here — absolutely positioned children ignore an
+  // ancestor's padding, so the horizontal inset is applied in JS instead
+  // (see GALLERY_PADDING in Gallery.svelte).
   margin: 0 auto 64px;
   transition: height 0.3s ease;
 
