@@ -6,8 +6,8 @@
 }
 
 // ─── Columns ────────────────────────────────────────────────────────────────
-// Mobile: single column, natural chronological order.
-// Desktop: two aligned columns.
+// Mobile: single column, chronological order.
+// Desktop: two-column grid, filled row by row.
 
 .columns {
   @include container;
@@ -21,18 +21,8 @@
   @include breakpoint($tablet-landscape) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
+    gap: 3.5rem 3rem;
     align-items: start;
-  }
-}
-
-.col {
-  display: contents;
-
-  @include breakpoint($tablet-landscape) {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem;
   }
 }
 

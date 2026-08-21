@@ -1,0 +1,53 @@
+export const categorySlugs = [
+  'landscape',
+  'wildlife',
+  'urban',
+  'travel',
+  'astrophotography',
+  'documentary',
+  'street',
+  'architecture',
+  'sport',
+  'events',
+  'product',
+  'portrait',
+  'still-life',
+  'macro',
+] as const;
+
+export type Category = (typeof categorySlugs)[number];
+
+export const categoryLabels: Record<'it' | 'en', Record<Category, string>> = {
+  it: {
+    landscape: 'Paesaggio',
+    wildlife: 'Wildlife',
+    urban: 'Urban',
+    travel: 'Viaggio',
+    astrophotography: 'Astrofotografia',
+    documentary: 'Documentario / Reportage',
+    street: 'Street',
+    architecture: 'Architettura',
+    sport: 'Sport',
+    events: 'Eventi',
+    product: 'Prodotto',
+    portrait: 'Ritratti',
+    'still-life': 'Still Life',
+    macro: 'Macro',
+  },
+  en: {
+    landscape: 'Landscape',
+    wildlife: 'Wildlife',
+    urban: 'Urban',
+    travel: 'Travel',
+    astrophotography: 'Astrophotography',
+    documentary: 'Documentary / Reportage',
+    street: 'Street',
+    architecture: 'Architecture',
+    sport: 'Sport',
+    events: 'Events',
+    product: 'Product',
+    portrait: 'Portraits',
+    'still-life': 'Still Life',
+    macro: 'Macro',
+  },
+};

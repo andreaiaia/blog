@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
+import { categorySlugs } from './i18n/categories';
 
 const blogSchema = z.object({
   title: z.string(),
@@ -39,9 +40,8 @@ const albums = defineCollection({
     published: z.boolean(),
     cover: z.string(),
     coverAlt: z.string(),
-    location: z.string().optional(),
-    category: z.string().optional(),
-    section: z.enum(['landscape-wildlife', 'travel', 'misc']).optional(),
+    location: z.string(),
+    category: z.enum(categorySlugs),
     images: z.array(
       z.object({
         file: z.string(),

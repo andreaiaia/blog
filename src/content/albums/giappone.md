@@ -5,9 +5,8 @@ date: '2024-10-04'
 published: true
 cover: 'giappone/miyajima-tempio-interno.jpg'
 coverAlt: 'The inside of a Japanese temple'
-location: 'Giappone'
-category: 'Viaggio · Asia'
-section: 'travel'
+location: '日本国'
+category: 'travel'
 images:
   - file: 'giappone/itsukushima-torii.jpg'
     alt: 'The floating torii of Itsukushima Shrine'

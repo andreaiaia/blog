@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import TitleSection from '@/components/TitleSection/TitleSection.astro';
 import css from '@/styles/Photo.module.scss';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { categoryLabels } from '@/i18n/categories';
 import CFImage from '@/components/CFImage/CFImage.astro';
 
 const lang = getLangFromUrl(Astro.url);
@@ -12,10 +13,6 @@ const t = useTranslations(lang);
 const albums = (await getCollection('albums'))
   .filter(({ data }) => data.published)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const entries = albums.map((album, i) => ({ album, i }));
-const leftEntries = entries.filter(({ i }) => i % 2 === 1);
-const rightEntries = entries.filter(({ i }) => i % 2 === 0);
 
 const IMAGE_SIZES = '(min-width: 1200px) 544px, 100vw';
 ---
@@ -29,58 +26,26 @@ const IMAGE_SIZES = '(min-width: 1200px) 544px, 100vw';
   <main class={css.page}>
     <TitleSection title={t('photo.pageTitle')} />
     <div class={css.columns}>
-      <div class={css.col}>
-        {
-          leftEntries.map(({ album: { id, data }, i }) => (
-            <a
-              class={css.entry}
-              href={`/photo/${id}`}
-              style={`order:${i + 1}`}
-            >
-              <div class={css.entryFrame}>
-                <CFImage
-                  src={data.cover}
-                  alt={data.coverAlt}
-                  widths={[600, 900, 1200]}
-                  sizes={IMAGE_SIZES}
-                />
-              </div>
-              <div class={css.entryCaption}>
-                <h2 class={css.entryTitle}>{data.title}</h2>
-                {data.category && (
-                  <span class={css.entryCategory}>{data.category}</span>
-                )}
-              </div>
-            </a>
-          ))
-        }
-      </div>
-      <div class={css.col}>
-        {
-          rightEntries.map(({ album: { id, data }, i }) => (
-            <a
-              class={css.entry}
-              href={`/photo/${id}`}
-              style={`order:${i + 1}`}
-            >
-              <div class={css.entryFrame}>
-                <CFImage
-                  src={data.cover}
-                  alt={data.coverAlt}
-                  widths={[600, 900, 1200]}
-                  sizes={IMAGE_SIZES}
-                />
-              </div>
-              <div class={css.entryCaption}>
-                <h2 class={css.entryTitle}>{data.title}</h2>
-                {data.category && (
-                  <span class={css.entryCategory}>{data.category}</span>
-                )}
-              </div>
-            </a>
-          ))
-        }
-      </div>
+      {
+        albums.map(({ id, data }) => (
+          <a class={css.entry} href={`/photo/${id}`}>
+            <div class={css.entryFrame}>
+              <CFImage
+                src={data.cover}
+                alt={data.coverAlt}
+                widths={[600, 900, 1200]}
+                sizes={IMAGE_SIZES}
+              />
+            </div>
+            <div class={css.entryCaption}>
+              <h2 class={css.entryTitle}>{data.title}</h2>
+              <span class={css.entryCategory}>
+                {categoryLabels[lang][data.category]} • {data.location}
+              </span>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </main>
 </BaseLayout>

@@ -1,13 +1,12 @@
 ---
-title: 'Flying among humans'
+title: 'Naumanni'
 description: 'An ode to the Falco Grillaio (Lesser Kestrel), a small falcon that passes the summer in the old town of Matera, Italy.'
 date: '2024-10-05'
 published: true
 cover: 'grillaio/nella-gravina.jpg'
 coverAlt: 'A Lesser Kestrel Flying in Matera.'
-location: 'Matera, IT'
-category: 'Wildlife · Basilicata'
-section: 'landscape-wildlife'
+location: 'Matera'
+category: 'wildlife'
 images:
   - file: 'grillaio/nella-gravina.jpg'
     alt: 'A Lesser Kestrel flying in the Murgia Materana'
