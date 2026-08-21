@@ -5,6 +5,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import Gallery from '@/components/Gallery/Gallery.svelte';
 import css from '@/styles/Gallery.module.scss';
 import { getImageDimensions } from '@/utils/imageDimensions';
+import { packRows } from '@/utils/galleryRows';
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -27,6 +28,7 @@ const galleryImages = images.map((image) => ({
   ...image,
   ...getImageDimensions(image.file),
 }));
+const rows = packRows(galleryImages);
 ---
 
 <GalleryLayout title={title} description={description} lang={lang}>
@@ -37,6 +39,6 @@ const galleryImages = images.map((image) => ({
         <p class={css.description}>{description}</p>
       </div>
     </section>
-    <Gallery images={galleryImages} client:load />
+    <Gallery rows={rows} client:load />
   </article>
 </GalleryLayout>

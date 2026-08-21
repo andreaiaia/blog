@@ -1,28 +1,65 @@
 @use '../../styles/globals.module' as *;
 
 .gallery {
-  position: relative;
   max-width: 1200px;
-  // No CSS padding here — absolutely positioned children ignore an
-  // ancestor's padding, so the horizontal inset is applied in JS instead
-  // (see GALLERY_PADDING in Gallery.svelte).
+  padding: 0 1rem;
   margin: 0 auto 64px;
-  transition: height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-  .imageButton {
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    overflow: hidden;
-    cursor: zoom-in;
+.row {
+  display: flex;
+  gap: 16px;
+  // The row's height is derived from its own width via this ratio (sum of
+  // its photos' aspect ratios), so it always fills exactly the available
+  // width with no JS recalculation needed on resize.
+  aspect-ratio: var(--row-ar);
 
-    .image {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
+  @media (max-width: 640px) {
+    // Drop out of flex layout entirely rather than toggle flex-direction —
+    // mixing a live-resized flex-direction switch with aspect-ratio and
+    // flex-grow/flex-basis on the same elements is fragile across browsers
+    // (things like it silently reflowing incorrectly after a resize back
+    // and forth across the breakpoint). Plain block flow has none of that
+    // interaction to get wrong.
+    display: block;
+    aspect-ratio: auto;
+  }
+}
+
+.item {
+  // Distributes the row's width proportionally to each photo's own aspect
+  // ratio, so every photo keeps its true proportions with zero cropping.
+  flex-grow: var(--item-ar);
+  flex-basis: 0;
+  min-width: 0;
+  aspect-ratio: var(--item-ar);
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+
+  @media (max-width: 640px) {
+    // .row is plain block flow now, so flex-grow/flex-basis are inert —
+    // this is just an ordinary full-width block stacked in a column, sized
+    // by aspect-ratio alone.
+    width: 100%;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
   }
 }
 
