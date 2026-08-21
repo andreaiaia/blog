@@ -33,3 +33,5 @@ images:
   - file: 'grillaio/in-volo.jpg'
     alt: 'A Lesser Kestrel flying with a cricket in its beak'
 ---
+
+An ode to the Falco Grillaio (Lesser Kestrel), a small falcon that passes the summer in the old town of Matera, Italy.

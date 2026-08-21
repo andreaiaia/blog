@@ -1,7 +1,7 @@
 ---
 import GalleryLayout from '@/layouts/GalleryLayout.astro';
 import { getLangFromUrl } from '@/i18n/utils';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Gallery from '@/components/Gallery/Gallery.svelte';
 import css from '@/styles/Gallery.module.scss';
 import { getImageDimensions } from '@/utils/imageDimensions';
@@ -23,6 +23,7 @@ type Props = CollectionEntry<'albums'>;
 
 const album = Astro.props;
 const { title, description, images } = album.data;
+const { Content } = await render(album);
 
 const galleryImages = images.map((image) => ({
   ...image,
@@ -36,7 +37,9 @@ const rows = packRows(galleryImages);
     <section class={css.head}>
       <div>
         <h1>{title}</h1>
-        <p class={css.description}>{description}</p>
+        <div class={css.description}>
+          <Content />
+        </div>
       </div>
     </section>
     <Gallery rows={rows} client:load />

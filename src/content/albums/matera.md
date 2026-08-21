@@ -33,3 +33,5 @@ images:
   - file: 'matera/lavoro-remoto-sassi.jpg'
     alt: 'A man working remotely sitting on the top of a staircase in the Sassi of Matera.'
 ---
+
+Pictures taken out and about in Matera, my hometown.

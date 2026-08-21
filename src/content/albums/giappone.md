@@ -33,3 +33,5 @@ images:
   - file: 'giappone/tempio-d-oro-kyoto.jpg'
     alt: 'The Golden temple of Kyoto'
 ---
+
+A collection of images taken during my trip to Japan in 2024.

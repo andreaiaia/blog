@@ -33,3 +33,5 @@ images:
   - file: 'paesaggi/lucania-4.jpg'
     alt: 'A field of wheat at sunset in the countryside of Matera.'
 ---
+
+My landscape photographs from around the world.

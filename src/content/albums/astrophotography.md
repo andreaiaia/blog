@@ -33,3 +33,5 @@ images:
   - file: 'astro/iss-moon-transit.jpg'
     alt: 'A composite image of the ISS transit in front of the moon.'
 ---
+
+A gallery of my astrophotography work.

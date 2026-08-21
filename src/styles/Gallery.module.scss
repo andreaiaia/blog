@@ -7,7 +7,7 @@
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 3.5rem 1rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,10 +17,37 @@
       font-family: 'DMSerifDisplay';
       border-left: unset;
       text-align: center;
+      margin-bottom: 1.25rem;
     }
 
-    p {
+    .description {
+      max-width: 700px;
+      text-align: left;
       font-family: 'PlusJakartaSans';
+      margin-bottom: 3rem;
+
+      h2,
+      h3 {
+        font-family: 'PlusJakartaSans';
+        font-weight: 700;
+        margin: 1.5rem 0 0.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

@@ -33,3 +33,5 @@ images:
   - file: 'napapiiri/tramonto.jpg'
     alt: 'A sun setting behind the forest.'
 ---
+
+A photo story of my trip to Lapland, chasing the northern lights.
